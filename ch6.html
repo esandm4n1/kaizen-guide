@@ -6,36 +6,11 @@
 <title>第6章 発表の型 | カイゼンガイド</title>
 <link rel="stylesheet" href="style.css">
 <style>
-  /* 6章専用: QCストーリー7段階 */
   .qc-story { display: grid; gap: 12px; margin: 24px 0; }
-  .qc-step {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 16px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 18px 22px;
-    align-items: start;
-  }
-  .qc-step-num {
-    width: 40px; height: 40px;
-    background: var(--accent);
-    color: white;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 800; font-size: 18px;
-    flex-shrink: 0;
-  }
-  .qc-step-body { }
-  .qc-step-title {
-    font-weight: 700; font-size: 17px;
-    margin-bottom: 6px;
-  }
-  .qc-step-desc {
-    font-size: 14px; color: var(--sub);
-    line-height: 1.7;
-  }
+  .qc-step { display: grid; grid-template-columns: auto 1fr; gap: 16px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; align-items: start; }
+  .qc-step-num { width: 40px; height: 40px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 18px; flex-shrink: 0; }
+  .qc-step-title { font-weight: 700; font-size: 17px; margin-bottom: 6px; }
+  .qc-step-desc { font-size: 14px; color: var(--sub); line-height: 1.7; }
   .qc-step-desc strong { color: var(--text); font-weight: 600; }
 </style>
 </head>
@@ -74,66 +49,20 @@
   <p data-i18n="ch6_p4">これが発表の骨格。どんなテーマでも、この7段階で組み立てる。</p>
 
   <div class="qc-story">
-    <div class="qc-step">
-      <div class="qc-step-num">1</div>
-      <div class="qc-step-body">
-        <div class="qc-step-title" data-i18n="qcStep1Title">テーマ選定</div>
-        <div class="qc-step-desc" data-i18n="qcStep1Desc">なぜこれに取り組んだか。<strong>背景と動機</strong>をシンプルに。「会社の方針」「現場の困りごと」「数字の異常」のどれかに繋がる。</div>
-      </div>
-    </div>
-    <div class="qc-step">
-      <div class="qc-step-num">2</div>
-      <div class="qc-step-body">
-        <div class="qc-step-title" data-i18n="qcStep2Title">現状把握</div>
-        <div class="qc-step-desc" data-i18n="qcStep2Desc">データで現状を見せる。<strong>パレート図と層別ドリルダウン</strong>。何が、どこで、いつ、誰が、どの条件で発生してるかまで絞り込む。<strong>ここが発表の山場</strong>。</div>
-      </div>
-    </div>
-    <div class="qc-step">
-      <div class="qc-step-num">3</div>
-      <div class="qc-step-body">
-        <div class="qc-step-title" data-i18n="qcStep3Title">目標設定</div>
-        <div class="qc-step-desc" data-i18n="qcStep3Desc"><strong>具体的な数字</strong>で目標を出す。「現状◯% → 目標◯%」「年間◯◯万円削減」。期限も明記。<strong>夢じゃなく、達成可能な数字</strong>。</div>
-      </div>
-    </div>
-    <div class="qc-step">
-      <div class="qc-step-num">4</div>
-      <div class="qc-step-body">
-        <div class="qc-step-title" data-i18n="qcStep4Title">要因分析</div>
-        <div class="qc-step-desc" data-i18n="qcStep4Desc">絞り込んだ条件に対して、<strong>なぜなぜ分析と特性要因図</strong>で真因を特定。「これを変えたら再発しない」のテストをクリアした原因だけを残す。</div>
-      </div>
-    </div>
-    <div class="qc-step">
-      <div class="qc-step-num">5</div>
-      <div class="qc-step-body">
-        <div class="qc-step-title" data-i18n="qcStep5Title">対策検討・実施</div>
-        <div class="qc-step-desc" data-i18n="qcStep5Desc">複数の対策案を<strong>効果×実現性×横展開性</strong>で評価。採用した対策を実施。<strong>BeforeAfter</strong>の写真・図を入れると一気に伝わる。</div>
-      </div>
-    </div>
-    <div class="qc-step">
-      <div class="qc-step-num">6</div>
-      <div class="qc-step-body">
-        <div class="qc-step-title" data-i18n="qcStep6Title">効果確認</div>
-        <div class="qc-step-desc" data-i18n="qcStep6Desc"><strong>対策前後のパレート図を並べる</strong>。目標に対してどう達成したか、金額換算で。<strong>副次的な効果</strong>(作業時間短縮・ミス削減など)もあれば書く。</div>
-      </div>
-    </div>
-    <div class="qc-step">
-      <div class="qc-step-num">7</div>
-      <div class="qc-step-body">
-        <div class="qc-step-title" data-i18n="qcStep7Title">標準化・歯止め</div>
-        <div class="qc-step-desc" data-i18n="qcStep7Desc">良い結果を<strong>維持する仕組み</strong>を作る。手順書更新、教育、定期チェック。<strong>他ラインへの横展開計画</strong>も。「やって終わり」にしない。</div>
-      </div>
-    </div>
+    <div class="qc-step"><div class="qc-step-num">1</div><div><div class="qc-step-title" data-i18n="qcStep1Title">テーマ選定</div><div class="qc-step-desc" data-i18n="qcStep1Desc">なぜこれに取り組んだか。<strong>背景と動機</strong>をシンプルに。「会社の方針」「現場の困りごと」「数字の異常」のどれかに繋がる。</div></div></div>
+    <div class="qc-step"><div class="qc-step-num">2</div><div><div class="qc-step-title" data-i18n="qcStep2Title">現状把握</div><div class="qc-step-desc" data-i18n="qcStep2Desc">データで現状を見せる。<strong>パレート図と層別ドリルダウン</strong>。何が、どこで、いつ、誰が、どの条件で発生してるかまで絞り込む。<strong>ここが発表の山場</strong>。</div></div></div>
+    <div class="qc-step"><div class="qc-step-num">3</div><div><div class="qc-step-title" data-i18n="qcStep3Title">目標設定</div><div class="qc-step-desc" data-i18n="qcStep3Desc"><strong>具体的な数字</strong>で目標を出す。「現状◯% → 目標◯%」「年間◯◯万円削減」。期限も明記。<strong>夢じゃなく、達成可能な数字</strong>。</div></div></div>
+    <div class="qc-step"><div class="qc-step-num">4</div><div><div class="qc-step-title" data-i18n="qcStep4Title">要因分析</div><div class="qc-step-desc" data-i18n="qcStep4Desc">絞り込んだ条件に対して、<strong>なぜなぜ分析と特性要因図</strong>で真因を特定。「これを変えたら再発しない」のテストをクリアした原因だけを残す。</div></div></div>
+    <div class="qc-step"><div class="qc-step-num">5</div><div><div class="qc-step-title" data-i18n="qcStep5Title">対策検討・実施</div><div class="qc-step-desc" data-i18n="qcStep5Desc">複数の対策案を<strong>効果×実現性×横展開性</strong>で評価。採用した対策を実施。<strong>BeforeAfter</strong>の写真・図を入れると一気に伝わる。</div></div></div>
+    <div class="qc-step"><div class="qc-step-num">6</div><div><div class="qc-step-title" data-i18n="qcStep6Title">効果確認</div><div class="qc-step-desc" data-i18n="qcStep6Desc"><strong>対策前後のパレート図を並べる</strong>。目標に対してどう達成したか、金額換算で。<strong>副次的な効果</strong>(作業時間短縮・ミス削減など)もあれば書く。</div></div></div>
+    <div class="qc-step"><div class="qc-step-num">7</div><div><div class="qc-step-title" data-i18n="qcStep7Title">標準化・歯止め</div><div class="qc-step-desc" data-i18n="qcStep7Desc">良い結果を<strong>維持する仕組み</strong>を作る。手順書更新、教育、定期チェック。<strong>他ラインへの横展開計画</strong>も。「やって終わり」にしない。</div></div></div>
   </div>
 
   <p data-i18n="ch6_p5"><strong>この7段階、順番通りに1スライドずつ</strong>。7〜10枚くらいの構成で、15分発表にちょうどいい。</p>
 
   <h3 data-i18n="ch6_h3">初めて見る人への配慮</h3>
   <p data-i18n="ch6_p6">審査員はあなたの現場を知らない。<strong>「初対面の人に伝える」</strong>意識が全て。</p>
-  <p data-i18n="ch6_p7">
-  • <strong>略語は必ず定義</strong>:「工程B」「治具X」みたいな社内用語、使う前に1行で説明<br>
-  • <strong>図解優先</strong>:文字ばかりだと読む気が失せる。図・写真・グラフを中心に<br>
-  • <strong>Why→What→How</strong>の順:「なぜやったか → 何をしたか → どうやったか」
-  </p>
+  <p data-i18n="ch6_p7">• <strong>略語は必ず定義</strong>:「工程B」「治具X」みたいな社内用語、使う前に1行で説明<br>• <strong>図解優先</strong>:文字ばかりだと読む気が失せる。図・写真・グラフを中心に<br>• <strong>Why→What→How</strong>の順:「なぜやったか → 何をしたか → どうやったか」</p>
   <p data-i18n="ch6_p8">特にWhyを飛ばすと、審査員は「で?」となる。<strong>共感が先、事実は後</strong>。</p>
 
   <div class="callout">
@@ -144,34 +73,20 @@
   <h3 data-i18n="ch6_h4">「映える」と「伝わる」は違う</h3>
   <p data-i18n="ch6_p9">派手なアニメーション、凝ったデザイン、カラフルなグラフ…。<strong>これ、伝わることとは別</strong>。</p>
   <p data-i18n="ch6_p10">むしろ<strong>シンプル・明確</strong>な資料のほうが金賞を取る。理由:</p>
-  <p data-i18n="ch6_p11">
-  • <strong>情報の密度が適切</strong>:1スライド1メッセージ<br>
-  • <strong>目が迷わない</strong>:どこを見ればいいかすぐわかる<br>
-  • <strong>印象に残る</strong>:派手な資料は「綺麗だった」で終わる
-  </p>
+  <p data-i18n="ch6_p11">• <strong>情報の密度が適切</strong>:1スライド1メッセージ<br>• <strong>目が迷わない</strong>:どこを見ればいいかすぐわかる<br>• <strong>印象に残る</strong>:派手な資料は「綺麗だった」で終わる</p>
   <p data-i18n="ch6_p12">発表資料作りで<strong>迷ったら、削る</strong>。足すより削るほうが難しいけど、削った資料のほうが強い。</p>
 
   <h3 data-i18n="ch6_h5">数字で語る</h3>
   <p data-i18n="ch6_p13">1章で話した<strong>「気がする」を「円(¥)」に変える</strong>、ここで効いてくる。</p>
   <p data-i18n="ch6_p14">発表で絶対に必要な数字:</p>
-  <p data-i18n="ch6_p15">
-  • <strong>現状値</strong>(不良率、ロス額、時間など)<br>
-  • <strong>目標値</strong>と<strong>達成値</strong><br>
-  • <strong>金額換算</strong>(年間◯◯万円効果)<br>
-  • <strong>対策費用</strong>(ほぼゼロなら、そのアピールも)
-  </p>
+  <p data-i18n="ch6_p15">• <strong>現状値</strong>(不良率、ロス額、時間など)<br>• <strong>目標値</strong>と<strong>達成値</strong><br>• <strong>金額換算</strong>(年間◯◯万円効果)<br>• <strong>対策費用</strong>(ほぼゼロなら、そのアピールも)</p>
   <p data-i18n="ch6_p16"><strong>「効果は絶大」「大幅に改善」みたいな曖昧な言葉は禁止</strong>。数字で語れば、審査員は動く。</p>
 
   <div class="quote" data-i18n="ch6_quote">「派手さじゃなく、明快さ。感動じゃなく、納得。数字で語る発表が、最後は勝つ。」</div>
 
   <h3 data-i18n="ch6_h6">質疑応答の心構え</h3>
   <p data-i18n="ch6_p17">発表後の質疑、ここで差がつく。よくある質問は予想できる:</p>
-  <p data-i18n="ch6_p18">
-  • <strong>「なぜこのテーマ?」</strong> → ① テーマ選定 の話を再度<br>
-  • <strong>「なぜこの原因に絞れた?」</strong> → 層別ドリルダウンの証拠を出す<br>
-  • <strong>「他の対策は検討した?」</strong> → 評価軸表を見せる<br>
-  • <strong>「横展開は?」</strong> → 他ライン・他工程への展開計画
-  </p>
+  <p data-i18n="ch6_p18">• <strong>「なぜこのテーマ?」</strong> → ① テーマ選定 の話を再度<br>• <strong>「なぜこの原因に絞れた?」</strong> → 層別ドリルダウンの証拠を出す<br>• <strong>「他の対策は検討した?」</strong> → 評価軸表を見せる<br>• <strong>「横展開は?」</strong> → 他ライン・他工程への展開計画</p>
   <p data-i18n="ch6_p19">これに淀みなく答えられれば、<strong>「ちゃんと考えてる」</strong>と伝わる。答えられなければ、「アリバイ作りのQC」が疑われる。</p>
 
   <h3 data-i18n="ch6_h7">次の章への橋渡し</h3>
@@ -181,7 +96,7 @@
 
   <div class="next-nav">
     <a href="index.html" class="back-btn">← <span data-i18n="backToHome">もくじに戻る</span></a>
-    <a href="#" class="next-btn disabled" onclick="return false;"><span data-i18n="nextChapterSoon">次の章へ(近日公開)</span> →</a>
+    <a href="ch7.html" class="next-btn"><span data-i18n="nextChapter">次の章へ</span> →</a>
   </div>
 </article>
 
