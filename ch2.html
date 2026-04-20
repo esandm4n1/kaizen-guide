@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第2章 答えから作るな、探れ | カイゼンガイド</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a href="index.html" class="brand">
+    <div class="brand-logo">改</div>
+    <div>
+      <div class="brand-name" data-i18n="brand">カイゼンガイド</div>
+      <div class="brand-sub" data-i18n="brandSub">現場改善の入り口</div>
+    </div>
+  </a>
+  <div class="lang-switch">
+    <button class="lang-btn active" data-lang="ja" onclick="kaizenApplyLang('ja')">日本語</button>
+    <button class="lang-btn" data-lang="en" onclick="kaizenApplyLang('en')">English</button>
+  </div>
+</header>
+
+<article class="chapter-content">
+  <div class="chapter-header">
+    <div class="chapter-number-large">CHAPTER 2</div>
+    <h2 data-i18n="ch2Title">答えから作るな、探れ</h2>
+  </div>
+
+  <div class="chapter-tldr">
+    <div class="chapter-tldr-label" data-i18n="tldrLabel">ひとこと要約</div>
+    <div class="chapter-tldr-text" data-i18n="ch2Tldr">多くのQCは、<strong>先に対策を決めてから、それに合うデータを揃えている</strong>。これを「逆再生QC」と呼ぼう。本物のQCは逆で、データから探っていって、<strong>最後に対策が決まる</strong>。順序を守るだけで、発表の質は段違いになる。</div>
+  </div>
+
+  <h3 data-i18n="ch2_h1">QCあるある:みんな答えから作ってる</h3>
+  <p data-i18n="ch2_p1">正直に告白します。<strong>現場のQCの多くが、答えから作られてる</strong>。</p>
+  <p data-i18n="ch2_p2">たぶん、身に覚えがあるんじゃないかな。こういう進め方:</p>
+  <p data-i18n="ch2_p3">• リーダーが「この設備、変えたい」と先に思う<br>• それに合うパレート図を後から作る<br>• それに合う特性要因図を後から書く<br>• 狙い通りの対策を実施<br>• 当然、効果は出る<br>• 発表は綺麗</p>
+  <p data-i18n="ch2_p4">これ、発表会で毎年たくさん見る光景。スライドは整ってるし、数字も合ってる。でも、<strong>中身は空っぽ</strong>。</p>
+
+  <div class="warn-box">
+    <div class="callout-title"><span class="callout-icon">⚠️</span><span data-i18n="reverseQcTitle">これを「逆再生QC」と呼ぶ</span></div>
+    <p data-i18n="reverseQcDesc">結論から逆向きに組み立てられたQC。パレート図も特性要因図も「アリバイ作り」になっていて、思考の跡が残っていない。<strong>審査員の目が鋭ければ、一発で見抜かれる</strong>。</p>
+  </div>
+
+  <h3 data-i18n="ch2_h2">なぜ「答えから作る」をやっちゃうのか</h3>
+  <p data-i18n="ch2_p5">これ、作ってる本人も「ダメだな」とわかってることが多い。でも、やっちゃう。理由はだいたいこの辺。</p>
+  <p data-i18n="ch2_p6">• <strong>時間がない</strong>。発表会の日付が近い。<br>• <strong>データがない</strong>。細かく取ってない。<br>• <strong>上司が早く結論を欲しがる</strong>。「で、原因は?」と詰められる。<br>• <strong>「まだわからない」に耐えられない</strong>。不安になる。<br>• <strong>発表映えしない</strong>と思ってる。派手な対策のほうがウケると勘違い。</p>
+  <p data-i18n="ch2_p7">全部、わかる。でも、ここを我慢できるかどうかで、QCの深さは決まる。</p>
+
+  <h3 data-i18n="ch2_h3">本物の順序:探偵ゲームだと思え</h3>
+  <p data-i18n="ch2_p8">じゃあ本物のQCはどう進むか。<strong>探偵ゲーム</strong>だと思うとわかりやすい。</p>
+  <p data-i18n="ch2_p9">犯人(真因)は、まだ誰かわからない。証拠(データ)を見ながら、容疑者を絞っていく。最後に犯人が浮かび上がる。<strong>対策は、そこで初めて決まる</strong>。</p>
+
+  <div class="order-compare">
+    <div class="order-box bad"><div class="order-label" data-i18n="badOrderLabel">✗ 逆再生QC</div><div class="order-steps" data-i18n="badOrderSteps">① 対策を決める<br>② データを揃える<br>③ 特性要因図を書く<br>④ 発表する</div></div>
+    <div class="order-box good"><div class="order-label" data-i18n="goodOrderLabel">○ 本物のQC</div><div class="order-steps" data-i18n="goodOrderSteps">① データを見る<br>② 大きい順に絞っていく<br>③ 真因にたどり着く<br>④ 対策が決まる<br>⑤ 発表する</div></div>
+  </div>
+
+  <p data-i18n="ch2_p10">見た目の工程は似てる。でも、<strong>順序が逆</strong>。ここが全て。</p>
+
+  <h3 data-i18n="ch2_h4">「大きいとこから小さいとこへ」だけ</h3>
+  <p data-i18n="ch2_p11">探偵ゲームの進め方は、難しくない。やることは、実は<strong>1つだけ</strong>。</p>
+  <p data-i18n="ch2_p12"><strong>大きいとこから、小さいとこへ見ていく</strong>。</p>
+  <p data-i18n="ch2_p13">たとえば、4工程ある現場。こう進む。</p>
+  <p data-i18n="ch2_p14"><strong>層1</strong>:全体のどこで不良が出てる? → 工程Bが一番多い<br><strong>層2</strong>:工程Bのどこで? → ②加工に集中<br><strong>層3</strong>:工程B-②加工のいつ? → 朝一に多い<br><strong>層4</strong>:朝一の加工工程の何が? → 特定の機械</p>
+  <p data-i18n="ch2_p15">ここまで絞れれば、「原因は何?」の答えが<strong>見えてくる</strong>。朝一、工程B、特定の機械。この3つが揃う時だけ起きる現象。<strong>そこで初めて特性要因図を書く意味が生まれる</strong>。</p>
+
+  <h3 data-i18n="ch2_h5">「探る」が楽しいか、苦痛か</h3>
+  <p data-i18n="ch2_p16">ここ、大事な分かれ目。</p>
+  <p data-i18n="ch2_p17"><strong>層別ドリルダウン</strong>をこうやって書くと、「めんどくさそう」と感じる人が多い。事実、めんどくさい。層を3つも4つも掘らないといけないし、データを切り替え続けないといけない。</p>
+  <p data-i18n="ch2_p18">でも、<strong>ここを「楽しい」と感じられたら、もう勝ち</strong>。</p>
+  <p data-i18n="ch2_p19">犯人が浮かび上がってくる感覚。「え、工程Bだけ?」「朝一だけ?」「あの機械だけ?」と驚く瞬間。<strong>これは、謎解きの快感</strong>。ミステリー小説と同じ。</p>
+
+  <div class="quote" data-i18n="ch2_quote">「探っていくのが楽しい。それに気づいた人から、QCが嫌いじゃなくなる。」</div>
+
+  <h3 data-i18n="ch2_h6">次の章への橋渡し</h3>
+  <p data-i18n="ch2_p20">「探る」ための道具が、よく言われる<strong>QC7つ道具</strong>。パレート図、特性要因図、ヒストグラム…。</p>
+  <p data-i18n="ch2_p21">でも、道具の前に、この<strong>姿勢</strong>がすべてなんだ。</p>
+  <p data-i18n="ch2_p22"><strong>答えから作るな、探れ</strong>。<br>次の章からは、探るための道具を1つずつ見ていきます。</p>
+
+  <div class="next-nav">
+    <a href="index.html" class="back-btn">← <span data-i18n="backToHome">もくじに戻る</span></a>
+    <a href="ch3.html" class="next-btn"><span data-i18n="nextChapter">次の章へ</span> →</a>
+  </div>
+</article>
+
+<footer>
+  <p><a href="https://github.com/esandm4n1/kaizen-guide" target="_blank">GitHub</a></p>
+  <p style="margin-top:6px; opacity:0.7;" data-i18n="copyright">© 2026 カイゼンガイド</p>
+</footer>
+
+<script src="_common.js"></script>
+<script>
+Object.assign(window.kaizenI18n.ja, {
+  tldrLabel: "ひとこと要約",
+  ch2Title: "答えから作るな、探れ",
+  ch2Tldr: '多くのQCは、<strong>先に対策を決めてから、それに合うデータを揃えている</strong>。これを「逆再生QC」と呼ぼう。本物のQCは逆で、データから探っていって、<strong>最後に対策が決まる</strong>。順序を守るだけで、発表の質は段違いになる。',
+  ch2_h1: "QCあるある:みんな答えから作ってる",
+  ch2_p1: '正直に告白します。<strong>現場のQCの多くが、答えから作られてる</strong>。',
+  ch2_p2: 'たぶん、身に覚えがあるんじゃないかな。こういう進め方:',
+  ch2_p3: '• リーダーが「この設備、変えたい」と先に思う<br>• それに合うパレート図を後から作る<br>• それに合う特性要因図を後から書く<br>• 狙い通りの対策を実施<br>• 当然、効果は出る<br>• 発表は綺麗',
+  ch2_p4: 'これ、発表会で毎年たくさん見る光景。スライドは整ってるし、数字も合ってる。でも、<strong>中身は空っぽ</strong>。',
+  reverseQcTitle: 'これを「逆再生QC」と呼ぶ',
+  reverseQcDesc: '結論から逆向きに組み立てられたQC。パレート図も特性要因図も「アリバイ作り」になっていて、思考の跡が残っていない。<strong>審査員の目が鋭ければ、一発で見抜かれる</strong>。',
+  ch2_h2: 'なぜ「答えから作る」をやっちゃうのか',
+  ch2_p5: 'これ、作ってる本人も「ダメだな」とわかってることが多い。でも、やっちゃう。理由はだいたいこの辺。',
+  ch2_p6: '• <strong>時間がない</strong>。発表会の日付が近い。<br>• <strong>データがない</strong>。細かく取ってない。<br>• <strong>上司が早く結論を欲しがる</strong>。「で、原因は?」と詰められる。<br>• <strong>「まだわからない」に耐えられない</strong>。不安になる。<br>• <strong>発表映えしない</strong>と思ってる。派手な対策のほうがウケると勘違い。',
+  ch2_p7: '全部、わかる。でも、ここを我慢できるかどうかで、QCの深さは決まる。',
+  ch2_h3: '本物の順序:探偵ゲームだと思え',
+  ch2_p8: 'じゃあ本物のQCはどう進むか。<strong>探偵ゲーム</strong>だと思うとわかりやすい。',
+  ch2_p9: '犯人(真因)は、まだ誰かわからない。証拠(データ)を見ながら、容疑者を絞っていく。最後に犯人が浮かび上がる。<strong>対策は、そこで初めて決まる</strong>。',
+  badOrderLabel: "✗ 逆再生QC",
+  badOrderSteps: "① 対策を決める<br>② データを揃える<br>③ 特性要因図を書く<br>④ 発表する",
+  goodOrderLabel: "○ 本物のQC",
+  goodOrderSteps: "① データを見る<br>② 大きい順に絞っていく<br>③ 真因にたどり着く<br>④ 対策が決まる<br>⑤ 発表する",
+  ch2_p10: '見た目の工程は似てる。でも、<strong>順序が逆</strong>。ここが全て。',
+  ch2_h4: '「大きいとこから小さいとこへ」だけ',
+  ch2_p11: '探偵ゲームの進め方は、難しくない。やることは、実は<strong>1つだけ</strong>。',
+  ch2_p12: '<strong>大きいとこから、小さいとこへ見ていく</strong>。',
+  ch2_p13: 'たとえば、4工程ある現場。こう進む。',
+  ch2_p14: '<strong>層1</strong>:全体のどこで不良が出てる? → 工程Bが一番多い<br><strong>層2</strong>:工程Bのどこで? → ②加工に集中<br><strong>層3</strong>:工程B-②加工のいつ? → 朝一に多い<br><strong>層4</strong>:朝一の加工工程の何が? → 特定の機械',
+  ch2_p15: 'ここまで絞れれば、「原因は何?」の答えが<strong>見えてくる</strong>。朝一、工程B、特定の機械。この3つが揃う時だけ起きる現象。<strong>そこで初めて特性要因図を書く意味が生まれる</strong>。',
+  ch2_h5: '「探る」が楽しいか、苦痛か',
+  ch2_p16: 'ここ、大事な分かれ目。',
+  ch2_p17: '<strong>層別ドリルダウン</strong>をこうやって書くと、「めんどくさそう」と感じる人が多い。事実、めんどくさい。層を3つも4つも掘らないといけないし、データを切り替え続けないといけない。',
+  ch2_p18: 'でも、<strong>ここを「楽しい」と感じられたら、もう勝ち</strong>。',
+  ch2_p19: '犯人が浮かび上がってくる感覚。「え、工程Bだけ?」「朝一だけ?」「あの機械だけ?」と驚く瞬間。<strong>これは、謎解きの快感</strong>。ミステリー小説と同じ。',
+  ch2_quote: '「探っていくのが楽しい。それに気づいた人から、QCが嫌いじゃなくなる。」',
+  ch2_h6: '次の章への橋渡し',
+  ch2_p20: '「探る」ための道具が、よく言われる<strong>QC7つ道具</strong>。パレート図、特性要因図、ヒストグラム…。',
+  ch2_p21: 'でも、道具の前に、この<strong>姿勢</strong>がすべてなんだ。',
+  ch2_p22: '<strong>答えから作るな、探れ</strong>。<br>次の章からは、探るための道具を1つずつ見ていきます。'
+});
+Object.assign(window.kaizenI18n.en, {
+  tldrLabel: "TL;DR",
+  ch2Title: "Don't build from the answer. Investigate.",
+  ch2Tldr: 'Most QC activities <strong>decide the countermeasure first, then gather data to fit it</strong>. Let\'s call this "reverse-play QC." Real QC is the opposite: you investigate from the data, and <strong>the countermeasure is decided last</strong>. Just following this order changes the quality of a presentation dramatically.',
+  ch2_h1: "The common pattern: everyone builds from the answer",
+  ch2_p1: 'Honest confession: <strong>most QC on the shop floor is built from the answer</strong>.',
+  ch2_p2: 'You probably recognize this flow:',
+  ch2_p3: '• The leader decides "I want to change this equipment" first<br>• A Pareto chart is built later to match<br>• A fishbone diagram is drawn later to match<br>• The intended countermeasure is implemented<br>• Naturally, results come out<br>• The presentation looks clean',
+  ch2_p4: 'You see this at every presentation event. The slides are neat, the numbers check out. But <strong>the content is empty</strong>.',
+  reverseQcTitle: 'Call this "reverse-play QC"',
+  reverseQcDesc: 'QC assembled backwards from the conclusion. The Pareto and fishbone become "alibi-building" with no trace of actual thinking. <strong>Sharp judges see through it instantly</strong>.',
+  ch2_h2: 'Why we end up "building from the answer"',
+  ch2_p5: 'Most people doing this know it\'s wrong. They do it anyway. The usual reasons:',
+  ch2_p6: '• <strong>No time</strong>. Presentation is coming up.<br>• <strong>No data</strong>. It wasn\'t collected in detail.<br>• <strong>The boss wants a conclusion fast</strong>. "So, what\'s the cause?"<br>• <strong>Can\'t stand "we don\'t know yet"</strong>. It feels uncomfortable.<br>• <strong>Think it won\'t look flashy</strong>. Misbelieve that dramatic countermeasures impress more.',
+  ch2_p7: 'All understandable. But whether you resist these pressures decides the depth of your QC.',
+  ch2_h3: 'The real order: think of it as a detective game',
+  ch2_p8: 'So how does real QC proceed? Think of it as a <strong>detective game</strong>.',
+  ch2_p9: 'The culprit (real cause) is unknown. You look at evidence (data) and narrow down suspects. The culprit emerges at the end. <strong>The countermeasure is decided only then</strong>.',
+  badOrderLabel: "✗ Reverse-play QC",
+  badOrderSteps: "① Decide the countermeasure<br>② Gather data<br>③ Draw the fishbone<br>④ Present",
+  goodOrderLabel: "○ Real QC",
+  goodOrderSteps: "① Look at the data<br>② Narrow down biggest first<br>③ Arrive at the real cause<br>④ Countermeasure is decided<br>⑤ Present",
+  ch2_p10: 'The steps look similar. But the <strong>order is reversed</strong>. That\'s everything.',
+  ch2_h4: '"Big to small" is the only rule',
+  ch2_p11: 'The detective game is not hard. There\'s really only <strong>one thing</strong> to do.',
+  ch2_p12: '<strong>Go from the big to the small.</strong>',
+  ch2_p13: 'For example, a shop floor with 4 processes:',
+  ch2_p14: '<strong>Layer 1</strong>: Where are defects occurring? → Process B has the most<br><strong>Layer 2</strong>: Where in Process B? → Concentrated on ②Machining<br><strong>Layer 3</strong>: When? → Morning has the most<br><strong>Layer 4</strong>: What specifically? → A specific machine',
+  ch2_p15: 'Once narrowed to "morning + Process B + specific machine," <strong>the cause emerges</strong>. It happens only when these three align. <strong>Only now does drawing a fishbone become meaningful</strong>.',
+  ch2_h5: 'Is "investigating" fun, or painful?',
+  ch2_p16: 'This is the critical fork.',
+  ch2_p17: 'When you write out <strong>layered drill-down</strong> like this, many people feel it\'s tedious. Honestly, it is tedious.',
+  ch2_p18: 'But <strong>if you can feel it as fun, you\'ve already won</strong>.',
+  ch2_p19: 'The feeling of the culprit emerging. "Only Process B?" "Only in the morning?" "Only that machine?" That moment of surprise. <strong>This is the pleasure of solving a puzzle</strong>.',
+  ch2_quote: '"Investigating is fun. Once people notice this, they stop hating QC."',
+  ch2_h6: "Bridge to the next chapter",
+  ch2_p20: 'The tools for "investigating" are what people call the <strong>7 QC Tools</strong>.',
+  ch2_p21: 'But before the tools, <strong>this mindset is everything</strong>.',
+  ch2_p22: '<strong>Don\'t build from the answer. Investigate.</strong><br>From the next chapter, we\'ll look at the tools for investigating.'
+});
+kaizenInitLang();
+</script>
+</body>
+</html>

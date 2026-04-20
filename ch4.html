@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第4章 真因を探す思考法 | カイゼンガイド</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a href="index.html" class="brand">
+    <div class="brand-logo">改</div>
+    <div>
+      <div class="brand-name" data-i18n="brand">カイゼンガイド</div>
+      <div class="brand-sub" data-i18n="brandSub">現場改善の入り口</div>
+    </div>
+  </a>
+  <div class="lang-switch">
+    <button class="lang-btn active" data-lang="ja" onclick="kaizenApplyLang('ja')">日本語</button>
+    <button class="lang-btn" data-lang="en" onclick="kaizenApplyLang('en')">English</button>
+  </div>
+</header>
+
+<article class="chapter-content">
+  <div class="chapter-header">
+    <div class="chapter-number-large">CHAPTER 4</div>
+    <h2 data-i18n="ch4Title">真因を探す思考法</h2>
+  </div>
+
+  <div class="chapter-tldr">
+    <div class="chapter-tldr-label" data-i18n="tldrLabel">ひとこと要約</div>
+    <div class="chapter-tldr-text" data-i18n="ch4Tldr">絞り込んだ後の「なぜ?」の掘り方。<strong>なぜなぜ分析</strong>と<strong>4M(人・機械・材料・方法)</strong>が王道。ただし「なぜなぜは5回」にこだわらない、「4Mは全部埋める」にこだわらない。判定基準は<strong>「これを変えたら本当に再発しない?」</strong>、これだけ。</div>
+  </div>
+
+  <h3 data-i18n="ch4_h1">絞り込んだ、で、どうする?</h3>
+  <p data-i18n="ch4_p1">前の章まででパレート図と層別を使って、条件を絞り込めた。例えばこんな状態:</p>
+  <p data-i18n="ch4_p2"><strong>「朝一の工程B-②加工・機械Cで、特定の作業者の時にだけ、不良Aが多発する」</strong></p>
+  <p data-i18n="ch4_p3">ここまで絞れて、初めて「<strong>なぜ?</strong>」を掘る意味が出てくる。逆に言うと、<strong>絞り込み前にどれだけ「なぜ?」を考えても、妄想が広がるだけ</strong>。</p>
+
+  <h3 data-i18n="ch4_h2">なぜなぜ分析の基本</h3>
+  <p data-i18n="ch4_p4">よく聞く<strong>なぜなぜ分析</strong>。やり方はシンプル。</p>
+  <p data-i18n="ch4_p5"><strong>なぜ?</strong> → 答える → <strong>なぜ?</strong> → 答える → <strong>なぜ?</strong> → ...</p>
+  <p data-i18n="ch4_p6">これを繰り返して、原因の奥へ奥へ掘っていく手法。トヨタ式で「<strong>なぜを5回</strong>」とよく言われる。</p>
+
+  <div class="callout">
+    <div class="callout-title"><span class="callout-icon">🔍</span><span data-i18n="ch4ExTitle">なぜなぜの例</span></div>
+    <p data-i18n="ch4ExBody"><strong>現象</strong>:朝一に不良Aが多発<br><strong>なぜ1</strong>:機械Cの調整がズレている → <strong>なぜ?</strong><br><strong>なぜ2</strong>:前日終業時の状態と違う → <strong>なぜ?</strong><br><strong>なぜ3</strong>:夜間に温度が下がって部品が収縮している → <strong>なぜ?</strong><br><strong>なぜ4</strong>:朝一の温度補正手順がない → <strong>なぜ?</strong><br><strong>なぜ5</strong>:そもそも朝一の状態を管理する仕組みがなかった<br>→ <strong>真因:朝の立ち上げ手順の不備</strong></p>
+  </div>
+
+  <h3 data-i18n="ch4_h3">「5回」にこだわらない</h3>
+  <p data-i18n="ch4_p7">ここ、多くの人が勘違いするポイント。</p>
+  <p data-i18n="ch4_p8">「なぜを5回」は<strong>目安</strong>であって、<strong>ルールじゃない</strong>。3回で真因に届くこともあれば、7回掘らないと届かないこともある。</p>
+  <p data-i18n="ch4_p9">大事なのは回数じゃなくて、<strong>「これを変えたら再発しない」に届いているか</strong>。届いてなければ、もう1回掘る。届いていれば、そこで止めていい。</p>
+
+  <div class="warn-box">
+    <div class="callout-title"><span class="callout-icon">⚠️</span><span data-i18n="ch4WarnTitle">5回を無理矢理やると</span></div>
+    <p data-i18n="ch4WarnBody">途中から<strong>妄想モード</strong>に入る。「なぜ?」の答えが推測ばかりになり、データの裏付けがなくなる。結果、<strong>発表では綺麗だけど、対策を打っても再発する</strong>、という典型パターン。</p>
+  </div>
+
+  <h3 data-i18n="ch4_h4">「人のせい」で止めない</h3>
+  <p data-i18n="ch4_p10">なぜなぜで一番ありがちな落とし穴がこれ。</p>
+  <p data-i18n="ch4_p11"><strong>「作業者が気づかなかったから」</strong><br><strong>「担当者がうっかりした」</strong><br><strong>「ベテランが休みだったから」</strong></p>
+  <p data-i18n="ch4_p12">こういう<strong>人のせい</strong>で止まると、対策は「注意喚起」「教育徹底」になる。これ、<strong>ほぼ効かない</strong>。人間はミスする生き物だから、注意してもまたミスする。</p>
+  <p data-i18n="ch4_p13">人のせいで止まりそうになったら、もう1回「なぜ?」を掘る。</p>
+  <p data-i18n="ch4_p14">「気づかなかった」 → <strong>なぜ気づけない仕組みなの?</strong><br>「うっかりした」 → <strong>なぜうっかりできる作業設計なの?</strong><br>「ベテランが休み」 → <strong>なぜベテランじゃないとできない作業なの?</strong></p>
+  <p data-i18n="ch4_p15">こう掘ると、<strong>仕組みの問題</strong>に辿り着く。人を変えるより、<strong>仕組みを変える</strong>。これがQCの鉄則。</p>
+
+  <h3 data-i18n="ch4_h5">4Mで原因を網羅する</h3>
+  <p data-i18n="ch4_p16">なぜなぜとセットで使うのが<strong>4M</strong>。特性要因図の骨と同じ考え方。</p>
+  <p data-i18n="ch4_p17"><strong>Man(人)</strong>:作業者のスキル、疲労、人員配置<br><strong>Machine(機械)</strong>:設備・治具・金型の状態<br><strong>Material(材料)</strong>:部品・原料のばらつき、ロット差<br><strong>Method(方法)</strong>:作業手順、管理基準、環境</p>
+  <p data-i18n="ch4_p18">この4つの観点から原因候補を洗い出す。<strong>漏れを防ぐための網</strong>として使う。</p>
+
+  <div class="callout">
+    <div class="callout-title"><span class="callout-icon">💡</span><span data-i18n="ch44mTitle">4Mは「全部埋める」必要なし</span></div>
+    <p data-i18n="ch44mBody">特性要因図の4本の骨、全部に原因を書き込もうとする人がいる。これ、真面目だけど<strong>形式主義</strong>。Materialに原因がないなら、書かなくていい。<strong>本当に疑わしい観点だけ深掘りする</strong>。</p>
+  </div>
+
+  <h3 data-i18n="ch4_h6">真因の判定基準</h3>
+  <p data-i18n="ch4_p19">「これが真因です」と言っていいのは、1つのテストをクリアした時だけ。</p>
+
+  <div class="quote" data-i18n="ch4_quote">「これを変えたら、本当に再発しない?」</div>
+
+  <p data-i18n="ch4_p20">この問いに<strong>Yesと言えれば真因</strong>。Noなら、まだ掘り足りない。</p>
+  <p data-i18n="ch4_p21">例えば「作業者への注意喚起」で再発しないか? → 人間はミスするから、おそらく再発する → <strong>真因じゃない</strong>。</p>
+  <p data-i18n="ch4_p22">「朝の立ち上げに温度補正の手順を追加する」で再発しないか? → 手順が守られる限り再発しない → <strong>これは真因に近い</strong>。</p>
+  <p data-i18n="ch4_p23">対処療法と真因の違いは、この一問で見分けられる。</p>
+
+  <h3 data-i18n="ch4_h7">次の章への橋渡し</h3>
+  <p data-i18n="ch4_p24">真因が見えたら、いよいよ対策。でも対策って、実は<strong>お金をかければいくらでもできる</strong>。</p>
+  <p data-i18n="ch4_p25">現場のリアルは、<strong>「金かけるな」と言われながら成果を出す</strong>こと。次章は、その知恵の話。</p>
+
+  <div class="next-nav">
+    <a href="index.html" class="back-btn">← <span data-i18n="backToHome">もくじに戻る</span></a>
+    <a href="#" class="next-btn disabled" onclick="return false;"><span data-i18n="nextChapterSoon">次の章へ(近日公開)</span> →</a>
+  </div>
+</article>
+
+<footer>
+  <p><a href="https://github.com/esandm4n1/kaizen-guide" target="_blank">GitHub</a></p>
+  <p style="margin-top:6px; opacity:0.7;" data-i18n="copyright">© 2026 カイゼンガイド</p>
+</footer>
+
+<script src="_common.js"></script>
+<script>
+Object.assign(window.kaizenI18n.ja, {
+  tldrLabel: "ひとこと要約",
+  ch4Title: "真因を探す思考法",
+  ch4Tldr: '絞り込んだ後の「なぜ?」の掘り方。<strong>なぜなぜ分析</strong>と<strong>4M(人・機械・材料・方法)</strong>が王道。ただし「なぜなぜは5回」にこだわらない、「4Mは全部埋める」にこだわらない。判定基準は<strong>「これを変えたら本当に再発しない?」</strong>、これだけ。',
+  ch4_h1: '絞り込んだ、で、どうする?',
+  ch4_p1: '前の章まででパレート図と層別を使って、条件を絞り込めた。例えばこんな状態:',
+  ch4_p2: '<strong>「朝一の工程B-②加工・機械Cで、特定の作業者の時にだけ、不良Aが多発する」</strong>',
+  ch4_p3: 'ここまで絞れて、初めて「<strong>なぜ?</strong>」を掘る意味が出てくる。逆に言うと、<strong>絞り込み前にどれだけ「なぜ?」を考えても、妄想が広がるだけ</strong>。',
+  ch4_h2: 'なぜなぜ分析の基本',
+  ch4_p4: 'よく聞く<strong>なぜなぜ分析</strong>。やり方はシンプル。',
+  ch4_p5: '<strong>なぜ?</strong> → 答える → <strong>なぜ?</strong> → 答える → <strong>なぜ?</strong> → ...',
+  ch4_p6: 'これを繰り返して、原因の奥へ奥へ掘っていく手法。トヨタ式で「<strong>なぜを5回</strong>」とよく言われる。',
+  ch4ExTitle: 'なぜなぜの例',
+  ch4ExBody: '<strong>現象</strong>:朝一に不良Aが多発<br><strong>なぜ1</strong>:機械Cの調整がズレている → <strong>なぜ?</strong><br><strong>なぜ2</strong>:前日終業時の状態と違う → <strong>なぜ?</strong><br><strong>なぜ3</strong>:夜間に温度が下がって部品が収縮している → <strong>なぜ?</strong><br><strong>なぜ4</strong>:朝一の温度補正手順がない → <strong>なぜ?</strong><br><strong>なぜ5</strong>:そもそも朝一の状態を管理する仕組みがなかった<br>→ <strong>真因:朝の立ち上げ手順の不備</strong>',
+  ch4_h3: '「5回」にこだわらない',
+  ch4_p7: 'ここ、多くの人が勘違いするポイント。',
+  ch4_p8: '「なぜを5回」は<strong>目安</strong>であって、<strong>ルールじゃない</strong>。3回で真因に届くこともあれば、7回掘らないと届かないこともある。',
+  ch4_p9: '大事なのは回数じゃなくて、<strong>「これを変えたら再発しない」に届いているか</strong>。届いてなければ、もう1回掘る。届いていれば、そこで止めていい。',
+  ch4WarnTitle: '5回を無理矢理やると',
+  ch4WarnBody: '途中から<strong>妄想モード</strong>に入る。「なぜ?」の答えが推測ばかりになり、データの裏付けがなくなる。結果、<strong>発表では綺麗だけど、対策を打っても再発する</strong>、という典型パターン。',
+  ch4_h4: '「人のせい」で止めない',
+  ch4_p10: 'なぜなぜで一番ありがちな落とし穴がこれ。',
+  ch4_p11: '<strong>「作業者が気づかなかったから」</strong><br><strong>「担当者がうっかりした」</strong><br><strong>「ベテランが休みだったから」</strong>',
+  ch4_p12: 'こういう<strong>人のせい</strong>で止まると、対策は「注意喚起」「教育徹底」になる。これ、<strong>ほぼ効かない</strong>。人間はミスする生き物だから、注意してもまたミスする。',
+  ch4_p13: '人のせいで止まりそうになったら、もう1回「なぜ?」を掘る。',
+  ch4_p14: '「気づかなかった」 → <strong>なぜ気づけない仕組みなの?</strong><br>「うっかりした」 → <strong>なぜうっかりできる作業設計なの?</strong><br>「ベテランが休み」 → <strong>なぜベテランじゃないとできない作業なの?</strong>',
+  ch4_p15: 'こう掘ると、<strong>仕組みの問題</strong>に辿り着く。人を変えるより、<strong>仕組みを変える</strong>。これがQCの鉄則。',
+  ch4_h5: '4Mで原因を網羅する',
+  ch4_p16: 'なぜなぜとセットで使うのが<strong>4M</strong>。特性要因図の骨と同じ考え方。',
+  ch4_p17: '<strong>Man(人)</strong>:作業者のスキル、疲労、人員配置<br><strong>Machine(機械)</strong>:設備・治具・金型の状態<br><strong>Material(材料)</strong>:部品・原料のばらつき、ロット差<br><strong>Method(方法)</strong>:作業手順、管理基準、環境',
+  ch4_p18: 'この4つの観点から原因候補を洗い出す。<strong>漏れを防ぐための網</strong>として使う。',
+  ch44mTitle: '4Mは「全部埋める」必要なし',
+  ch44mBody: '特性要因図の4本の骨、全部に原因を書き込もうとする人がいる。これ、真面目だけど<strong>形式主義</strong>。Materialに原因がないなら、書かなくていい。<strong>本当に疑わしい観点だけ深掘りする</strong>。',
+  ch4_h6: '真因の判定基準',
+  ch4_p19: '「これが真因です」と言っていいのは、1つのテストをクリアした時だけ。',
+  ch4_quote: '「これを変えたら、本当に再発しない?」',
+  ch4_p20: 'この問いに<strong>Yesと言えれば真因</strong>。Noなら、まだ掘り足りない。',
+  ch4_p21: '例えば「作業者への注意喚起」で再発しないか? → 人間はミスするから、おそらく再発する → <strong>真因じゃない</strong>。',
+  ch4_p22: '「朝の立ち上げに温度補正の手順を追加する」で再発しないか? → 手順が守られる限り再発しない → <strong>これは真因に近い</strong>。',
+  ch4_p23: '対処療法と真因の違いは、この一問で見分けられる。',
+  ch4_h7: '次の章への橋渡し',
+  ch4_p24: '真因が見えたら、いよいよ対策。でも対策って、実は<strong>お金をかければいくらでもできる</strong>。',
+  ch4_p25: '現場のリアルは、<strong>「金かけるな」と言われながら成果を出す</strong>こと。次章は、その知恵の話。'
+});
+Object.assign(window.kaizenI18n.en, {
+  tldrLabel: "TL;DR",
+  ch4Title: "How to find the real cause",
+  ch4Tldr: 'How to dig into "why" after narrowing down. <strong>5-Whys</strong> and <strong>4M (Man/Machine/Material/Method)</strong> are the standards. But don\'t obsess over "5 times" or "fill in all 4M slots." The only real test is: <strong>"If I change this, will it really not recur?"</strong>'
+});
+kaizenInitLang();
+</script>
+</body>
+</html>

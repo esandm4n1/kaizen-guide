@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第3章 QC7つ道具ってなに? | カイゼンガイド</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <a href="index.html" class="brand">
+    <div class="brand-logo">改</div>
+    <div>
+      <div class="brand-name" data-i18n="brand">カイゼンガイド</div>
+      <div class="brand-sub" data-i18n="brandSub">現場改善の入り口</div>
+    </div>
+  </a>
+  <div class="lang-switch">
+    <button class="lang-btn active" data-lang="ja" onclick="kaizenApplyLang('ja')">日本語</button>
+    <button class="lang-btn" data-lang="en" onclick="kaizenApplyLang('en')">English</button>
+  </div>
+</header>
+
+<article class="chapter-content">
+  <div class="chapter-header">
+    <div class="chapter-number-large">CHAPTER 3</div>
+    <h2 data-i18n="ch3Title">QC7つ道具ってなに?</h2>
+  </div>
+
+  <div class="chapter-tldr">
+    <div class="chapter-tldr-label" data-i18n="tldrLabel">ひとこと要約</div>
+    <div class="chapter-tldr-text" data-i18n="ch3Tldr">7つ道具は<strong>工具箱の中身</strong>。用途別に7本ある。全部を最初に覚える必要はなくて、<strong>パレート図</strong>と<strong>特性要因図</strong>の2つを押さえれば、現場の8割は戦える。</div>
+  </div>
+
+  <h3 data-i18n="ch3_h1">名前はいかつい、でも中身は地味</h3>
+  <p data-i18n="ch3_p1"><strong>QC7つ道具</strong>。漢字とカタカナで並べられると身構えるけど、<strong>1つ1つは地味</strong>。棒グラフ、折れ線グラフ、散らばりグラフ…。中学校の数学でもうやってるレベル。</p>
+  <p data-i18n="ch3_p2">怖がらなくていい。大事なのは<strong>「どの場面でどれを使うか」</strong>、これだけ。</p>
+
+  <h3 data-i18n="ch3_h2">7つ道具の全体マップ</h3>
+  <p data-i18n="ch3_p3">先に一覧で見せます。それぞれが<strong>どこで使うか</strong>を短く書きました。</p>
+
+  <div class="tool-grid">
+    <div class="tool-card king"><div class="tool-icon">📊</div><div class="tool-body"><div class="tool-head"><span class="tool-name" data-i18n="tool1Name">① パレート図</span><span class="tool-tag king" data-i18n="toolKing">一番使う</span></div><div class="tool-use" data-i18n="tool1Use"><strong>いつ使う:</strong>現状把握。「何が一番問題か」を大きい順に並べる。<br><strong>層別の各ステップで毎回使う</strong>。</div></div></div>
+    <div class="tool-card"><div class="tool-icon">🐟</div><div class="tool-body"><div class="tool-head"><span class="tool-name" data-i18n="tool2Name">② 特性要因図(フィッシュボーン)</span><span class="tool-tag" data-i18n="toolOften">よく使う</span></div><div class="tool-use" data-i18n="tool2Use"><strong>いつ使う:</strong>絞り込んだ後の原因分析。「なぜそれが起きるか」を骨に分けて整理する。<br><strong>絞り込む前に書いても意味が薄い</strong>。</div></div></div>
+    <div class="tool-card"><div class="tool-icon">🧱</div><div class="tool-body"><div class="tool-head"><span class="tool-name" data-i18n="tool3Name">③ 層別</span><span class="tool-tag" data-i18n="toolOften">よく使う</span></div><div class="tool-use" data-i18n="tool3Use"><strong>いつ使う:</strong>データの「切り口」を変える時。時間帯別、機械別、工程別、作業者別。<br><strong>パレート図とセットで使う</strong>。</div></div></div>
+    <div class="tool-card"><div class="tool-icon">📋</div><div class="tool-body"><div class="tool-head"><span class="tool-name" data-i18n="tool4Name">④ チェックシート</span><span class="tool-tag" data-i18n="toolSometimes">たまに</span></div><div class="tool-use" data-i18n="tool4Use"><strong>いつ使う:</strong>データ収集の時。「何をいつ何件」を数える。<br>エクセルの集計表もこの一種。</div></div></div>
+    <div class="tool-card"><div class="tool-icon">📈</div><div class="tool-body"><div class="tool-head"><span class="tool-name" data-i18n="tool5Name">⑤ ヒストグラム</span><span class="tool-tag" data-i18n="toolSometimes">たまに</span></div><div class="tool-use" data-i18n="tool5Use"><strong>いつ使う:</strong>「ばらつき」を見たい時。サイズ・重さ・時間など、連続値の分布を見る。</div></div></div>
+    <div class="tool-card"><div class="tool-icon">⚡</div><div class="tool-body"><div class="tool-head"><span class="tool-name" data-i18n="tool6Name">⑥ 散布図</span><span class="tool-tag" data-i18n="toolSometimes">たまに</span></div><div class="tool-use" data-i18n="tool6Use"><strong>いつ使う:</strong>2つのことの関係を見たい時。「温度が上がると不良が増える?」とか。</div></div></div>
+    <div class="tool-card"><div class="tool-icon">📉</div><div class="tool-body"><div class="tool-head"><span class="tool-name" data-i18n="tool7Name">⑦ 管理図・グラフ</span><span class="tool-tag" data-i18n="toolSometimes">たまに</span></div><div class="tool-use" data-i18n="tool7Use"><strong>いつ使う:</strong>時系列の推移を見たい時。改善前後の比較や、日々の変動の監視に。</div></div></div>
+  </div>
+
+  <h3 data-i18n="ch3_h3">パレート図が「王様」である理由</h3>
+  <p data-i18n="ch3_p4">7つあるけど、<strong>一番使うのはパレート図</strong>。ダントツで使う。なぜか。</p>
+  <p data-i18n="ch3_p5">前章で話した「<strong>大きいとこから小さいとこへ</strong>」。これをやるたびに、パレート図を書く。</p>
+  <p data-i18n="ch3_p6"><strong>層1のパレート図</strong>:工程別。工程Bが最大。<br><strong>層2のパレート図</strong>:工程B内の工程別。②加工が最大。<br><strong>層3のパレート図</strong>:時間帯別。朝一が最大。<br><strong>層4のパレート図</strong>:機械別。機械Cが最大。</p>
+  <p data-i18n="ch3_p7">つまり、<strong>層別ごとに1枚のパレート図</strong>。4層掘れば4枚書くことになる。これが本物のQC。</p>
+
+  <div class="callout">
+    <div class="callout-title"><span class="callout-icon">💡</span><span data-i18n="ch3CalloutTitle">多くの人が間違えるポイント</span></div>
+    <p data-i18n="ch3CalloutBody">パレート図を<strong>最初の1枚だけで終わらせない</strong>。「大きい項目を発見した → そこをさらに層別 → またパレート」の繰り返しが正しい使い方。</p>
+  </div>
+
+  <h3 data-i18n="ch3_h4">特性要因図は「最後」に書く</h3>
+  <p data-i18n="ch3_p8">2番目によく使うのが<strong>特性要因図(フィッシュボーン)</strong>。魚の骨みたいな形で、原因を整理する図。</p>
+  <p data-i18n="ch3_p9">ただし、<strong>書くタイミングを間違えると価値が半減する</strong>。</p>
+  <p data-i18n="ch3_p10">• <strong>×ダメな使い方</strong>:最初に書く。「原因を全部洗い出しましょう」と、まだ絞り込んでいない状態で書く。<br>• <strong>○正しい使い方</strong>:パレート図で絞り込んだ後に書く。「朝一の工程B-②加工・機械Cの不良」に絞ってから、「<strong>この条件下での</strong>原因を考えましょう」と書く。</p>
+  <p data-i18n="ch3_p11">この順番を守るだけで、特性要因図は<strong>アリバイ作りの図から、本物の分析の図</strong>に変わる。</p>
+
+  <h3 data-i18n="ch3_h5">まずは3つから</h3>
+  <p data-i18n="ch3_p12">全部を最初に覚える必要はない。まずはこの3つ。</p>
+  <p data-i18n="ch3_p13"><strong>1. パレート図</strong>(大きい順に並べる)<br><strong>2. 層別</strong>(切り口を変える)<br><strong>3. 特性要因図</strong>(絞り込んだ後で書く)</p>
+  <p data-i18n="ch3_p14">この3つだけで、<strong>現場の8割は戦える</strong>。残りの4つは、必要になった時に覚えればいい。</p>
+
+  <div class="quote" data-i18n="ch3_quote">「道具を全部使おうとすると、道具に振り回される。使うべき道具は、現象が決める。」</div>
+
+  <h3 data-i18n="ch3_h6">次の章への橋渡し</h3>
+  <p data-i18n="ch3_p15">道具がわかったところで、次は<strong>真因を探す思考法</strong>。</p>
+  <p data-i18n="ch3_p16">道具を使って絞り込んだ後、「で、なぜそれが起きるの?」を掘り下げる時の考え方。<strong>なぜなぜ分析</strong>とか、<strong>4M(人・機械・材料・方法)</strong>とか。</p>
+  <p data-i18n="ch3_p17">ここを雑にやると、対策も雑になる。次章で、丁寧にやる型を渡します。</p>
+
+  <div class="next-nav">
+    <a href="index.html" class="back-btn">← <span data-i18n="backToHome">もくじに戻る</span></a>
+    <a href="ch4.html" class="next-btn"><span data-i18n="nextChapter">次の章へ</span> →</a>
+  </div>
+</article>
+
+<footer>
+  <p><a href="https://github.com/esandm4n1/kaizen-guide" target="_blank">GitHub</a></p>
+  <p style="margin-top:6px; opacity:0.7;" data-i18n="copyright">© 2026 カイゼンガイド</p>
+</footer>
+
+<script src="_common.js"></script>
+<script>
+Object.assign(window.kaizenI18n.ja, {
+  tldrLabel: "ひとこと要約",
+  ch3Title: "QC7つ道具ってなに?",
+  ch3Tldr: '7つ道具は<strong>工具箱の中身</strong>。用途別に7本ある。全部を最初に覚える必要はなくて、<strong>パレート図</strong>と<strong>特性要因図</strong>の2つを押さえれば、現場の8割は戦える。',
+  ch3_h1: '名前はいかつい、でも中身は地味',
+  ch3_p1: '<strong>QC7つ道具</strong>。漢字とカタカナで並べられると身構えるけど、<strong>1つ1つは地味</strong>。棒グラフ、折れ線グラフ、散らばりグラフ…。中学校の数学でもうやってるレベル。',
+  ch3_p2: '怖がらなくていい。大事なのは<strong>「どの場面でどれを使うか」</strong>、これだけ。',
+  ch3_h2: '7つ道具の全体マップ',
+  ch3_p3: '先に一覧で見せます。それぞれが<strong>どこで使うか</strong>を短く書きました。',
+  toolKing: '一番使う', toolOften: 'よく使う', toolSometimes: 'たまに',
+  tool1Name: '① パレート図',
+  tool1Use: '<strong>いつ使う:</strong>現状把握。「何が一番問題か」を大きい順に並べる。<br><strong>層別の各ステップで毎回使う</strong>。',
+  tool2Name: '② 特性要因図(フィッシュボーン)',
+  tool2Use: '<strong>いつ使う:</strong>絞り込んだ後の原因分析。「なぜそれが起きるか」を骨に分けて整理する。<br><strong>絞り込む前に書いても意味が薄い</strong>。',
+  tool3Name: '③ 層別',
+  tool3Use: '<strong>いつ使う:</strong>データの「切り口」を変える時。時間帯別、機械別、工程別、作業者別。<br><strong>パレート図とセットで使う</strong>。',
+  tool4Name: '④ チェックシート',
+  tool4Use: '<strong>いつ使う:</strong>データ収集の時。「何をいつ何件」を数える。<br>エクセルの集計表もこの一種。',
+  tool5Name: '⑤ ヒストグラム',
+  tool5Use: '<strong>いつ使う:</strong>「ばらつき」を見たい時。サイズ・重さ・時間など、連続値の分布を見る。',
+  tool6Name: '⑥ 散布図',
+  tool6Use: '<strong>いつ使う:</strong>2つのことの関係を見たい時。「温度が上がると不良が増える?」とか。',
+  tool7Name: '⑦ 管理図・グラフ',
+  tool7Use: '<strong>いつ使う:</strong>時系列の推移を見たい時。改善前後の比較や、日々の変動の監視に。',
+  ch3_h3: 'パレート図が「王様」である理由',
+  ch3_p4: '7つあるけど、<strong>一番使うのはパレート図</strong>。ダントツで使う。なぜか。',
+  ch3_p5: '前章で話した「<strong>大きいとこから小さいとこへ</strong>」。これをやるたびに、パレート図を書く。',
+  ch3_p6: '<strong>層1のパレート図</strong>:工程別。工程Bが最大。<br><strong>層2のパレート図</strong>:工程B内の工程別。②加工が最大。<br><strong>層3のパレート図</strong>:時間帯別。朝一が最大。<br><strong>層4のパレート図</strong>:機械別。機械Cが最大。',
+  ch3_p7: 'つまり、<strong>層別ごとに1枚のパレート図</strong>。4層掘れば4枚書くことになる。これが本物のQC。',
+  ch3CalloutTitle: '多くの人が間違えるポイント',
+  ch3CalloutBody: 'パレート図を<strong>最初の1枚だけで終わらせない</strong>。「大きい項目を発見した → そこをさらに層別 → またパレート」の繰り返しが正しい使い方。',
+  ch3_h4: '特性要因図は「最後」に書く',
+  ch3_p8: '2番目によく使うのが<strong>特性要因図(フィッシュボーン)</strong>。魚の骨みたいな形で、原因を整理する図。',
+  ch3_p9: 'ただし、<strong>書くタイミングを間違えると価値が半減する</strong>。',
+  ch3_p10: '• <strong>×ダメな使い方</strong>:最初に書く。「原因を全部洗い出しましょう」と、まだ絞り込んでいない状態で書く。<br>• <strong>○正しい使い方</strong>:パレート図で絞り込んだ後に書く。「朝一の工程B-②加工・機械Cの不良」に絞ってから、「<strong>この条件下での</strong>原因を考えましょう」と書く。',
+  ch3_p11: 'この順番を守るだけで、特性要因図は<strong>アリバイ作りの図から、本物の分析の図</strong>に変わる。',
+  ch3_h5: 'まずは3つから',
+  ch3_p12: '全部を最初に覚える必要はない。まずはこの3つ。',
+  ch3_p13: '<strong>1. パレート図</strong>(大きい順に並べる)<br><strong>2. 層別</strong>(切り口を変える)<br><strong>3. 特性要因図</strong>(絞り込んだ後で書く)',
+  ch3_p14: 'この3つだけで、<strong>現場の8割は戦える</strong>。残りの4つは、必要になった時に覚えればいい。',
+  ch3_quote: '「道具を全部使おうとすると、道具に振り回される。使うべき道具は、現象が決める。」',
+  ch3_h6: '次の章への橋渡し',
+  ch3_p15: '道具がわかったところで、次は<strong>真因を探す思考法</strong>。',
+  ch3_p16: '道具を使って絞り込んだ後、「で、なぜそれが起きるの?」を掘り下げる時の考え方。<strong>なぜなぜ分析</strong>とか、<strong>4M(人・機械・材料・方法)</strong>とか。',
+  ch3_p17: 'ここを雑にやると、対策も雑になる。次章で、丁寧にやる型を渡します。'
+});
+Object.assign(window.kaizenI18n.en, {
+  tldrLabel: "TL;DR",
+  ch3Title: "What are the 7 QC tools?",
+  ch3Tldr: 'The 7 QC tools are the <strong>contents of a toolbox</strong>. Seven tools, each with a purpose. Master the <strong>Pareto chart</strong> and the <strong>fishbone diagram</strong>, and you can handle 80% of real shop floor situations.',
+  toolKing: 'Most used', toolOften: 'Often used', toolSometimes: 'Sometimes'
+});
+kaizenInitLang();
+</script>
+</body>
+</html>
