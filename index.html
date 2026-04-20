@@ -41,11 +41,8 @@
     gap: 12px;
   }
   .brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: var(--text);
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none; color: var(--text);
   }
   .brand-logo {
     width: 32px; height: 32px;
@@ -201,6 +198,52 @@
   .order-box.bad .order-label { color: var(--warn); }
   .order-box.good .order-label { color: var(--accent); }
   .order-steps { font-size: 14px; line-height: 1.8; }
+
+  /* Tool cards for chapter 3 */
+  .tool-grid { display: grid; gap: 14px; margin: 24px 0; }
+  .tool-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 22px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  .tool-card.king {
+    border-color: var(--accent);
+    border-width: 2px;
+    background: linear-gradient(to right, var(--accent-light) 0%, var(--card) 40%);
+  }
+  .tool-icon {
+    width: 44px; height: 44px;
+    background: var(--accent-light);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .tool-card.king .tool-icon { background: var(--accent); color: white; }
+  .tool-body { }
+  .tool-head {
+    display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+  .tool-name { font-weight: 700; font-size: 17px; }
+  .tool-tag {
+    font-size: 11px;
+    padding: 2px 8px; border-radius: 10px;
+    background: var(--highlight); color: #a57800;
+    font-weight: 600;
+  }
+  .tool-tag.king { background: var(--accent); color: white; }
+  .tool-use {
+    font-size: 14px; color: var(--sub);
+    line-height: 1.6;
+  }
+  .tool-use strong { color: var(--text); font-weight: 600; }
+
   @media (max-width: 600px) {
     .order-compare { grid-template-columns: 1fr; }
   }
@@ -274,11 +317,10 @@
         <span class="chapter-num">2</span>
         <span class="chapter-title" data-i18n="ch2Title">答えから作るな、探れ</span>
       </a></li>
-      <li><div class="chapter-item locked">
+      <li><a href="#" class="chapter-item" onclick="showView('ch3'); return false;">
         <span class="chapter-num">3</span>
         <span class="chapter-title" data-i18n="ch3Title">QC7つ道具ってなに?</span>
-        <span class="chapter-badge" data-i18n="comingSoon">近日公開</span>
-      </div></li>
+      </a></li>
       <li><div class="chapter-item locked">
         <span class="chapter-num">4</span>
         <span class="chapter-title" data-i18n="ch4Title">真因を探す思考法</span>
@@ -443,20 +485,20 @@
     <h3 data-i18n="ch2_h4">「大きいとこから小さいとこへ」だけ</h3>
     <p data-i18n="ch2_p11">探偵ゲームの進め方は、難しくない。やることは、実は<strong>1つだけ</strong>。</p>
     <p data-i18n="ch2_p12"><strong>大きいとこから、小さいとこへ見ていく</strong>。</p>
-    <p data-i18n="ch2_p13">たとえば、不良がたくさん出てる工程があるとする。こう進む。</p>
+    <p data-i18n="ch2_p13">たとえば、4工程ある現場。こう進む。</p>
     <p data-i18n="ch2_p14">
-    <strong>層1</strong>:不良の種類で分ける → 不良Aが一番多い<br>
-    <strong>層2</strong>:不良Aを時間帯で分ける → 朝一に多い<br>
-    <strong>層3</strong>:朝一の不良Aを機械で分ける → 機械Bに集中<br>
-    <strong>層4</strong>:朝一の機械Bの不良Aを作業者で分ける → 特定の作業者
+    <strong>層1</strong>:全体のどこで不良が出てる? → 工程Bが一番多い<br>
+    <strong>層2</strong>:工程Bのどこで? → ②加工に集中<br>
+    <strong>層3</strong>:工程B-②加工のいつ? → 朝一に多い<br>
+    <strong>層4</strong>:朝一の加工工程の何が? → 特定の機械
     </p>
-    <p data-i18n="ch2_p15">ここまで絞れれば、「原因は何?」の答えが<strong>見えてくる</strong>。朝一、機械B、特定作業者。この3つが揃う時だけ起きる現象。<strong>そこで初めて特性要因図を書く意味が生まれる</strong>。</p>
+    <p data-i18n="ch2_p15">ここまで絞れれば、「原因は何?」の答えが<strong>見えてくる</strong>。朝一、工程B、特定の機械。この3つが揃う時だけ起きる現象。<strong>そこで初めて特性要因図を書く意味が生まれる</strong>。</p>
 
     <h3 data-i18n="ch2_h5">「探る」が楽しいか、苦痛か</h3>
     <p data-i18n="ch2_p16">ここ、大事な分かれ目。</p>
     <p data-i18n="ch2_p17"><strong>層別ドリルダウン</strong>をこうやって書くと、「めんどくさそう」と感じる人が多い。事実、めんどくさい。層を3つも4つも掘らないといけないし、データを切り替え続けないといけない。</p>
     <p data-i18n="ch2_p18">でも、<strong>ここを「楽しい」と感じられたら、もう勝ち</strong>。</p>
-    <p data-i18n="ch2_p19">犯人が浮かび上がってくる感覚。「え、朝一だけ多いの?」「機械Bだけ?」「あの人だけ?」と驚く瞬間。<strong>これは、謎解きの快感</strong>。ミステリー小説と同じ。</p>
+    <p data-i18n="ch2_p19">犯人が浮かび上がってくる感覚。「え、工程Bだけ?」「朝一だけ?」「あの機械だけ?」と驚く瞬間。<strong>これは、謎解きの快感</strong>。ミステリー小説と同じ。</p>
 
     <div class="quote" data-i18n="ch2_quote">
       「探っていくのが楽しい。それに気づいた人から、QCが嫌いじゃなくなる。」
@@ -466,6 +508,160 @@
     <p data-i18n="ch2_p20">「探る」ための道具が、よく言われる<strong>QC7つ道具</strong>。パレート図、特性要因図、ヒストグラム…。</p>
     <p data-i18n="ch2_p21">でも、道具の前に、この<strong>姿勢</strong>がすべてなんだ。</p>
     <p data-i18n="ch2_p22"><strong>答えから作るな、探れ</strong>。<br>次の章からは、探るための道具を1つずつ見ていきます。</p>
+
+    <div class="next-nav">
+      <a href="#" class="back-btn" onclick="showView('home'); return false;">
+        ← <span data-i18n="backToHome">もくじに戻る</span>
+      </a>
+      <a href="#" class="next-btn" onclick="showView('ch3'); return false;">
+        <span data-i18n="nextChapter">次の章へ</span> →
+      </a>
+    </div>
+  </article>
+</div>
+
+<div id="view-ch3" class="view">
+  <article class="chapter-content">
+    <div class="chapter-header">
+      <div class="chapter-number-large">CHAPTER 3</div>
+      <h2 data-i18n="ch3Title">QC7つ道具ってなに?</h2>
+    </div>
+
+    <div class="chapter-tldr">
+      <div class="chapter-tldr-label" data-i18n="tldrLabel">ひとこと要約</div>
+      <div class="chapter-tldr-text" data-i18n="ch3Tldr">
+        7つ道具は<strong>工具箱の中身</strong>。用途別に7本ある。全部を最初に覚える必要はなくて、<strong>パレート図</strong>と<strong>特性要因図</strong>の2つを押さえれば、現場の8割は戦える。
+      </div>
+    </div>
+
+    <h3 data-i18n="ch3_h1">名前はいかつい、でも中身は地味</h3>
+    <p data-i18n="ch3_p1"><strong>QC7つ道具</strong>。漢字とカタカナで並べられると身構えるけど、<strong>1つ1つは地味</strong>。棒グラフ、折れ線グラフ、散らばりグラフ…。中学校の数学でもうやってるレベル。</p>
+    <p data-i18n="ch3_p2">怖がらなくていい。大事なのは<strong>「どの場面でどれを使うか」</strong>、これだけ。</p>
+
+    <h3 data-i18n="ch3_h2">7つ道具の全体マップ</h3>
+    <p data-i18n="ch3_p3">先に一覧で見せます。それぞれが<strong>どこで使うか</strong>を短く書きました。</p>
+
+    <div class="tool-grid">
+      <div class="tool-card king">
+        <div class="tool-icon">📊</div>
+        <div class="tool-body">
+          <div class="tool-head">
+            <span class="tool-name" data-i18n="tool1Name">① パレート図</span>
+            <span class="tool-tag king" data-i18n="toolKing">一番使う</span>
+          </div>
+          <div class="tool-use" data-i18n="tool1Use"><strong>いつ使う:</strong>現状把握。「何が一番問題か」を大きい順に並べる。<br><strong>層別の各ステップで毎回使う</strong>。</div>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-icon">🐟</div>
+        <div class="tool-body">
+          <div class="tool-head">
+            <span class="tool-name" data-i18n="tool2Name">② 特性要因図(フィッシュボーン)</span>
+            <span class="tool-tag" data-i18n="toolOften">よく使う</span>
+          </div>
+          <div class="tool-use" data-i18n="tool2Use"><strong>いつ使う:</strong>絞り込んだ後の原因分析。「なぜそれが起きるか」を骨に分けて整理する。<br><strong>絞り込む前に書いても意味が薄い</strong>。</div>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-icon">🧱</div>
+        <div class="tool-body">
+          <div class="tool-head">
+            <span class="tool-name" data-i18n="tool3Name">③ 層別</span>
+            <span class="tool-tag" data-i18n="toolOften">よく使う</span>
+          </div>
+          <div class="tool-use" data-i18n="tool3Use"><strong>いつ使う:</strong>データの「切り口」を変える時。時間帯別、機械別、工程別、作業者別。<br><strong>パレート図とセットで使う</strong>。</div>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-icon">📋</div>
+        <div class="tool-body">
+          <div class="tool-head">
+            <span class="tool-name" data-i18n="tool4Name">④ チェックシート</span>
+            <span class="tool-tag" data-i18n="toolSometimes">たまに</span>
+          </div>
+          <div class="tool-use" data-i18n="tool4Use"><strong>いつ使う:</strong>データ収集の時。「何をいつ何件」を数える。<br>エクセルの集計表もこの一種。</div>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-icon">📈</div>
+        <div class="tool-body">
+          <div class="tool-head">
+            <span class="tool-name" data-i18n="tool5Name">⑤ ヒストグラム</span>
+            <span class="tool-tag" data-i18n="toolSometimes">たまに</span>
+          </div>
+          <div class="tool-use" data-i18n="tool5Use"><strong>いつ使う:</strong>「ばらつき」を見たい時。サイズ・重さ・時間など、連続値の分布を見る。</div>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-icon">⚡</div>
+        <div class="tool-body">
+          <div class="tool-head">
+            <span class="tool-name" data-i18n="tool6Name">⑥ 散布図</span>
+            <span class="tool-tag" data-i18n="toolSometimes">たまに</span>
+          </div>
+          <div class="tool-use" data-i18n="tool6Use"><strong>いつ使う:</strong>2つのことの関係を見たい時。「温度が上がると不良が増える?」とか。</div>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-icon">📉</div>
+        <div class="tool-body">
+          <div class="tool-head">
+            <span class="tool-name" data-i18n="tool7Name">⑦ 管理図・グラフ</span>
+            <span class="tool-tag" data-i18n="toolSometimes">たまに</span>
+          </div>
+          <div class="tool-use" data-i18n="tool7Use"><strong>いつ使う:</strong>時系列の推移を見たい時。改善前後の比較や、日々の変動の監視に。</div>
+        </div>
+      </div>
+    </div>
+
+    <h3 data-i18n="ch3_h3">パレート図が「王様」である理由</h3>
+    <p data-i18n="ch3_p4">7つあるけど、<strong>一番使うのはパレート図</strong>。ダントツで使う。なぜか。</p>
+    <p data-i18n="ch3_p5">前章で話した「<strong>大きいとこから小さいとこへ</strong>」。これをやるたびに、パレート図を書く。</p>
+    <p data-i18n="ch3_p6">
+    <strong>層1のパレート図</strong>:工程別。工程Bが最大。<br>
+    <strong>層2のパレート図</strong>:工程B内の工程別。②加工が最大。<br>
+    <strong>層3のパレート図</strong>:時間帯別。朝一が最大。<br>
+    <strong>層4のパレート図</strong>:機械別。機械Cが最大。
+    </p>
+    <p data-i18n="ch3_p7">つまり、<strong>層別ごとに1枚のパレート図</strong>。4層掘れば4枚書くことになる。これが本物のQC。</p>
+
+    <div class="callout">
+      <div class="callout-title"><span class="callout-icon">💡</span><span data-i18n="ch3CalloutTitle">多くの人が間違えるポイント</span></div>
+      <p data-i18n="ch3CalloutBody">パレート図を<strong>最初の1枚だけで終わらせない</strong>。「大きい項目を発見した → そこをさらに層別 → またパレート」の繰り返しが正しい使い方。</p>
+    </div>
+
+    <h3 data-i18n="ch3_h4">特性要因図は「最後」に書く</h3>
+    <p data-i18n="ch3_p8">2番目によく使うのが<strong>特性要因図(フィッシュボーン)</strong>。魚の骨みたいな形で、原因を整理する図。</p>
+    <p data-i18n="ch3_p9">ただし、<strong>書くタイミングを間違えると価値が半減する</strong>。</p>
+    <p data-i18n="ch3_p10">
+    • <strong>×ダメな使い方</strong>:最初に書く。「原因を全部洗い出しましょう」と、まだ絞り込んでいない状態で書く。<br>
+    • <strong>○正しい使い方</strong>:パレート図で絞り込んだ後に書く。「朝一の工程B-②加工・機械Cの不良」に絞ってから、「<strong>この条件下での</strong>原因を考えましょう」と書く。
+    </p>
+    <p data-i18n="ch3_p11">この順番を守るだけで、特性要因図は<strong>アリバイ作りの図から、本物の分析の図</strong>に変わる。</p>
+
+    <h3 data-i18n="ch3_h5">まずは3つから</h3>
+    <p data-i18n="ch3_p12">全部を最初に覚える必要はない。まずはこの3つ。</p>
+    <p data-i18n="ch3_p13">
+    <strong>1. パレート図</strong>(大きい順に並べる)<br>
+    <strong>2. 層別</strong>(切り口を変える)<br>
+    <strong>3. 特性要因図</strong>(絞り込んだ後で書く)
+    </p>
+    <p data-i18n="ch3_p14">この3つだけで、<strong>現場の8割は戦える</strong>。残りの4つは、必要になった時に覚えればいい。</p>
+
+    <div class="quote" data-i18n="ch3_quote">
+      「道具を全部使おうとすると、道具に振り回される。使うべき道具は、現象が決める。」
+    </div>
+
+    <h3 data-i18n="ch3_h6">次の章への橋渡し</h3>
+    <p data-i18n="ch3_p15">道具がわかったところで、次は<strong>真因を探す思考法</strong>。</p>
+    <p data-i18n="ch3_p16">道具を使って絞り込んだ後、「で、なぜそれが起きるの?」を掘り下げる時の考え方。<strong>なぜなぜ分析</strong>とか、<strong>4M(人・機械・材料・方法)</strong>とか。</p>
+    <p data-i18n="ch3_p17">ここを雑にやると、対策も雑になる。次章で、丁寧にやる型を渡します。</p>
 
     <div class="next-nav">
       <a href="#" class="back-btn" onclick="showView('home'); return false;">
@@ -550,19 +746,64 @@ const i18n = {
     ch2_h4: '「大きいとこから小さいとこへ」だけ',
     ch2_p11: '探偵ゲームの進め方は、難しくない。やることは、実は<strong>1つだけ</strong>。',
     ch2_p12: '<strong>大きいとこから、小さいとこへ見ていく</strong>。',
-    ch2_p13: 'たとえば、不良がたくさん出てる工程があるとする。こう進む。',
-    ch2_p14: '<strong>層1</strong>:不良の種類で分ける → 不良Aが一番多い<br><strong>層2</strong>:不良Aを時間帯で分ける → 朝一に多い<br><strong>層3</strong>:朝一の不良Aを機械で分ける → 機械Bに集中<br><strong>層4</strong>:朝一の機械Bの不良Aを作業者で分ける → 特定の作業者',
-    ch2_p15: 'ここまで絞れれば、「原因は何?」の答えが<strong>見えてくる</strong>。朝一、機械B、特定作業者。この3つが揃う時だけ起きる現象。<strong>そこで初めて特性要因図を書く意味が生まれる</strong>。',
+    ch2_p13: 'たとえば、4工程ある現場。こう進む。',
+    ch2_p14: '<strong>層1</strong>:全体のどこで不良が出てる? → 工程Bが一番多い<br><strong>層2</strong>:工程Bのどこで? → ②加工に集中<br><strong>層3</strong>:工程B-②加工のいつ? → 朝一に多い<br><strong>層4</strong>:朝一の加工工程の何が? → 特定の機械',
+    ch2_p15: 'ここまで絞れれば、「原因は何?」の答えが<strong>見えてくる</strong>。朝一、工程B、特定の機械。この3つが揃う時だけ起きる現象。<strong>そこで初めて特性要因図を書く意味が生まれる</strong>。',
     ch2_h5: '「探る」が楽しいか、苦痛か',
     ch2_p16: 'ここ、大事な分かれ目。',
     ch2_p17: '<strong>層別ドリルダウン</strong>をこうやって書くと、「めんどくさそう」と感じる人が多い。事実、めんどくさい。層を3つも4つも掘らないといけないし、データを切り替え続けないといけない。',
     ch2_p18: 'でも、<strong>ここを「楽しい」と感じられたら、もう勝ち</strong>。',
-    ch2_p19: '犯人が浮かび上がってくる感覚。「え、朝一だけ多いの?」「機械Bだけ?」「あの人だけ?」と驚く瞬間。<strong>これは、謎解きの快感</strong>。ミステリー小説と同じ。',
+    ch2_p19: '犯人が浮かび上がってくる感覚。「え、工程Bだけ?」「朝一だけ?」「あの機械だけ?」と驚く瞬間。<strong>これは、謎解きの快感</strong>。ミステリー小説と同じ。',
     ch2_quote: '「探っていくのが楽しい。それに気づいた人から、QCが嫌いじゃなくなる。」',
     ch2_h6: '次の章への橋渡し',
     ch2_p20: '「探る」ための道具が、よく言われる<strong>QC7つ道具</strong>。パレート図、特性要因図、ヒストグラム…。',
     ch2_p21: 'でも、道具の前に、この<strong>姿勢</strong>がすべてなんだ。',
     ch2_p22: '<strong>答えから作るな、探れ</strong>。<br>次の章からは、探るための道具を1つずつ見ていきます。',
+    // Ch3
+    ch3Tldr: '7つ道具は<strong>工具箱の中身</strong>。用途別に7本ある。全部を最初に覚える必要はなくて、<strong>パレート図</strong>と<strong>特性要因図</strong>の2つを押さえれば、現場の8割は戦える。',
+    ch3_h1: '名前はいかつい、でも中身は地味',
+    ch3_p1: '<strong>QC7つ道具</strong>。漢字とカタカナで並べられると身構えるけど、<strong>1つ1つは地味</strong>。棒グラフ、折れ線グラフ、散らばりグラフ…。中学校の数学でもうやってるレベル。',
+    ch3_p2: '怖がらなくていい。大事なのは<strong>「どの場面でどれを使うか」</strong>、これだけ。',
+    ch3_h2: '7つ道具の全体マップ',
+    ch3_p3: '先に一覧で見せます。それぞれが<strong>どこで使うか</strong>を短く書きました。',
+    toolKing: '一番使う',
+    toolOften: 'よく使う',
+    toolSometimes: 'たまに',
+    tool1Name: '① パレート図',
+    tool1Use: '<strong>いつ使う:</strong>現状把握。「何が一番問題か」を大きい順に並べる。<br><strong>層別の各ステップで毎回使う</strong>。',
+    tool2Name: '② 特性要因図(フィッシュボーン)',
+    tool2Use: '<strong>いつ使う:</strong>絞り込んだ後の原因分析。「なぜそれが起きるか」を骨に分けて整理する。<br><strong>絞り込む前に書いても意味が薄い</strong>。',
+    tool3Name: '③ 層別',
+    tool3Use: '<strong>いつ使う:</strong>データの「切り口」を変える時。時間帯別、機械別、工程別、作業者別。<br><strong>パレート図とセットで使う</strong>。',
+    tool4Name: '④ チェックシート',
+    tool4Use: '<strong>いつ使う:</strong>データ収集の時。「何をいつ何件」を数える。<br>エクセルの集計表もこの一種。',
+    tool5Name: '⑤ ヒストグラム',
+    tool5Use: '<strong>いつ使う:</strong>「ばらつき」を見たい時。サイズ・重さ・時間など、連続値の分布を見る。',
+    tool6Name: '⑥ 散布図',
+    tool6Use: '<strong>いつ使う:</strong>2つのことの関係を見たい時。「温度が上がると不良が増える?」とか。',
+    tool7Name: '⑦ 管理図・グラフ',
+    tool7Use: '<strong>いつ使う:</strong>時系列の推移を見たい時。改善前後の比較や、日々の変動の監視に。',
+    ch3_h3: 'パレート図が「王様」である理由',
+    ch3_p4: '7つあるけど、<strong>一番使うのはパレート図</strong>。ダントツで使う。なぜか。',
+    ch3_p5: '前章で話した「<strong>大きいとこから小さいとこへ</strong>」。これをやるたびに、パレート図を書く。',
+    ch3_p6: '<strong>層1のパレート図</strong>:工程別。工程Bが最大。<br><strong>層2のパレート図</strong>:工程B内の工程別。②加工が最大。<br><strong>層3のパレート図</strong>:時間帯別。朝一が最大。<br><strong>層4のパレート図</strong>:機械別。機械Cが最大。',
+    ch3_p7: 'つまり、<strong>層別ごとに1枚のパレート図</strong>。4層掘れば4枚書くことになる。これが本物のQC。',
+    ch3CalloutTitle: '多くの人が間違えるポイント',
+    ch3CalloutBody: 'パレート図を<strong>最初の1枚だけで終わらせない</strong>。「大きい項目を発見した → そこをさらに層別 → またパレート」の繰り返しが正しい使い方。',
+    ch3_h4: '特性要因図は「最後」に書く',
+    ch3_p8: '2番目によく使うのが<strong>特性要因図(フィッシュボーン)</strong>。魚の骨みたいな形で、原因を整理する図。',
+    ch3_p9: 'ただし、<strong>書くタイミングを間違えると価値が半減する</strong>。',
+    ch3_p10: '• <strong>×ダメな使い方</strong>:最初に書く。「原因を全部洗い出しましょう」と、まだ絞り込んでいない状態で書く。<br>• <strong>○正しい使い方</strong>:パレート図で絞り込んだ後に書く。「朝一の工程B-②加工・機械Cの不良」に絞ってから、「<strong>この条件下での</strong>原因を考えましょう」と書く。',
+    ch3_p11: 'この順番を守るだけで、特性要因図は<strong>アリバイ作りの図から、本物の分析の図</strong>に変わる。',
+    ch3_h5: 'まずは3つから',
+    ch3_p12: '全部を最初に覚える必要はない。まずはこの3つ。',
+    ch3_p13: '<strong>1. パレート図</strong>(大きい順に並べる)<br><strong>2. 層別</strong>(切り口を変える)<br><strong>3. 特性要因図</strong>(絞り込んだ後で書く)',
+    ch3_p14: 'この3つだけで、<strong>現場の8割は戦える</strong>。残りの4つは、必要になった時に覚えればいい。',
+    ch3_quote: '「道具を全部使おうとすると、道具に振り回される。使うべき道具は、現象が決める。」',
+    ch3_h6: '次の章への橋渡し',
+    ch3_p15: '道具がわかったところで、次は<strong>真因を探す思考法</strong>。',
+    ch3_p16: '道具を使って絞り込んだ後、「で、なぜそれが起きるの?」を掘り下げる時の考え方。<strong>なぜなぜ分析</strong>とか、<strong>4M(人・機械・材料・方法)</strong>とか。',
+    ch3_p17: 'ここを雑にやると、対策も雑になる。次章で、丁寧にやる型を渡します。',
     backToHome: "もくじに戻る",
     nextChapter: "次の章へ",
     nextChapterSoon: "次の章へ(近日公開)",
@@ -631,19 +872,63 @@ const i18n = {
     ch2_h4: '"Big to small" is the only rule',
     ch2_p11: 'The detective game is not hard. There\'s really only <strong>one thing</strong> to do.',
     ch2_p12: '<strong>Go from the big to the small.</strong>',
-    ch2_p13: 'Say a process is producing lots of defects. You proceed like this:',
-    ch2_p14: '<strong>Layer 1</strong>: split by defect type → Defect A is most common<br><strong>Layer 2</strong>: split Defect A by time → Morning shift has the most<br><strong>Layer 3</strong>: split morning Defect A by machine → Concentrated on Machine B<br><strong>Layer 4</strong>: split morning Machine B Defect A by operator → A specific person',
-    ch2_p15: 'Once narrowed to this: "morning + Machine B + specific operator," <strong>the answer to "what\'s the cause" starts to emerge</strong>. It happens only when these three conditions align. <strong>Only now does drawing a fishbone become meaningful</strong>.',
+    ch2_p13: 'For example, a shop floor with 4 processes:',
+    ch2_p14: '<strong>Layer 1</strong>: Where in the whole shop are defects occurring? → Process B has the most<br><strong>Layer 2</strong>: Where in Process B? → Concentrated on step ②Machining<br><strong>Layer 3</strong>: When, within Process B ②Machining? → Morning has the most<br><strong>Layer 4</strong>: What is happening in the morning machining? → A specific machine',
+    ch2_p15: 'Once narrowed to this: "morning + Process B + specific machine," <strong>the answer to "what\'s the cause" starts to emerge</strong>. It happens only when these three conditions align. <strong>Only now does drawing a fishbone become meaningful</strong>.',
     ch2_h5: 'Is "investigating" fun, or painful?',
     ch2_p16: 'This is the critical fork.',
     ch2_p17: 'When you write out <strong>layered drill-down</strong> like this, many people feel it\'s tedious. Honestly, it is tedious. Three or four layers, constantly switching data views.',
     ch2_p18: 'But <strong>if you can feel it as fun, you\'ve already won</strong>.',
-    ch2_p19: 'The feeling of the culprit emerging. "Wait, only in the morning?" "Only Machine B?" "Only that person?" That moment of surprise. <strong>This is the pleasure of solving a puzzle</strong>. Same as reading a mystery novel.',
+    ch2_p19: 'The feeling of the culprit emerging. "Wait, only Process B?" "Only in the morning?" "Only that machine?" That moment of surprise. <strong>This is the pleasure of solving a puzzle</strong>. Same as reading a mystery novel.',
     ch2_quote: '"Investigating is fun. Once people notice this, they stop hating QC."',
     ch2_h6: "Bridge to the next chapter",
     ch2_p20: 'The tools for "investigating" are what people call the <strong>7 QC Tools</strong>: Pareto chart, fishbone diagram, histogram...',
     ch2_p21: 'But before the tools, <strong>this mindset is everything</strong>.',
     ch2_p22: '<strong>Don\'t build from the answer. Investigate.</strong><br>From the next chapter, we\'ll look at the tools for investigating, one by one.',
+    ch3Tldr: 'The 7 QC tools are the <strong>contents of a toolbox</strong>. Seven tools, each with a purpose. You don\'t need to learn all of them at once. Master the <strong>Pareto chart</strong> and the <strong>fishbone diagram</strong>, and you can handle 80% of real shop floor situations.',
+    ch3_h1: 'Scary names, mundane contents',
+    ch3_p1: '<strong>The 7 QC Tools</strong>. Listed out in kanji and katakana, they sound intimidating. But <strong>each one is plain</strong>. Bar charts, line charts, scatter plots... stuff you learned in middle school math.',
+    ch3_p2: 'Don\'t be afraid. What matters is <strong>"which one to use when"</strong>. That\'s all.',
+    ch3_h2: 'The full map of the 7 tools',
+    ch3_p3: 'Here\'s the overview. Each shows <strong>where to use it</strong> in a short line.',
+    toolKing: 'Most used',
+    toolOften: 'Often used',
+    toolSometimes: 'Sometimes',
+    tool1Name: '① Pareto chart',
+    tool1Use: '<strong>When:</strong> Grasp the current state. List things in descending order. <strong>Use it at every layer of drill-down</strong>.',
+    tool2Name: '② Fishbone diagram (cause-and-effect)',
+    tool2Use: '<strong>When:</strong> Cause analysis, after narrowing down. Organize "why does this happen" by branch. <strong>Drawing it before narrowing down is mostly wasted</strong>.',
+    tool3Name: '③ Stratification',
+    tool3Use: '<strong>When:</strong> Changing the "cut" of the data. By time, by machine, by process, by operator. <strong>Always used together with Pareto</strong>.',
+    tool4Name: '④ Check sheet',
+    tool4Use: '<strong>When:</strong> Collecting data. Count "what, when, how many." Excel tallies count too.',
+    tool5Name: '⑤ Histogram',
+    tool5Use: '<strong>When:</strong> Looking at "variability." The distribution of continuous values like size, weight, time.',
+    tool6Name: '⑥ Scatter plot',
+    tool6Use: '<strong>When:</strong> Checking the relation between two things. "Do defects rise with temperature?"',
+    tool7Name: '⑦ Control chart / graph',
+    tool7Use: '<strong>When:</strong> Seeing changes over time. Before/after comparison, daily monitoring.',
+    ch3_h3: 'Why the Pareto chart is "the king"',
+    ch3_p4: 'There are 7 tools, but <strong>the one you use most is the Pareto chart</strong>. By far. Here\'s why.',
+    ch3_p5: 'Remember the previous chapter: "<strong>Go from the big to the small</strong>." Every time you do this, you draw a Pareto.',
+    ch3_p6: '<strong>Layer 1 Pareto</strong>: by process. Process B is the biggest.<br><strong>Layer 2 Pareto</strong>: inside Process B, by step. Step ②Machining is biggest.<br><strong>Layer 3 Pareto</strong>: by time. Morning is biggest.<br><strong>Layer 4 Pareto</strong>: by machine. Machine C is biggest.',
+    ch3_p7: 'That is, <strong>one Pareto chart per layer</strong>. Four layers = four Paretos. This is real QC.',
+    ch3CalloutTitle: 'The point most people get wrong',
+    ch3CalloutBody: 'Don\'t stop at <strong>one Pareto chart</strong>. "Find the biggest item → stratify it further → new Pareto" — this loop is the correct usage.',
+    ch3_h4: 'Draw the fishbone LAST',
+    ch3_p8: 'The second most used is the <strong>fishbone diagram</strong>. A fish-skeleton shape for organizing causes.',
+    ch3_p9: 'But <strong>timing is critical, or half its value disappears</strong>.',
+    ch3_p10: '• <strong>× Bad usage</strong>: Draw it first. "Let\'s list all causes" with nothing narrowed down yet.<br>• <strong>○ Good usage</strong>: Draw it after Pareto narrows things down. "Morning + Process B ②Machining + Machine C defects" — narrowed down. Then: "What\'s the cause <strong>under these conditions?</strong>"',
+    ch3_p11: 'Just by following this order, the fishbone transforms <strong>from an alibi diagram into a real analysis diagram</strong>.',
+    ch3_h5: 'Start with these 3',
+    ch3_p12: 'You don\'t need to learn all 7 at once. Start with just these 3.',
+    ch3_p13: '<strong>1. Pareto chart</strong> (order by size)<br><strong>2. Stratification</strong> (change the cut)<br><strong>3. Fishbone diagram</strong> (draw it after narrowing down)',
+    ch3_p14: 'With just these 3, <strong>you can handle 80% of the shop floor</strong>. Learn the other 4 when you actually need them.',
+    ch3_quote: '"When you try to use every tool, the tools drag you around. The tool you need is chosen by the phenomenon."',
+    ch3_h6: 'Bridge to the next chapter',
+    ch3_p15: 'Now that you know the tools, the next step is <strong>how to find the real cause</strong>.',
+    ch3_p16: 'After narrowing down with tools, "So why does this happen?" — the thinking that goes deeper. <strong>Why-why analysis</strong>, <strong>4M (Man/Machine/Material/Method)</strong>.',
+    ch3_p17: 'If you\'re sloppy here, the countermeasure will be sloppy too. In the next chapter, a clean way to do this.',
     backToHome: "Back to contents",
     nextChapter: "Next chapter",
     nextChapterSoon: "Next chapter (Coming soon)",
