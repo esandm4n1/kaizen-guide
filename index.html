@@ -16,10 +16,7 @@
       <div class="brand-sub" data-i18n="brandSub">現場改善の入り口</div>
     </div>
   </a>
-  <div class="lang-switch">
-    <button class="lang-btn active" data-lang="ja" onclick="kaizenApplyLang('ja')">日本語</button>
-    <button class="lang-btn" data-lang="en" onclick="kaizenApplyLang('en')">English</button>
-  </div>
+  <div class="lang-switch"></div>
 </header>
 
 <section class="hero">
@@ -50,7 +47,6 @@
 Object.assign(window.kaizenI18n.ja, {
   heroTitle: 'QCが<span class="accent">苦手</span>でも大丈夫。<br>現場を変える考え方、ここから。',
   heroSub: "品質管理、改善活動、QC7つ道具…。難しそうな言葉ばかりで身構えちゃう人のためのガイド。働く人の視点で、ゆっくり進めます。",
-  chapters: "CHAPTERS",
   ch1Title: "QCってなぜやるの?",
   ch2Title: "答えから作るな、探れ",
   ch3Title: "QC7つ道具ってなに?",
@@ -62,7 +58,6 @@ Object.assign(window.kaizenI18n.ja, {
 Object.assign(window.kaizenI18n.en, {
   heroTitle: 'Not good with <span class="accent">QC</span>? That\'s fine.<br>How to change the shop floor, starts here.',
   heroSub: "Quality control, improvement activities, the 7 QC tools... A guide for people put off by intimidating terms. We go slowly, from the worker's perspective.",
-  chapters: "CHAPTERS",
   ch1Title: "Why do we even do QC?",
   ch2Title: "Don't build from the answer. Investigate.",
   ch3Title: "What are the 7 QC tools?",
@@ -70,6 +65,39 @@ Object.assign(window.kaizenI18n.en, {
   ch5Title: "How to design countermeasures",
   ch6Title: "The presentation format",
   ch7Title: "Learn from real cases"
+});
+Object.assign(window.kaizenI18n.vi, {
+  heroTitle: '<span class="accent">Không giỏi QC?</span><br>Không sao. Cách thay đổi hiện trường bắt đầu từ đây.',
+  heroSub: "Quản lý chất lượng, hoạt động cải tiến, 7 công cụ QC... Hướng dẫn dành cho những người ngại các thuật ngữ khó. Chúng ta đi từ từ, từ góc nhìn của người lao động.",
+  ch1Title: "Tại sao phải làm QC?",
+  ch2Title: "Đừng bắt đầu từ câu trả lời. Hãy điều tra.",
+  ch3Title: "7 công cụ QC là gì?",
+  ch4Title: "Cách tìm nguyên nhân thực sự",
+  ch5Title: "Cách nghĩ đối sách",
+  ch6Title: "Khuôn mẫu thuyết trình",
+  ch7Title: "Học qua ví dụ thực tế"
+});
+Object.assign(window.kaizenI18n.id, {
+  heroTitle: '<span class="accent">Tidak pandai QC?</span><br>Tidak apa-apa. Cara mengubah lapangan, mulai dari sini.',
+  heroSub: "Kontrol kualitas, kegiatan perbaikan, 7 alat QC... Panduan untuk orang yang takut dengan istilah sulit. Kita jalan pelan-pelan dari sudut pandang pekerja.",
+  ch1Title: "Kenapa melakukan QC?",
+  ch2Title: "Jangan mulai dari jawaban. Selidiki.",
+  ch3Title: "Apa itu 7 alat QC?",
+  ch4Title: "Cara mencari penyebab sejati",
+  ch5Title: "Cara memikirkan tindakan",
+  ch6Title: "Format presentasi",
+  ch7Title: "Belajar dari contoh nyata"
+});
+Object.assign(window.kaizenI18n.my, {
+  heroTitle: '<span class="accent">QC မကျွမ်းကျင်ဘူးလား?</span><br>အဆင်ပြေပါတယ်။ လုပ်ငန်းခွင်ကို ပြောင်းလဲခြင်းကို ဒီနေရာကစလိုက်ပါ။',
+  heroSub: "အရည်အသွေးထိန်းချုပ်မှု၊ တိုးတက်မှုလုပ်ငန်းများ၊ QC ကိရိယာ ၇ မျိုး... ခက်ခဲသော အသုံးအနှုန်းများကြောင့် တုန်လှုပ်သူများအတွက် လမ်းညွှန်။ အလုပ်သမားရှုထောင့်မှ ဖြည်းဖြည်းချင်း သွားကြရအောင်။",
+  ch1Title: "QC ကို ဘာလို့ လုပ်ရတာလဲ?",
+  ch2Title: "အဖြေကနေ မစတင်ပါနဲ့။ စုံစမ်းပါ။",
+  ch3Title: "QC ကိရိယာ ၇ မျိုး ဆိုတာဘာလဲ?",
+  ch4Title: "တကယ့်အကြောင်းရင်းကို ရှာနည်း",
+  ch5Title: "တုံ့ပြန်မှု ဒီဇိုင်း",
+  ch6Title: "တင်ပြမှုပုံစံ",
+  ch7Title: "လက်တွေ့နမူနာနှင့် လေ့လာခြင်း"
 });
 kaizenInitLang();
 </script>
