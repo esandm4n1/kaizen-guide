@@ -6,240 +6,52 @@
 <title>第7章 実例で学ぶ | カイゼンガイド</title>
 <link rel="stylesheet" href="style.css">
 <style>
-  /* 7章専用スタイル */
-  .type-intro {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin: 24px 0 32px;
-  }
-  @media (max-width: 600px) {
-    .type-intro { grid-template-columns: 1fr; }
-  }
-  .type-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px 22px;
-  }
-  .type-card .type-label {
-    display: inline-block;
-    padding: 4px 12px;
-    background: var(--accent);
-    color: white;
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-  }
+  .type-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0 32px; }
+  @media (max-width: 600px) { .type-intro { grid-template-columns: 1fr; } }
+  .type-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; }
+  .type-card .type-label { display: inline-block; padding: 4px 12px; background: var(--accent); color: white; border-radius: 6px; font-size: 12px; font-weight: 700; margin-bottom: 10px; letter-spacing: 1px; }
   .type-card.b .type-label { background: #5a6da7; }
   .type-card h4 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
   .type-card p { font-size: 14px; line-height: 1.7; color: var(--sub); margin-bottom: 0; }
-
-  /* Tabs */
-  .tabs {
-    display: flex; gap: 4px;
-    background: var(--bg);
-    padding: 4px;
-    border-radius: 10px;
-    margin: 30px 0 20px;
-    position: sticky;
-    top: 72px;
-    z-index: 50;
-  }
-  .tab-btn {
-    flex: 1;
-    padding: 12px 16px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    border-radius: 7px;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--sub);
-    transition: all 0.2s;
-  }
-  .tab-btn.active {
-    background: var(--card);
-    color: var(--text);
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  }
+  .tabs { display: flex; gap: 4px; background: var(--bg); padding: 4px; border-radius: 10px; margin: 30px 0 20px; position: sticky; top: 72px; z-index: 50; }
+  .tab-btn { flex: 1; padding: 12px 16px; border: none; background: transparent; cursor: pointer; border-radius: 7px; font-size: 15px; font-weight: 600; color: var(--sub); transition: all 0.2s; }
+  .tab-btn.active { background: var(--card); color: var(--text); box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
   .tab-content { display: none; }
   .tab-content.active { display: block; }
-
-  .scenario {
-    background: var(--card);
-    border-left: 4px solid var(--accent);
-    padding: 18px 22px;
-    border-radius: 0 8px 8px 0;
-    margin: 20px 0 30px;
-  }
-  .scenario-label {
-    font-size: 12px; font-weight: 700;
-    color: var(--accent);
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-  }
-
-  .step-block {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 22px 26px;
-    margin: 20px 0;
-  }
-  @media (max-width: 600px) {
-    .step-block { padding: 16px 14px; }
-  }
-  .step-heading {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 14px;
-    padding-bottom: 14px;
-    border-bottom: 1px dashed var(--border);
-  }
-  .step-circle {
-    width: 36px; height: 36px;
-    background: var(--accent);
-    color: white;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 800; font-size: 16px;
-    flex-shrink: 0;
-  }
+  .scenario { background: var(--card); border-left: 4px solid var(--accent); padding: 18px 22px; border-radius: 0 8px 8px 0; margin: 20px 0 30px; }
+  .scenario-label { font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: 1px; margin-bottom: 8px; }
+  .step-block { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 22px 26px; margin: 20px 0; }
+  @media (max-width: 600px) { .step-block { padding: 16px 14px; } }
+  .step-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px dashed var(--border); }
+  .step-circle { width: 36px; height: 36px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px; flex-shrink: 0; }
   .step-name { font-weight: 700; font-size: 18px; }
   .step-block p { margin-bottom: 10px; font-size: 15px; }
   .step-block p:last-child { margin-bottom: 0; }
-
-  /* Pareto chart */
-  .pareto-wrapper {
-    margin: 18px 0;
-  }
-  .pareto-label {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--accent);
-    margin-bottom: 10px;
-  }
-  .pareto-svg {
-    width: 100%;
-    height: auto;
-    display: block;
-    background: #fafaf8;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-  }
-  .pareto-legend {
-    display: flex;
-    gap: 14px;
-    font-size: 11px;
-    color: var(--sub);
-    margin-top: 8px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
+  .pareto-wrapper { margin: 18px 0; }
+  .pareto-label { font-size: 13px; font-weight: 700; color: var(--accent); margin-bottom: 10px; }
+  .pareto-svg { width: 100%; height: auto; display: block; background: #fafaf8; border-radius: 8px; border: 1px solid var(--border); }
+  .pareto-legend { display: flex; gap: 14px; font-size: 11px; color: var(--sub); margin-top: 8px; justify-content: center; flex-wrap: wrap; }
   .pl-item { display: flex; align-items: center; gap: 5px; }
   .pl-bar { width: 12px; height: 9px; background: #2d7a4f; border-radius: 2px; }
   .pl-line { width: 18px; height: 2px; background: #d97706; }
   .pl-80 { width: 18px; height: 0; border-top: 2px dashed #b8541e; }
-
-  .conclusion-small {
-    background: var(--accent-light);
-    border-left: 3px solid var(--accent);
-    padding: 10px 14px;
-    border-radius: 4px;
-    margin: 10px 0 20px;
-    font-size: 14px;
-  }
-
-  /* Matrix */
-  .matrix-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 14px 0;
-    font-size: 13px;
-  }
-  .matrix-table th, .matrix-table td {
-    padding: 10px 10px;
-    text-align: center;
-    border: 1px solid var(--border);
-  }
-  .matrix-table th {
-    background: var(--accent-light);
-    font-weight: 700;
-  }
-  .matrix-table td:first-child {
-    text-align: left;
-    font-weight: 500;
-  }
-  .matrix-table tr.winner {
-    background: #fffbe6;
-  }
+  .conclusion-small { background: var(--accent-light); border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 4px; margin: 10px 0 20px; font-size: 14px; }
+  .matrix-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+  .matrix-table th, .matrix-table td { padding: 10px 10px; text-align: center; border: 1px solid var(--border); }
+  .matrix-table th { background: var(--accent-light); font-weight: 700; }
+  .matrix-table td:first-child { text-align: left; font-weight: 500; }
+  .matrix-table tr.winner { background: #fffbe6; }
   .matrix-table tr.winner td { font-weight: 700; }
-  .matrix-table .rank {
-    display: inline-block;
-    width: 20px; height: 20px; line-height: 20px;
-    background: var(--accent);
-    color: white;
-    border-radius: 50%;
-    font-size: 11px;
-    font-weight: 700;
-    margin-right: 6px;
-  }
-  @media (max-width: 600px) {
-    .matrix-table { font-size: 12px; }
-    .matrix-table th, .matrix-table td { padding: 6px 4px; }
-  }
-
-  /* Outcome */
-  .outcome {
-    background: linear-gradient(to bottom right, var(--accent-light), var(--card));
-    border: 1px solid var(--accent);
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin: 20px 0;
-  }
-  .outcome-title {
-    font-weight: 700;
-    color: var(--accent);
-    margin-bottom: 10px;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .outcome-metrics {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 12px;
-    margin-top: 14px;
-  }
-  .metric {
-    background: var(--card);
-    padding: 12px 14px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-  }
-  .metric-label {
-    font-size: 11px;
-    color: var(--sub);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 4px;
-  }
-  .metric-value {
-    font-size: 18px;
-    font-weight: 800;
-    color: var(--accent);
-  }
+  .matrix-table .rank { display: inline-block; width: 20px; height: 20px; line-height: 20px; background: var(--accent); color: white; border-radius: 50%; font-size: 11px; font-weight: 700; margin-right: 6px; }
+  @media (max-width: 600px) { .matrix-table { font-size: 12px; } .matrix-table th, .matrix-table td { padding: 6px 4px; } }
+  .outcome { background: linear-gradient(to bottom right, var(--accent-light), var(--card)); border: 1px solid var(--accent); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+  .outcome-title { font-weight: 700; color: var(--accent); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .outcome-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-top: 14px; }
+  .metric { background: var(--card); padding: 12px 14px; border-radius: 8px; border: 1px solid var(--border); }
+  .metric-label { font-size: 11px; color: var(--sub); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .metric-value { font-size: 18px; font-weight: 800; color: var(--accent); }
   .metric-sub { font-size: 12px; color: var(--sub); }
-
-  .summary-block {
-    background: var(--card);
-    border: 2px solid var(--accent);
-    border-radius: 12px;
-    padding: 24px 28px;
-    margin: 40px 0;
-  }
+  .summary-block { background: var(--card); border: 2px solid var(--accent); border-radius: 12px; padding: 24px 28px; margin: 40px 0; }
   .summary-block h3 { margin-top: 0; }
 </style>
 </head>
@@ -252,15 +64,12 @@
       <div class="brand-sub" data-i18n="brandSub">現場改善の入り口</div>
     </div>
   </a>
-  <div class="lang-switch">
-    <button class="lang-btn active" data-lang="ja" onclick="kaizenApplyLang('ja')">日本語</button>
-    <button class="lang-btn" data-lang="en" onclick="kaizenApplyLang('en')">English</button>
-  </div>
+  <div class="lang-switch"></div>
 </header>
 
 <article class="chapter-content">
   <div class="chapter-header">
-    <div class="chapter-number-large">CHAPTER 7</div>
+    <div class="chapter-number-large" data-i18n="ch7Label">CHAPTER 7</div>
     <h2 data-i18n="ch7Title">実例で学ぶ</h2>
   </div>
 
@@ -274,12 +83,12 @@
 
   <div class="type-intro">
     <div class="type-card">
-      <span class="type-label">A型</span>
+      <span class="type-label" data-i18n="typeALabel">A型</span>
       <h4 data-i18n="typeAName">指標ドリブン</h4>
       <p data-i18n="typeADesc">会社のKPIや経営課題から入る。「受注増なのに設備能力が足りない」「歩留まりが悪化した」など、<strong>数字の異常や経営の方針</strong>がきっかけ。トヨタ系・大企業でよく使われる。</p>
     </div>
     <div class="type-card b">
-      <span class="type-label">B型</span>
+      <span class="type-label" data-i18n="typeBLabel">B型</span>
       <h4 data-i18n="typeBName">ヒアリングドリブン</h4>
       <p data-i18n="typeBDesc">現場の困りごとから入る。作業者・保全・品質の声を集め、<strong>評価マトリクス</strong>で客観的にテーマを選ぶ。働く人の参加意欲が高く、育成目的にも向いている。</p>
     </div>
@@ -290,60 +99,56 @@
   <p data-i18n="ch7_p3">以下、同じ架空の工場(製造業・従業員80名・工程A〜Dの4工程ライン)で、A型とB型、両方のアプローチを完走します。</p>
 
   <div class="tabs">
-    <button class="tab-btn active" data-tab="a" onclick="showTab('a')">A型(指標ドリブン)</button>
-    <button class="tab-btn" data-tab="b" onclick="showTab('b')">B型(ヒアリングドリブン)</button>
+    <button class="tab-btn active" data-tab="a" onclick="showTab('a')" data-i18n="tabA">A型(指標ドリブン)</button>
+    <button class="tab-btn" data-tab="b" onclick="showTab('b')" data-i18n="tabB">B型(ヒアリングドリブン)</button>
   </div>
 
   <!-- ========== TAB A ========== -->
   <div id="tab-a" class="tab-content active">
     <div class="scenario">
-      <div class="scenario-label">シナリオ(A型)</div>
-      <p><strong>状況:</strong>受注が前年比130%増。工場の可動率は維持しているが、<strong>不良率が前年同月比で1.8倍</strong>に悪化。役員から「来期までに不良率を元水準に戻せ」と指示。経営KPIレポートから発覚。</p>
+      <div class="scenario-label" data-i18n="scenarioALabel">シナリオ(A型)</div>
+      <p data-i18n="scenarioABody"><strong>状況:</strong>受注が前年比130%増。工場の可動率は維持しているが、<strong>不良率が前年同月比で1.8倍</strong>に悪化。役員から「来期までに不良率を元水準に戻せ」と指示。経営KPIレポートから発覚。</p>
     </div>
 
     <!-- Step 1 -->
     <div class="step-block">
       <div class="step-heading">
         <div class="step-circle">1</div>
-        <div class="step-name">テーマ選定</div>
+        <div class="step-name" data-i18n="stepA1Name">テーマ選定</div>
       </div>
-      <p><strong>テーマ:</strong>不良率の改善(前年同月比削減)</p>
-      <p><strong>背景:</strong>受注130%増に対し、不良率3.5%(前年1.9%)で年間ロス約600万円。顧客への納期遅延リスクあり。</p>
-      <p><strong>根拠:</strong>経営KPIレポート、品質月報、顧客クレーム件数の推移</p>
+      <p data-i18n="stepA1p1"><strong>テーマ:</strong>不良率の改善(前年同月比削減)</p>
+      <p data-i18n="stepA1p2"><strong>背景:</strong>受注130%増に対し、不良率3.5%(前年1.9%)で年間ロス約600万円。顧客への納期遅延リスクあり。</p>
+      <p data-i18n="stepA1p3"><strong>根拠:</strong>経営KPIレポート、品質月報、顧客クレーム件数の推移</p>
     </div>
 
-    <!-- Step 2: 現状把握(パレート図4枚) -->
+    <!-- Step 2 -->
     <div class="step-block">
       <div class="step-heading">
         <div class="step-circle">2</div>
-        <div class="step-name">現状把握</div>
+        <div class="step-name" data-i18n="stepA2Name">現状把握</div>
       </div>
-      <p>パレート図と層別ドリルダウンで、<strong>どこに問題が集中しているか</strong>を絞り込んでいく。</p>
+      <p data-i18n="stepA2p1">パレート図と層別ドリルダウンで、<strong>どこに問題が集中しているか</strong>を絞り込んでいく。</p>
 
       <!-- 層1 -->
       <div class="pareto-wrapper">
-        <div class="pareto-label">層1:不良の種類別(合計250件)</div>
+        <div class="pareto-label" data-i18n="layer1Label">層1:不良の種類別(合計250件)</div>
         <svg class="pareto-svg" viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
           <line x1="50" y1="290" x2="550" y2="290" stroke="#666" stroke-width="1"/>
           <line x1="50" y1="20" x2="50" y2="290" stroke="#666" stroke-width="1"/>
           <line x1="550" y1="20" x2="550" y2="290" stroke="#666" stroke-width="1"/>
-          <!-- 左軸(件数) -->
           <text x="45" y="294" text-anchor="end" font-size="11" fill="#6b6b6b">0</text>
           <text x="45" y="240" text-anchor="end" font-size="11" fill="#6b6b6b">50</text>
           <text x="45" y="186" text-anchor="end" font-size="11" fill="#6b6b6b">100</text>
           <text x="45" y="132" text-anchor="end" font-size="11" fill="#6b6b6b">150</text>
           <text x="45" y="78" text-anchor="end" font-size="11" fill="#6b6b6b">200</text>
           <text x="45" y="24" text-anchor="end" font-size="11" fill="#6b6b6b">250</text>
-          <text x="22" y="155" text-anchor="middle" font-size="10" fill="#6b6b6b" transform="rotate(-90 22 155)">件数</text>
-          <!-- 右軸(%) -->
+          <text x="22" y="155" text-anchor="middle" font-size="10" fill="#6b6b6b" transform="rotate(-90 22 155)" data-i18n-svg="yAxis">件数</text>
           <text x="555" y="294" text-anchor="start" font-size="11" fill="#6b6b6b">0%</text>
           <text x="555" y="186" text-anchor="start" font-size="11" fill="#6b6b6b">40%</text>
           <text x="555" y="132" text-anchor="start" font-size="11" fill="#6b6b6b">60%</text>
           <text x="555" y="78" text-anchor="start" font-size="11" fill="#6b6b6b">80%</text>
           <text x="555" y="24" text-anchor="start" font-size="11" fill="#6b6b6b">100%</text>
-          <!-- 80%line -->
           <line x1="50" y1="78" x2="550" y2="78" stroke="#b8541e" stroke-width="1.5" stroke-dasharray="5,4"/>
-          <!-- 棒 -->
           <rect x="50" y="133.4" width="125" height="156.6" fill="#2d7a4f" opacity="0.9"/>
           <text x="112.5" y="215" text-anchor="middle" font-size="15" fill="white" font-weight="700">145</text>
           <rect x="175" y="230.6" width="125" height="59.4" fill="#2d7a4f" opacity="0.7"/>
@@ -355,7 +160,6 @@
           <line x1="175" y1="133.4" x2="175" y2="290" stroke="white" stroke-width="1.5"/>
           <line x1="300" y1="230.6" x2="300" y2="290" stroke="white" stroke-width="1.5"/>
           <line x1="425" y1="257.6" x2="425" y2="290" stroke="white" stroke-width="1.5"/>
-          <!-- 折れ線 -->
           <polyline points="50,290 175,133.4 300,74 425,41.6 550,20" fill="none" stroke="#d97706" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
           <circle cx="50" cy="290" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
           <circle cx="175" cy="133.4" r="5" fill="#d97706" stroke="white" stroke-width="2.5"/>
@@ -366,7 +170,6 @@
           <text x="310" y="68" font-size="11" fill="#d97706" font-weight="700">80%</text>
           <text x="435" y="36" font-size="11" fill="#d97706" font-weight="700">92%</text>
           <text x="520" y="14" font-size="11" fill="#d97706" font-weight="700">100%</text>
-          <!-- X軸 -->
           <text x="112.5" y="308" text-anchor="middle" font-size="12" fill="#2c2c2c" font-weight="600">不良A</text>
           <text x="112.5" y="323" text-anchor="middle" font-size="10" fill="#6b6b6b">(寸法NG)</text>
           <text x="237.5" y="308" text-anchor="middle" font-size="12" fill="#2c2c2c" font-weight="600">不良B</text>
@@ -376,23 +179,20 @@
           <text x="487.5" y="308" text-anchor="middle" font-size="12" fill="#2c2c2c" font-weight="600">その他</text>
         </svg>
         <div class="pareto-legend">
-          <div class="pl-item"><div class="pl-bar"></div><span>件数(左軸)</span></div>
-          <div class="pl-item"><div class="pl-line"></div><span>累積比率(右軸)</span></div>
-          <div class="pl-item"><div class="pl-80"></div><span>80%ライン</span></div>
+          <div class="pl-item"><div class="pl-bar"></div><span data-i18n="legendCount">件数(左軸)</span></div>
+          <div class="pl-item"><div class="pl-line"></div><span data-i18n="legendCumu">累積比率(右軸)</span></div>
+          <div class="pl-item"><div class="pl-80"></div><span data-i18n="legend80">80%ライン</span></div>
         </div>
       </div>
-      <div class="conclusion-small">
-        → <strong>不良A(寸法NG)が58%で最大</strong>。ここに絞って深掘りする。
-      </div>
+      <div class="conclusion-small" data-i18n="layer1Conclusion">→ <strong>不良A(寸法NG)が58%で最大</strong>。ここに絞って深掘りする。</div>
 
       <!-- 層2 -->
       <div class="pareto-wrapper">
-        <div class="pareto-label">層2:不良Aを工程別(合計145件)</div>
+        <div class="pareto-label" data-i18n="layer2Label">層2:不良Aを工程別(合計145件)</div>
         <svg class="pareto-svg" viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
           <line x1="50" y1="290" x2="550" y2="290" stroke="#666" stroke-width="1"/>
           <line x1="50" y1="20" x2="50" y2="290" stroke="#666" stroke-width="1"/>
           <line x1="550" y1="20" x2="550" y2="290" stroke="#666" stroke-width="1"/>
-          <!-- 合計145、目盛りは150 -->
           <text x="45" y="294" text-anchor="end" font-size="11" fill="#6b6b6b">0</text>
           <text x="45" y="222" text-anchor="end" font-size="11" fill="#6b6b6b">40</text>
           <text x="45" y="150" font-size="11" fill="#6b6b6b" text-anchor="end">80</text>
@@ -405,14 +205,6 @@
           <text x="555" y="78" text-anchor="start" font-size="11" fill="#6b6b6b">80%</text>
           <text x="555" y="24" text-anchor="start" font-size="11" fill="#6b6b6b">100%</text>
           <line x1="50" y1="78" x2="550" y2="78" stroke="#b8541e" stroke-width="1.5" stroke-dasharray="5,4"/>
-
-          <!--
-            合計145件、最大145、棒高さ = 件数/145 * 270
-            工程B 105件: Y = 290 - 105/145*270 = 290 - 195.5 = 94.5, 高さ195.5
-            工程A  15件: Y = 290 - 15/145*270  = 290 - 27.9  = 262.1, 高さ27.9
-            工程C  15件: 同上
-            工程D  10件: Y = 290 - 10/145*270  = 290 - 18.6  = 271.4, 高さ18.6
-          -->
           <rect x="50" y="94.5" width="125" height="195.5" fill="#2d7a4f" opacity="0.9"/>
           <text x="112.5" y="200" text-anchor="middle" font-size="15" fill="white" font-weight="700">105</text>
           <rect x="175" y="262.1" width="125" height="27.9" fill="#2d7a4f" opacity="0.7"/>
@@ -424,9 +216,6 @@
           <line x1="175" y1="94.5" x2="175" y2="290" stroke="white" stroke-width="1.5"/>
           <line x1="300" y1="262.1" x2="300" y2="290" stroke="white" stroke-width="1.5"/>
           <line x1="425" y1="262.1" x2="425" y2="290" stroke="white" stroke-width="1.5"/>
-
-          <!-- 累積: B=105(72%), BA=120(83%), BAC=135(93%), BACD=145(100%) -->
-          <!-- Y: 72%=290-0.72*270=95.6, 83%=290-0.83*270=65.9, 93%=290-0.93*270=38.9, 100%=20 -->
           <polyline points="50,290 175,95.6 300,65.9 425,38.9 550,20" fill="none" stroke="#d97706" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
           <circle cx="50" cy="290" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
           <circle cx="175" cy="95.6" r="5" fill="#d97706" stroke="white" stroke-width="2.5"/>
@@ -437,25 +226,21 @@
           <text x="310" y="60" font-size="11" fill="#d97706" font-weight="700">83%</text>
           <text x="435" y="34" font-size="11" fill="#d97706" font-weight="700">93%</text>
           <text x="520" y="14" font-size="11" fill="#d97706" font-weight="700">100%</text>
-
           <text x="112.5" y="308" text-anchor="middle" font-size="12" fill="#2c2c2c" font-weight="600">工程B</text>
           <text x="237.5" y="308" text-anchor="middle" font-size="12" fill="#2c2c2c" font-weight="600">工程A</text>
           <text x="362.5" y="308" text-anchor="middle" font-size="12" fill="#2c2c2c" font-weight="600">工程C</text>
           <text x="487.5" y="308" text-anchor="middle" font-size="12" fill="#2c2c2c" font-weight="600">工程D</text>
         </svg>
       </div>
-      <div class="conclusion-small">
-        → <strong>工程Bで72%</strong>発生。さらに工程Bを深掘りする。
-      </div>
+      <div class="conclusion-small" data-i18n="layer2Conclusion">→ <strong>工程Bで72%</strong>発生。さらに工程Bを深掘りする。</div>
 
       <!-- 層3 -->
       <div class="pareto-wrapper">
-        <div class="pareto-label">層3:工程Bの不良Aを時間帯別(合計105件)</div>
+        <div class="pareto-label" data-i18n="layer3Label">層3:工程Bの不良Aを時間帯別(合計105件)</div>
         <svg class="pareto-svg" viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
           <line x1="50" y1="290" x2="550" y2="290" stroke="#666" stroke-width="1"/>
           <line x1="50" y1="20" x2="50" y2="290" stroke="#666" stroke-width="1"/>
           <line x1="550" y1="20" x2="550" y2="290" stroke="#666" stroke-width="1"/>
-          <!-- 合計105、目盛り110 -->
           <text x="45" y="294" text-anchor="end" font-size="11" fill="#6b6b6b">0</text>
           <text x="45" y="226" text-anchor="end" font-size="11" fill="#6b6b6b">30</text>
           <text x="45" y="157" text-anchor="end" font-size="11" fill="#6b6b6b">60</text>
@@ -468,17 +253,6 @@
           <text x="555" y="78" text-anchor="start" font-size="11" fill="#6b6b6b">80%</text>
           <text x="555" y="24" text-anchor="start" font-size="11" fill="#6b6b6b">100%</text>
           <line x1="50" y1="78" x2="550" y2="78" stroke="#b8541e" stroke-width="1.5" stroke-dasharray="5,4"/>
-
-          <!--
-            合計105、軸上限を合計105と設定(件数/105*270)
-            朝一 67件: Y = 290 - 67/105*270 = 290 - 172.3 = 117.7
-            日中 19件: Y = 290 - 19/105*270 = 290 - 48.9  = 241.1
-            午後 16件: Y = 290 - 16/105*270 = 290 - 41.1  = 248.9
-            夜間  3件: Y = 290 -  3/105*270 = 290 -  7.7  = 282.3
-
-            累積:朝一67(63.8%), 日中86(81.9%), 午後102(97.1%), 夜間105(100%)
-            折れ線Y: 63.8%=290-0.638*270=117.7, 81.9%=290-0.819*270=68.9, 97.1%=290-0.971*270=27.8, 100%=20
-          -->
           <rect x="50" y="117.7" width="125" height="172.3" fill="#2d7a4f" opacity="0.9"/>
           <text x="112.5" y="212" text-anchor="middle" font-size="15" fill="white" font-weight="700">67</text>
           <rect x="175" y="241.1" width="125" height="48.9" fill="#2d7a4f" opacity="0.7"/>
@@ -490,7 +264,6 @@
           <line x1="175" y1="117.7" x2="175" y2="290" stroke="white" stroke-width="1.5"/>
           <line x1="300" y1="241.1" x2="300" y2="290" stroke="white" stroke-width="1.5"/>
           <line x1="425" y1="248.9" x2="425" y2="290" stroke="white" stroke-width="1.5"/>
-
           <polyline points="50,290 175,117.7 300,68.9 425,27.8 550,20" fill="none" stroke="#d97706" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
           <circle cx="50" cy="290" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
           <circle cx="175" cy="117.7" r="5" fill="#d97706" stroke="white" stroke-width="2.5"/>
@@ -501,7 +274,6 @@
           <text x="310" y="63" font-size="11" fill="#d97706" font-weight="700">82%</text>
           <text x="435" y="22" font-size="11" fill="#d97706" font-weight="700">97%</text>
           <text x="510" y="14" font-size="11" fill="#d97706" font-weight="700">100%</text>
-
           <text x="112.5" y="308" text-anchor="middle" font-size="12" fill="#2c2c2c" font-weight="600">朝一</text>
           <text x="112.5" y="323" text-anchor="middle" font-size="10" fill="#6b6b6b">(8-10時)</text>
           <text x="237.5" y="308" text-anchor="middle" font-size="12" fill="#2c2c2c" font-weight="600">日中</text>
@@ -511,18 +283,15 @@
           <text x="487.5" y="308" text-anchor="middle" font-size="12" fill="#2c2c2c" font-weight="600">夜間</text>
         </svg>
       </div>
-      <div class="conclusion-small">
-        → <strong>朝一(8-10時)に64%集中</strong>。さらに機械別に見る。
-      </div>
+      <div class="conclusion-small" data-i18n="layer3Conclusion">→ <strong>朝一(8-10時)に64%集中</strong>。さらに機械別に見る。</div>
 
       <!-- 層4 -->
       <div class="pareto-wrapper">
-        <div class="pareto-label">層4:朝一・工程Bの不良Aを機械別(合計67件)</div>
+        <div class="pareto-label" data-i18n="layer4Label">層4:朝一・工程Bの不良Aを機械別(合計67件)</div>
         <svg class="pareto-svg" viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
           <line x1="50" y1="290" x2="550" y2="290" stroke="#666" stroke-width="1"/>
           <line x1="50" y1="20" x2="50" y2="290" stroke="#666" stroke-width="1"/>
           <line x1="550" y1="20" x2="550" y2="290" stroke="#666" stroke-width="1"/>
-          <!-- 合計67、軸70まで -->
           <text x="45" y="294" text-anchor="end" font-size="11" fill="#6b6b6b">0</text>
           <text x="45" y="213" text-anchor="end" font-size="11" fill="#6b6b6b">20</text>
           <text x="45" y="135" text-anchor="end" font-size="11" fill="#6b6b6b">40</text>
@@ -535,16 +304,6 @@
           <text x="555" y="78" text-anchor="start" font-size="11" fill="#6b6b6b">80%</text>
           <text x="555" y="24" text-anchor="start" font-size="11" fill="#6b6b6b">100%</text>
           <line x1="50" y1="78" x2="550" y2="78" stroke="#b8541e" stroke-width="1.5" stroke-dasharray="5,4"/>
-
-          <!--
-            棒3本(機械C、B-1、B-3)、棒幅 = 500/3 = 166.67
-            機械C 56件: Y = 290 - 56/67*270 = 290 - 225.7 = 64.3
-            機械B-1 6件: Y = 290 - 6/67*270  = 290 - 24.2  = 265.8
-            機械B-3 5件: Y = 290 - 5/67*270  = 290 - 20.1  = 269.9
-
-            累積:C=56(83.6%), CB1=62(92.5%), CB1B3=67(100%)
-            折れ線Y: 83.6%=290-0.836*270=64.3, 92.5%=290-0.925*270=40.3, 100%=20
-          -->
           <rect x="50" y="64.3" width="166.67" height="225.7" fill="#2d7a4f" opacity="0.9"/>
           <text x="133.3" y="180" text-anchor="middle" font-size="16" fill="white" font-weight="700">56</text>
           <rect x="216.67" y="265.8" width="166.67" height="24.2" fill="#2d7a4f" opacity="0.7"/>
@@ -553,8 +312,6 @@
           <text x="466.67" y="284" text-anchor="middle" font-size="12" fill="white" font-weight="700">5</text>
           <line x1="216.67" y1="64.3" x2="216.67" y2="290" stroke="white" stroke-width="1.5"/>
           <line x1="383.33" y1="265.8" x2="383.33" y2="290" stroke="white" stroke-width="1.5"/>
-
-          <!-- 折れ線(棒3本、点4つ) -->
           <polyline points="50,290 216.67,64.3 383.33,40.3 550,20" fill="none" stroke="#d97706" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
           <circle cx="50" cy="290" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
           <circle cx="216.67" cy="64.3" r="5" fill="#d97706" stroke="white" stroke-width="2.5"/>
@@ -563,7 +320,6 @@
           <text x="226" y="60" font-size="11" fill="#d97706" font-weight="700">84%</text>
           <text x="393" y="36" font-size="11" fill="#d97706" font-weight="700">93%</text>
           <text x="510" y="14" font-size="11" fill="#d97706" font-weight="700">100%</text>
-
           <text x="133.3" y="308" text-anchor="middle" font-size="12" fill="#2c2c2c" font-weight="600">機械C</text>
           <text x="133.3" y="323" text-anchor="middle" font-size="10" fill="#6b6b6b">(B-2号機)</text>
           <text x="300" y="308" text-anchor="middle" font-size="12" fill="#2c2c2c" font-weight="600">機械B-1</text>
@@ -572,8 +328,8 @@
       </div>
 
       <div class="callout">
-        <div class="callout-title"><span class="callout-icon">🎯</span>絞り込み結果</div>
-        <p><strong>朝一(8-10時)の工程B・機械Cで発生する、寸法NG不良</strong>。機械Cで84%を占める。<strong>ここに対策を打てば全体が大きく動く</strong>。</p>
+        <div class="callout-title"><span class="callout-icon">🎯</span><span data-i18n="narrowdownTitle">絞り込み結果</span></div>
+        <p data-i18n="narrowdownBody"><strong>朝一(8-10時)の工程B・機械Cで発生する、寸法NG不良</strong>。機械Cで84%を占める。<strong>ここに対策を打てば全体が大きく動く</strong>。</p>
       </div>
     </div>
 
@@ -581,23 +337,23 @@
     <div class="step-block">
       <div class="step-heading">
         <div class="step-circle">3</div>
-        <div class="step-name">目標設定</div>
+        <div class="step-name" data-i18n="stepA3Name">目標設定</div>
       </div>
-      <p><strong>目標:</strong>不良率 3.5% → <strong>1.0%以下</strong>(前年水準への復帰)</p>
-      <p><strong>削減額目標:</strong>年間600万円 → <strong>170万円以下</strong>(430万円削減)</p>
-      <p><strong>期限:</strong>3ヶ月後</p>
+      <p data-i18n="stepA3p1"><strong>目標:</strong>不良率 3.5% → <strong>1.0%以下</strong>(前年水準への復帰)</p>
+      <p data-i18n="stepA3p2"><strong>削減額目標:</strong>年間600万円 → <strong>170万円以下</strong>(430万円削減)</p>
+      <p data-i18n="stepA3p3"><strong>期限:</strong>3ヶ月後</p>
     </div>
 
     <!-- Step 4 -->
     <div class="step-block">
       <div class="step-heading">
         <div class="step-circle">4</div>
-        <div class="step-name">要因分析</div>
+        <div class="step-name" data-i18n="stepA4Name">要因分析</div>
       </div>
-      <p>絞り込んだ条件「朝一・機械Cの寸法NG」に対して、<strong>特性要因図(4M)</strong>で原因候補を洗い出し:</p>
-      <p>• <strong>Machine(機械):</strong>夜間停止中の温度低下で部品が収縮<br>• <strong>Method(方法):</strong>朝一の立ち上げ手順に温度補正がない<br>• <strong>Man(人):</strong>(関係なし、複数作業者で同傾向)<br>• <strong>Material(材料):</strong>(関係なし、ロット差と相関なし)</p>
-      <p><strong>なぜなぜ分析:</strong></p>
-      <p>
+      <p data-i18n="stepA4p1">絞り込んだ条件「朝一・機械Cの寸法NG」に対して、<strong>特性要因図(4M)</strong>で原因候補を洗い出し:</p>
+      <p data-i18n="stepA4p2">• <strong>Machine(機械):</strong>夜間停止中の温度低下で部品が収縮<br>• <strong>Method(方法):</strong>朝一の立ち上げ手順に温度補正がない<br>• <strong>Man(人):</strong>(関係なし、複数作業者で同傾向)<br>• <strong>Material(材料):</strong>(関係なし、ロット差と相関なし)</p>
+      <p data-i18n="stepA4p3"><strong>なぜなぜ分析:</strong></p>
+      <p data-i18n="stepA4p4">
       なぜ1:朝一に寸法NGが多い → 機械Cの調整がずれている<br>
       なぜ2:調整がずれる → 前日終業時と状態が変わっている<br>
       なぜ3:状態が変わる → 夜間の温度変化で部品が収縮<br>
@@ -605,8 +361,8 @@
       なぜ5:補正手順がない → 朝の立ち上げ標準化が未整備
       </p>
       <div class="callout">
-        <div class="callout-title"><span class="callout-icon">💡</span>真因</div>
-        <p><strong>朝一の立ち上げ手順の不備</strong>(温度補正プロセスの欠如)<br>判定:「この手順を追加すれば再発しないか?」→ <strong>Yes</strong>。真因と確定。</p>
+        <div class="callout-title"><span class="callout-icon">💡</span><span data-i18n="realCauseTitle">真因</span></div>
+        <p data-i18n="realCauseBody"><strong>朝一の立ち上げ手順の不備</strong>(温度補正プロセスの欠如)<br>判定:「この手順を追加すれば再発しないか?」→ <strong>Yes</strong>。真因と確定。</p>
       </div>
     </div>
 
@@ -614,185 +370,184 @@
     <div class="step-block">
       <div class="step-heading">
         <div class="step-circle">5</div>
-        <div class="step-name">対策検討・実施</div>
+        <div class="step-name" data-i18n="stepA5Name">対策検討・実施</div>
       </div>
-      <p><strong>対策候補の評価マトリクス:</strong></p>
+      <p data-i18n="stepA5p1"><strong>対策候補の評価マトリクス:</strong></p>
       <table class="matrix-table">
         <thead>
-          <tr><th>対策案</th><th>効果</th><th>実現性</th><th>横展開</th><th>合計</th></tr>
+          <tr><th data-i18n="matrixHeadMeasure">対策案</th><th data-i18n="matrixHeadEffect">効果</th><th data-i18n="matrixHeadFeasible">実現性</th><th data-i18n="matrixHeadLateral">横展開</th><th data-i18n="matrixHeadTotal">合計</th></tr>
         </thead>
         <tbody>
-          <tr><td>機械C更新(温度制御付き)</td><td>5</td><td>1</td><td>2</td><td>8</td></tr>
-          <tr class="winner"><td><span class="rank">1</span>朝一の温度補正手順追加(5分)</td><td>4</td><td>5</td><td>5</td><td>14</td></tr>
-          <tr><td>工場全体の温調システム導入</td><td>5</td><td>2</td><td>1</td><td>8</td></tr>
-          <tr><td>夜間も最低稼働を維持</td><td>3</td><td>3</td><td>3</td><td>9</td></tr>
+          <tr><td data-i18n="measure1">機械C更新(温度制御付き)</td><td>5</td><td>1</td><td>2</td><td>8</td></tr>
+          <tr class="winner"><td><span class="rank">1</span><span data-i18n="measure2">朝一の温度補正手順追加(5分)</span></td><td>4</td><td>5</td><td>5</td><td>14</td></tr>
+          <tr><td data-i18n="measure3">工場全体の温調システム導入</td><td>5</td><td>2</td><td>1</td><td>8</td></tr>
+          <tr><td data-i18n="measure4">夜間も最低稼働を維持</td><td>3</td><td>3</td><td>3</td><td>9</td></tr>
         </tbody>
       </table>
-      <p><strong>採用:</strong>朝一の温度補正手順追加(合計14点)。費用ほぼゼロ、他ラインにも即適用可能。</p>
-      <p><strong>実施内容:</strong>立ち上げ時に機械Cのウォームアップ5分を追加、写真付き手順書を機械脇に掲示、最初の10個を検品強化。</p>
+      <p data-i18n="stepA5p2"><strong>採用:</strong>朝一の温度補正手順追加(合計14点)。費用ほぼゼロ、他ラインにも即適用可能。</p>
+      <p data-i18n="stepA5p3"><strong>実施内容:</strong>立ち上げ時に機械Cのウォームアップ5分を追加、写真付き手順書を機械脇に掲示、最初の10個を検品強化。</p>
     </div>
 
     <!-- Step 6 -->
     <div class="step-block">
       <div class="step-heading">
         <div class="step-circle">6</div>
-        <div class="step-name">効果確認</div>
+        <div class="step-name" data-i18n="stepA6Name">効果確認</div>
       </div>
       <div class="outcome">
-        <div class="outcome-title">📊 実施1ヶ月後の結果</div>
+        <div class="outcome-title">📊 <span data-i18n="outcomeATitle">実施1ヶ月後の結果</span></div>
         <div class="outcome-metrics">
-          <div class="metric"><div class="metric-label">不良率</div><div class="metric-value">0.8%</div><div class="metric-sub">(3.5% → 0.8%)</div></div>
-          <div class="metric"><div class="metric-label">年間削減額</div><div class="metric-value">430万円</div><div class="metric-sub">目標達成</div></div>
-          <div class="metric"><div class="metric-label">対策費用</div><div class="metric-value">約0円</div><div class="metric-sub">手順書制作のみ</div></div>
-          <div class="metric"><div class="metric-label">副次効果</div><div class="metric-value">8分短縮</div><div class="metric-sub">朝の立ち上げ時間</div></div>
+          <div class="metric"><div class="metric-label" data-i18n="metricDefectRate">不良率</div><div class="metric-value">0.8%</div><div class="metric-sub">(3.5% → 0.8%)</div></div>
+          <div class="metric"><div class="metric-label" data-i18n="metricAnnualSave">年間削減額</div><div class="metric-value">430万円</div><div class="metric-sub" data-i18n="metricGoalAchieved">目標達成</div></div>
+          <div class="metric"><div class="metric-label" data-i18n="metricCost">対策費用</div><div class="metric-value">約0円</div><div class="metric-sub" data-i18n="metricCostSub">手順書制作のみ</div></div>
+          <div class="metric"><div class="metric-label" data-i18n="metricSide">副次効果</div><div class="metric-value" data-i18n="metricSideValue">8分短縮</div><div class="metric-sub" data-i18n="metricSideSub">朝の立ち上げ時間</div></div>
         </div>
       </div>
-      <p>目標値1.0%を上回る0.8%を達成。不良Aだけでなく、副次的に<strong>朝のライン立ち上げ時間も平均8分短縮</strong>(手順が明確になり迷いが消えた)。</p>
+      <p data-i18n="stepA6p1">目標値1.0%を上回る0.8%を達成。不良Aだけでなく、副次的に<strong>朝のライン立ち上げ時間も平均8分短縮</strong>(手順が明確になり迷いが消えた)。</p>
     </div>
 
     <!-- Step 7 -->
     <div class="step-block">
       <div class="step-heading">
         <div class="step-circle">7</div>
-        <div class="step-name">標準化・歯止め</div>
+        <div class="step-name" data-i18n="stepA7Name">標準化・歯止め</div>
       </div>
-      <p>• <strong>作業標準書の更新</strong>:新しい温度補正手順を正式に組み込む<br>• <strong>新人教育</strong>:入社時研修のチェック項目に追加<br>• <strong>月次レビュー</strong>:不良率を月次で監視、閾値超過でアラート<br>• <strong>横展開</strong>:工程C・工程Dの機械でも同様の現象の有無を調査 → 工程Dでも効果確認<br>• <strong>報告</strong>:役員会で四半期レビューに反映</p>
+      <p data-i18n="stepA7p1">• <strong>作業標準書の更新</strong>:新しい温度補正手順を正式に組み込む<br>• <strong>新人教育</strong>:入社時研修のチェック項目に追加<br>• <strong>月次レビュー</strong>:不良率を月次で監視、閾値超過でアラート<br>• <strong>横展開</strong>:工程C・工程Dの機械でも同様の現象の有無を調査 → 工程Dでも効果確認<br>• <strong>報告</strong>:役員会で四半期レビューに反映</p>
     </div>
   </div>
 
   <!-- ========== TAB B ========== -->
   <div id="tab-b" class="tab-content">
     <div class="scenario">
-      <div class="scenario-label">シナリオ(B型)</div>
-      <p><strong>状況:</strong>現場リーダーが作業者から「なんか最近朝しんどい」「工具探すのに時間かかる」などの声をよく聞くようになった。<strong>何が一番困りごとなのか</strong>を客観的に把握するため、全員ヒアリングを実施。</p>
+      <div class="scenario-label" data-i18n="scenarioBLabel">シナリオ(B型)</div>
+      <p data-i18n="scenarioBBody"><strong>状況:</strong>現場リーダーが作業者から「なんか最近朝しんどい」「工具探すのに時間かかる」などの声をよく聞くようになった。<strong>何が一番困りごとなのか</strong>を客観的に把握するため、全員ヒアリングを実施。</p>
     </div>
 
     <div class="step-block">
       <div class="step-heading">
         <div class="step-circle">1</div>
-        <div class="step-name">テーマ選定(ヒアリング型)</div>
+        <div class="step-name" data-i18n="stepB1Name">テーマ選定(ヒアリング型)</div>
       </div>
-      <p><strong>Step 1-1: 現場ヒアリング(10件収集)</strong></p>
-      <p>作業者・保全・品質担当、全員から困りごとを1人3件まで出してもらい、重複を整理して10件に集約:</p>
-      <p>① 朝一の不良が多い<br>② 工具が散らかって探す時間がかかる<br>③ 出庫待ちで作業が止まる時間がある<br>④ 日報の入力が面倒<br>⑤ 部品供給のタイミングがバラバラ<br>⑥ 夜勤と昼勤の引き継ぎが不十分<br>⑦ 検査の基準が人によって違う<br>⑧ エアの圧力が時々弱くなる<br>⑨ 休憩所が暑い/寒い<br>⑩ 更衣室までが遠い</p>
-      <p><strong>玉石混交で構わない。</strong>QC対象にしにくいものも含めて、まず全部並べる。</p>
+      <p data-i18n="stepB1p1"><strong>Step 1-1: 現場ヒアリング(10件収集)</strong></p>
+      <p data-i18n="stepB1p2">作業者・保全・品質担当、全員から困りごとを1人3件まで出してもらい、重複を整理して10件に集約:</p>
+      <p data-i18n="stepB1p3">① 朝一の不良が多い<br>② 工具が散らかって探す時間がかかる<br>③ 出庫待ちで作業が止まる時間がある<br>④ 日報の入力が面倒<br>⑤ 部品供給のタイミングがバラバラ<br>⑥ 夜勤と昼勤の引き継ぎが不十分<br>⑦ 検査の基準が人によって違う<br>⑧ エアの圧力が時々弱くなる<br>⑨ 休憩所が暑い/寒い<br>⑩ 更衣室までが遠い</p>
+      <p data-i18n="stepB1p4"><strong>玉石混交で構わない。</strong>QC対象にしにくいものも含めて、まず全部並べる。</p>
 
-      <p style="margin-top:18px;"><strong>Step 1-2: 評価マトリクスで並べる(5点満点 × 4軸)</strong></p>
+      <p data-i18n="stepB1p5" style="margin-top:18px;"><strong>Step 1-2: 評価マトリクスで並べる(5点満点 × 4軸)</strong></p>
       <table class="matrix-table">
         <thead>
-          <tr><th>困りごと</th><th>影響度</th><th>実現性</th><th>数値化</th><th>裁量</th><th>合計</th></tr>
+          <tr><th data-i18n="bMatrixProblem">困りごと</th><th data-i18n="bMatrixImpact">影響度</th><th data-i18n="bMatrixFeasible">実現性</th><th data-i18n="bMatrixQuant">数値化</th><th data-i18n="bMatrixAuto">裁量</th><th data-i18n="bMatrixTotal">合計</th></tr>
         </thead>
         <tbody>
-          <tr class="winner"><td><span class="rank">1</span>朝一の不良多発</td><td>5</td><td>4</td><td>5</td><td>4</td><td>18</td></tr>
-          <tr><td><span class="rank" style="background:#888;">2</span>工具の散らかり</td><td>3</td><td>5</td><td>3</td><td>5</td><td>16</td></tr>
-          <tr><td><span class="rank" style="background:#aaa;">3</span>検査基準のばらつき</td><td>4</td><td>3</td><td>4</td><td>4</td><td>15</td></tr>
-          <tr><td>エア圧不安定</td><td>4</td><td>3</td><td>4</td><td>3</td><td>14</td></tr>
-          <tr><td>出庫待ち</td><td>4</td><td>2</td><td>4</td><td>2</td><td>12</td></tr>
-          <tr><td>引き継ぎ不十分</td><td>3</td><td>3</td><td>2</td><td>3</td><td>11</td></tr>
-          <tr><td>日報入力が面倒</td><td>2</td><td>4</td><td>2</td><td>3</td><td>11</td></tr>
-          <tr><td>部品供給バラバラ</td><td>3</td><td>2</td><td>3</td><td>2</td><td>10</td></tr>
-          <tr><td>休憩所の温度</td><td>2</td><td>3</td><td>1</td><td>3</td><td>9</td></tr>
-          <tr><td>更衣室が遠い</td><td>1</td><td>1</td><td>1</td><td>1</td><td>4</td></tr>
+          <tr class="winner"><td><span class="rank">1</span><span data-i18n="bItem1">朝一の不良多発</span></td><td>5</td><td>4</td><td>5</td><td>4</td><td>18</td></tr>
+          <tr><td><span class="rank" style="background:#888;">2</span><span data-i18n="bItem2">工具の散らかり</span></td><td>3</td><td>5</td><td>3</td><td>5</td><td>16</td></tr>
+          <tr><td><span class="rank" style="background:#aaa;">3</span><span data-i18n="bItem3">検査基準のばらつき</span></td><td>4</td><td>3</td><td>4</td><td>4</td><td>15</td></tr>
+          <tr><td data-i18n="bItem4">エア圧不安定</td><td>4</td><td>3</td><td>4</td><td>3</td><td>14</td></tr>
+          <tr><td data-i18n="bItem5">出庫待ち</td><td>4</td><td>2</td><td>4</td><td>2</td><td>12</td></tr>
+          <tr><td data-i18n="bItem6">引き継ぎ不十分</td><td>3</td><td>3</td><td>2</td><td>3</td><td>11</td></tr>
+          <tr><td data-i18n="bItem7">日報入力が面倒</td><td>2</td><td>4</td><td>2</td><td>3</td><td>11</td></tr>
+          <tr><td data-i18n="bItem8">部品供給バラバラ</td><td>3</td><td>2</td><td>3</td><td>2</td><td>10</td></tr>
+          <tr><td data-i18n="bItem9">休憩所の温度</td><td>2</td><td>3</td><td>1</td><td>3</td><td>9</td></tr>
+          <tr><td data-i18n="bItem10">更衣室が遠い</td><td>1</td><td>1</td><td>1</td><td>1</td><td>4</td></tr>
         </tbody>
       </table>
 
-      <p><strong>選定結果:</strong></p>
-      <p>• <strong>1位「朝一の不良多発」(18点)</strong> → 今期のテーマに採用<br>• 2位・3位はバックログとして次期以降に送る<br>• 下位(休憩所・更衣室など)は設備管理側に共有</p>
+      <p data-i18n="stepB1p6"><strong>選定結果:</strong></p>
+      <p data-i18n="stepB1p7">• <strong>1位「朝一の不良多発」(18点)</strong> → 今期のテーマに採用<br>• 2位・3位はバックログとして次期以降に送る<br>• 下位(休憩所・更衣室など)は設備管理側に共有</p>
 
       <div class="callout">
-        <div class="callout-title"><span class="callout-icon">💡</span>なぜこのテーマか(根拠あり)</div>
-        <p>「朝一の不良」を選んだのは<strong>直感じゃない</strong>。<strong>影響度・実現性・数値化・裁量の4軸で評価した結果、18点で最上位</strong>だったから。質疑応答で「なぜこれを選んだ?」と聞かれても、<strong>全10件の評価表で答えられる</strong>。</p>
+        <div class="callout-title"><span class="callout-icon">💡</span><span data-i18n="bCalloutTitle">なぜこのテーマか(根拠あり)</span></div>
+        <p data-i18n="bCalloutBody">「朝一の不良」を選んだのは<strong>直感じゃない</strong>。<strong>影響度・実現性・数値化・裁量の4軸で評価した結果、18点で最上位</strong>だったから。質疑応答で「なぜこれを選んだ?」と聞かれても、<strong>全10件の評価表で答えられる</strong>。</p>
       </div>
     </div>
 
     <div class="step-block">
       <div class="step-heading">
         <div class="step-circle">2</div>
-        <div class="step-name">現状把握</div>
+        <div class="step-name" data-i18n="stepB2Name">現状把握</div>
       </div>
-      <p>テーマが決まったら、ここからはA型と<strong>同じドリルダウン</strong>で現状把握する。</p>
-      <p>ヒアリングで出た「朝一の不良」を裏付けるデータを取る → 層別ドリルダウン → <strong>朝一・工程B・機械C・寸法NG不良</strong>に絞り込み。</p>
-      <p>(詳細はA型タブの層1〜層4と同じパレート図。データがヒアリングの内容を裏付ける形になる。)</p>
+      <p data-i18n="stepB2p1">テーマが決まったら、ここからはA型と<strong>同じドリルダウン</strong>で現状把握する。</p>
+      <p data-i18n="stepB2p2">ヒアリングで出た「朝一の不良」を裏付けるデータを取る → 層別ドリルダウン → <strong>朝一・工程B・機械C・寸法NG不良</strong>に絞り込み。</p>
+      <p data-i18n="stepB2p3">(詳細はA型タブの層1〜層4と同じパレート図。データがヒアリングの内容を裏付ける形になる。)</p>
     </div>
 
     <div class="step-block">
       <div class="step-heading">
         <div class="step-circle">3</div>
-        <div class="step-name">目標設定</div>
+        <div class="step-name" data-i18n="stepB3Name">目標設定</div>
       </div>
-      <p><strong>目標:</strong>不良率 3.5% → <strong>1.0%以下</strong></p>
-      <p><strong>削減額目標:</strong>年間約430万円</p>
-      <p><strong>期限:</strong>3ヶ月後</p>
-      <p>(A型と同じ数字に辿り着く。入口が違っても、現象が同じなら数字も同じ。)</p>
+      <p data-i18n="stepB3p1"><strong>目標:</strong>不良率 3.5% → <strong>1.0%以下</strong></p>
+      <p data-i18n="stepB3p2"><strong>削減額目標:</strong>年間約430万円</p>
+      <p data-i18n="stepB3p3"><strong>期限:</strong>3ヶ月後</p>
+      <p data-i18n="stepB3p4">(A型と同じ数字に辿り着く。入口が違っても、現象が同じなら数字も同じ。)</p>
     </div>
 
     <div class="step-block">
       <div class="step-heading">
         <div class="step-circle">4</div>
-        <div class="step-name">要因分析</div>
+        <div class="step-name" data-i18n="stepB4Name">要因分析</div>
       </div>
-      <p>B型では<strong>人・方法の観点にやや重み</strong>を置いて4M分析する(現場ヒアリング起点だから、現場に根ざした視点が活きる)。</p>
-      <p>ただし結論は同じ:<strong>朝一の立ち上げ手順の不備</strong>が真因。</p>
-      <p>追加で見つかった知見:現場ヒアリングから<strong>「ベテランは経験で朝の機械を数分空回ししている」</strong>という暗黙知が判明。真因分析で裏付けられた。</p>
+      <p data-i18n="stepB4p1">B型では<strong>人・方法の観点にやや重み</strong>を置いて4M分析する(現場ヒアリング起点だから、現場に根ざした視点が活きる)。</p>
+      <p data-i18n="stepB4p2">ただし結論は同じ:<strong>朝一の立ち上げ手順の不備</strong>が真因。</p>
+      <p data-i18n="stepB4p3">追加で見つかった知見:現場ヒアリングから<strong>「ベテランは経験で朝の機械を数分空回ししている」</strong>という暗黙知が判明。真因分析で裏付けられた。</p>
     </div>
 
     <div class="step-block">
       <div class="step-heading">
         <div class="step-circle">5</div>
-        <div class="step-name">対策検討・実施</div>
+        <div class="step-name" data-i18n="stepB5Name">対策検討・実施</div>
       </div>
-      <p>対策はA型と<strong>ほぼ同じ</strong>(温度補正5分手順の追加)だが、B型では<strong>ベテランの暗黙知を形式知化</strong>する形で進める。</p>
-      <p>現場ヒアリングから出発してるので、<strong>「自分たちで選んだ、自分たちで作る」</strong>感が強く、手順遵守率が高い。</p>
+      <p data-i18n="stepB5p1">対策はA型と<strong>ほぼ同じ</strong>(温度補正5分手順の追加)だが、B型では<strong>ベテランの暗黙知を形式知化</strong>する形で進める。</p>
+      <p data-i18n="stepB5p2">現場ヒアリングから出発してるので、<strong>「自分たちで選んだ、自分たちで作る」</strong>感が強く、手順遵守率が高い。</p>
     </div>
 
     <div class="step-block">
       <div class="step-heading">
         <div class="step-circle">6</div>
-        <div class="step-name">効果確認</div>
+        <div class="step-name" data-i18n="stepB6Name">効果確認</div>
       </div>
       <div class="outcome">
-        <div class="outcome-title">📊 実施1ヶ月後の結果</div>
+        <div class="outcome-title">📊 <span data-i18n="outcomeBTitle">実施1ヶ月後の結果</span></div>
         <div class="outcome-metrics">
-          <div class="metric"><div class="metric-label">不良率</div><div class="metric-value">0.7%</div><div class="metric-sub">(3.5% → 0.7%)</div></div>
-          <div class="metric"><div class="metric-label">年間削減額</div><div class="metric-value">450万円</div></div>
-          <div class="metric"><div class="metric-label">バックログ</div><div class="metric-value">9件</div><div class="metric-sub">次期以降の候補</div></div>
-          <div class="metric"><div class="metric-label">現場満足度</div><div class="metric-value" style="font-size:16px;">大幅向上</div></div>
+          <div class="metric"><div class="metric-label" data-i18n="metricDefectRate">不良率</div><div class="metric-value">0.7%</div><div class="metric-sub">(3.5% → 0.7%)</div></div>
+          <div class="metric"><div class="metric-label" data-i18n="metricAnnualSave">年間削減額</div><div class="metric-value">450万円</div></div>
+          <div class="metric"><div class="metric-label" data-i18n="metricBacklog">バックログ</div><div class="metric-value" data-i18n="metricBacklogValue">9件</div><div class="metric-sub" data-i18n="metricBacklogSub">次期以降の候補</div></div>
+          <div class="metric"><div class="metric-label" data-i18n="metricSatisfaction">現場満足度</div><div class="metric-value" data-i18n="metricSatisfactionValue" style="font-size:16px;">大幅向上</div></div>
         </div>
       </div>
-      <p>A型よりわずかに効果が高い(0.7% vs 0.8%)。理由:<strong>現場が納得して手順を遵守している</strong>ため。「やらされ感」がない。</p>
+      <p data-i18n="stepB6p1">A型よりわずかに効果が高い(0.7% vs 0.8%)。理由:<strong>現場が納得して手順を遵守している</strong>ため。「やらされ感」がない。</p>
     </div>
 
     <div class="step-block">
       <div class="step-heading">
         <div class="step-circle">7</div>
-        <div class="step-name">標準化・歯止め</div>
+        <div class="step-name" data-i18n="stepB7Name">標準化・歯止め</div>
       </div>
-      <p>• <strong>手順書更新</strong>:ベテランの暗黙知を組み込み<br>• <strong>次のテーマへ</strong>:バックログ2位「工具の散らかり」を次期QCに移行<br>• <strong>ヒアリング定例化</strong>:半年ごとに全員ヒアリングを実施し、新しい困りごとを拾う仕組みに<br>• <strong>B型の仕組み自体が標準化される</strong>:この流れを毎年繰り返せる</p>
+      <p data-i18n="stepB7p1">• <strong>手順書更新</strong>:ベテランの暗黙知を組み込み<br>• <strong>次のテーマへ</strong>:バックログ2位「工具の散らかり」を次期QCに移行<br>• <strong>ヒアリング定例化</strong>:半年ごとに全員ヒアリングを実施し、新しい困りごとを拾う仕組みに<br>• <strong>B型の仕組み自体が標準化される</strong>:この流れを毎年繰り返せる</p>
       <div class="callout">
-        <div class="callout-title"><span class="callout-icon">♻️</span>B型の継続メリット</div>
-        <p>ヒアリング→評価→選定→実施→次ヒアリング、の<strong>ループが組織文化になる</strong>。QCが「一度やって終わり」じゃなく、<strong>毎年自然に回る活動</strong>になる。</p>
+        <div class="callout-title"><span class="callout-icon">♻️</span><span data-i18n="bLoopTitle">B型の継続メリット</span></div>
+        <p data-i18n="bLoopBody">ヒアリング→評価→選定→実施→次ヒアリング、の<strong>ループが組織文化になる</strong>。QCが「一度やって終わり」じゃなく、<strong>毎年自然に回る活動</strong>になる。</p>
       </div>
     </div>
   </div>
 
-  <!-- Common Summary -->
   <div class="summary-block">
-    <h3>A型・B型の共通点と使い分け</h3>
-    <p>2つのアプローチを並べてみて気づくこと:</p>
-    <p>• <strong>型は同じ(7段階)</strong>。入り口が違うだけ。<br>• <strong>真因と対策は同じ場所に辿り着く</strong>。データが正直だから。<br>• <strong>A型は速い、B型は深い</strong>。<br>• <strong>A型は数字の裏付けが強く、B型は現場の納得感が強い</strong>。</p>
-    <p><strong>自分の会社・現場がどちらの文化か</strong>を見極めて使い分ける。両方できるとベスト。</p>
-    <div class="quote" style="margin-top:20px;">「QCは、型があるから誰でも始められる。型があっても、深さは人による。」</div>
+    <h3 data-i18n="summaryTitle">A型・B型の共通点と使い分け</h3>
+    <p data-i18n="summaryP1">2つのアプローチを並べてみて気づくこと:</p>
+    <p data-i18n="summaryP2">• <strong>型は同じ(7段階)</strong>。入り口が違うだけ。<br>• <strong>真因と対策は同じ場所に辿り着く</strong>。データが正直だから。<br>• <strong>A型は速い、B型は深い</strong>。<br>• <strong>A型は数字の裏付けが強く、B型は現場の納得感が強い</strong>。</p>
+    <p data-i18n="summaryP3"><strong>自分の会社・現場がどちらの文化か</strong>を見極めて使い分ける。両方できるとベスト。</p>
+    <div class="quote" data-i18n="summaryQuote" style="margin-top:20px;">「QCは、型があるから誰でも始められる。型があっても、深さは人による。」</div>
   </div>
 
-  <h3>最後に</h3>
-  <p>7章を通して、QCの全体像を見てきました。<strong>思想(1章) → 姿勢(2章) → 道具(3章) → 掘り方(4章) → 対策(5章) → 発表(6章) → 事例(7章)</strong>。これで、どの現場でもQCを始められる骨格が揃ったはずです。</p>
-  <p>ただし、このガイドは<strong>入口</strong>。実際の現場では、ここに書ききれない細かい判断がたくさんあります。<strong>やってみて、試行錯誤して、自分の型を作る</strong>。これが本当のQC力です。</p>
-  <p>型があるから、迷わない。型があるから、始められる。でも最後は、<strong>あなたの現場の知恵</strong>が主役です。</p>
-  <div class="quote">「型は地図。歩くのはあなた。」</div>
+  <h3 data-i18n="finallyTitle">最後に</h3>
+  <p data-i18n="finallyP1">7章を通して、QCの全体像を見てきました。<strong>思想(1章) → 姿勢(2章) → 道具(3章) → 掘り方(4章) → 対策(5章) → 発表(6章) → 事例(7章)</strong>。これで、どの現場でもQCを始められる骨格が揃ったはずです。</p>
+  <p data-i18n="finallyP2">ただし、このガイドは<strong>入口</strong>。実際の現場では、ここに書ききれない細かい判断がたくさんあります。<strong>やってみて、試行錯誤して、自分の型を作る</strong>。これが本当のQC力です。</p>
+  <p data-i18n="finallyP3">型があるから、迷わない。型があるから、始められる。でも最後は、<strong>あなたの現場の知恵</strong>が主役です。</p>
+  <div class="quote" data-i18n="finalQuote">「型は地図。歩くのはあなた。」</div>
 
   <div class="next-nav">
     <a href="index.html" class="back-btn">← <span data-i18n="backToHome">もくじに戻る</span></a>
-    <a href="index.html" class="next-btn">ホームに戻る →</a>
+    <a href="index.html" class="next-btn"><span data-i18n="backToTop">ホームに戻る</span> →</a>
   </div>
 </article>
 
@@ -804,32 +559,572 @@
 <script src="_common.js"></script>
 <script>
 function showTab(tab) {
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.tab === tab);
-  });
-  document.querySelectorAll('.tab-content').forEach(c => {
-    c.classList.remove('active');
-  });
+  document.querySelectorAll('.tab-btn').forEach(btn => { btn.classList.toggle('active', btn.dataset.tab === tab); });
+  document.querySelectorAll('.tab-content').forEach(c => { c.classList.remove('active'); });
   document.getElementById('tab-' + tab).classList.add('active');
   window.scrollTo({ top: document.querySelector('.tabs').offsetTop - 80, behavior: 'smooth' });
 }
+
+// ================= JA =================
 Object.assign(window.kaizenI18n.ja, {
+  ch7Label: "CHAPTER 7",
   ch7Title: "実例で学ぶ",
-  tldrLabel: "ひとこと要約",
   ch7Tldr: 'QCには2つの入り口がある。<strong>A型:指標ドリブン</strong>(会社の数字から入る)と、<strong>B型:ヒアリングドリブン</strong>(現場の声から入る)。両方の入口でも、<strong>辿り着く型は同じ7段階</strong>。架空の事例で完走してみせます。',
   ch7_h1: 'QCには2種類の入り口がある',
   ch7_p1: '実際の現場でQCを始める時、<strong>入り方が2種類</strong>ある。どちらも正しい。会社の文化や目的によって使い分ける。',
+  typeALabel: 'A型', typeBLabel: 'B型',
   typeAName: '指標ドリブン',
   typeADesc: '会社のKPIや経営課題から入る。「受注増なのに設備能力が足りない」「歩留まりが悪化した」など、<strong>数字の異常や経営の方針</strong>がきっかけ。トヨタ系・大企業でよく使われる。',
   typeBName: 'ヒアリングドリブン',
   typeBDesc: '現場の困りごとから入る。作業者・保全・品質の声を集め、<strong>評価マトリクス</strong>で客観的にテーマを選ぶ。働く人の参加意欲が高く、育成目的にも向いている。',
   ch7_p2: '大事なのは、<strong>どちらを選んでもQCストーリー7段階</strong>に沿って進めること。入り口が違っても、<strong>真因と対策は同じところに辿り着く</strong>。',
-  ch7_p3: '以下、同じ架空の工場(製造業・従業員80名・工程A〜Dの4工程ライン)で、A型とB型、両方のアプローチを完走します。'
+  ch7_p3: '以下、同じ架空の工場(製造業・従業員80名・工程A〜Dの4工程ライン)で、A型とB型、両方のアプローチを完走します。',
+  tabA: 'A型(指標ドリブン)', tabB: 'B型(ヒアリングドリブン)',
+  scenarioALabel: 'シナリオ(A型)',
+  scenarioABody: '<strong>状況:</strong>受注が前年比130%増。工場の可動率は維持しているが、<strong>不良率が前年同月比で1.8倍</strong>に悪化。役員から「来期までに不良率を元水準に戻せ」と指示。経営KPIレポートから発覚。',
+  stepA1Name: 'テーマ選定',
+  stepA1p1: '<strong>テーマ:</strong>不良率の改善(前年同月比削減)',
+  stepA1p2: '<strong>背景:</strong>受注130%増に対し、不良率3.5%(前年1.9%)で年間ロス約600万円。顧客への納期遅延リスクあり。',
+  stepA1p3: '<strong>根拠:</strong>経営KPIレポート、品質月報、顧客クレーム件数の推移',
+  stepA2Name: '現状把握',
+  stepA2p1: 'パレート図と層別ドリルダウンで、<strong>どこに問題が集中しているか</strong>を絞り込んでいく。',
+  layer1Label: '層1:不良の種類別(合計250件)',
+  layer2Label: '層2:不良Aを工程別(合計145件)',
+  layer3Label: '層3:工程Bの不良Aを時間帯別(合計105件)',
+  layer4Label: '層4:朝一・工程Bの不良Aを機械別(合計67件)',
+  layer1Conclusion: '→ <strong>不良A(寸法NG)が58%で最大</strong>。ここに絞って深掘りする。',
+  layer2Conclusion: '→ <strong>工程Bで72%</strong>発生。さらに工程Bを深掘りする。',
+  layer3Conclusion: '→ <strong>朝一(8-10時)に64%集中</strong>。さらに機械別に見る。',
+  legendCount: '件数(左軸)',
+  legendCumu: '累積比率(右軸)',
+  legend80: '80%ライン',
+  narrowdownTitle: '絞り込み結果',
+  narrowdownBody: '<strong>朝一(8-10時)の工程B・機械Cで発生する、寸法NG不良</strong>。機械Cで84%を占める。<strong>ここに対策を打てば全体が大きく動く</strong>。',
+  stepA3Name: '目標設定',
+  stepA3p1: '<strong>目標:</strong>不良率 3.5% → <strong>1.0%以下</strong>(前年水準への復帰)',
+  stepA3p2: '<strong>削減額目標:</strong>年間600万円 → <strong>170万円以下</strong>(430万円削減)',
+  stepA3p3: '<strong>期限:</strong>3ヶ月後',
+  stepA4Name: '要因分析',
+  stepA4p1: '絞り込んだ条件「朝一・機械Cの寸法NG」に対して、<strong>特性要因図(4M)</strong>で原因候補を洗い出し:',
+  stepA4p2: '• <strong>Machine(機械):</strong>夜間停止中の温度低下で部品が収縮<br>• <strong>Method(方法):</strong>朝一の立ち上げ手順に温度補正がない<br>• <strong>Man(人):</strong>(関係なし、複数作業者で同傾向)<br>• <strong>Material(材料):</strong>(関係なし、ロット差と相関なし)',
+  stepA4p3: '<strong>なぜなぜ分析:</strong>',
+  stepA4p4: 'なぜ1:朝一に寸法NGが多い → 機械Cの調整がずれている<br>なぜ2:調整がずれる → 前日終業時と状態が変わっている<br>なぜ3:状態が変わる → 夜間の温度変化で部品が収縮<br>なぜ4:収縮の影響が残る → 朝一の温度補正手順がない<br>なぜ5:補正手順がない → 朝の立ち上げ標準化が未整備',
+  realCauseTitle: '真因',
+  realCauseBody: '<strong>朝一の立ち上げ手順の不備</strong>(温度補正プロセスの欠如)<br>判定:「この手順を追加すれば再発しないか?」→ <strong>Yes</strong>。真因と確定。',
+  stepA5Name: '対策検討・実施',
+  stepA5p1: '<strong>対策候補の評価マトリクス:</strong>',
+  matrixHeadMeasure: '対策案', matrixHeadEffect: '効果', matrixHeadFeasible: '実現性', matrixHeadLateral: '横展開', matrixHeadTotal: '合計',
+  measure1: '機械C更新(温度制御付き)',
+  measure2: '朝一の温度補正手順追加(5分)',
+  measure3: '工場全体の温調システム導入',
+  measure4: '夜間も最低稼働を維持',
+  stepA5p2: '<strong>採用:</strong>朝一の温度補正手順追加(合計14点)。費用ほぼゼロ、他ラインにも即適用可能。',
+  stepA5p3: '<strong>実施内容:</strong>立ち上げ時に機械Cのウォームアップ5分を追加、写真付き手順書を機械脇に掲示、最初の10個を検品強化。',
+  stepA6Name: '効果確認',
+  outcomeATitle: '実施1ヶ月後の結果',
+  metricDefectRate: '不良率', metricAnnualSave: '年間削減額', metricGoalAchieved: '目標達成', metricCost: '対策費用', metricCostSub: '手順書制作のみ', metricSide: '副次効果', metricSideValue: '8分短縮', metricSideSub: '朝の立ち上げ時間',
+  stepA6p1: '目標値1.0%を上回る0.8%を達成。不良Aだけでなく、副次的に<strong>朝のライン立ち上げ時間も平均8分短縮</strong>(手順が明確になり迷いが消えた)。',
+  stepA7Name: '標準化・歯止め',
+  stepA7p1: '• <strong>作業標準書の更新</strong>:新しい温度補正手順を正式に組み込む<br>• <strong>新人教育</strong>:入社時研修のチェック項目に追加<br>• <strong>月次レビュー</strong>:不良率を月次で監視、閾値超過でアラート<br>• <strong>横展開</strong>:工程C・工程Dの機械でも同様の現象の有無を調査 → 工程Dでも効果確認<br>• <strong>報告</strong>:役員会で四半期レビューに反映',
+  scenarioBLabel: 'シナリオ(B型)',
+  scenarioBBody: '<strong>状況:</strong>現場リーダーが作業者から「なんか最近朝しんどい」「工具探すのに時間かかる」などの声をよく聞くようになった。<strong>何が一番困りごとなのか</strong>を客観的に把握するため、全員ヒアリングを実施。',
+  stepB1Name: 'テーマ選定(ヒアリング型)',
+  stepB1p1: '<strong>Step 1-1: 現場ヒアリング(10件収集)</strong>',
+  stepB1p2: '作業者・保全・品質担当、全員から困りごとを1人3件まで出してもらい、重複を整理して10件に集約:',
+  stepB1p3: '① 朝一の不良が多い<br>② 工具が散らかって探す時間がかかる<br>③ 出庫待ちで作業が止まる時間がある<br>④ 日報の入力が面倒<br>⑤ 部品供給のタイミングがバラバラ<br>⑥ 夜勤と昼勤の引き継ぎが不十分<br>⑦ 検査の基準が人によって違う<br>⑧ エアの圧力が時々弱くなる<br>⑨ 休憩所が暑い/寒い<br>⑩ 更衣室までが遠い',
+  stepB1p4: '<strong>玉石混交で構わない。</strong>QC対象にしにくいものも含めて、まず全部並べる。',
+  stepB1p5: '<strong>Step 1-2: 評価マトリクスで並べる(5点満点 × 4軸)</strong>',
+  bMatrixProblem: '困りごと', bMatrixImpact: '影響度', bMatrixFeasible: '実現性', bMatrixQuant: '数値化', bMatrixAuto: '裁量', bMatrixTotal: '合計',
+  bItem1: '朝一の不良多発', bItem2: '工具の散らかり', bItem3: '検査基準のばらつき', bItem4: 'エア圧不安定', bItem5: '出庫待ち', bItem6: '引き継ぎ不十分', bItem7: '日報入力が面倒', bItem8: '部品供給バラバラ', bItem9: '休憩所の温度', bItem10: '更衣室が遠い',
+  stepB1p6: '<strong>選定結果:</strong>',
+  stepB1p7: '• <strong>1位「朝一の不良多発」(18点)</strong> → 今期のテーマに採用<br>• 2位・3位はバックログとして次期以降に送る<br>• 下位(休憩所・更衣室など)は設備管理側に共有',
+  bCalloutTitle: 'なぜこのテーマか(根拠あり)',
+  bCalloutBody: '「朝一の不良」を選んだのは<strong>直感じゃない</strong>。<strong>影響度・実現性・数値化・裁量の4軸で評価した結果、18点で最上位</strong>だったから。質疑応答で「なぜこれを選んだ?」と聞かれても、<strong>全10件の評価表で答えられる</strong>。',
+  stepB2Name: '現状把握',
+  stepB2p1: 'テーマが決まったら、ここからはA型と<strong>同じドリルダウン</strong>で現状把握する。',
+  stepB2p2: 'ヒアリングで出た「朝一の不良」を裏付けるデータを取る → 層別ドリルダウン → <strong>朝一・工程B・機械C・寸法NG不良</strong>に絞り込み。',
+  stepB2p3: '(詳細はA型タブの層1〜層4と同じパレート図。データがヒアリングの内容を裏付ける形になる。)',
+  stepB3Name: '目標設定',
+  stepB3p1: '<strong>目標:</strong>不良率 3.5% → <strong>1.0%以下</strong>',
+  stepB3p2: '<strong>削減額目標:</strong>年間約430万円',
+  stepB3p3: '<strong>期限:</strong>3ヶ月後',
+  stepB3p4: '(A型と同じ数字に辿り着く。入口が違っても、現象が同じなら数字も同じ。)',
+  stepB4Name: '要因分析',
+  stepB4p1: 'B型では<strong>人・方法の観点にやや重み</strong>を置いて4M分析する(現場ヒアリング起点だから、現場に根ざした視点が活きる)。',
+  stepB4p2: 'ただし結論は同じ:<strong>朝一の立ち上げ手順の不備</strong>が真因。',
+  stepB4p3: '追加で見つかった知見:現場ヒアリングから<strong>「ベテランは経験で朝の機械を数分空回ししている」</strong>という暗黙知が判明。真因分析で裏付けられた。',
+  stepB5Name: '対策検討・実施',
+  stepB5p1: '対策はA型と<strong>ほぼ同じ</strong>(温度補正5分手順の追加)だが、B型では<strong>ベテランの暗黙知を形式知化</strong>する形で進める。',
+  stepB5p2: '現場ヒアリングから出発してるので、<strong>「自分たちで選んだ、自分たちで作る」</strong>感が強く、手順遵守率が高い。',
+  stepB6Name: '効果確認',
+  outcomeBTitle: '実施1ヶ月後の結果',
+  metricBacklog: 'バックログ', metricBacklogValue: '9件', metricBacklogSub: '次期以降の候補', metricSatisfaction: '現場満足度', metricSatisfactionValue: '大幅向上',
+  stepB6p1: 'A型よりわずかに効果が高い(0.7% vs 0.8%)。理由:<strong>現場が納得して手順を遵守している</strong>ため。「やらされ感」がない。',
+  stepB7Name: '標準化・歯止め',
+  stepB7p1: '• <strong>手順書更新</strong>:ベテランの暗黙知を組み込み<br>• <strong>次のテーマへ</strong>:バックログ2位「工具の散らかり」を次期QCに移行<br>• <strong>ヒアリング定例化</strong>:半年ごとに全員ヒアリングを実施し、新しい困りごとを拾う仕組みに<br>• <strong>B型の仕組み自体が標準化される</strong>:この流れを毎年繰り返せる',
+  bLoopTitle: 'B型の継続メリット',
+  bLoopBody: 'ヒアリング→評価→選定→実施→次ヒアリング、の<strong>ループが組織文化になる</strong>。QCが「一度やって終わり」じゃなく、<strong>毎年自然に回る活動</strong>になる。',
+  summaryTitle: 'A型・B型の共通点と使い分け',
+  summaryP1: '2つのアプローチを並べてみて気づくこと:',
+  summaryP2: '• <strong>型は同じ(7段階)</strong>。入り口が違うだけ。<br>• <strong>真因と対策は同じ場所に辿り着く</strong>。データが正直だから。<br>• <strong>A型は速い、B型は深い</strong>。<br>• <strong>A型は数字の裏付けが強く、B型は現場の納得感が強い</strong>。',
+  summaryP3: '<strong>自分の会社・現場がどちらの文化か</strong>を見極めて使い分ける。両方できるとベスト。',
+  summaryQuote: '「QCは、型があるから誰でも始められる。型があっても、深さは人による。」',
+  finallyTitle: '最後に',
+  finallyP1: '7章を通して、QCの全体像を見てきました。<strong>思想(1章) → 姿勢(2章) → 道具(3章) → 掘り方(4章) → 対策(5章) → 発表(6章) → 事例(7章)</strong>。これで、どの現場でもQCを始められる骨格が揃ったはずです。',
+  finallyP2: 'ただし、このガイドは<strong>入口</strong>。実際の現場では、ここに書ききれない細かい判断がたくさんあります。<strong>やってみて、試行錯誤して、自分の型を作る</strong>。これが本当のQC力です。',
+  finallyP3: '型があるから、迷わない。型があるから、始められる。でも最後は、<strong>あなたの現場の知恵</strong>が主役です。',
+  finalQuote: '「型は地図。歩くのはあなた。」',
+  backToTop: 'ホームに戻る'
 });
+
+// ================= EN =================
 Object.assign(window.kaizenI18n.en, {
+  ch7Label: "CHAPTER 7",
   ch7Title: "Learn from real cases",
-  tldrLabel: "TL;DR"
+  ch7Tldr: 'QC has two entry points. <strong>Type A: metric-driven</strong> (starting from company numbers), and <strong>Type B: hearing-driven</strong> (starting from shop floor voices). Both paths, <strong>the arrival format is the same 7 stages</strong>. We\'ll run through a fictional case to the end.',
+  ch7_h1: 'QC has two types of entry points',
+  ch7_p1: 'When starting QC on a real shop floor, there are <strong>two ways to enter</strong>. Both are correct. Choose depending on the company culture and purpose.',
+  typeALabel: 'Type A', typeBLabel: 'Type B',
+  typeAName: 'Metric-driven',
+  typeADesc: 'Start from company KPIs or management issues. Triggered by "orders up but capacity short," "yield worsened," etc. — <strong>number anomalies or management direction</strong>. Common in Toyota-style/large companies.',
+  typeBName: 'Hearing-driven',
+  typeBDesc: 'Start from shop floor problems. Collect voices of operators, maintenance, quality, and choose the theme objectively with an <strong>evaluation matrix</strong>. High participation, good for development purposes.',
+  ch7_p2: 'What matters is that <strong>whichever you choose, you follow the 7 QC Story stages</strong>. Different entries, but <strong>real cause and countermeasure arrive at the same place</strong>.',
+  ch7_p3: 'Below, using the same fictional factory (manufacturing, 80 employees, 4-process line A-D), we run both Type A and Type B approaches to the end.',
+  tabA: 'Type A (metric-driven)', tabB: 'Type B (hearing-driven)',
+  scenarioALabel: 'Scenario (Type A)',
+  scenarioABody: '<strong>Situation:</strong> Orders up 130% year over year. Factory operation rate maintained, but <strong>defect rate is 1.8x of the same month last year</strong>. Executive order: "return defect rate to previous level by next term." Discovered from the KPI report.',
+  stepA1Name: 'Theme selection',
+  stepA1p1: '<strong>Theme:</strong> Improve defect rate (reduce vs. same month last year)',
+  stepA1p2: '<strong>Background:</strong> Against 130% order increase, defect rate 3.5% (last year 1.9%), annual loss ~6M JPY. Risk of delivery delays to customers.',
+  stepA1p3: '<strong>Basis:</strong> KPI reports, quality monthly reports, customer complaint trends',
+  stepA2Name: 'Grasping current state',
+  stepA2p1: 'Narrow down <strong>where problems concentrate</strong> with Pareto charts and stratified drill-down.',
+  layer1Label: 'Layer 1: By defect type (total 250 cases)',
+  layer2Label: 'Layer 2: Defect A by process (total 145 cases)',
+  layer3Label: 'Layer 3: Defect A in Process B by time (total 105 cases)',
+  layer4Label: 'Layer 4: Defect A, Morning, Process B by machine (total 67 cases)',
+  layer1Conclusion: '→ <strong>Defect A (dimension NG) is 58%, the biggest</strong>. Focus here and dig deeper.',
+  layer2Conclusion: '→ <strong>Process B accounts for 72%</strong>. Dig further into Process B.',
+  layer3Conclusion: '→ <strong>Morning (8-10am) is 64% concentrated</strong>. Look by machine next.',
+  legendCount: 'Count (left axis)',
+  legendCumu: 'Cumulative % (right axis)',
+  legend80: '80% line',
+  narrowdownTitle: 'Narrowed-down result',
+  narrowdownBody: '<strong>Dimension NG defects occurring in morning (8-10am), Process B, Machine C</strong>. Machine C accounts for 84%. <strong>Countermeasure here moves the whole significantly</strong>.',
+  stepA3Name: 'Goal setting',
+  stepA3p1: '<strong>Target:</strong> Defect rate 3.5% → <strong>below 1.0%</strong> (return to last year\'s level)',
+  stepA3p2: '<strong>Saving target:</strong> Annual 6M JPY → <strong>below 1.7M JPY</strong> (4.3M JPY reduction)',
+  stepA3p3: '<strong>Deadline:</strong> 3 months',
+  stepA4Name: 'Cause analysis',
+  stepA4p1: 'For narrowed condition "Morning, Machine C dimension NG," list cause candidates with <strong>fishbone diagram (4M)</strong>:',
+  stepA4p2: '• <strong>Machine:</strong> Parts contract due to overnight temperature drop<br>• <strong>Method:</strong> No temperature correction in morning startup<br>• <strong>Man:</strong> (unrelated, same trend across operators)<br>• <strong>Material:</strong> (unrelated, no correlation with lot difference)',
+  stepA4p3: '<strong>Why-why analysis:</strong>',
+  stepA4p4: 'Why 1: Many dimension NGs in morning → Machine C calibration is off<br>Why 2: Calibration off → State differs from previous day\'s end<br>Why 3: State differs → Parts contract from overnight temperature change<br>Why 4: Effect of contraction remains → No morning temperature correction procedure<br>Why 5: No correction procedure → Morning startup standardization not in place',
+  realCauseTitle: 'Real cause',
+  realCauseBody: '<strong>Inadequate morning startup procedure</strong> (lack of temperature correction process)<br>Test: "Will recurrence stop if this procedure is added?" → <strong>Yes</strong>. Confirmed as real cause.',
+  stepA5Name: 'Countermeasure planning & execution',
+  stepA5p1: '<strong>Evaluation matrix for countermeasure candidates:</strong>',
+  matrixHeadMeasure: 'Countermeasure', matrixHeadEffect: 'Effect', matrixHeadFeasible: 'Feasibility', matrixHeadLateral: 'Lateral deployment', matrixHeadTotal: 'Total',
+  measure1: 'Replace Machine C (with temperature control)',
+  measure2: 'Add morning temperature correction procedure (5 min)',
+  measure3: 'Install factory-wide climate system',
+  measure4: 'Maintain minimum operation at night',
+  stepA5p2: '<strong>Adopted:</strong> Add morning temperature correction procedure (total 14 points). Near-zero cost, immediately applicable to other lines.',
+  stepA5p3: '<strong>Execution:</strong> Add 5-min warm-up for Machine C at startup, post photo procedure next to the machine, intensified inspection on first 10 pieces.',
+  stepA6Name: 'Effect verification',
+  outcomeATitle: 'Result 1 month after implementation',
+  metricDefectRate: 'Defect rate', metricAnnualSave: 'Annual saving', metricGoalAchieved: 'Goal achieved', metricCost: 'Countermeasure cost', metricCostSub: 'Just producing procedure doc', metricSide: 'Side effect', metricSideValue: '8 min shorter', metricSideSub: 'Morning startup time',
+  stepA6p1: 'Achieved 0.8%, beating the 1.0% target. Beyond defect A, also <strong>shortened morning line startup by average 8 minutes</strong> (clear procedure removed hesitation).',
+  stepA7Name: 'Standardization & preventing recurrence',
+  stepA7p1: '• <strong>Update work standard doc</strong>: Formally incorporate new temperature correction procedure<br>• <strong>New employee training</strong>: Add to onboarding checklist<br>• <strong>Monthly review</strong>: Monitor defect rate monthly, alert on threshold<br>• <strong>Lateral deployment</strong>: Check for same phenomenon on Process C/D machines → Effect confirmed on Process D too<br>• <strong>Reporting</strong>: Include in quarterly review at executive meetings',
+  scenarioBLabel: 'Scenario (Type B)',
+  scenarioBBody: '<strong>Situation:</strong> Shop floor leader started hearing more from operators: "mornings feel tougher lately," "tool search takes time," etc. To objectively grasp <strong>what the biggest issues are</strong>, conducted hearings from everyone.',
+  stepB1Name: 'Theme selection (hearing-based)',
+  stepB1p1: '<strong>Step 1-1: Shop floor hearing (collect 10 items)</strong>',
+  stepB1p2: 'From operators, maintenance, quality — collect up to 3 problems each, organize duplicates, consolidate to 10:',
+  stepB1p3: '① Many defects in the morning<br>② Tools scattered, takes time to find<br>③ Work stops waiting for shipment<br>④ Daily report input is tedious<br>⑤ Parts supply timing varies<br>⑥ Night-day shift handover is inadequate<br>⑦ Inspection standards vary by person<br>⑧ Air pressure sometimes weakens<br>⑨ Break room is hot/cold<br>⑩ Locker room is far',
+  stepB1p4: '<strong>Mixed quality is fine.</strong> Include items that don\'t easily fit QC — first, list everything.',
+  stepB1p5: '<strong>Step 1-2: Arrange with evaluation matrix (5-point × 4 axes)</strong>',
+  bMatrixProblem: 'Problem', bMatrixImpact: 'Impact', bMatrixFeasible: 'Feasibility', bMatrixQuant: 'Quantifiability', bMatrixAuto: 'Autonomy', bMatrixTotal: 'Total',
+  bItem1: 'Morning defects frequent', bItem2: 'Scattered tools', bItem3: 'Inspection standard varies', bItem4: 'Unstable air pressure', bItem5: 'Shipment waiting', bItem6: 'Inadequate handover', bItem7: 'Tedious daily report', bItem8: 'Varying parts supply', bItem9: 'Break room temperature', bItem10: 'Far locker room',
+  stepB1p6: '<strong>Selection result:</strong>',
+  stepB1p7: '• <strong>#1 "Morning defects frequent" (18 points)</strong> → Adopted as this term\'s theme<br>• #2 and #3 go to backlog for later<br>• Low-ranking (break room, locker room) shared with facilities side',
+  bCalloutTitle: 'Why this theme (with basis)',
+  bCalloutBody: 'Choosing "morning defects" is <strong>not intuition</strong>. <strong>Evaluated on 4 axes — impact, feasibility, quantifiability, autonomy — it scored 18, highest</strong>. When asked "why this theme?" in Q&A, answer with <strong>the evaluation table of all 10 items</strong>.',
+  stepB2Name: 'Grasping current state',
+  stepB2p1: 'Once the theme is set, from here it\'s <strong>the same drill-down as Type A</strong>.',
+  stepB2p2: 'Collect data to back up the "morning defects" from hearings → stratified drill-down → narrow to <strong>morning, Process B, Machine C, dimension NG defect</strong>.',
+  stepB2p3: '(Details same as Layers 1-4 in the Type A tab. Data confirms the hearings.)',
+  stepB3Name: 'Goal setting',
+  stepB3p1: '<strong>Target:</strong> Defect rate 3.5% → <strong>below 1.0%</strong>',
+  stepB3p2: '<strong>Saving target:</strong> Annual ~4.3M JPY',
+  stepB3p3: '<strong>Deadline:</strong> 3 months',
+  stepB3p4: '(Same numbers as Type A. Different entries, but same phenomenon = same numbers.)',
+  stepB4Name: 'Cause analysis',
+  stepB4p1: 'Type B puts <strong>slightly more weight on Man/Method angles</strong> in 4M analysis (starting from hearings, field-rooted views shine).',
+  stepB4p2: 'But the conclusion is the same: <strong>inadequate morning startup procedure</strong> is the real cause.',
+  stepB4p3: 'Additional insight: from hearings, <strong>"veterans idle the machine for a few minutes each morning from experience"</strong> — tacit knowledge discovered. Backed up by real cause analysis.',
+  stepB5Name: 'Countermeasure planning & execution',
+  stepB5p1: 'Countermeasure is <strong>mostly the same as Type A</strong> (add 5-min temperature correction), but Type B proceeds as <strong>formalizing veteran tacit knowledge</strong>.',
+  stepB5p2: 'Starting from hearings, the <strong>"we chose, we build"</strong> feeling is strong, procedure compliance is high.',
+  stepB6Name: 'Effect verification',
+  outcomeBTitle: 'Result 1 month after implementation',
+  metricBacklog: 'Backlog', metricBacklogValue: '9 items', metricBacklogSub: 'Candidates for later', metricSatisfaction: 'Shop floor satisfaction', metricSatisfactionValue: 'Significantly up',
+  stepB6p1: 'Slightly more effective than Type A (0.7% vs 0.8%). Reason: <strong>the shop floor follows procedure with conviction</strong>. No "forced" feeling.',
+  stepB7Name: 'Standardization & preventing recurrence',
+  stepB7p1: '• <strong>Update procedure doc</strong>: Incorporate veteran tacit knowledge<br>• <strong>Next theme</strong>: Move backlog #2 "scattered tools" to next QC<br>• <strong>Regular hearings</strong>: Conduct all-member hearings every 6 months, system to capture new issues<br>• <strong>Type B process itself gets standardized</strong>: Loop repeats yearly',
+  bLoopTitle: 'Ongoing benefit of Type B',
+  bLoopBody: 'Hearing → evaluate → select → implement → next hearing — <strong>the loop becomes organizational culture</strong>. QC stops being a "one-off," becomes <strong>an activity that naturally turns every year</strong>.',
+  summaryTitle: 'Commonalities and use cases of Types A/B',
+  summaryP1: 'What you notice comparing the two approaches:',
+  summaryP2: '• <strong>Same format (7 stages)</strong>. Only the entry differs.<br>• <strong>Real cause and countermeasure arrive at the same place</strong>. Because data is honest.<br>• <strong>Type A is faster, Type B is deeper</strong>.<br>• <strong>Type A has strong numerical backing, Type B has strong shop floor conviction</strong>.',
+  summaryP3: 'Judge <strong>which culture fits your company/shop floor</strong> and use accordingly. Best if you can do both.',
+  summaryQuote: '"QC can be started by anyone because there\'s a format. Even with the format, the depth depends on the person."',
+  finallyTitle: 'Finally',
+  finallyP1: 'Through these 7 chapters, we\'ve seen the whole picture of QC. <strong>Philosophy (1) → Mindset (2) → Tools (3) → Digging method (4) → Countermeasure (5) → Presentation (6) → Case (7)</strong>. Now you have the skeleton to start QC on any shop floor.',
+  finallyP2: 'However, this guide is an <strong>entry</strong>. On real shop floors, many nuanced judgments aren\'t covered here. <strong>Try, trial and error, build your own format</strong>. That is real QC skill.',
+  finallyP3: 'With a format, you don\'t get lost. With a format, you can start. But in the end, <strong>the wisdom of your shop floor</strong> is the main actor.',
+  finalQuote: '"The format is a map. You are the one walking."',
+  backToTop: 'Back to home'
 });
+
+// ================= VI =================
+Object.assign(window.kaizenI18n.vi, {
+  ch7Label: "CHƯƠNG 7",
+  ch7Title: "Học qua ví dụ thực tế",
+  ch7Tldr: 'QC có 2 cửa vào. <strong>Loại A: Theo chỉ số</strong> (từ số liệu công ty), và <strong>Loại B: Theo phỏng vấn</strong> (từ tiếng nói hiện trường). Cả hai đều dẫn đến <strong>khuôn mẫu 7 giai đoạn giống nhau</strong>. Ta chạy xuyên một ví dụ giả định.',
+  ch7_h1: 'QC có 2 loại cửa vào',
+  ch7_p1: 'Khi bắt đầu QC tại hiện trường thực tế, có <strong>2 cách vào</strong>. Cả hai đều đúng. Chọn theo văn hóa và mục đích công ty.',
+  typeALabel: 'Loại A', typeBLabel: 'Loại B',
+  typeAName: 'Theo chỉ số',
+  typeADesc: 'Bắt đầu từ KPI hoặc vấn đề quản lý của công ty. Kích hoạt bởi "đơn hàng tăng nhưng năng lực thiếu", "tỷ lệ hiệu suất xấu đi" — <strong>bất thường số liệu hoặc chính sách quản lý</strong>. Thường dùng trong Toyota/công ty lớn.',
+  typeBName: 'Theo phỏng vấn',
+  typeBDesc: 'Bắt đầu từ vấn đề hiện trường. Thu thập tiếng nói của người vận hành, bảo trì, chất lượng, chọn chủ đề khách quan bằng <strong>ma trận đánh giá</strong>. Sự tham gia cao, phù hợp mục đích đào tạo.',
+  ch7_p2: 'Quan trọng là <strong>bất kể chọn cái nào, đều theo 7 giai đoạn QC Story</strong>. Khác cửa vào, nhưng <strong>nguyên nhân thật và đối sách đến cùng một nơi</strong>.',
+  ch7_p3: 'Dưới đây, dùng cùng nhà máy giả định (sản xuất, 80 nhân viên, dây chuyền 4 công đoạn A-D), chạy xuyên cả hai phương pháp.',
+  tabA: 'Loại A (Theo chỉ số)', tabB: 'Loại B (Theo phỏng vấn)',
+  scenarioALabel: 'Kịch bản (Loại A)',
+  scenarioABody: '<strong>Tình huống:</strong> Đơn hàng tăng 130% so với năm trước. Tỷ lệ hoạt động nhà máy duy trì, nhưng <strong>tỷ lệ lỗi 1.8 lần so với cùng tháng năm trước</strong>. Lệnh từ lãnh đạo: "đưa tỷ lệ lỗi về mức cũ trước kỳ sau." Phát hiện từ báo cáo KPI.',
+  stepA1Name: 'Chọn chủ đề',
+  stepA1p1: '<strong>Chủ đề:</strong> Cải thiện tỷ lệ lỗi (giảm so với cùng tháng năm trước)',
+  stepA1p2: '<strong>Bối cảnh:</strong> Với đơn hàng tăng 130%, tỷ lệ lỗi 3.5% (năm trước 1.9%), tổn thất năm ~6 triệu yên. Rủi ro trễ giao hàng.',
+  stepA1p3: '<strong>Cơ sở:</strong> Báo cáo KPI, báo cáo chất lượng tháng, xu hướng khiếu nại khách hàng',
+  stepA2Name: 'Nắm hiện trạng',
+  stepA2p1: 'Thu hẹp <strong>nơi vấn đề tập trung</strong> bằng biểu đồ Pareto và phân tầng.',
+  layer1Label: 'Lớp 1: Theo loại lỗi (tổng 250 ca)',
+  layer2Label: 'Lớp 2: Lỗi A theo công đoạn (tổng 145 ca)',
+  layer3Label: 'Lớp 3: Lỗi A trong Công đoạn B theo thời gian (tổng 105 ca)',
+  layer4Label: 'Lớp 4: Lỗi A, Sáng, Công đoạn B theo máy (tổng 67 ca)',
+  layer1Conclusion: '→ <strong>Lỗi A (kích thước NG) 58%, lớn nhất</strong>. Tập trung vào đây và đào sâu.',
+  layer2Conclusion: '→ <strong>Công đoạn B chiếm 72%</strong>. Đào sâu thêm Công đoạn B.',
+  layer3Conclusion: '→ <strong>Sáng (8-10h) tập trung 64%</strong>. Xem theo máy tiếp.',
+  legendCount: 'Số lượng (trục trái)',
+  legendCumu: 'Tỷ lệ tích lũy (trục phải)',
+  legend80: 'Đường 80%',
+  narrowdownTitle: 'Kết quả thu hẹp',
+  narrowdownBody: '<strong>Lỗi kích thước NG xảy ra ở sáng (8-10h), Công đoạn B, Máy C</strong>. Máy C chiếm 84%. <strong>Đối sách ở đây tác động lớn đến toàn bộ</strong>.',
+  stepA3Name: 'Đặt mục tiêu',
+  stepA3p1: '<strong>Mục tiêu:</strong> Tỷ lệ lỗi 3.5% → <strong>dưới 1.0%</strong> (trở về mức năm trước)',
+  stepA3p2: '<strong>Mục tiêu tiết kiệm:</strong> Năm 6 triệu yên → <strong>dưới 1.7 triệu yên</strong> (giảm 4.3 triệu yên)',
+  stepA3p3: '<strong>Thời hạn:</strong> 3 tháng',
+  stepA4Name: 'Phân tích nguyên nhân',
+  stepA4p1: 'Với điều kiện đã thu hẹp "Sáng, lỗi kích thước Máy C", liệt kê nguyên nhân bằng <strong>sơ đồ xương cá (4M)</strong>:',
+  stepA4p2: '• <strong>Machine (Máy):</strong> Linh kiện co lại do nhiệt độ giảm ban đêm<br>• <strong>Method (Phương pháp):</strong> Không hiệu chỉnh nhiệt độ khi khởi động sáng<br>• <strong>Man (Người):</strong> (không liên quan, cùng xu hướng ở nhiều người)<br>• <strong>Material (Vật liệu):</strong> (không liên quan, không tương quan với khác lô)',
+  stepA4p3: '<strong>Phân tích 5-Why:</strong>',
+  stepA4p4: 'Why 1: Nhiều lỗi kích thước NG sáng → Hiệu chỉnh Máy C lệch<br>Why 2: Hiệu chỉnh lệch → Khác trạng thái cuối ngày trước<br>Why 3: Khác trạng thái → Linh kiện co từ nhiệt độ đêm<br>Why 4: Co còn ảnh hưởng → Không có quy trình hiệu chỉnh nhiệt độ sáng<br>Why 5: Không có → Khởi động sáng chưa chuẩn hóa',
+  realCauseTitle: 'Nguyên nhân thật',
+  realCauseBody: '<strong>Quy trình khởi động sáng không đầy đủ</strong> (thiếu quá trình hiệu chỉnh nhiệt độ)<br>Kiểm tra: "Thêm quy trình này thì không tái phát?" → <strong>Có</strong>. Xác nhận nguyên nhân thật.',
+  stepA5Name: 'Lập và thực hiện đối sách',
+  stepA5p1: '<strong>Ma trận đánh giá các đối sách:</strong>',
+  matrixHeadMeasure: 'Đối sách', matrixHeadEffect: 'Hiệu quả', matrixHeadFeasible: 'Khả thi', matrixHeadLateral: 'Mở rộng ngang', matrixHeadTotal: 'Tổng',
+  measure1: 'Thay Máy C (có điều khiển nhiệt độ)',
+  measure2: 'Thêm quy trình hiệu chỉnh nhiệt độ sáng (5 phút)',
+  measure3: 'Lắp hệ thống điều hòa toàn nhà máy',
+  measure4: 'Duy trì hoạt động tối thiểu ban đêm',
+  stepA5p2: '<strong>Chọn:</strong> Thêm quy trình hiệu chỉnh sáng (tổng 14 điểm). Chi phí gần 0, áp dụng ngay sang dây chuyền khác.',
+  stepA5p3: '<strong>Thực hiện:</strong> Thêm 5 phút khởi động Máy C, dán quy trình có ảnh cạnh máy, tăng cường kiểm 10 sản phẩm đầu.',
+  stepA6Name: 'Xác nhận hiệu quả',
+  outcomeATitle: 'Kết quả 1 tháng sau thực hiện',
+  metricDefectRate: 'Tỷ lệ lỗi', metricAnnualSave: 'Tiết kiệm năm', metricGoalAchieved: 'Đạt mục tiêu', metricCost: 'Chi phí đối sách', metricCostSub: 'Chỉ làm tài liệu quy trình', metricSide: 'Hiệu quả phụ', metricSideValue: 'Ngắn 8 phút', metricSideSub: 'Thời gian khởi động sáng',
+  stepA6p1: 'Đạt 0.8%, vượt mục tiêu 1.0%. Ngoài lỗi A, còn <strong>rút ngắn thời gian khởi động sáng trung bình 8 phút</strong> (quy trình rõ ràng xóa tan do dự).',
+  stepA7Name: 'Chuẩn hóa và chống tái phát',
+  stepA7p1: '• <strong>Cập nhật tài liệu chuẩn</strong>: Chính thức đưa quy trình mới vào<br>• <strong>Đào tạo nhân viên mới</strong>: Thêm vào checklist onboarding<br>• <strong>Review hàng tháng</strong>: Theo dõi tỷ lệ lỗi, cảnh báo khi vượt ngưỡng<br>• <strong>Mở rộng ngang</strong>: Kiểm tra hiện tượng tương tự ở máy Công đoạn C/D → Xác nhận hiệu quả ở D<br>• <strong>Báo cáo</strong>: Đưa vào review quý ở hội đồng lãnh đạo',
+  scenarioBLabel: 'Kịch bản (Loại B)',
+  scenarioBBody: '<strong>Tình huống:</strong> Trưởng hiện trường bắt đầu nghe nhiều từ người vận hành: "dạo này sáng mệt", "tìm đồ nghề mất thời gian". Để khách quan nắm <strong>vấn đề lớn nhất là gì</strong>, phỏng vấn toàn thể.',
+  stepB1Name: 'Chọn chủ đề (theo phỏng vấn)',
+  stepB1p1: '<strong>Bước 1-1: Phỏng vấn hiện trường (thu 10 mục)</strong>',
+  stepB1p2: 'Từ người vận hành, bảo trì, chất lượng — mỗi người tối đa 3 vấn đề, gộp trùng, tổng hợp thành 10:',
+  stepB1p3: '① Nhiều lỗi sáng<br>② Đồ nghề lộn xộn, mất thời gian tìm<br>③ Ngừng việc chờ xuất kho<br>④ Nhập báo cáo ngày phiền<br>⑤ Thời điểm cấp linh kiện không đều<br>⑥ Bàn giao ca đêm-ngày không đầy đủ<br>⑦ Tiêu chuẩn kiểm khác nhau theo người<br>⑧ Áp suất khí đôi lúc yếu<br>⑨ Nhà nghỉ nóng/lạnh<br>⑩ Phòng thay đồ xa',
+  stepB1p4: '<strong>Chất lượng hỗn hợp cũng OK.</strong> Bao gồm cả những thứ khó làm QC — đầu tiên cứ liệt kê hết.',
+  stepB1p5: '<strong>Bước 1-2: Sắp bằng ma trận đánh giá (5 điểm × 4 trục)</strong>',
+  bMatrixProblem: 'Vấn đề', bMatrixImpact: 'Tác động', bMatrixFeasible: 'Khả thi', bMatrixQuant: 'Đo được', bMatrixAuto: 'Quyền tự chủ', bMatrixTotal: 'Tổng',
+  bItem1: 'Nhiều lỗi sáng', bItem2: 'Đồ nghề lộn xộn', bItem3: 'Tiêu chuẩn kiểm khác nhau', bItem4: 'Áp suất khí không ổn', bItem5: 'Chờ xuất kho', bItem6: 'Bàn giao không đủ', bItem7: 'Báo cáo ngày phiền', bItem8: 'Cấp linh kiện không đều', bItem9: 'Nhiệt độ nhà nghỉ', bItem10: 'Phòng thay đồ xa',
+  stepB1p6: '<strong>Kết quả chọn:</strong>',
+  stepB1p7: '• <strong>#1 "Nhiều lỗi sáng" (18 điểm)</strong> → Chọn làm chủ đề kỳ này<br>• #2 và #3 vào backlog cho kỳ sau<br>• Hạng thấp (nhà nghỉ, phòng thay đồ) chia sẻ với quản lý cơ sở',
+  bCalloutTitle: 'Vì sao chủ đề này (có cơ sở)',
+  bCalloutBody: 'Chọn "lỗi sáng" <strong>không phải trực giác</strong>. <strong>Đánh giá trên 4 trục — tác động, khả thi, đo được, quyền tự chủ — được 18 điểm, cao nhất</strong>. Khi bị hỏi "sao chọn?" trong Q&A, trả lời bằng <strong>bảng đánh giá 10 mục</strong>.',
+  stepB2Name: 'Nắm hiện trạng',
+  stepB2p1: 'Một khi chủ đề xong, từ đây là <strong>drill-down giống Loại A</strong>.',
+  stepB2p2: 'Thu dữ liệu hỗ trợ "lỗi sáng" từ phỏng vấn → phân tầng → thu hẹp đến <strong>sáng, Công đoạn B, Máy C, lỗi kích thước NG</strong>.',
+  stepB2p3: '(Chi tiết giống Lớp 1-4 ở tab Loại A. Dữ liệu xác nhận phỏng vấn.)',
+  stepB3Name: 'Đặt mục tiêu',
+  stepB3p1: '<strong>Mục tiêu:</strong> Tỷ lệ lỗi 3.5% → <strong>dưới 1.0%</strong>',
+  stepB3p2: '<strong>Mục tiêu tiết kiệm:</strong> Năm ~4.3 triệu yên',
+  stepB3p3: '<strong>Thời hạn:</strong> 3 tháng',
+  stepB3p4: '(Cùng số với Loại A. Khác cửa vào, hiện tượng giống = số giống.)',
+  stepB4Name: 'Phân tích nguyên nhân',
+  stepB4p1: 'Loại B <strong>đặt trọng số hơn vào Man/Method</strong> trong phân tích 4M (xuất phát từ phỏng vấn, góc nhìn hiện trường phát huy).',
+  stepB4p2: 'Nhưng kết luận giống: <strong>quy trình khởi động sáng không đầy đủ</strong> là nguyên nhân thật.',
+  stepB4p3: 'Thông tin phụ: từ phỏng vấn, <strong>"người kỳ cựu cho máy chạy không tải vài phút sáng theo kinh nghiệm"</strong> — tri thức ngầm phát hiện. Được xác nhận bằng phân tích nguyên nhân.',
+  stepB5Name: 'Lập và thực hiện đối sách',
+  stepB5p1: 'Đối sách <strong>gần giống Loại A</strong> (thêm 5 phút hiệu chỉnh nhiệt độ), nhưng Loại B tiến hành như <strong>chuẩn hóa tri thức ngầm của người kỳ cựu</strong>.',
+  stepB5p2: 'Xuất phát từ phỏng vấn, cảm giác <strong>"chúng ta chọn, chúng ta làm"</strong> mạnh, tỷ lệ tuân thủ quy trình cao.',
+  stepB6Name: 'Xác nhận hiệu quả',
+  outcomeBTitle: 'Kết quả 1 tháng sau thực hiện',
+  metricBacklog: 'Backlog', metricBacklogValue: '9 mục', metricBacklogSub: 'Ứng viên kỳ sau', metricSatisfaction: 'Hài lòng hiện trường', metricSatisfactionValue: 'Tăng mạnh',
+  stepB6p1: 'Hiệu quả nhỉnh hơn Loại A (0.7% vs 0.8%). Lý do: <strong>hiện trường tuân thủ quy trình với tin tưởng</strong>. Không có cảm giác "bị ép".',
+  stepB7Name: 'Chuẩn hóa và chống tái phát',
+  stepB7p1: '• <strong>Cập nhật quy trình</strong>: Tích hợp tri thức ngầm của người kỳ cựu<br>• <strong>Chủ đề tiếp</strong>: Đưa backlog #2 "đồ nghề lộn xộn" vào QC kỳ tới<br>• <strong>Phỏng vấn định kỳ</strong>: 6 tháng/lần phỏng vấn toàn thể, hệ thống bắt vấn đề mới<br>• <strong>Quy trình Loại B tự chuẩn hóa</strong>: Vòng lặp lặp lại hàng năm',
+  bLoopTitle: 'Lợi ích liên tục của Loại B',
+  bLoopBody: 'Phỏng vấn → đánh giá → chọn → thực hiện → phỏng vấn tiếp — <strong>vòng lặp thành văn hóa tổ chức</strong>. QC không còn "làm một lần rồi thôi", thành <strong>hoạt động tự nhiên xoay hàng năm</strong>.',
+  summaryTitle: 'Điểm chung và cách dùng Loại A/B',
+  summaryP1: 'Điều nhận ra khi so sánh hai phương pháp:',
+  summaryP2: '• <strong>Khuôn mẫu giống (7 giai đoạn)</strong>. Chỉ cửa vào khác.<br>• <strong>Nguyên nhân thật và đối sách đến cùng nơi</strong>. Vì dữ liệu trung thực.<br>• <strong>Loại A nhanh, Loại B sâu</strong>.<br>• <strong>Loại A có cơ sở số mạnh, Loại B có sự đồng thuận hiện trường mạnh</strong>.',
+  summaryP3: 'Đánh giá <strong>văn hóa nào phù hợp công ty/hiện trường</strong> và dùng. Tốt nhất là biết cả hai.',
+  summaryQuote: '"QC có thể bắt đầu bởi bất kỳ ai vì có khuôn mẫu. Dù có khuôn mẫu, độ sâu tùy người."',
+  finallyTitle: 'Cuối cùng',
+  finallyP1: 'Qua 7 chương, ta đã thấy toàn cảnh QC. <strong>Triết lý (1) → Tư duy (2) → Công cụ (3) → Cách đào (4) → Đối sách (5) → Thuyết trình (6) → Ví dụ (7)</strong>. Giờ bạn có khung xương để bắt đầu QC ở bất kỳ hiện trường nào.',
+  finallyP2: 'Tuy nhiên, hướng dẫn này là <strong>cửa vào</strong>. Ở hiện trường thực, có nhiều phán đoán tinh tế chưa viết hết ở đây. <strong>Thử, thử sai, xây khuôn riêng</strong>. Đó là năng lực QC thật.',
+  finallyP3: 'Có khuôn mẫu, không lạc. Có khuôn mẫu, có thể bắt đầu. Nhưng cuối cùng, <strong>trí tuệ hiện trường của bạn</strong> là diễn viên chính.',
+  finalQuote: '"Khuôn mẫu là bản đồ. Người đi là bạn."',
+  backToTop: 'Về trang chủ'
+});
+
+// ================= ID =================
+Object.assign(window.kaizenI18n.id, {
+  ch7Label: "BAB 7",
+  ch7Title: "Belajar dari contoh nyata",
+  ch7Tldr: 'QC punya 2 pintu masuk. <strong>Tipe A: Berbasis indikator</strong> (dari angka perusahaan), dan <strong>Tipe B: Berbasis wawancara</strong> (dari suara lapangan). Kedua jalur sampai ke <strong>format 7 tahap yang sama</strong>. Kita jalankan contoh fiktif sampai selesai.',
+  ch7_h1: 'QC punya 2 jenis pintu masuk',
+  ch7_p1: 'Saat mulai QC di lapangan nyata, ada <strong>2 cara masuk</strong>. Keduanya benar. Pilih sesuai budaya dan tujuan perusahaan.',
+  typeALabel: 'Tipe A', typeBLabel: 'Tipe B',
+  typeAName: 'Berbasis indikator',
+  typeADesc: 'Mulai dari KPI atau masalah manajemen. Dipicu oleh "order naik tapi kapasitas kurang", "yield memburuk" — <strong>anomali angka atau arahan manajemen</strong>. Umum di Toyota/perusahaan besar.',
+  typeBName: 'Berbasis wawancara',
+  typeBDesc: 'Mulai dari masalah lapangan. Kumpulkan suara operator, maintenance, kualitas, pilih tema objektif dengan <strong>matriks evaluasi</strong>. Partisipasi tinggi, cocok untuk tujuan pembinaan.',
+  ch7_p2: 'Yang penting, <strong>apapun dipilih, ikuti 7 tahap QC Story</strong>. Pintu berbeda, tapi <strong>penyebab sejati dan tindakan sampai ke tempat yang sama</strong>.',
+  ch7_p3: 'Di bawah, dengan pabrik fiktif yang sama (manufaktur, 80 karyawan, line 4 proses A-D), jalankan kedua pendekatan sampai selesai.',
+  tabA: 'Tipe A (Berbasis indikator)', tabB: 'Tipe B (Berbasis wawancara)',
+  scenarioALabel: 'Skenario (Tipe A)',
+  scenarioABody: '<strong>Situasi:</strong> Order naik 130% dari tahun sebelumnya. Tingkat operasi pabrik terjaga, tapi <strong>tingkat cacat 1.8x bulan yang sama tahun lalu</strong>. Perintah direksi: "kembalikan tingkat cacat ke level lama sebelum kuartal berikut." Ditemukan dari laporan KPI.',
+  stepA1Name: 'Pemilihan tema',
+  stepA1p1: '<strong>Tema:</strong> Perbaikan tingkat cacat (kurangi dari bulan yang sama tahun lalu)',
+  stepA1p2: '<strong>Latar belakang:</strong> Terhadap order naik 130%, tingkat cacat 3.5% (tahun lalu 1.9%), kerugian tahunan ~6 juta yen. Risiko terlambat kirim.',
+  stepA1p3: '<strong>Dasar:</strong> Laporan KPI, laporan kualitas bulanan, tren komplain pelanggan',
+  stepA2Name: 'Memahami keadaan saat ini',
+  stepA2p1: 'Persempit <strong>di mana masalah terkonsentrasi</strong> dengan diagram Pareto dan stratifikasi.',
+  layer1Label: 'Lapisan 1: Per jenis cacat (total 250 kasus)',
+  layer2Label: 'Lapisan 2: Cacat A per proses (total 145 kasus)',
+  layer3Label: 'Lapisan 3: Cacat A di Proses B per waktu (total 105 kasus)',
+  layer4Label: 'Lapisan 4: Cacat A, Pagi, Proses B per mesin (total 67 kasus)',
+  layer1Conclusion: '→ <strong>Cacat A (dimensi NG) 58%, terbesar</strong>. Fokus sini dan gali dalam.',
+  layer2Conclusion: '→ <strong>Proses B mencapai 72%</strong>. Gali lebih dalam Proses B.',
+  layer3Conclusion: '→ <strong>Pagi (8-10) terkonsentrasi 64%</strong>. Lihat per mesin selanjutnya.',
+  legendCount: 'Jumlah (sumbu kiri)',
+  legendCumu: 'Persentase kumulatif (sumbu kanan)',
+  legend80: 'Garis 80%',
+  narrowdownTitle: 'Hasil penyempitan',
+  narrowdownBody: '<strong>Cacat dimensi NG terjadi di pagi (8-10), Proses B, Mesin C</strong>. Mesin C 84%. <strong>Tindakan di sini menggerakkan keseluruhan signifikan</strong>.',
+  stepA3Name: 'Penetapan target',
+  stepA3p1: '<strong>Target:</strong> Tingkat cacat 3.5% → <strong>di bawah 1.0%</strong> (kembali ke level tahun lalu)',
+  stepA3p2: '<strong>Target penghematan:</strong> Tahunan 6 juta yen → <strong>di bawah 1.7 juta yen</strong> (hemat 4.3 juta yen)',
+  stepA3p3: '<strong>Batas waktu:</strong> 3 bulan',
+  stepA4Name: 'Analisis penyebab',
+  stepA4p1: 'Untuk kondisi yang dipersempit "Pagi, cacat dimensi Mesin C", list kandidat penyebab dengan <strong>diagram tulang ikan (4M)</strong>:',
+  stepA4p2: '• <strong>Machine (Mesin):</strong> Suku cadang menyusut karena suhu turun malam<br>• <strong>Method (Metode):</strong> Tidak ada koreksi suhu di startup pagi<br>• <strong>Man (Manusia):</strong> (tidak terkait, sama tren lintas operator)<br>• <strong>Material:</strong> (tidak terkait, tidak korelasi dengan beda lot)',
+  stepA4p3: '<strong>Analisis 5-Why:</strong>',
+  stepA4p4: 'Why 1: Banyak cacat dimensi NG pagi → Kalibrasi Mesin C meleset<br>Why 2: Kalibrasi meleset → Beda kondisi dengan akhir hari kemarin<br>Why 3: Kondisi beda → Suku cadang menyusut karena suhu malam<br>Why 4: Efek menyusut tersisa → Tidak ada prosedur koreksi suhu pagi<br>Why 5: Tidak ada prosedur → Startup pagi belum standar',
+  realCauseTitle: 'Penyebab sejati',
+  realCauseBody: '<strong>Prosedur startup pagi tidak memadai</strong> (tidak ada proses koreksi suhu)<br>Uji: "Tambah prosedur ini tidak kambuh?" → <strong>Ya</strong>. Konfirmasi penyebab sejati.',
+  stepA5Name: 'Perencanaan dan pelaksanaan tindakan',
+  stepA5p1: '<strong>Matriks evaluasi kandidat tindakan:</strong>',
+  matrixHeadMeasure: 'Tindakan', matrixHeadEffect: 'Efek', matrixHeadFeasible: 'Kelayakan', matrixHeadLateral: 'Deploy lateral', matrixHeadTotal: 'Total',
+  measure1: 'Ganti Mesin C (dengan kontrol suhu)',
+  measure2: 'Tambah prosedur koreksi suhu pagi (5 menit)',
+  measure3: 'Pasang sistem AC seluruh pabrik',
+  measure4: 'Jaga operasi minimum malam',
+  stepA5p2: '<strong>Dipakai:</strong> Tambah prosedur koreksi pagi (total 14 poin). Biaya hampir 0, segera bisa diterapkan ke line lain.',
+  stepA5p3: '<strong>Pelaksanaan:</strong> Tambah warm-up 5 menit Mesin C saat startup, pasang prosedur berfoto di samping mesin, intensif inspeksi 10 produk pertama.',
+  stepA6Name: 'Verifikasi efek',
+  outcomeATitle: 'Hasil 1 bulan setelah pelaksanaan',
+  metricDefectRate: 'Tingkat cacat', metricAnnualSave: 'Penghematan tahunan', metricGoalAchieved: 'Target tercapai', metricCost: 'Biaya tindakan', metricCostSub: 'Hanya pembuatan prosedur', metricSide: 'Efek samping', metricSideValue: 'Lebih singkat 8 menit', metricSideSub: 'Waktu startup pagi',
+  stepA6p1: 'Capai 0.8%, melebihi target 1.0%. Selain cacat A, juga <strong>pendek waktu startup line pagi rata-rata 8 menit</strong> (prosedur jelas hilangkan keragu-raguan).',
+  stepA7Name: 'Standarisasi dan pencegahan kambuh',
+  stepA7p1: '• <strong>Update dokumen standar kerja</strong>: Secara formal masukkan prosedur baru<br>• <strong>Pelatihan karyawan baru</strong>: Tambahkan ke checklist onboarding<br>• <strong>Review bulanan</strong>: Pantau tingkat cacat bulanan, peringatan saat ambang batas<br>• <strong>Deploy lateral</strong>: Periksa fenomena sama di mesin Proses C/D → Efek dikonfirmasi di D juga<br>• <strong>Laporan</strong>: Masukkan ke review kuartal di rapat direksi',
+  scenarioBLabel: 'Skenario (Tipe B)',
+  scenarioBBody: '<strong>Situasi:</strong> Leader lapangan mulai sering dengar dari operator: "pagi belakangan terasa berat", "cari alat makan waktu". Untuk objektif pahami <strong>apa masalah paling besar</strong>, lakukan wawancara seluruh anggota.',
+  stepB1Name: 'Pemilihan tema (berbasis wawancara)',
+  stepB1p1: '<strong>Step 1-1: Wawancara lapangan (kumpul 10 item)</strong>',
+  stepB1p2: 'Dari operator, maintenance, kualitas — masing-masing maksimal 3 masalah, gabung duplikasi, konsolidasi 10:',
+  stepB1p3: '① Banyak cacat pagi<br>② Alat berantakan, butuh waktu cari<br>③ Stop kerja menunggu kirim<br>④ Input laporan harian merepotkan<br>⑤ Timing supply suku cadang tidak seragam<br>⑥ Handover shift malam-siang tidak cukup<br>⑦ Standar inspeksi beda per orang<br>⑧ Tekanan udara kadang lemah<br>⑨ Ruang istirahat panas/dingin<br>⑩ Ruang ganti jauh',
+  stepB1p4: '<strong>Kualitas campuran juga OK.</strong> Termasuk yang sulit jadi QC — dulu list semua.',
+  stepB1p5: '<strong>Step 1-2: Urutkan dengan matriks evaluasi (5 poin × 4 sumbu)</strong>',
+  bMatrixProblem: 'Masalah', bMatrixImpact: 'Dampak', bMatrixFeasible: 'Kelayakan', bMatrixQuant: 'Dapat diukur', bMatrixAuto: 'Otonomi', bMatrixTotal: 'Total',
+  bItem1: 'Banyak cacat pagi', bItem2: 'Alat berantakan', bItem3: 'Standar inspeksi beda', bItem4: 'Tekanan udara tidak stabil', bItem5: 'Tunggu kirim', bItem6: 'Handover kurang', bItem7: 'Laporan harian merepotkan', bItem8: 'Supply suku cadang tidak seragam', bItem9: 'Suhu ruang istirahat', bItem10: 'Ruang ganti jauh',
+  stepB1p6: '<strong>Hasil seleksi:</strong>',
+  stepB1p7: '• <strong>#1 "Banyak cacat pagi" (18 poin)</strong> → Pakai sebagai tema kuartal ini<br>• #2 dan #3 masuk backlog untuk nanti<br>• Rendah (ruang istirahat, ganti) dibagikan ke manajemen fasilitas',
+  bCalloutTitle: 'Kenapa tema ini (dengan dasar)',
+  bCalloutBody: 'Pilih "cacat pagi" <strong>bukan intuisi</strong>. <strong>Dievaluasi pada 4 sumbu — dampak, kelayakan, terukur, otonomi — dapat 18 poin, tertinggi</strong>. Kalau ditanya "kenapa ini?" di Q&A, jawab dengan <strong>tabel evaluasi 10 item</strong>.',
+  stepB2Name: 'Memahami keadaan saat ini',
+  stepB2p1: 'Setelah tema ditetapkan, dari sini <strong>drill-down sama Tipe A</strong>.',
+  stepB2p2: 'Kumpul data dukung "cacat pagi" dari wawancara → stratifikasi → persempit ke <strong>pagi, Proses B, Mesin C, cacat dimensi NG</strong>.',
+  stepB2p3: '(Detail sama Lapisan 1-4 di tab Tipe A. Data mendukung wawancara.)',
+  stepB3Name: 'Penetapan target',
+  stepB3p1: '<strong>Target:</strong> Tingkat cacat 3.5% → <strong>di bawah 1.0%</strong>',
+  stepB3p2: '<strong>Target penghematan:</strong> Tahunan ~4.3 juta yen',
+  stepB3p3: '<strong>Batas waktu:</strong> 3 bulan',
+  stepB3p4: '(Angka sama Tipe A. Pintu berbeda, fenomena sama = angka sama.)',
+  stepB4Name: 'Analisis penyebab',
+  stepB4p1: 'Tipe B <strong>memberikan bobot lebih ke Man/Method</strong> dalam analisis 4M (mulai dari wawancara, sudut pandang berakar di lapangan berfungsi).',
+  stepB4p2: 'Tapi kesimpulan sama: <strong>prosedur startup pagi tidak memadai</strong> adalah penyebab sejati.',
+  stepB4p3: 'Info tambahan: dari wawancara, <strong>"senior idle-kan mesin beberapa menit pagi dari pengalaman"</strong> — tacit knowledge ditemukan. Dikonfirmasi lewat analisis penyebab.',
+  stepB5Name: 'Perencanaan dan pelaksanaan tindakan',
+  stepB5p1: 'Tindakan <strong>hampir sama Tipe A</strong> (tambah 5 menit koreksi suhu), tapi Tipe B berjalan sebagai <strong>formalisasi tacit knowledge senior</strong>.',
+  stepB5p2: 'Karena mulai dari wawancara, rasa <strong>"kami pilih, kami buat"</strong> kuat, tingkat kepatuhan prosedur tinggi.',
+  stepB6Name: 'Verifikasi efek',
+  outcomeBTitle: 'Hasil 1 bulan setelah pelaksanaan',
+  metricBacklog: 'Backlog', metricBacklogValue: '9 item', metricBacklogSub: 'Kandidat kuartal berikut', metricSatisfaction: 'Kepuasan lapangan', metricSatisfactionValue: 'Naik signifikan',
+  stepB6p1: 'Efek sedikit lebih tinggi dari Tipe A (0.7% vs 0.8%). Alasan: <strong>lapangan patuhi prosedur dengan keyakinan</strong>. Tidak ada rasa "dipaksa".',
+  stepB7Name: 'Standarisasi dan pencegahan kambuh',
+  stepB7p1: '• <strong>Update prosedur</strong>: Masukkan tacit knowledge senior<br>• <strong>Tema berikut</strong>: Pindah backlog #2 "alat berantakan" ke QC kuartal berikut<br>• <strong>Rutinisasi wawancara</strong>: 6 bulan/kali wawancara seluruh anggota, sistem tangkap masalah baru<br>• <strong>Proses Tipe B sendiri terstandarisasi</strong>: Loop berulang tahunan',
+  bLoopTitle: 'Manfaat berkelanjutan Tipe B',
+  bLoopBody: 'Wawancara → evaluasi → pilih → laksanakan → wawancara berikut — <strong>loop jadi budaya organisasi</strong>. QC tidak lagi "sekali lalu selesai", jadi <strong>aktivitas yang berputar alami tiap tahun</strong>.',
+  summaryTitle: 'Kesamaan dan penggunaan Tipe A/B',
+  summaryP1: 'Yang disadari saat menyandingkan dua pendekatan:',
+  summaryP2: '• <strong>Format sama (7 tahap)</strong>. Hanya pintu beda.<br>• <strong>Penyebab sejati dan tindakan sampai ke tempat sama</strong>. Karena data jujur.<br>• <strong>Tipe A lebih cepat, Tipe B lebih dalam</strong>.<br>• <strong>Tipe A dukungan angka kuat, Tipe B keyakinan lapangan kuat</strong>.',
+  summaryP3: 'Nilai <strong>budaya mana yang cocok perusahaan/lapangan Anda</strong> dan pakai. Terbaik kalau bisa keduanya.',
+  summaryQuote: '"QC bisa dimulai siapa saja karena ada format. Meski ada format, kedalaman tergantung orang."',
+  finallyTitle: 'Akhirnya',
+  finallyP1: 'Melalui 7 bab, kita lihat gambaran lengkap QC. <strong>Filosofi (1) → Mindset (2) → Alat (3) → Cara gali (4) → Tindakan (5) → Presentasi (6) → Contoh (7)</strong>. Sekarang Anda punya kerangka untuk mulai QC di lapangan manapun.',
+  finallyP2: 'Namun, panduan ini adalah <strong>pintu masuk</strong>. Di lapangan nyata, banyak keputusan halus yang tidak tercakup di sini. <strong>Coba, coba salah, buat format sendiri</strong>. Itu kemampuan QC sejati.',
+  finallyP3: 'Ada format, tidak tersesat. Ada format, bisa mulai. Tapi akhirnya, <strong>kebijaksanaan lapangan Anda</strong> adalah pemain utama.',
+  finalQuote: '"Format adalah peta. Yang berjalan adalah Anda."',
+  backToTop: 'Kembali ke beranda'
+});
+
+// ================= MY =================
+Object.assign(window.kaizenI18n.my, {
+  ch7Label: "အခန်း ၇",
+  ch7Title: "လက်တွေ့နမူနာနှင့် လေ့လာခြင်း",
+  ch7Tldr: 'QC တွင် ဝင်ပေါက် ၂ ခု ရှိ။ <strong>အမျိုးအစား A: ညွှန်းကိန်းအပေါ်အခြေခံ</strong> (ကုမ္ပဏီ၏ ဂဏန်းမှ ဝင်) နှင့် <strong>အမျိုးအစား B: မေးမြန်းခြင်းအပေါ်အခြေခံ</strong> (လုပ်ငန်းခွင်၏ အသံမှ ဝင်)။ နှစ်ဦးလုံး <strong>ရောက်ရှိသော ပုံစံသည် အဆင့် ၇ ဆင့် အတူတူ</strong>။ စိတ်ကူး နမူနာဖြင့် အပြီးထိ ပြေး။',
+  ch7_h1: 'QC တွင် ဝင်ပေါက် ၂ မျိုး ရှိ',
+  ch7_p1: 'လက်တွေ့ လုပ်ငန်းခွင်တွင် QC စတင်သောအခါ <strong>ဝင်နည်း ၂ မျိုး</strong> ရှိ။ နှစ်ဦးလုံး မှန်။ ကုမ္ပဏီ ယဉ်ကျေးမှုနှင့် ရည်ရွယ်ချက်အလိုက် သုံးခြင်း။',
+  typeALabel: 'အမျိုးအစား A', typeBLabel: 'အမျိုးအစား B',
+  typeAName: 'ညွှန်းကိန်းအပေါ်အခြေခံ',
+  typeADesc: 'ကုမ္ပဏီ KPI သို့ စီမံခန့်ခွဲမှု ပြဿနာမှ ဝင်။ "အော်ဒါ တိုးနေလျက် စက်ပစ္စည်း စွမ်းရည် မလုံ"၊ "ထုတ်ကုန် ရှုံးခဲ့" အစရှိသည့် <strong>ဂဏန်း ပုံမှန်မဟုတ်မှု သို့ စီမံခန့်ခွဲမှု မူဝါဒ</strong> ဖြစ်။ Toyota/ကြီးကျယ်သော ကုမ္ပဏီတွင် အသုံးများ။',
+  typeBName: 'မေးမြန်းခြင်းအပေါ်အခြေခံ',
+  typeBDesc: 'လုပ်ငန်းခွင် ပြဿနာမှ ဝင်။ လုပ်သား၊ ပြုပြင်ထိန်းသိမ်းရေး၊ အရည်အသွေး တို့၏ အသံ စု၍ <strong>အကဲဖြတ် မက်ထရစ်</strong>ဖြင့် ဘက်မလိုက်ဘဲ အကြောင်းအရာ ရွေး။ ပါဝင်မှု မြင့်၊ တိုးတက်စေရန် အတွက်လည်း သင့်တော်။',
+  ch7_p2: 'အရေးကြီးသည်မှာ <strong>ဘယ်ဟာရွေးရွေး QC ဇာတ်လမ်း အဆင့် ၇ ဆင့်</strong> အတိုင်း လုပ်ခြင်း။ ဝင်ပေါက် ကွဲသော်လည်း <strong>တကယ့်အကြောင်းရင်းနှင့် တုံ့ပြန်မှု တူညီသော နေရာ</strong> သို့ ရောက်။',
+  ch7_p3: 'အောက်တွင် တူညီသော စိတ်ကူး စက်ရုံ (ထုတ်လုပ်မှု၊ ဝန်ထမ်း ၈၀ ယောက်၊ လုပ်ငန်းစဉ် A-D ၄ ခု) ဖြင့် A နှင့် B နှစ်ဦးလုံး လုပ်ငန်းစဉ် အပြီးထိ ပြေး။',
+  tabA: 'အမျိုးအစား A (ညွှန်းကိန်း)', tabB: 'အမျိုးအစား B (မေးမြန်းခြင်း)',
+  scenarioALabel: 'ဇာတ်လမ်း (A)',
+  scenarioABody: '<strong>အခြေအနေ:</strong> ယခင်နှစ်နှင့် နှိုင်း အော်ဒါ ၁၃၀% တိုး။ စက်ရုံ လည်ပတ်နှုန်း ထိန်းနိုင် သော်လည်း <strong>ချွတ်ယွင်းမှု နှုန်း ယခင်နှစ်၏ အလားတူ လ နှင့် နှိုင်း ၁.၈ ဆ</strong> ဆိုးလာ။ ဒါရိုက်တာများထံမှ "လာမည့် သုံးလပတ်မတိုင်မီ ချွတ်ယွင်းမှု နှုန်း ယခင် အဆင့် သို့ ပြန်ပို့" အမိန့်။ KPI အစီရင်ခံစာ မှ ဖော်ထုတ်။',
+  stepA1Name: 'အကြောင်းအရာ ရွေးခြင်း',
+  stepA1p1: '<strong>အကြောင်းအရာ:</strong> ချွတ်ယွင်းမှု နှုန်း တိုးတက်စေခြင်း',
+  stepA1p2: '<strong>နောက်ခံ:</strong> အော်ဒါ ၁၃၀% တိုးလျက် ချွတ်ယွင်းမှု နှုန်း ၃.၅% (ယခင်နှစ် ၁.၉%)၊ နှစ်စဉ် ဆုံးရှုံး ၆ သန်း ယန်း။ ပို့ဆောင်မှု နောက်ကျသော စွန့်စားမှု။',
+  stepA1p3: '<strong>အခြေခံ:</strong> KPI အစီရင်ခံစာ၊ အရည်အသွေး လစဉ် အစီရင်ခံစာ၊ သုံးစွဲသူ တိုင်ကြားမှု ခြေရာ',
+  stepA2Name: 'လက်ရှိအခြေအနေ နားလည်',
+  stepA2p1: 'Pareto ဇယားနှင့် အလွှာခွဲ ခြင်းဖြင့် <strong>ပြဿနာ စုစည်းရာ နေရာ</strong> ကျဉ်းကျပ်။',
+  layer1Label: 'အလွှာ ၁: ချွတ်ယွင်းမှု အမျိုးအစား (စုစုပေါင်း ၂၅၀ ကြိမ်)',
+  layer2Label: 'အလွှာ ၂: ချွတ်ယွင်းမှု A ကို လုပ်ငန်းစဉ်အလိုက် (စုစုပေါင်း ၁၄၅ ကြိမ်)',
+  layer3Label: 'အလွှာ ၃: လုပ်ငန်းစဉ် B ၏ ချွတ်ယွင်းမှု A ကို အချိန်အလိုက် (စုစုပေါင်း ၁၀၅ ကြိမ်)',
+  layer4Label: 'အလွှာ ၄: မနက်၊ လုပ်ငန်းစဉ် B ၏ ချွတ်ယွင်းမှု A ကို စက်အလိုက် (စုစုပေါင်း ၆၇ ကြိမ်)',
+  layer1Conclusion: '→ <strong>ချွတ်ယွင်းမှု A (အရွယ်အစား NG) ၅၈% အကြီးဆုံး</strong>။ ဤနေရာ၌ ကျဉ်းကျပ်၍ နက်ရှိုင်းစွာ တူး။',
+  layer2Conclusion: '→ <strong>လုပ်ငန်းစဉ် B တွင် ၇၂%</strong> ဖြစ်ပေါ်။ လုပ်ငန်းစဉ် B ကို ထပ်မံ တူး။',
+  layer3Conclusion: '→ <strong>မနက် (၈-၁၀ နာရီ) တွင် ၆၄% စုစည်း</strong>။ စက်အလိုက် ထပ်ကြည့်။',
+  legendCount: 'အရေအတွက် (ဘယ်ဝင်ရိုး)',
+  legendCumu: 'စုစုပေါင်း ရာခိုင်နှုန်း (ညာဝင်ရိုး)',
+  legend80: '၈၀% လိုင်း',
+  narrowdownTitle: 'ကျဉ်းကျပ်မှု ရလဒ်',
+  narrowdownBody: '<strong>မနက် (၈-၁၀)၊ လုပ်ငန်းစဉ် B၊ စက် C တွင် ဖြစ်ပေါ်သော အရွယ်အစား NG ချွတ်ယွင်းမှု</strong>။ စက် C သည် ၈၄% ယူ။ <strong>ဤနေရာ၌ တုံ့ပြန်လျှင် အားလုံး အကြီးအကျယ် လှုပ်</strong>။',
+  stepA3Name: 'ရည်မှန်းချက် သတ်မှတ်',
+  stepA3p1: '<strong>ရည်မှန်းချက်:</strong> ချွတ်ယွင်းမှု နှုန်း ၃.၅% → <strong>၁.၀% အောက်</strong>',
+  stepA3p2: '<strong>လျှော့ချရေး ရည်မှန်းချက်:</strong> နှစ်စဉ် ၆ သန်း ယန်း → <strong>၁.၇ သန်း ယန်း အောက်</strong>',
+  stepA3p3: '<strong>အချိန်ကာလ:</strong> ၃ လ',
+  stepA4Name: 'အကြောင်းရင်း ခွဲခြမ်းစိတ်ဖြာ',
+  stepA4p1: 'ကျဉ်းကျပ်သော အခြေအနေ "မနက်၊ စက် C အရွယ်အစား NG" အတွက် <strong>ငါးရိုးပုံ (4M)</strong>ဖြင့် အကြောင်းရင်း ကိုယ်စားလှယ်များ ဖော်ထုတ်:',
+  stepA4p2: '• <strong>Machine (စက်):</strong> ည ရပ်နား အပူချိန် ကျ၍ အစိတ်အပိုင်း ကျုံ့<br>• <strong>Method (နည်းလမ်း):</strong> မနက် စတင်မှု၌ အပူချိန် ပြင်ဆင်ခြင်း မရှိ<br>• <strong>Man (လူ):</strong> (မဆိုင်၊ လုပ်သား အများ တွင်လည်း တူညီ)<br>• <strong>Material (ပစ္စည်း):</strong> (မဆိုင်၊ တွဲလိုက် ခြားနားခြင်းနှင့် ဆက်စပ် မရှိ)',
+  stepA4p3: '<strong>၅-Whys ခွဲခြမ်းစိတ်ဖြာ:</strong>',
+  stepA4p4: 'Why 1: မနက် အရွယ်အစား NG များ → စက် C ချိန်ညှိ လွဲ<br>Why 2: ချိန်ညှိ လွဲ → မနေ့က အပြီးခါ အခြေအနေနှင့် ကွဲ<br>Why 3: အခြေအနေ ကွဲ → ည အပူချိန် ပြောင်းလဲ၍ အစိတ်အပိုင်း ကျုံ့<br>Why 4: ကျုံ့မှု အကျိုး ကျန် → မနက် အပူချိန် ပြင်ဆင်ခြင်း လုပ်ငန်းစဉ် မရှိ<br>Why 5: ပြင်ဆင်မှု လုပ်ငန်းစဉ် မရှိ → မနက် စတင်မှု စံချိန် မသတ်မှတ်ထား',
+  realCauseTitle: 'တကယ့်အကြောင်းရင်း',
+  realCauseBody: '<strong>မနက် စတင်မှု လုပ်ငန်းစဉ် မပြည့်စုံ</strong> (အပူချိန် ပြင်ဆင် လုပ်ငန်းစဉ် မရှိ)<br>စစ်ဆေးမှု: "ဤလုပ်ငန်းစဉ် ထပ်ထည့်လျှင် ပြန်မဖြစ်?" → <strong>Yes</strong>။ တကယ့်အကြောင်းရင်း အတည်ပြု။',
+  stepA5Name: 'တုံ့ပြန်မှု စီစဉ် နှင့် လုပ်ဆောင်ခြင်း',
+  stepA5p1: '<strong>တုံ့ပြန်မှု ကိုယ်စားလှယ်များ၏ အကဲဖြတ် မက်ထရစ်:</strong>',
+  matrixHeadMeasure: 'တုံ့ပြန်မှု', matrixHeadEffect: 'အကျိုးသက်ရောက်မှု', matrixHeadFeasible: 'အကောင်အထည်', matrixHeadLateral: 'ဖြန့်ကျက်', matrixHeadTotal: 'စုစုပေါင်း',
+  measure1: 'စက် C လဲလှယ် (အပူချိန် ထိန်းသော ပုံစံ)',
+  measure2: 'မနက် အပူချိန် ပြင်ဆင်ခြင်း လုပ်ငန်းစဉ် ထပ် (၅ မိနစ်)',
+  measure3: 'စက်ရုံ တစ်ခုလုံး အပူချိန် ထိန်းစနစ် တပ်',
+  measure4: 'ည အနည်းဆုံး လည်ပတ်မှု ထိန်း',
+  stepA5p2: '<strong>ရွေးချယ်:</strong> မနက် ပြင်ဆင်ခြင်း လုပ်ငန်းစဉ် ထပ်ခြင်း (စုစုပေါင်း ၁၄ မှတ်)။ ကုန်ကျ နီးနီးသုည၊ အခြား လိုင်းများ သို့ ချက်ချင်း သုံးနိုင်။',
+  stepA5p3: '<strong>လုပ်ဆောင်မှု:</strong> စတင်ချိန်၌ စက် C ၏ ၅ မိနစ် နွေးထားခြင်း ထပ်ထည့်၊ ဓာတ်ပုံပါ လုပ်ငန်းစဉ် ကို စက်ဘေး၌ ကပ်၊ ပထမ ၁၀ ခုကို စစ်ဆေးမှု မြှင့်။',
+  stepA6Name: 'အကျိုးသက်ရောက်မှု အတည်ပြု',
+  outcomeATitle: 'လုပ်ဆောင်ပြီး ၁ လ အကြာ ရလဒ်',
+  metricDefectRate: 'ချွတ်ယွင်းမှု နှုန်း', metricAnnualSave: 'နှစ်စဉ် လျှော့ချငွေ', metricGoalAchieved: 'ရည်မှန်းချက် ပြည့်', metricCost: 'တုံ့ပြန်မှု ကုန်ကျ', metricCostSub: 'လုပ်ငန်းစဉ် ထုတ်လုပ်မှုသာ', metricSide: 'ဘေးထွက် အကျိုး', metricSideValue: '၈ မိနစ် တို', metricSideSub: 'မနက် စတင်မှု အချိန်',
+  stepA6p1: 'ရည်မှန်း ၁.၀% ထက် ၀.၈% ဖြင့် ပြည့်။ ချွတ်ယွင်းမှု A သာမက <strong>မနက် လိုင်း စတင်သော အချိန်လည်း ပျမ်းမျှ ၈ မိနစ် တို</strong> (လုပ်ငန်းစဉ် ရှင်းလင်း၍ ဝေခွဲခြင်း ပျောက်)။',
+  stepA7Name: 'စံချိန်ထား နှင့် ပြန်မဖြစ်စေ',
+  stepA7p1: '• <strong>အလုပ် စံ စာရွက် မွမ်းမံ</strong>: အပူချိန် ပြင်ဆင်ခြင်း လုပ်ငန်းစဉ်သစ်ကို တရားဝင် ထည့်<br>• <strong>ဝန်ထမ်းသစ် သင်ကြား</strong>: ဝင်ရောက်ချိန် သင်ကြား စစ်ဆေးစာရင်း သို့ ထပ်<br>• <strong>လစဉ် ပြန်စစ်</strong>: ချွတ်ယွင်းမှု နှုန်း လစဉ် စောင့်ကြည့်၊ ကန့်သတ်ကျော်လျှင် သတိပေး<br>• <strong>ဖြန့်ကျက်</strong>: လုပ်ငန်းစဉ် C/D ၏ စက်များတွင်လည်း ဖြစ်ရပ် ရှိမရှိ စုံစမ်း → လုပ်ငန်းစဉ် D တွင်လည်း အကျိုး အတည်ပြု<br>• <strong>အစီရင်ခံ</strong>: ဒါရိုက်တာ အစည်းအဝေး၏ သုံးလပတ် ပြန်စစ်မှုတွင် ထည့်',
+  scenarioBLabel: 'ဇာတ်လမ်း (B)',
+  scenarioBBody: '<strong>အခြေအနေ:</strong> လုပ်ငန်းခွင် ခေါင်းဆောင်သည် လုပ်သားများထံမှ "ခုတလော မနက် ပင်ပန်း"၊ "ကိရိယာ ရှာရ အချိန်ကြာ" တို့ ကို မကြာခဏ ကြားလာ။ <strong>ပြဿနာ အကြီးဆုံး က ဘာလဲ</strong> ဘက်မလိုက်ဘဲ နားလည်ရန် အားလုံးကို မေးမြန်း။',
+  stepB1Name: 'အကြောင်းအရာ ရွေးခြင်း (မေးမြန်းခြင်း)',
+  stepB1p1: '<strong>အဆင့် ၁-၁: လုပ်ငန်းခွင် မေးမြန်းခြင်း (၁၀ ခု စု)</strong>',
+  stepB1p2: 'လုပ်သား၊ ပြုပြင်ထိန်းသိမ်းရေး၊ အရည်အသွေး တာဝန်ရှိသူ အားလုံးထံမှ ပြဿနာကို တစ်ဦးလျှင် ၃ ခုထိ ထုတ်ပေး၊ ထပ်တူ သိမ်းပြီး ၁၀ ခု အဖြစ် ခြုံ:',
+  stepB1p3: '① မနက် ချွတ်ယွင်းမှု များ<br>② ကိရိယာ ပြန့်၍ ရှာရ အချိန်ကြာ<br>③ ထုတ်ပေးမှု စောင့်၍ အလုပ် ရပ်သော အချိန် ရှိ<br>④ နေ့စဉ် အစီရင်ခံ ရိုက်ထည့် ခက်<br>⑤ အစိတ်အပိုင်း ပေးပို့သော အချိန် မညီ<br>⑥ ည-နေ့ အလုပ်ဆိုင်း လွှဲပြောင်း မပြည့်စုံ<br>⑦ စစ်ဆေးရေး စံ လူအလိုက် ကွဲပြား<br>⑧ လေ ဖိအား တစ်ခါတစ်ရံ အားနည်း<br>⑨ အနားယူ နေရာ ပူ/အေး<br>⑩ အ၀တ်လဲခန်း ဝေးလွန်း',
+  stepB1p4: '<strong>အရည်အသွေး ရောထွေးနေသော်လည်း အဆင်ပြေ။</strong> QC အတွက် မသင့်တော်သော အရာများ ပါဝင်ပြီး ဦးစွာ အားလုံး စာရင်းပြု။',
+  stepB1p5: '<strong>အဆင့် ၁-၂: အကဲဖြတ် မက်ထရစ်ဖြင့် စီ (၅ မှတ် × ၄ ဝင်ရိုး)</strong>',
+  bMatrixProblem: 'ပြဿနာ', bMatrixImpact: 'သက်ရောက်မှု', bMatrixFeasible: 'အကောင်အထည်', bMatrixQuant: 'ဂဏန်း ဖော်', bMatrixAuto: 'ဆုံးဖြတ်ခွင့်', bMatrixTotal: 'စုစုပေါင်း',
+  bItem1: 'မနက် ချွတ်ယွင်းမှု များ', bItem2: 'ကိရိယာ ပြန့်', bItem3: 'စစ်ဆေး စံ ကွဲပြား', bItem4: 'လေဖိအား မတည်ငြိမ်', bItem5: 'ထုတ်ပေးမှု စောင့်', bItem6: 'လွှဲပြောင်း မပြည့်', bItem7: 'နေ့စဉ် အစီရင်ခံ ခက်', bItem8: 'အစိတ်အပိုင်း ပေးပို့ မညီ', bItem9: 'အနားယူ နေရာ အပူချိန်', bItem10: 'အ၀တ်လဲခန်း ဝေး',
+  stepB1p6: '<strong>ရွေးချယ်မှု ရလဒ်:</strong>',
+  stepB1p7: '• <strong>အဆင့် ၁ "မနက် ချွတ်ယွင်းမှု" (၁၈ မှတ်)</strong> → ယခုကာလ အကြောင်းအရာ အဖြစ် လက်ခံ<br>• ၂ နှင့် ၃ နေရာ နောက် အတွက် backlog<br>• အဆင့်နိမ့်များ (အနားယူ၊ အ၀တ်လဲ) ကို ပစ္စည်းစီမံ ဘက်သို့ ပေးပို့',
+  bCalloutTitle: 'ဘာကြောင့် ဤအကြောင်းအရာ (အခြေခံပါ)',
+  bCalloutBody: '"မနက် ချွတ်ယွင်းမှု" ရွေးသည် <strong>ထင်ရာ မဟုတ်</strong>။ <strong>သက်ရောက်မှု၊ အကောင်အထည်၊ ဂဏန်းဖော်၊ ဆုံးဖြတ်ခွင့် ၄ ဝင်ရိုးဖြင့် အကဲဖြတ်ရ ၁၈ မှတ် ထိပ်ဆုံး</strong> ဖြစ်၍။ "ဘာကြောင့် ဤအရာ?" Q&A တွင် မေးခံရလျှင် <strong>၁၀ ခု အကဲဖြတ်ဇယား</strong>ဖြင့် ဖြေနိုင်။',
+  stepB2Name: 'လက်ရှိအခြေအနေ နားလည်',
+  stepB2p1: 'အကြောင်းအရာ ဆုံးဖြတ်ပြီးနောက်၊ ဤမှစ၍ A နှင့် <strong>တူညီသော drill-down</strong>။',
+  stepB2p2: 'မေးမြန်းမှုမှ ထွက်သော "မနက် ချွတ်ယွင်းမှု" ကို ထောက်သော အချက်အလက် ရ → အလွှာခွဲ drill-down → <strong>မနက်၊ လုပ်ငန်းစဉ် B၊ စက် C၊ အရွယ်အစား NG ချွတ်ယွင်းမှု</strong> သို့ ကျဉ်းကျပ်။',
+  stepB2p3: '(အသေးစိတ်မှာ A တက်ဘ်၏ အလွှာ ၁-၄ နှင့် တူညီသော Pareto။ အချက်အလက်က မေးမြန်းမှုကို ထောက်။)',
+  stepB3Name: 'ရည်မှန်းချက် သတ်မှတ်',
+  stepB3p1: '<strong>ရည်မှန်းချက်:</strong> ချွတ်ယွင်းမှု နှုန်း ၃.၅% → <strong>၁.၀% အောက်</strong>',
+  stepB3p2: '<strong>လျှော့ချရေး ရည်မှန်းချက်:</strong> နှစ်စဉ် ၄.၃ သန်း ယန်း ခန့်',
+  stepB3p3: '<strong>အချိန်ကာလ:</strong> ၃ လ',
+  stepB3p4: '(A နှင့် တူညီသော ဂဏန်း ရောက်။ ဝင်ပေါက် ကွဲသော်လည်း ဖြစ်ရပ် တူလျှင် ဂဏန်း တူ။)',
+  stepB4Name: 'အကြောင်းရင်း ခွဲခြမ်းစိတ်ဖြာ',
+  stepB4p1: 'B တွင် 4M ခွဲခြမ်းတွင် <strong>လူ/နည်းလမ်း မြင်ကွင်းကို အလေးသာ ပေး</strong> (လုပ်ငန်းခွင် မေးမြန်း စတင်၊ လုပ်ငန်းခွင်၌ အမြစ်တွယ်သော မြင်ကွင်း ထိရောက်)။',
+  stepB4p2: 'သို့သော် နိဂုံး တူညီ: <strong>မနက် စတင်မှု လုပ်ငန်းစဉ် မပြည့်စုံ</strong> က တကယ့်အကြောင်းရင်း။',
+  stepB4p3: 'နောက်ထပ် တွေ့ရှိသော အသိ: လုပ်ငန်းခွင် မေးမြန်းမှုမှ <strong>"အတွေ့အကြုံ ရှိသူသည် အတွေ့အကြုံဖြင့် မနက် စက်ကို မိနစ် အနည်းငယ် ပြေးထား"</strong> သော ကိုယ်ပိုင်ဗဟုသုတ တွေ့။ အကြောင်းရင်း ခွဲခြမ်းဖြင့် ထောက်။',
+  stepB5Name: 'တုံ့ပြန်မှု စီစဉ် နှင့် လုပ်ဆောင်ခြင်း',
+  stepB5p1: 'တုံ့ပြန်မှုသည် A နှင့် <strong>နီးပါး တူညီ</strong> (၅ မိနစ် အပူချိန် ပြင်ဆင်ခြင်း ထပ်) သော်လည်း B တွင် <strong>အတွေ့အကြုံ ရှိသူ၏ ကိုယ်ပိုင်ဗဟုသုတကို ပုံစံ ပြု</strong> သော ပုံစံဖြင့် သွား။',
+  stepB5p2: 'လုပ်ငန်းခွင် မေးမြန်းမှုမှ စတင်၍ <strong>"ကျွန်တော်တို့ ရွေးခဲ့၊ ကျွန်တော်တို့ လုပ်"</strong> သော ခံစားမှု အားကောင်း၊ လုပ်ငန်းစဉ် လိုက်နာသော နှုန်း မြင့်။',
+  stepB6Name: 'အကျိုးသက်ရောက်မှု အတည်ပြု',
+  outcomeBTitle: 'လုပ်ဆောင်ပြီး ၁ လ အကြာ ရလဒ်',
+  metricBacklog: 'Backlog', metricBacklogValue: '၉ ခု', metricBacklogSub: 'နောက် ကာလအတွက် ကိုယ်စားလှယ်', metricSatisfaction: 'လုပ်ငန်းခွင် ကျေနပ်မှု', metricSatisfactionValue: 'အလွန်တက်',
+  stepB6p1: 'A ထက် အနည်းငယ် ပိုမိုထိရောက် (၀.၇% vs ၀.၈%)။ အကြောင်း: <strong>လုပ်ငန်းခွင် လက်ခံ၍ လုပ်ငန်းစဉ် လိုက်နာ</strong> ခြင်း။ "အတင်း ခိုင်းခံ" ခံစားမှု မရှိ။',
+  stepB7Name: 'စံချိန်ထား နှင့် ပြန်မဖြစ်စေ',
+  stepB7p1: '• <strong>လုပ်ငန်းစဉ် စာရွက် မွမ်းမံ</strong>: အတွေ့အကြုံ ရှိသူ၏ ကိုယ်ပိုင်ဗဟုသုတ ထည့်<br>• <strong>နောက်အကြောင်းအရာ</strong>: Backlog ၂ နေရာ "ကိရိယာ ပြန့်" ကို နောက်ကာလ QC သို့ ပြောင်း<br>• <strong>မေးမြန်း ပုံမှန်ပြု</strong>: ၆ လ တစ်ကြိမ် အားလုံး မေးမြန်း၊ ပြဿနာသစ် ဖမ်းသော စနစ်<br>• <strong>B ၏ စနစ်ကိုယ်တိုင် စံချိန်ပြု</strong>: ဤစီးကြောင်းကို နှစ်စဉ် ထပ်ခါထပ်ခါ လုပ်နိုင်',
+  bLoopTitle: 'B ၏ ဆက်လက်တည်ရှိ အကျိုးခံစားခွင့်',
+  bLoopBody: 'မေးမြန်း → အကဲဖြတ် → ရွေး → လုပ်ဆောင် → နောက် မေးမြန်း၊ <strong>ဤသံသရာ အဖွဲ့အစည်း ယဉ်ကျေးမှု</strong> ဖြစ်။ QC သည် "တစ်ကြိမ် လုပ်၍ ပြီး" မဟုတ်ဘဲ <strong>နှစ်စဉ် သဘာဝအားဖြင့် လည်ပတ်သော လှုပ်ရှားမှု</strong>။',
+  summaryTitle: 'A နှင့် B ၏ တူညီမှုနှင့် အသုံးချ',
+  summaryP1: '၂ ဦးလုံး ယှဉ်၍ မြင်ရသည်:',
+  summaryP2: '• <strong>ပုံစံ တူညီ (၇ အဆင့်)</strong>။ ဝင်ပေါက်သာ ကွဲ။<br>• <strong>တကယ့်အကြောင်းရင်းနှင့် တုံ့ပြန်မှု တူညီသော နေရာသို့ ရောက်</strong>။ အချက်အလက် ရိုးသား။<br>• <strong>A က မြန်၊ B က နက်ရှိုင်း</strong>။<br>• <strong>A တွင် ဂဏန်း အထောက်အထား အားကောင်း၊ B တွင် လုပ်ငန်းခွင် လက်ခံမှု အားကောင်း</strong>။',
+  summaryP3: '<strong>ကိုယ့်ကုမ္ပဏီ/လုပ်ငန်းခွင် မည်သည့် ယဉ်ကျေးမှု ဖြစ်သည်</strong> ကို ခွဲခြား၍ သုံး။ နှစ်ဦးလုံး လုပ်နိုင်လျှင် အကောင်းဆုံး။',
+  summaryQuote: '"QC သည် ပုံစံ ရှိ၍ မည်သူမဆို စတင်နိုင်။ ပုံစံ ရှိသော်လည်း အနက်သည် လူအလိုက်။"',
+  finallyTitle: 'အဆုံး',
+  finallyP1: 'အခန်း ၇ အားလုံးမှ တစ်ဆင့် QC ၏ အမြင်အားလုံး မြင်ခဲ့။ <strong>အတွေးအခေါ် (၁) → သဘောထား (၂) → ကိရိယာ (၃) → တူးနည်း (၄) → တုံ့ပြန်မှု (၅) → တင်ပြမှု (၆) → နမူနာ (၇)</strong>။ ယခု မည်သည့် လုပ်ငန်းခွင်တွင်မဆို QC စတင်နိုင်သော အရိုးအဆစ် စုံ။',
+  finallyP2: 'သို့သော် ဤလမ်းညွှန်သည် <strong>ဝင်ပေါက်</strong>။ လက်တွေ့ လုပ်ငန်းခွင်တွင် ဤနေရာ၌ မပါသော အသေးစိတ် ဆုံးဖြတ်ချက်များစွာ ရှိ။ <strong>လုပ်ကြည့်၊ စမ်းသပ်၊ ကိုယ်ပိုင် ပုံစံ ဖန်တီး</strong>။ ၎င်းသည် တကယ့် QC စွမ်းရည်။',
+  finallyP3: 'ပုံစံ ရှိ၍ လမ်းမမှား။ ပုံစံ ရှိ၍ စတင်နိုင်။ သို့သော် နောက်ဆုံး၌ <strong>သင့်လုပ်ငန်းခွင်၏ ဉာဏ်ပညာ</strong> က အဓိက သရုပ်ဆောင်။',
+  finalQuote: '"ပုံစံသည် မြေပုံ။ လျှောက်သူသည် သင်။"',
+  backToTop: 'အိမ်သို့ ပြန်'
+});
+
 kaizenInitLang();
 </script>
 </body>
