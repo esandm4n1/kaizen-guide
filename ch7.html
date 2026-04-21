@@ -75,17 +75,17 @@
 
   <div class="chapter-tldr">
     <div class="chapter-tldr-label" data-i18n="tldrLabel">ひとこと要約</div>
-    <div class="chapter-tldr-text" data-i18n="ch7Tldr">QCには2つの入り口がある。<strong>A型:指標ドリブン</strong>(会社の数字から入る)と、<strong>B型:ヒアリングドリブン</strong>(現場の声から入る)。両方の入口でも、<strong>辿り着く型は同じ7段階</strong>。架空の事例で完走してみせます。</div>
+    <div class="chapter-tldr-text" data-i18n="ch7Tldr">QCには大きく<strong>2つの入り方</strong>がある(本ガイド独自の整理)。<strong>A型:指標ドリブン</strong>(会社の数字から入る)と、<strong>B型:ヒアリングドリブン</strong>(現場の声から入る)。両方の入口でも、<strong>辿り着く型は同じ7段階</strong>。架空の事例で完走してみせます。</div>
   </div>
 
   <h3 data-i18n="ch7_h1">QCには2種類の入り口がある</h3>
-  <p data-i18n="ch7_p1">実際の現場でQCを始める時、<strong>入り方が2種類</strong>ある。どちらも正しい。会社の文化や目的によって使い分ける。</p>
+  <p data-i18n="ch7_p1">実際の現場でQCを始める時、<strong>入り方に2つのパターン</strong>がある(本ガイド独自の整理)。どちらも正しい。会社の文化や目的によって使い分ける。</p>
 
   <div class="type-intro">
     <div class="type-card">
       <span class="type-label" data-i18n="typeALabel">A型</span>
       <h4 data-i18n="typeAName">指標ドリブン</h4>
-      <p data-i18n="typeADesc">会社のKPIや経営課題から入る。「受注増なのに設備能力が足りない」「歩留まりが悪化した」など、<strong>数字の異常や経営の方針</strong>がきっかけ。トヨタ系・大企業でよく使われる。</p>
+      <p data-i18n="typeADesc">会社のKPIや経営課題から入る。「受注増なのに設備能力が足りない」「歩留まりが悪化した」など、<strong>数字の異常や経営の方針</strong>がきっかけ。数値管理が徹底した組織でよく使われる。</p>
     </div>
     <div class="type-card b">
       <span class="type-label" data-i18n="typeBLabel">B型</span>
@@ -96,7 +96,7 @@
 
   <p data-i18n="ch7_p2">大事なのは、<strong>どちらを選んでもQCストーリー7段階</strong>に沿って進めること。入り口が違っても、<strong>真因と対策は同じところに辿り着く</strong>。</p>
 
-  <p data-i18n="ch7_p3">以下、同じ架空の工場(製造業・従業員80名・工程A〜Dの4工程ライン)で、A型とB型、両方のアプローチを完走します。</p>
+  <p data-i18n="ch7_p3">以下、同じ架空の工場(製造業・従業員80名・工程A〜Dの4工程ライン)で、A型とB型、両方のアプローチを完走します。<br><small style="color:var(--sub);">※QCストーリーは一般的に「反省・今後の課題」を含む8段階で整理される場合もあるが、本ガイドでは7段階に簡略化して説明する。</small></p>
 
   <div class="tabs">
     <button class="tab-btn active" data-tab="a" onclick="showTab('a')" data-i18n="tabA">A型(指標ドリブン)</button>
@@ -339,8 +339,8 @@
         <div class="step-circle">3</div>
         <div class="step-name" data-i18n="stepA3Name">目標設定</div>
       </div>
-      <p data-i18n="stepA3p1"><strong>目標:</strong>不良率 3.5% → <strong>1.0%以下</strong>(前年水準への復帰)</p>
-      <p data-i18n="stepA3p2"><strong>削減額目標:</strong>年間600万円 → <strong>170万円以下</strong>(430万円削減)</p>
+      <p data-i18n="stepA3p1"><strong>目標:</strong>不良率 3.5% → <strong>1.0%以下</strong>(前年水準1.9%を上回る改善)</p>
+      <p data-i18n="stepA3p2"><strong>削減額目標:</strong>年間600万円 → <strong>170万円以下</strong>(430万円削減)<br><small style="color:var(--sub);">※削減額には不良材料費・選別工数・再加工費を含む</small></p>
       <p data-i18n="stepA3p3"><strong>期限:</strong>3ヶ月後</p>
     </div>
 
@@ -351,18 +351,18 @@
         <div class="step-name" data-i18n="stepA4Name">要因分析</div>
       </div>
       <p data-i18n="stepA4p1">絞り込んだ条件「朝一・機械Cの寸法NG」に対して、<strong>特性要因図(4M)</strong>で原因候補を洗い出し:</p>
-      <p data-i18n="stepA4p2">• <strong>Machine(機械):</strong>夜間停止中の温度低下で部品が収縮<br>• <strong>Method(方法):</strong>朝一の立ち上げ手順に温度補正がない<br>• <strong>Man(人):</strong>(関係なし、複数作業者で同傾向)<br>• <strong>Material(材料):</strong>(関係なし、ロット差と相関なし)</p>
+      <p data-i18n="stepA4p2">• <strong>Machine(機械):</strong>夜間停止中の温度低下で部品が収縮<br>• <strong>Method(方法):</strong>朝一の立ち上げ手順に温度補正がない<br>• <strong>Man(人):</strong>複数作業者で同傾向のため、<strong>主因ではないと判断</strong><br>• <strong>Material(材料):</strong>ロット差との相関が弱く、<strong>主因ではないと判断</strong></p>
       <p data-i18n="stepA4p3"><strong>なぜなぜ分析:</strong></p>
       <p data-i18n="stepA4p4">
       なぜ1:朝一に寸法NGが多い → 機械Cの調整がずれている<br>
       なぜ2:調整がずれる → 前日終業時と状態が変わっている<br>
       なぜ3:状態が変わる → 夜間の温度変化で部品が収縮<br>
       なぜ4:収縮の影響が残る → 朝一の温度補正手順がない<br>
-      なぜ5:補正手順がない → 朝の立ち上げ標準化が未整備
+      なぜ5:立ち上げ時の管理項目に「温度」が含まれていなかった → <strong>朝の状態変化を想定した作業設計になっていなかった</strong>
       </p>
       <div class="callout">
-        <div class="callout-title"><span class="callout-icon">💡</span><span data-i18n="realCauseTitle">真因</span></div>
-        <p data-i18n="realCauseBody"><strong>朝一の立ち上げ手順の不備</strong>(温度補正プロセスの欠如)<br>判定:「この手順を追加すれば再発しないか?」→ <strong>Yes</strong>。真因と確定。</p>
+        <div class="callout-title"><span class="callout-icon">💡</span><span data-i18n="realCauseTitle">真因(根本原因)</span></div>
+        <p data-i18n="realCauseBody"><strong>朝一の立ち上げ手順の不備</strong>(温度補正プロセスの欠如)<br>判定:「この手順を追加すれば再発しないか?」→ <strong>Yes</strong>。<strong>真因の仮説として採用し、対策実施後の効果確認で検証する</strong>。</p>
       </div>
     </div>
 
@@ -395,7 +395,7 @@
         <div class="step-name" data-i18n="stepA6Name">効果確認</div>
       </div>
       <div class="outcome">
-        <div class="outcome-title">📊 <span data-i18n="outcomeATitle">実施1ヶ月後の結果</span></div>
+        <div class="outcome-title">📊 <span data-i18n="outcomeATitle">実施1ヶ月後の結果(数値は説明用の概算)</span></div>
         <div class="outcome-metrics">
           <div class="metric"><div class="metric-label" data-i18n="metricDefectRate">不良率</div><div class="metric-value">0.8%</div><div class="metric-sub">(3.5% → 0.8%)</div></div>
           <div class="metric"><div class="metric-label" data-i18n="metricAnnualSave">年間削減額</div><div class="metric-value">430万円</div><div class="metric-sub" data-i18n="metricGoalAchieved">目標達成</div></div>
@@ -410,7 +410,7 @@
     <div class="step-block">
       <div class="step-heading">
         <div class="step-circle">7</div>
-        <div class="step-name" data-i18n="stepA7Name">標準化・歯止め</div>
+        <div class="step-name" data-i18n="stepA7Name">標準化・歯止め(再発防止)</div>
       </div>
       <p data-i18n="stepA7p1">• <strong>作業標準書の更新</strong>:新しい温度補正手順を正式に組み込む<br>• <strong>新人教育</strong>:入社時研修のチェック項目に追加<br>• <strong>月次レビュー</strong>:不良率を月次で監視、閾値超過でアラート<br>• <strong>横展開</strong>:工程C・工程Dの機械でも同様の現象の有無を調査 → 工程Dでも効果確認<br>• <strong>報告</strong>:役員会で四半期レビューに反映</p>
     </div>
@@ -431,7 +431,7 @@
       <p data-i18n="stepB1p1"><strong>Step 1-1: 現場ヒアリング(10件収集)</strong></p>
       <p data-i18n="stepB1p2">作業者・保全・品質担当、全員から困りごとを1人3件まで出してもらい、重複を整理して10件に集約:</p>
       <p data-i18n="stepB1p3">① 朝一の不良が多い<br>② 工具が散らかって探す時間がかかる<br>③ 出庫待ちで作業が止まる時間がある<br>④ 日報の入力が面倒<br>⑤ 部品供給のタイミングがバラバラ<br>⑥ 夜勤と昼勤の引き継ぎが不十分<br>⑦ 検査の基準が人によって違う<br>⑧ エアの圧力が時々弱くなる<br>⑨ 休憩所が暑い/寒い<br>⑩ 更衣室までが遠い</p>
-      <p data-i18n="stepB1p4"><strong>玉石混交で構わない。</strong>QC対象にしにくいものも含めて、まず全部並べる。</p>
+      <p data-i18n="stepB1p4"><strong>質にばらつきがあってもOK。</strong>QC対象にしにくいものも含めて、まず全部並べる。</p>
 
       <p data-i18n="stepB1p5" style="margin-top:18px;"><strong>Step 1-2: 評価マトリクスで並べる(5点満点 × 4軸)</strong></p>
       <table class="matrix-table">
@@ -466,9 +466,9 @@
         <div class="step-circle">2</div>
         <div class="step-name" data-i18n="stepB2Name">現状把握</div>
       </div>
-      <p data-i18n="stepB2p1">テーマが決まったら、ここからはA型と<strong>同じドリルダウン</strong>で現状把握する。</p>
-      <p data-i18n="stepB2p2">ヒアリングで出た「朝一の不良」を裏付けるデータを取る → 層別ドリルダウン → <strong>朝一・工程B・機械C・寸法NG不良</strong>に絞り込み。</p>
-      <p data-i18n="stepB2p3">(詳細はA型タブの層1〜層4と同じパレート図。データがヒアリングの内容を裏付ける形になる。)</p>
+      <p data-i18n="stepB2p1">テーマが決まったら、ここからはA型と<strong>同じ手順</strong>で現状把握を行う。</p>
+      <p data-i18n="stepB2p2">ヒアリングで出た「朝一の不良」を裏付けるデータを集める。層別ドリルダウンを行う。結果として<strong>朝一・工程B・機械C・寸法NG不良</strong>に絞り込まれる。</p>
+      <p data-i18n="stepB2p3">(詳細はA型タブの層1〜層4のパレート図と同じ。データがヒアリングの内容を裏付ける。)</p>
     </div>
 
     <div class="step-block">
@@ -489,7 +489,7 @@
       </div>
       <p data-i18n="stepB4p1">B型では<strong>人・方法の観点にやや重み</strong>を置いて4M分析する(現場ヒアリング起点だから、現場に根ざした視点が活きる)。</p>
       <p data-i18n="stepB4p2">ただし結論は同じ:<strong>朝一の立ち上げ手順の不備</strong>が真因。</p>
-      <p data-i18n="stepB4p3">追加で見つかった知見:現場ヒアリングから<strong>「ベテランは経験で朝の機械を数分空回ししている」</strong>という暗黙知が判明。真因分析で裏付けられた。</p>
+      <p data-i18n="stepB4p3">追加で見つかった知見:現場ヒアリングから<strong>「ベテランは経験で朝、機械を数分間ウォームアップしている」</strong>という暗黙知が判明。真因分析で裏付けられた。</p>
     </div>
 
     <div class="step-block">
@@ -507,7 +507,7 @@
         <div class="step-name" data-i18n="stepB6Name">効果確認</div>
       </div>
       <div class="outcome">
-        <div class="outcome-title">📊 <span data-i18n="outcomeBTitle">実施1ヶ月後の結果</span></div>
+        <div class="outcome-title">📊 <span data-i18n="outcomeBTitle">実施1ヶ月後の結果(数値は説明用の概算)</span></div>
         <div class="outcome-metrics">
           <div class="metric"><div class="metric-label" data-i18n="metricDefectRate">不良率</div><div class="metric-value">0.7%</div><div class="metric-sub">(3.5% → 0.7%)</div></div>
           <div class="metric"><div class="metric-label" data-i18n="metricAnnualSave">年間削減額</div><div class="metric-value">450万円</div></div>
@@ -515,13 +515,13 @@
           <div class="metric"><div class="metric-label" data-i18n="metricSatisfaction">現場満足度</div><div class="metric-value" data-i18n="metricSatisfactionValue" style="font-size:16px;">大幅向上</div></div>
         </div>
       </div>
-      <p data-i18n="stepB6p1">A型よりわずかに効果が高い(0.7% vs 0.8%)。理由:<strong>現場が納得して手順を遵守している</strong>ため。「やらされ感」がない。</p>
+      <p data-i18n="stepB6p1">A型とほぼ同等の効果を達成(0.7% vs 0.8%、差は誤差範囲)。<strong>どちらが上かは組織文化と現場状況に依存する</strong>。一般論としては、B型は現場起点のため<strong>手順遵守率が高いと言われる傾向</strong>があるが、数字で断言はできない。</p>
     </div>
 
     <div class="step-block">
       <div class="step-heading">
         <div class="step-circle">7</div>
-        <div class="step-name" data-i18n="stepB7Name">標準化・歯止め</div>
+        <div class="step-name" data-i18n="stepB7Name">標準化・歯止め(再発防止)</div>
       </div>
       <p data-i18n="stepB7p1">• <strong>手順書更新</strong>:ベテランの暗黙知を組み込み<br>• <strong>次のテーマへ</strong>:バックログ2位「工具の散らかり」を次期QCに移行<br>• <strong>ヒアリング定例化</strong>:半年ごとに全員ヒアリングを実施し、新しい困りごとを拾う仕組みに<br>• <strong>B型の仕組み自体が標準化される</strong>:この流れを毎年繰り返せる</p>
       <div class="callout">
@@ -569,16 +569,16 @@ function showTab(tab) {
 Object.assign(window.kaizenI18n.ja, {
   ch7Label: "CHAPTER 7",
   ch7Title: "実例で学ぶ",
-  ch7Tldr: 'QCには2つの入り口がある。<strong>A型:指標ドリブン</strong>(会社の数字から入る)と、<strong>B型:ヒアリングドリブン</strong>(現場の声から入る)。両方の入口でも、<strong>辿り着く型は同じ7段階</strong>。架空の事例で完走してみせます。',
+  ch7Tldr: 'QCには大きく<strong>2つの入り方</strong>がある(本ガイド独自の整理)。<strong>A型:指標ドリブン</strong>(会社の数字から入る)と、<strong>B型:ヒアリングドリブン</strong>(現場の声から入る)。両方の入口でも、<strong>辿り着く型は同じ7段階</strong>。架空の事例で完走してみせます。',
   ch7_h1: 'QCには2種類の入り口がある',
-  ch7_p1: '実際の現場でQCを始める時、<strong>入り方が2種類</strong>ある。どちらも正しい。会社の文化や目的によって使い分ける。',
+  ch7_p1: '実際の現場でQCを始める時、<strong>入り方に2つのパターン</strong>がある(本ガイド独自の整理)。どちらも正しい。会社の文化や目的によって使い分ける。',
   typeALabel: 'A型', typeBLabel: 'B型',
   typeAName: '指標ドリブン',
-  typeADesc: '会社のKPIや経営課題から入る。「受注増なのに設備能力が足りない」「歩留まりが悪化した」など、<strong>数字の異常や経営の方針</strong>がきっかけ。トヨタ系・大企業でよく使われる。',
+  typeADesc: '会社のKPIや経営課題から入る。「受注増なのに設備能力が足りない」「歩留まりが悪化した」など、<strong>数字の異常や経営の方針</strong>がきっかけ。数値管理が徹底した組織でよく使われる。',
   typeBName: 'ヒアリングドリブン',
   typeBDesc: '現場の困りごとから入る。作業者・保全・品質の声を集め、<strong>評価マトリクス</strong>で客観的にテーマを選ぶ。働く人の参加意欲が高く、育成目的にも向いている。',
   ch7_p2: '大事なのは、<strong>どちらを選んでもQCストーリー7段階</strong>に沿って進めること。入り口が違っても、<strong>真因と対策は同じところに辿り着く</strong>。',
-  ch7_p3: '以下、同じ架空の工場(製造業・従業員80名・工程A〜Dの4工程ライン)で、A型とB型、両方のアプローチを完走します。',
+  ch7_p3: '以下、同じ架空の工場(製造業・従業員80名・工程A〜Dの4工程ライン)で、A型とB型、両方のアプローチを完走します。<br><small style="color:var(--sub);">※QCストーリーは一般的に「反省・今後の課題」を含む8段階で整理される場合もあるが、本ガイドでは7段階に簡略化して説明する。</small>',
   tabA: 'A型(指標ドリブン)', tabB: 'B型(ヒアリングドリブン)',
   scenarioALabel: 'シナリオ(A型)',
   scenarioABody: '<strong>状況:</strong>受注が前年比130%増。工場の可動率は維持しているが、<strong>不良率が前年同月比で1.8倍</strong>に悪化。役員から「来期までに不良率を元水準に戻せ」と指示。経営KPIレポートから発覚。',
@@ -601,16 +601,16 @@ Object.assign(window.kaizenI18n.ja, {
   narrowdownTitle: '絞り込み結果',
   narrowdownBody: '<strong>朝一(8-10時)の工程B・機械Cで発生する、寸法NG不良</strong>。機械Cで84%を占める。<strong>ここに対策を打てば全体が大きく動く</strong>。',
   stepA3Name: '目標設定',
-  stepA3p1: '<strong>目標:</strong>不良率 3.5% → <strong>1.0%以下</strong>(前年水準への復帰)',
-  stepA3p2: '<strong>削減額目標:</strong>年間600万円 → <strong>170万円以下</strong>(430万円削減)',
+  stepA3p1: '<strong>目標:</strong>不良率 3.5% → <strong>1.0%以下</strong>(前年水準1.9%を上回る改善)',
+  stepA3p2: '<strong>削減額目標:</strong>年間600万円 → <strong>170万円以下</strong>(430万円削減)<br><small style="color:var(--sub);">※削減額には不良材料費・選別工数・再加工費を含む</small>',
   stepA3p3: '<strong>期限:</strong>3ヶ月後',
   stepA4Name: '要因分析',
   stepA4p1: '絞り込んだ条件「朝一・機械Cの寸法NG」に対して、<strong>特性要因図(4M)</strong>で原因候補を洗い出し:',
-  stepA4p2: '• <strong>Machine(機械):</strong>夜間停止中の温度低下で部品が収縮<br>• <strong>Method(方法):</strong>朝一の立ち上げ手順に温度補正がない<br>• <strong>Man(人):</strong>(関係なし、複数作業者で同傾向)<br>• <strong>Material(材料):</strong>(関係なし、ロット差と相関なし)',
+  stepA4p2: '• <strong>Machine(機械):</strong>夜間停止中の温度低下で部品が収縮<br>• <strong>Method(方法):</strong>朝一の立ち上げ手順に温度補正がない<br>• <strong>Man(人):</strong>複数作業者で同傾向のため、<strong>主因ではないと判断</strong><br>• <strong>Material(材料):</strong>ロット差との相関が弱く、<strong>主因ではないと判断</strong>',
   stepA4p3: '<strong>なぜなぜ分析:</strong>',
-  stepA4p4: 'なぜ1:朝一に寸法NGが多い → 機械Cの調整がずれている<br>なぜ2:調整がずれる → 前日終業時と状態が変わっている<br>なぜ3:状態が変わる → 夜間の温度変化で部品が収縮<br>なぜ4:収縮の影響が残る → 朝一の温度補正手順がない<br>なぜ5:補正手順がない → 朝の立ち上げ標準化が未整備',
-  realCauseTitle: '真因',
-  realCauseBody: '<strong>朝一の立ち上げ手順の不備</strong>(温度補正プロセスの欠如)<br>判定:「この手順を追加すれば再発しないか?」→ <strong>Yes</strong>。真因と確定。',
+  stepA4p4: 'なぜ1:朝一に寸法NGが多い → 機械Cの調整がずれている<br>なぜ2:調整がずれる → 前日終業時と状態が変わっている<br>なぜ3:状態が変わる → 夜間の温度変化で部品が収縮<br>なぜ4:収縮の影響が残る → 朝一の温度補正手順がない<br>なぜ5:立ち上げ時の管理項目に「温度」が含まれていなかった → <strong>朝の状態変化を想定した作業設計になっていなかった</strong>',
+  realCauseTitle: '真因(根本原因)',
+  realCauseBody: '<strong>朝一の立ち上げ手順の不備</strong>(温度補正プロセスの欠如)<br>判定:「この手順を追加すれば再発しないか?」→ <strong>Yes</strong>。<strong>真因の仮説として採用し、対策実施後の効果確認で検証する</strong>。',
   stepA5Name: '対策検討・実施',
   stepA5p1: '<strong>対策候補の評価マトリクス:</strong>',
   matrixHeadMeasure: '対策案', matrixHeadEffect: '効果', matrixHeadFeasible: '実現性', matrixHeadLateral: '横展開', matrixHeadTotal: '合計',
@@ -621,10 +621,10 @@ Object.assign(window.kaizenI18n.ja, {
   stepA5p2: '<strong>採用:</strong>朝一の温度補正手順追加(合計14点)。費用ほぼゼロ、他ラインにも即適用可能。',
   stepA5p3: '<strong>実施内容:</strong>立ち上げ時に機械Cのウォームアップ5分を追加、写真付き手順書を機械脇に掲示、最初の10個を検品強化。',
   stepA6Name: '効果確認',
-  outcomeATitle: '実施1ヶ月後の結果',
+  outcomeATitle: '実施1ヶ月後の結果(数値は説明用の概算)',
   metricDefectRate: '不良率', metricAnnualSave: '年間削減額', metricGoalAchieved: '目標達成', metricCost: '対策費用', metricCostSub: '手順書制作のみ', metricSide: '副次効果', metricSideValue: '8分短縮', metricSideSub: '朝の立ち上げ時間',
   stepA6p1: '目標値1.0%を上回る0.8%を達成。不良Aだけでなく、副次的に<strong>朝のライン立ち上げ時間も平均8分短縮</strong>(手順が明確になり迷いが消えた)。',
-  stepA7Name: '標準化・歯止め',
+  stepA7Name: '標準化・歯止め(再発防止)',
   stepA7p1: '• <strong>作業標準書の更新</strong>:新しい温度補正手順を正式に組み込む<br>• <strong>新人教育</strong>:入社時研修のチェック項目に追加<br>• <strong>月次レビュー</strong>:不良率を月次で監視、閾値超過でアラート<br>• <strong>横展開</strong>:工程C・工程Dの機械でも同様の現象の有無を調査 → 工程Dでも効果確認<br>• <strong>報告</strong>:役員会で四半期レビューに反映',
   scenarioBLabel: 'シナリオ(B型)',
   scenarioBBody: '<strong>状況:</strong>現場リーダーが作業者から「なんか最近朝しんどい」「工具探すのに時間かかる」などの声をよく聞くようになった。<strong>何が一番困りごとなのか</strong>を客観的に把握するため、全員ヒアリングを実施。',
@@ -632,7 +632,7 @@ Object.assign(window.kaizenI18n.ja, {
   stepB1p1: '<strong>Step 1-1: 現場ヒアリング(10件収集)</strong>',
   stepB1p2: '作業者・保全・品質担当、全員から困りごとを1人3件まで出してもらい、重複を整理して10件に集約:',
   stepB1p3: '① 朝一の不良が多い<br>② 工具が散らかって探す時間がかかる<br>③ 出庫待ちで作業が止まる時間がある<br>④ 日報の入力が面倒<br>⑤ 部品供給のタイミングがバラバラ<br>⑥ 夜勤と昼勤の引き継ぎが不十分<br>⑦ 検査の基準が人によって違う<br>⑧ エアの圧力が時々弱くなる<br>⑨ 休憩所が暑い/寒い<br>⑩ 更衣室までが遠い',
-  stepB1p4: '<strong>玉石混交で構わない。</strong>QC対象にしにくいものも含めて、まず全部並べる。',
+  stepB1p4: '<strong>質にばらつきがあってもOK。</strong>QC対象にしにくいものも含めて、まず全部並べる。',
   stepB1p5: '<strong>Step 1-2: 評価マトリクスで並べる(5点満点 × 4軸)</strong>',
   bMatrixProblem: '困りごと', bMatrixImpact: '影響度', bMatrixFeasible: '実現性', bMatrixQuant: '数値化', bMatrixAuto: '裁量', bMatrixTotal: '合計',
   bItem1: '朝一の不良多発', bItem2: '工具の散らかり', bItem3: '検査基準のばらつき', bItem4: 'エア圧不安定', bItem5: '出庫待ち', bItem6: '引き継ぎ不十分', bItem7: '日報入力が面倒', bItem8: '部品供給バラバラ', bItem9: '休憩所の温度', bItem10: '更衣室が遠い',
@@ -641,9 +641,9 @@ Object.assign(window.kaizenI18n.ja, {
   bCalloutTitle: 'なぜこのテーマか(根拠あり)',
   bCalloutBody: '「朝一の不良」を選んだのは<strong>直感じゃない</strong>。<strong>影響度・実現性・数値化・裁量の4軸で評価した結果、18点で最上位</strong>だったから。質疑応答で「なぜこれを選んだ?」と聞かれても、<strong>全10件の評価表で答えられる</strong>。',
   stepB2Name: '現状把握',
-  stepB2p1: 'テーマが決まったら、ここからはA型と<strong>同じドリルダウン</strong>で現状把握する。',
-  stepB2p2: 'ヒアリングで出た「朝一の不良」を裏付けるデータを取る → 層別ドリルダウン → <strong>朝一・工程B・機械C・寸法NG不良</strong>に絞り込み。',
-  stepB2p3: '(詳細はA型タブの層1〜層4と同じパレート図。データがヒアリングの内容を裏付ける形になる。)',
+  stepB2p1: 'テーマが決まったら、ここからはA型と<strong>同じ手順</strong>で現状把握を行う。',
+  stepB2p2: 'ヒアリングで出た「朝一の不良」を裏付けるデータを集める。層別ドリルダウンを行う。結果として<strong>朝一・工程B・機械C・寸法NG不良</strong>に絞り込まれる。',
+  stepB2p3: '(詳細はA型タブの層1〜層4のパレート図と同じ。データがヒアリングの内容を裏付ける。)',
   stepB3Name: '目標設定',
   stepB3p1: '<strong>目標:</strong>不良率 3.5% → <strong>1.0%以下</strong>',
   stepB3p2: '<strong>削減額目標:</strong>年間約430万円',
@@ -652,15 +652,15 @@ Object.assign(window.kaizenI18n.ja, {
   stepB4Name: '要因分析',
   stepB4p1: 'B型では<strong>人・方法の観点にやや重み</strong>を置いて4M分析する(現場ヒアリング起点だから、現場に根ざした視点が活きる)。',
   stepB4p2: 'ただし結論は同じ:<strong>朝一の立ち上げ手順の不備</strong>が真因。',
-  stepB4p3: '追加で見つかった知見:現場ヒアリングから<strong>「ベテランは経験で朝の機械を数分空回ししている」</strong>という暗黙知が判明。真因分析で裏付けられた。',
+  stepB4p3: '追加で見つかった知見:現場ヒアリングから<strong>「ベテランは経験で朝、機械を数分間ウォームアップしている」</strong>という暗黙知が判明。真因分析で裏付けられた。',
   stepB5Name: '対策検討・実施',
   stepB5p1: '対策はA型と<strong>ほぼ同じ</strong>(温度補正5分手順の追加)だが、B型では<strong>ベテランの暗黙知を形式知化</strong>する形で進める。',
   stepB5p2: '現場ヒアリングから出発してるので、<strong>「自分たちで選んだ、自分たちで作る」</strong>感が強く、手順遵守率が高い。',
   stepB6Name: '効果確認',
-  outcomeBTitle: '実施1ヶ月後の結果',
+  outcomeBTitle: '実施1ヶ月後の結果(数値は説明用の概算)',
   metricBacklog: 'バックログ', metricBacklogValue: '9件', metricBacklogSub: '次期以降の候補', metricSatisfaction: '現場満足度', metricSatisfactionValue: '大幅向上',
-  stepB6p1: 'A型よりわずかに効果が高い(0.7% vs 0.8%)。理由:<strong>現場が納得して手順を遵守している</strong>ため。「やらされ感」がない。',
-  stepB7Name: '標準化・歯止め',
+  stepB6p1: 'A型とほぼ同等の効果を達成(0.7% vs 0.8%、差は誤差範囲)。<strong>どちらが上かは組織文化と現場状況に依存する</strong>。一般論としては、B型は現場起点のため<strong>手順遵守率が高いと言われる傾向</strong>があるが、数字で断言はできない。',
+  stepB7Name: '標準化・歯止め(再発防止)',
   stepB7p1: '• <strong>手順書更新</strong>:ベテランの暗黙知を組み込み<br>• <strong>次のテーマへ</strong>:バックログ2位「工具の散らかり」を次期QCに移行<br>• <strong>ヒアリング定例化</strong>:半年ごとに全員ヒアリングを実施し、新しい困りごとを拾う仕組みに<br>• <strong>B型の仕組み自体が標準化される</strong>:この流れを毎年繰り返せる',
   bLoopTitle: 'B型の継続メリット',
   bLoopBody: 'ヒアリング→評価→選定→実施→次ヒアリング、の<strong>ループが組織文化になる</strong>。QCが「一度やって終わり」じゃなく、<strong>毎年自然に回る活動</strong>になる。',
@@ -681,16 +681,16 @@ Object.assign(window.kaizenI18n.ja, {
 Object.assign(window.kaizenI18n.en, {
   ch7Label: "CHAPTER 7",
   ch7Title: "Learn from real cases",
-  ch7Tldr: 'QC has two entry points. <strong>Type A: metric-driven</strong> (starting from company numbers), and <strong>Type B: hearing-driven</strong> (starting from shop floor voices). Both paths, <strong>the arrival format is the same 7 stages</strong>. We\'ll run through a fictional case to the end.',
+  ch7Tldr: 'QC has broadly <strong>2 ways to enter</strong> (the author\'s original framing). <strong>Type A: metric-driven</strong> (starting from company numbers), and <strong>Type B: hearing-driven</strong> (starting from shop floor voices). Both paths, <strong>the arrival format is the same 7 stages</strong>. We\'ll run through a fictional case to the end.',
   ch7_h1: 'QC has two types of entry points',
-  ch7_p1: 'When starting QC on a real shop floor, there are <strong>two ways to enter</strong>. Both are correct. Choose depending on the company culture and purpose.',
+  ch7_p1: 'When starting QC on a real shop floor, there are <strong>2 patterns for entry</strong> (the author\'s original framing). Both are correct. Choose depending on the company culture and purpose.',
   typeALabel: 'Type A', typeBLabel: 'Type B',
   typeAName: 'Metric-driven',
-  typeADesc: 'Start from company KPIs or management issues. Triggered by "orders up but capacity short," "yield worsened," etc. — <strong>number anomalies or management direction</strong>. Common in Toyota-style/large companies.',
+  typeADesc: 'Start from company KPIs or management issues. Triggered by "orders up but capacity short," "yield worsened," etc. — <strong>number anomalies or management direction</strong>. Common in organizations with strong numerical management.',
   typeBName: 'Hearing-driven',
   typeBDesc: 'Start from shop floor problems. Collect voices of operators, maintenance, quality, and choose the theme objectively with an <strong>evaluation matrix</strong>. High participation, good for development purposes.',
   ch7_p2: 'What matters is that <strong>whichever you choose, you follow the 7 QC Story stages</strong>. Different entries, but <strong>real cause and countermeasure arrive at the same place</strong>.',
-  ch7_p3: 'Below, using the same fictional factory (manufacturing, 80 employees, 4-process line A-D), we run both Type A and Type B approaches to the end.',
+  ch7_p3: 'Below, using the same fictional factory (manufacturing, 80 employees, 4-process line A-D), we run both Type A and Type B approaches to the end.<br><small style="color:var(--sub);">*QC Story is sometimes organized as 8 stages including "reflection and future challenges"; this guide simplifies it to 7 stages.</small>',
   tabA: 'Type A (metric-driven)', tabB: 'Type B (hearing-driven)',
   scenarioALabel: 'Scenario (Type A)',
   scenarioABody: '<strong>Situation:</strong> Orders up 130% year over year. Factory operation rate maintained, but <strong>defect rate is 1.8x of the same month last year</strong>. Executive order: "return defect rate to previous level by next term." Discovered from the KPI report.',
@@ -713,16 +713,16 @@ Object.assign(window.kaizenI18n.en, {
   narrowdownTitle: 'Narrowed-down result',
   narrowdownBody: '<strong>Dimension NG defects occurring in morning (8-10am), Process B, Machine C</strong>. Machine C accounts for 84%. <strong>Countermeasure here moves the whole significantly</strong>.',
   stepA3Name: 'Goal setting',
-  stepA3p1: '<strong>Target:</strong> Defect rate 3.5% → <strong>below 1.0%</strong> (return to last year\'s level)',
-  stepA3p2: '<strong>Saving target:</strong> Annual 6M JPY → <strong>below 1.7M JPY</strong> (4.3M JPY reduction)',
+  stepA3p1: '<strong>Target:</strong> Defect rate 3.5% → <strong>below 1.0%</strong> (better than last year\'s level of 1.9%)',
+  stepA3p2: '<strong>Saving target:</strong> Annual 6M JPY → <strong>below 1.7M JPY</strong> (4.3M JPY reduction)<br><small style="color:var(--sub);">*Savings include defective material cost, sorting labor, and rework cost.</small>',
   stepA3p3: '<strong>Deadline:</strong> 3 months',
   stepA4Name: 'Cause analysis',
   stepA4p1: 'For narrowed condition "Morning, Machine C dimension NG," list cause candidates with <strong>fishbone diagram (4M)</strong>:',
-  stepA4p2: '• <strong>Machine:</strong> Parts contract due to overnight temperature drop<br>• <strong>Method:</strong> No temperature correction in morning startup<br>• <strong>Man:</strong> (unrelated, same trend across operators)<br>• <strong>Material:</strong> (unrelated, no correlation with lot difference)',
+  stepA4p2: '• <strong>Machine:</strong> Parts contract due to overnight temperature drop<br>• <strong>Method:</strong> No temperature correction in morning startup<br>• <strong>Man:</strong> Same trend across operators, <strong>judged as not the main cause</strong><br>• <strong>Material:</strong> Weak correlation with lot difference, <strong>judged as not the main cause</strong>',
   stepA4p3: '<strong>Why-why analysis:</strong>',
-  stepA4p4: 'Why 1: Many dimension NGs in morning → Machine C calibration is off<br>Why 2: Calibration off → State differs from previous day\'s end<br>Why 3: State differs → Parts contract from overnight temperature change<br>Why 4: Effect of contraction remains → No morning temperature correction procedure<br>Why 5: No correction procedure → Morning startup standardization not in place',
-  realCauseTitle: 'Real cause',
-  realCauseBody: '<strong>Inadequate morning startup procedure</strong> (lack of temperature correction process)<br>Test: "Will recurrence stop if this procedure is added?" → <strong>Yes</strong>. Confirmed as real cause.',
+  stepA4p4: 'Why 1: Many dimension NGs in morning → Machine C calibration is off<br>Why 2: Calibration off → State differs from previous day\'s end<br>Why 3: State differs → Parts contract from overnight temperature change<br>Why 4: Effect of contraction remains → No morning temperature correction procedure<br>Why 5: "Temperature" was not included in startup control items → <strong>Work design did not account for morning state changes</strong>',
+  realCauseTitle: 'Root cause (real cause)',
+  realCauseBody: '<strong>Inadequate morning startup procedure</strong> (lack of temperature correction process)<br>Test: "Will recurrence stop if this procedure is added?" → <strong>Yes</strong>. <strong>Adopt as hypothesis of real cause, verify through implementation and effect confirmation</strong>.',
   stepA5Name: 'Countermeasure planning & execution',
   stepA5p1: '<strong>Evaluation matrix for countermeasure candidates:</strong>',
   matrixHeadMeasure: 'Countermeasure', matrixHeadEffect: 'Effect', matrixHeadFeasible: 'Feasibility', matrixHeadLateral: 'Lateral deployment', matrixHeadTotal: 'Total',
@@ -733,10 +733,10 @@ Object.assign(window.kaizenI18n.en, {
   stepA5p2: '<strong>Adopted:</strong> Add morning temperature correction procedure (total 14 points). Near-zero cost, immediately applicable to other lines.',
   stepA5p3: '<strong>Execution:</strong> Add 5-min warm-up for Machine C at startup, post photo procedure next to the machine, intensified inspection on first 10 pieces.',
   stepA6Name: 'Effect verification',
-  outcomeATitle: 'Result 1 month after implementation',
+  outcomeATitle: 'Result 1 month after implementation (numbers are approximate for illustration)',
   metricDefectRate: 'Defect rate', metricAnnualSave: 'Annual saving', metricGoalAchieved: 'Goal achieved', metricCost: 'Countermeasure cost', metricCostSub: 'Just producing procedure doc', metricSide: 'Side effect', metricSideValue: '8 min shorter', metricSideSub: 'Morning startup time',
   stepA6p1: 'Achieved 0.8%, beating the 1.0% target. Beyond defect A, also <strong>shortened morning line startup by average 8 minutes</strong> (clear procedure removed hesitation).',
-  stepA7Name: 'Standardization & preventing recurrence',
+  stepA7Name: 'Standardization & preventing recurrence (Hadome)',
   stepA7p1: '• <strong>Update work standard doc</strong>: Formally incorporate new temperature correction procedure<br>• <strong>New employee training</strong>: Add to onboarding checklist<br>• <strong>Monthly review</strong>: Monitor defect rate monthly, alert on threshold<br>• <strong>Lateral deployment</strong>: Check for same phenomenon on Process C/D machines → Effect confirmed on Process D too<br>• <strong>Reporting</strong>: Include in quarterly review at executive meetings',
   scenarioBLabel: 'Scenario (Type B)',
   scenarioBBody: '<strong>Situation:</strong> Shop floor leader started hearing more from operators: "mornings feel tougher lately," "tool search takes time," etc. To objectively grasp <strong>what the biggest issues are</strong>, conducted hearings from everyone.',
@@ -744,7 +744,7 @@ Object.assign(window.kaizenI18n.en, {
   stepB1p1: '<strong>Step 1-1: Shop floor hearing (collect 10 items)</strong>',
   stepB1p2: 'From operators, maintenance, quality — collect up to 3 problems each, organize duplicates, consolidate to 10:',
   stepB1p3: '① Many defects in the morning<br>② Tools scattered, takes time to find<br>③ Work stops waiting for shipment<br>④ Daily report input is tedious<br>⑤ Parts supply timing varies<br>⑥ Night-day shift handover is inadequate<br>⑦ Inspection standards vary by person<br>⑧ Air pressure sometimes weakens<br>⑨ Break room is hot/cold<br>⑩ Locker room is far',
-  stepB1p4: '<strong>Mixed quality is fine.</strong> Include items that don\'t easily fit QC — first, list everything.',
+  stepB1p4: '<strong>Varying quality is fine.</strong> Include items that don\'t easily fit QC — first, list everything.',
   stepB1p5: '<strong>Step 1-2: Arrange with evaluation matrix (5-point × 4 axes)</strong>',
   bMatrixProblem: 'Problem', bMatrixImpact: 'Impact', bMatrixFeasible: 'Feasibility', bMatrixQuant: 'Quantifiability', bMatrixAuto: 'Autonomy', bMatrixTotal: 'Total',
   bItem1: 'Morning defects frequent', bItem2: 'Scattered tools', bItem3: 'Inspection standard varies', bItem4: 'Unstable air pressure', bItem5: 'Shipment waiting', bItem6: 'Inadequate handover', bItem7: 'Tedious daily report', bItem8: 'Varying parts supply', bItem9: 'Break room temperature', bItem10: 'Far locker room',
@@ -753,9 +753,9 @@ Object.assign(window.kaizenI18n.en, {
   bCalloutTitle: 'Why this theme (with basis)',
   bCalloutBody: 'Choosing "morning defects" is <strong>not intuition</strong>. <strong>Evaluated on 4 axes — impact, feasibility, quantifiability, autonomy — it scored 18, highest</strong>. When asked "why this theme?" in Q&A, answer with <strong>the evaluation table of all 10 items</strong>.',
   stepB2Name: 'Grasping current state',
-  stepB2p1: 'Once the theme is set, from here it\'s <strong>the same drill-down as Type A</strong>.',
-  stepB2p2: 'Collect data to back up the "morning defects" from hearings → stratified drill-down → narrow to <strong>morning, Process B, Machine C, dimension NG defect</strong>.',
-  stepB2p3: '(Details same as Layers 1-4 in the Type A tab. Data confirms the hearings.)',
+  stepB2p1: 'Once the theme is set, from here we grasp the current state with the <strong>same procedure as Type A</strong>.',
+  stepB2p2: 'Collect data to support "morning defects" from hearings. Perform stratified drill-down. As a result, narrow down to <strong>morning, Process B, Machine C, dimension NG defect</strong>.',
+  stepB2p3: '(Details same as the Pareto charts of Layers 1-4 in the Type A tab. The data supports the hearings.)',
   stepB3Name: 'Goal setting',
   stepB3p1: '<strong>Target:</strong> Defect rate 3.5% → <strong>below 1.0%</strong>',
   stepB3p2: '<strong>Saving target:</strong> Annual ~4.3M JPY',
@@ -764,15 +764,15 @@ Object.assign(window.kaizenI18n.en, {
   stepB4Name: 'Cause analysis',
   stepB4p1: 'Type B puts <strong>slightly more weight on Man/Method angles</strong> in 4M analysis (starting from hearings, field-rooted views shine).',
   stepB4p2: 'But the conclusion is the same: <strong>inadequate morning startup procedure</strong> is the real cause.',
-  stepB4p3: 'Additional insight: from hearings, <strong>"veterans idle the machine for a few minutes each morning from experience"</strong> — tacit knowledge discovered. Backed up by real cause analysis.',
+  stepB4p3: 'Additional insight: from hearings, <strong>"veterans warm up the machine for a few minutes each morning based on experience"</strong> — tacit knowledge discovered. Backed up by real cause analysis.',
   stepB5Name: 'Countermeasure planning & execution',
   stepB5p1: 'Countermeasure is <strong>mostly the same as Type A</strong> (add 5-min temperature correction), but Type B proceeds as <strong>formalizing veteran tacit knowledge</strong>.',
   stepB5p2: 'Starting from hearings, the <strong>"we chose, we build"</strong> feeling is strong, procedure compliance is high.',
   stepB6Name: 'Effect verification',
-  outcomeBTitle: 'Result 1 month after implementation',
+  outcomeBTitle: 'Result 1 month after implementation (numbers are approximate for illustration)',
   metricBacklog: 'Backlog', metricBacklogValue: '9 items', metricBacklogSub: 'Candidates for later', metricSatisfaction: 'Shop floor satisfaction', metricSatisfactionValue: 'Significantly up',
-  stepB6p1: 'Slightly more effective than Type A (0.7% vs 0.8%). Reason: <strong>the shop floor follows procedure with conviction</strong>. No "forced" feeling.',
-  stepB7Name: 'Standardization & preventing recurrence',
+  stepB6p1: 'Achieved almost the same effect as Type A (0.7% vs 0.8%, difference within margin of error). <strong>Which is better depends on organizational culture and shop floor situation</strong>. As a general tendency, Type B is said to have higher procedure compliance because it starts from the shop floor, but this cannot be asserted with numbers.',
+  stepB7Name: 'Standardization & preventing recurrence (Hadome)',
   stepB7p1: '• <strong>Update procedure doc</strong>: Incorporate veteran tacit knowledge<br>• <strong>Next theme</strong>: Move backlog #2 "scattered tools" to next QC<br>• <strong>Regular hearings</strong>: Conduct all-member hearings every 6 months, system to capture new issues<br>• <strong>Type B process itself gets standardized</strong>: Loop repeats yearly',
   bLoopTitle: 'Ongoing benefit of Type B',
   bLoopBody: 'Hearing → evaluate → select → implement → next hearing — <strong>the loop becomes organizational culture</strong>. QC stops being a "one-off," becomes <strong>an activity that naturally turns every year</strong>.',
@@ -793,16 +793,16 @@ Object.assign(window.kaizenI18n.en, {
 Object.assign(window.kaizenI18n.vi, {
   ch7Label: "CHƯƠNG 7",
   ch7Title: "Học qua ví dụ thực tế",
-  ch7Tldr: 'QC có 2 cửa vào. <strong>Loại A: Theo chỉ số</strong> (từ số liệu công ty), và <strong>Loại B: Theo phỏng vấn</strong> (từ tiếng nói hiện trường). Cả hai đều dẫn đến <strong>khuôn mẫu 7 giai đoạn giống nhau</strong>. Ta chạy xuyên một ví dụ giả định.',
+  ch7Tldr: 'QC có rộng rãi <strong>2 cách vào</strong> (cách sắp xếp riêng của tác giả). <strong>Loại A: Theo chỉ số</strong> (từ số liệu công ty), và <strong>Loại B: Theo phỏng vấn</strong> (từ tiếng nói hiện trường). Cả hai đều dẫn đến <strong>khuôn mẫu 7 giai đoạn giống nhau</strong>. Ta chạy xuyên một ví dụ giả định.',
   ch7_h1: 'QC có 2 loại cửa vào',
-  ch7_p1: 'Khi bắt đầu QC tại hiện trường thực tế, có <strong>2 cách vào</strong>. Cả hai đều đúng. Chọn theo văn hóa và mục đích công ty.',
+  ch7_p1: 'Khi bắt đầu QC tại hiện trường thực tế, có <strong>2 mẫu cách vào</strong> (cách sắp xếp riêng của tác giả). Cả hai đều đúng. Chọn theo văn hóa và mục đích công ty.',
   typeALabel: 'Loại A', typeBLabel: 'Loại B',
   typeAName: 'Theo chỉ số',
-  typeADesc: 'Bắt đầu từ KPI hoặc vấn đề quản lý của công ty. Kích hoạt bởi "đơn hàng tăng nhưng năng lực thiếu", "tỷ lệ hiệu suất xấu đi" — <strong>bất thường số liệu hoặc chính sách quản lý</strong>. Thường dùng trong Toyota/công ty lớn.',
+  typeADesc: 'Bắt đầu từ KPI hoặc vấn đề quản lý của công ty. Kích hoạt bởi "đơn hàng tăng nhưng năng lực thiếu", "tỷ lệ hiệu suất xấu đi" — <strong>bất thường số liệu hoặc chính sách quản lý</strong>. Thường dùng trong các tổ chức có quản lý số liệu chặt chẽ.',
   typeBName: 'Theo phỏng vấn',
   typeBDesc: 'Bắt đầu từ vấn đề hiện trường. Thu thập tiếng nói của người vận hành, bảo trì, chất lượng, chọn chủ đề khách quan bằng <strong>ma trận đánh giá</strong>. Sự tham gia cao, phù hợp mục đích đào tạo.',
   ch7_p2: 'Quan trọng là <strong>bất kể chọn cái nào, đều theo 7 giai đoạn QC Story</strong>. Khác cửa vào, nhưng <strong>nguyên nhân thật và đối sách đến cùng một nơi</strong>.',
-  ch7_p3: 'Dưới đây, dùng cùng nhà máy giả định (sản xuất, 80 nhân viên, dây chuyền 4 công đoạn A-D), chạy xuyên cả hai phương pháp.',
+  ch7_p3: 'Dưới đây, dùng cùng nhà máy giả định (sản xuất, 80 nhân viên, dây chuyền 4 công đoạn A-D), chạy xuyên cả hai phương pháp.<br><small style="color:var(--sub);">*QC Story đôi khi được tổ chức thành 8 giai đoạn bao gồm "suy ngẫm và thách thức tương lai"; hướng dẫn này đơn giản hóa thành 7 giai đoạn.</small>',
   tabA: 'Loại A (Theo chỉ số)', tabB: 'Loại B (Theo phỏng vấn)',
   scenarioALabel: 'Kịch bản (Loại A)',
   scenarioABody: '<strong>Tình huống:</strong> Đơn hàng tăng 130% so với năm trước. Tỷ lệ hoạt động nhà máy duy trì, nhưng <strong>tỷ lệ lỗi 1.8 lần so với cùng tháng năm trước</strong>. Lệnh từ lãnh đạo: "đưa tỷ lệ lỗi về mức cũ trước kỳ sau." Phát hiện từ báo cáo KPI.',
@@ -825,16 +825,16 @@ Object.assign(window.kaizenI18n.vi, {
   narrowdownTitle: 'Kết quả thu hẹp',
   narrowdownBody: '<strong>Lỗi kích thước NG xảy ra ở sáng (8-10h), Công đoạn B, Máy C</strong>. Máy C chiếm 84%. <strong>Đối sách ở đây tác động lớn đến toàn bộ</strong>.',
   stepA3Name: 'Đặt mục tiêu',
-  stepA3p1: '<strong>Mục tiêu:</strong> Tỷ lệ lỗi 3.5% → <strong>dưới 1.0%</strong> (trở về mức năm trước)',
-  stepA3p2: '<strong>Mục tiêu tiết kiệm:</strong> Năm 6 triệu yên → <strong>dưới 1.7 triệu yên</strong> (giảm 4.3 triệu yên)',
+  stepA3p1: '<strong>Mục tiêu:</strong> Tỷ lệ lỗi 3.5% → <strong>dưới 1.0%</strong> (tốt hơn mức 1.9% của năm trước)',
+  stepA3p2: '<strong>Mục tiêu tiết kiệm:</strong> Năm 6 triệu yên → <strong>dưới 1.7 triệu yên</strong> (giảm 4.3 triệu yên)<br><small style="color:var(--sub);">*Tiết kiệm bao gồm chi phí vật liệu lỗi, chi phí lao động phân loại, và chi phí làm lại.</small>',
   stepA3p3: '<strong>Thời hạn:</strong> 3 tháng',
   stepA4Name: 'Phân tích nguyên nhân',
   stepA4p1: 'Với điều kiện đã thu hẹp "Sáng, lỗi kích thước Máy C", liệt kê nguyên nhân bằng <strong>sơ đồ xương cá (4M)</strong>:',
-  stepA4p2: '• <strong>Machine (Máy):</strong> Linh kiện co lại do nhiệt độ giảm ban đêm<br>• <strong>Method (Phương pháp):</strong> Không hiệu chỉnh nhiệt độ khi khởi động sáng<br>• <strong>Man (Người):</strong> (không liên quan, cùng xu hướng ở nhiều người)<br>• <strong>Material (Vật liệu):</strong> (không liên quan, không tương quan với khác lô)',
+  stepA4p2: '• <strong>Machine (Máy):</strong> Linh kiện co lại do nhiệt độ giảm ban đêm<br>• <strong>Method (Phương pháp):</strong> Không hiệu chỉnh nhiệt độ khi khởi động sáng<br>• <strong>Man (Người):</strong> Cùng xu hướng ở nhiều người, <strong>đánh giá không phải nguyên nhân chính</strong><br>• <strong>Material (Vật liệu):</strong> Tương quan yếu với khác lô, <strong>đánh giá không phải nguyên nhân chính</strong>',
   stepA4p3: '<strong>Phân tích 5-Why:</strong>',
-  stepA4p4: 'Why 1: Nhiều lỗi kích thước NG sáng → Hiệu chỉnh Máy C lệch<br>Why 2: Hiệu chỉnh lệch → Khác trạng thái cuối ngày trước<br>Why 3: Khác trạng thái → Linh kiện co từ nhiệt độ đêm<br>Why 4: Co còn ảnh hưởng → Không có quy trình hiệu chỉnh nhiệt độ sáng<br>Why 5: Không có → Khởi động sáng chưa chuẩn hóa',
-  realCauseTitle: 'Nguyên nhân thật',
-  realCauseBody: '<strong>Quy trình khởi động sáng không đầy đủ</strong> (thiếu quá trình hiệu chỉnh nhiệt độ)<br>Kiểm tra: "Thêm quy trình này thì không tái phát?" → <strong>Có</strong>. Xác nhận nguyên nhân thật.',
+  stepA4p4: 'Why 1: Nhiều lỗi kích thước NG sáng → Hiệu chỉnh Máy C lệch<br>Why 2: Hiệu chỉnh lệch → Khác trạng thái cuối ngày trước<br>Why 3: Khác trạng thái → Linh kiện co từ nhiệt độ đêm<br>Why 4: Co còn ảnh hưởng → Không có quy trình hiệu chỉnh nhiệt độ sáng<br>Why 5: "Nhiệt độ" không có trong mục kiểm soát khởi động → <strong>Thiết kế công việc không tính đến thay đổi trạng thái buổi sáng</strong>',
+  realCauseTitle: 'Nguyên nhân thật (nguyên nhân gốc rễ)',
+  realCauseBody: '<strong>Quy trình khởi động sáng không đầy đủ</strong> (thiếu quá trình hiệu chỉnh nhiệt độ)<br>Kiểm tra: "Thêm quy trình này thì không tái phát?" → <strong>Có</strong>. <strong>Áp dụng làm giả thuyết nguyên nhân thật, xác minh qua thực hiện và xác nhận hiệu quả</strong>.',
   stepA5Name: 'Lập và thực hiện đối sách',
   stepA5p1: '<strong>Ma trận đánh giá các đối sách:</strong>',
   matrixHeadMeasure: 'Đối sách', matrixHeadEffect: 'Hiệu quả', matrixHeadFeasible: 'Khả thi', matrixHeadLateral: 'Mở rộng ngang', matrixHeadTotal: 'Tổng',
@@ -845,10 +845,10 @@ Object.assign(window.kaizenI18n.vi, {
   stepA5p2: '<strong>Chọn:</strong> Thêm quy trình hiệu chỉnh sáng (tổng 14 điểm). Chi phí gần 0, áp dụng ngay sang dây chuyền khác.',
   stepA5p3: '<strong>Thực hiện:</strong> Thêm 5 phút khởi động Máy C, dán quy trình có ảnh cạnh máy, tăng cường kiểm 10 sản phẩm đầu.',
   stepA6Name: 'Xác nhận hiệu quả',
-  outcomeATitle: 'Kết quả 1 tháng sau thực hiện',
+  outcomeATitle: 'Kết quả 1 tháng sau thực hiện (số liệu là ước lượng để minh họa)',
   metricDefectRate: 'Tỷ lệ lỗi', metricAnnualSave: 'Tiết kiệm năm', metricGoalAchieved: 'Đạt mục tiêu', metricCost: 'Chi phí đối sách', metricCostSub: 'Chỉ làm tài liệu quy trình', metricSide: 'Hiệu quả phụ', metricSideValue: 'Ngắn 8 phút', metricSideSub: 'Thời gian khởi động sáng',
   stepA6p1: 'Đạt 0.8%, vượt mục tiêu 1.0%. Ngoài lỗi A, còn <strong>rút ngắn thời gian khởi động sáng trung bình 8 phút</strong> (quy trình rõ ràng xóa tan do dự).',
-  stepA7Name: 'Chuẩn hóa và chống tái phát',
+  stepA7Name: 'Chuẩn hóa và chống tái phát (Hadome)',
   stepA7p1: '• <strong>Cập nhật tài liệu chuẩn</strong>: Chính thức đưa quy trình mới vào<br>• <strong>Đào tạo nhân viên mới</strong>: Thêm vào checklist onboarding<br>• <strong>Review hàng tháng</strong>: Theo dõi tỷ lệ lỗi, cảnh báo khi vượt ngưỡng<br>• <strong>Mở rộng ngang</strong>: Kiểm tra hiện tượng tương tự ở máy Công đoạn C/D → Xác nhận hiệu quả ở D<br>• <strong>Báo cáo</strong>: Đưa vào review quý ở hội đồng lãnh đạo',
   scenarioBLabel: 'Kịch bản (Loại B)',
   scenarioBBody: '<strong>Tình huống:</strong> Trưởng hiện trường bắt đầu nghe nhiều từ người vận hành: "dạo này sáng mệt", "tìm đồ nghề mất thời gian". Để khách quan nắm <strong>vấn đề lớn nhất là gì</strong>, phỏng vấn toàn thể.',
@@ -856,7 +856,7 @@ Object.assign(window.kaizenI18n.vi, {
   stepB1p1: '<strong>Bước 1-1: Phỏng vấn hiện trường (thu 10 mục)</strong>',
   stepB1p2: 'Từ người vận hành, bảo trì, chất lượng — mỗi người tối đa 3 vấn đề, gộp trùng, tổng hợp thành 10:',
   stepB1p3: '① Nhiều lỗi sáng<br>② Đồ nghề lộn xộn, mất thời gian tìm<br>③ Ngừng việc chờ xuất kho<br>④ Nhập báo cáo ngày phiền<br>⑤ Thời điểm cấp linh kiện không đều<br>⑥ Bàn giao ca đêm-ngày không đầy đủ<br>⑦ Tiêu chuẩn kiểm khác nhau theo người<br>⑧ Áp suất khí đôi lúc yếu<br>⑨ Nhà nghỉ nóng/lạnh<br>⑩ Phòng thay đồ xa',
-  stepB1p4: '<strong>Chất lượng hỗn hợp cũng OK.</strong> Bao gồm cả những thứ khó làm QC — đầu tiên cứ liệt kê hết.',
+  stepB1p4: '<strong>Chất lượng khác nhau cũng OK.</strong> Bao gồm cả những thứ khó làm QC — đầu tiên cứ liệt kê hết.',
   stepB1p5: '<strong>Bước 1-2: Sắp bằng ma trận đánh giá (5 điểm × 4 trục)</strong>',
   bMatrixProblem: 'Vấn đề', bMatrixImpact: 'Tác động', bMatrixFeasible: 'Khả thi', bMatrixQuant: 'Đo được', bMatrixAuto: 'Quyền tự chủ', bMatrixTotal: 'Tổng',
   bItem1: 'Nhiều lỗi sáng', bItem2: 'Đồ nghề lộn xộn', bItem3: 'Tiêu chuẩn kiểm khác nhau', bItem4: 'Áp suất khí không ổn', bItem5: 'Chờ xuất kho', bItem6: 'Bàn giao không đủ', bItem7: 'Báo cáo ngày phiền', bItem8: 'Cấp linh kiện không đều', bItem9: 'Nhiệt độ nhà nghỉ', bItem10: 'Phòng thay đồ xa',
@@ -865,9 +865,9 @@ Object.assign(window.kaizenI18n.vi, {
   bCalloutTitle: 'Vì sao chủ đề này (có cơ sở)',
   bCalloutBody: 'Chọn "lỗi sáng" <strong>không phải trực giác</strong>. <strong>Đánh giá trên 4 trục — tác động, khả thi, đo được, quyền tự chủ — được 18 điểm, cao nhất</strong>. Khi bị hỏi "sao chọn?" trong Q&A, trả lời bằng <strong>bảng đánh giá 10 mục</strong>.',
   stepB2Name: 'Nắm hiện trạng',
-  stepB2p1: 'Một khi chủ đề xong, từ đây là <strong>drill-down giống Loại A</strong>.',
-  stepB2p2: 'Thu dữ liệu hỗ trợ "lỗi sáng" từ phỏng vấn → phân tầng → thu hẹp đến <strong>sáng, Công đoạn B, Máy C, lỗi kích thước NG</strong>.',
-  stepB2p3: '(Chi tiết giống Lớp 1-4 ở tab Loại A. Dữ liệu xác nhận phỏng vấn.)',
+  stepB2p1: 'Một khi chủ đề được ấn định, từ đây ta nắm hiện trạng bằng <strong>cùng quy trình với Loại A</strong>.',
+  stepB2p2: 'Thu thập dữ liệu để hỗ trợ "lỗi sáng" từ phỏng vấn. Thực hiện phân tầng drill-down. Kết quả thu hẹp đến <strong>sáng, Công đoạn B, Máy C, lỗi kích thước NG</strong>.',
+  stepB2p3: '(Chi tiết giống biểu đồ Pareto Lớp 1-4 ở tab Loại A. Dữ liệu hỗ trợ phỏng vấn.)',
   stepB3Name: 'Đặt mục tiêu',
   stepB3p1: '<strong>Mục tiêu:</strong> Tỷ lệ lỗi 3.5% → <strong>dưới 1.0%</strong>',
   stepB3p2: '<strong>Mục tiêu tiết kiệm:</strong> Năm ~4.3 triệu yên',
@@ -876,15 +876,15 @@ Object.assign(window.kaizenI18n.vi, {
   stepB4Name: 'Phân tích nguyên nhân',
   stepB4p1: 'Loại B <strong>đặt trọng số hơn vào Man/Method</strong> trong phân tích 4M (xuất phát từ phỏng vấn, góc nhìn hiện trường phát huy).',
   stepB4p2: 'Nhưng kết luận giống: <strong>quy trình khởi động sáng không đầy đủ</strong> là nguyên nhân thật.',
-  stepB4p3: 'Thông tin phụ: từ phỏng vấn, <strong>"người kỳ cựu cho máy chạy không tải vài phút sáng theo kinh nghiệm"</strong> — tri thức ngầm phát hiện. Được xác nhận bằng phân tích nguyên nhân.',
+  stepB4p3: 'Thông tin bổ sung: từ phỏng vấn, <strong>"người kỳ cựu làm ấm (warm-up) máy vài phút mỗi sáng theo kinh nghiệm"</strong> — tri thức ngầm được phát hiện. Được hỗ trợ bởi phân tích nguyên nhân thật.',
   stepB5Name: 'Lập và thực hiện đối sách',
   stepB5p1: 'Đối sách <strong>gần giống Loại A</strong> (thêm 5 phút hiệu chỉnh nhiệt độ), nhưng Loại B tiến hành như <strong>chuẩn hóa tri thức ngầm của người kỳ cựu</strong>.',
   stepB5p2: 'Xuất phát từ phỏng vấn, cảm giác <strong>"chúng ta chọn, chúng ta làm"</strong> mạnh, tỷ lệ tuân thủ quy trình cao.',
   stepB6Name: 'Xác nhận hiệu quả',
-  outcomeBTitle: 'Kết quả 1 tháng sau thực hiện',
+  outcomeBTitle: 'Kết quả 1 tháng sau thực hiện (số liệu là ước lượng để minh họa)',
   metricBacklog: 'Backlog', metricBacklogValue: '9 mục', metricBacklogSub: 'Ứng viên kỳ sau', metricSatisfaction: 'Hài lòng hiện trường', metricSatisfactionValue: 'Tăng mạnh',
-  stepB6p1: 'Hiệu quả nhỉnh hơn Loại A (0.7% vs 0.8%). Lý do: <strong>hiện trường tuân thủ quy trình với tin tưởng</strong>. Không có cảm giác "bị ép".',
-  stepB7Name: 'Chuẩn hóa và chống tái phát',
+  stepB6p1: 'Đạt hiệu quả gần như Loại A (0.7% vs 0.8%, chênh lệch trong phạm vi sai số). <strong>Cái nào tốt hơn tùy thuộc vào văn hóa tổ chức và tình huống hiện trường</strong>. Nhìn chung, Loại B được cho là có tỷ lệ tuân thủ quy trình cao hơn vì xuất phát từ hiện trường, nhưng không thể khẳng định bằng con số.',
+  stepB7Name: 'Chuẩn hóa và chống tái phát (Hadome)',
   stepB7p1: '• <strong>Cập nhật quy trình</strong>: Tích hợp tri thức ngầm của người kỳ cựu<br>• <strong>Chủ đề tiếp</strong>: Đưa backlog #2 "đồ nghề lộn xộn" vào QC kỳ tới<br>• <strong>Phỏng vấn định kỳ</strong>: 6 tháng/lần phỏng vấn toàn thể, hệ thống bắt vấn đề mới<br>• <strong>Quy trình Loại B tự chuẩn hóa</strong>: Vòng lặp lặp lại hàng năm',
   bLoopTitle: 'Lợi ích liên tục của Loại B',
   bLoopBody: 'Phỏng vấn → đánh giá → chọn → thực hiện → phỏng vấn tiếp — <strong>vòng lặp thành văn hóa tổ chức</strong>. QC không còn "làm một lần rồi thôi", thành <strong>hoạt động tự nhiên xoay hàng năm</strong>.',
@@ -905,16 +905,16 @@ Object.assign(window.kaizenI18n.vi, {
 Object.assign(window.kaizenI18n.id, {
   ch7Label: "BAB 7",
   ch7Title: "Belajar dari contoh nyata",
-  ch7Tldr: 'QC punya 2 pintu masuk. <strong>Tipe A: Berbasis indikator</strong> (dari angka perusahaan), dan <strong>Tipe B: Berbasis wawancara</strong> (dari suara lapangan). Kedua jalur sampai ke <strong>format 7 tahap yang sama</strong>. Kita jalankan contoh fiktif sampai selesai.',
+  ch7Tldr: 'QC punya secara luas <strong>2 cara masuk</strong> (penataan asli penulis). <strong>Tipe A: Berbasis indikator</strong> (dari angka perusahaan), dan <strong>Tipe B: Berbasis wawancara</strong> (dari suara lapangan). Kedua jalur sampai ke <strong>format 7 tahap yang sama</strong>. Kita jalankan contoh fiktif sampai selesai.',
   ch7_h1: 'QC punya 2 jenis pintu masuk',
-  ch7_p1: 'Saat mulai QC di lapangan nyata, ada <strong>2 cara masuk</strong>. Keduanya benar. Pilih sesuai budaya dan tujuan perusahaan.',
+  ch7_p1: 'Saat mulai QC di lapangan nyata, ada <strong>2 pola cara masuk</strong> (penataan asli penulis). Keduanya benar. Pilih sesuai budaya dan tujuan perusahaan.',
   typeALabel: 'Tipe A', typeBLabel: 'Tipe B',
   typeAName: 'Berbasis indikator',
-  typeADesc: 'Mulai dari KPI atau masalah manajemen. Dipicu oleh "order naik tapi kapasitas kurang", "yield memburuk" — <strong>anomali angka atau arahan manajemen</strong>. Umum di Toyota/perusahaan besar.',
+  typeADesc: 'Mulai dari KPI atau masalah manajemen. Dipicu oleh "order naik tapi kapasitas kurang", "yield memburuk" — <strong>anomali angka atau arahan manajemen</strong>. Umum di organisasi dengan manajemen numerik yang kuat.',
   typeBName: 'Berbasis wawancara',
   typeBDesc: 'Mulai dari masalah lapangan. Kumpulkan suara operator, maintenance, kualitas, pilih tema objektif dengan <strong>matriks evaluasi</strong>. Partisipasi tinggi, cocok untuk tujuan pembinaan.',
   ch7_p2: 'Yang penting, <strong>apapun dipilih, ikuti 7 tahap QC Story</strong>. Pintu berbeda, tapi <strong>penyebab sejati dan tindakan sampai ke tempat yang sama</strong>.',
-  ch7_p3: 'Di bawah, dengan pabrik fiktif yang sama (manufaktur, 80 karyawan, line 4 proses A-D), jalankan kedua pendekatan sampai selesai.',
+  ch7_p3: 'Di bawah, dengan pabrik fiktif yang sama (manufaktur, 80 karyawan, line 4 proses A-D), jalankan kedua pendekatan sampai selesai.<br><small style="color:var(--sub);">*QC Story kadang disusun menjadi 8 tahap termasuk "refleksi dan tantangan masa depan"; panduan ini menyederhanakan menjadi 7 tahap.</small>',
   tabA: 'Tipe A (Berbasis indikator)', tabB: 'Tipe B (Berbasis wawancara)',
   scenarioALabel: 'Skenario (Tipe A)',
   scenarioABody: '<strong>Situasi:</strong> Order naik 130% dari tahun sebelumnya. Tingkat operasi pabrik terjaga, tapi <strong>tingkat cacat 1.8x bulan yang sama tahun lalu</strong>. Perintah direksi: "kembalikan tingkat cacat ke level lama sebelum kuartal berikut." Ditemukan dari laporan KPI.',
@@ -937,16 +937,16 @@ Object.assign(window.kaizenI18n.id, {
   narrowdownTitle: 'Hasil penyempitan',
   narrowdownBody: '<strong>Cacat dimensi NG terjadi di pagi (8-10), Proses B, Mesin C</strong>. Mesin C 84%. <strong>Tindakan di sini menggerakkan keseluruhan signifikan</strong>.',
   stepA3Name: 'Penetapan target',
-  stepA3p1: '<strong>Target:</strong> Tingkat cacat 3.5% → <strong>di bawah 1.0%</strong> (kembali ke level tahun lalu)',
-  stepA3p2: '<strong>Target penghematan:</strong> Tahunan 6 juta yen → <strong>di bawah 1.7 juta yen</strong> (hemat 4.3 juta yen)',
+  stepA3p1: '<strong>Target:</strong> Tingkat cacat 3.5% → <strong>di bawah 1.0%</strong> (lebih baik dari level 1.9% tahun lalu)',
+  stepA3p2: '<strong>Target penghematan:</strong> Tahunan 6 juta yen → <strong>di bawah 1.7 juta yen</strong> (hemat 4.3 juta yen)<br><small style="color:var(--sub);">*Penghematan termasuk biaya material cacat, biaya tenaga kerja sortir, dan biaya pengerjaan ulang.</small>',
   stepA3p3: '<strong>Batas waktu:</strong> 3 bulan',
   stepA4Name: 'Analisis penyebab',
   stepA4p1: 'Untuk kondisi yang dipersempit "Pagi, cacat dimensi Mesin C", list kandidat penyebab dengan <strong>diagram tulang ikan (4M)</strong>:',
-  stepA4p2: '• <strong>Machine (Mesin):</strong> Suku cadang menyusut karena suhu turun malam<br>• <strong>Method (Metode):</strong> Tidak ada koreksi suhu di startup pagi<br>• <strong>Man (Manusia):</strong> (tidak terkait, sama tren lintas operator)<br>• <strong>Material:</strong> (tidak terkait, tidak korelasi dengan beda lot)',
+  stepA4p2: '• <strong>Machine (Mesin):</strong> Suku cadang menyusut karena suhu turun malam<br>• <strong>Method (Metode):</strong> Tidak ada koreksi suhu di startup pagi<br>• <strong>Man (Manusia):</strong> Sama tren lintas operator, <strong>dinilai bukan penyebab utama</strong><br>• <strong>Material:</strong> Korelasi lemah dengan beda lot, <strong>dinilai bukan penyebab utama</strong>',
   stepA4p3: '<strong>Analisis 5-Why:</strong>',
-  stepA4p4: 'Why 1: Banyak cacat dimensi NG pagi → Kalibrasi Mesin C meleset<br>Why 2: Kalibrasi meleset → Beda kondisi dengan akhir hari kemarin<br>Why 3: Kondisi beda → Suku cadang menyusut karena suhu malam<br>Why 4: Efek menyusut tersisa → Tidak ada prosedur koreksi suhu pagi<br>Why 5: Tidak ada prosedur → Startup pagi belum standar',
-  realCauseTitle: 'Penyebab sejati',
-  realCauseBody: '<strong>Prosedur startup pagi tidak memadai</strong> (tidak ada proses koreksi suhu)<br>Uji: "Tambah prosedur ini tidak kambuh?" → <strong>Ya</strong>. Konfirmasi penyebab sejati.',
+  stepA4p4: 'Why 1: Banyak cacat dimensi NG pagi → Kalibrasi Mesin C meleset<br>Why 2: Kalibrasi meleset → Beda kondisi dengan akhir hari kemarin<br>Why 3: Kondisi beda → Suku cadang menyusut karena suhu malam<br>Why 4: Efek menyusut tersisa → Tidak ada prosedur koreksi suhu pagi<br>Why 5: "Suhu" tidak termasuk dalam item kontrol startup → <strong>Desain kerja tidak memperhitungkan perubahan kondisi pagi</strong>',
+  realCauseTitle: 'Penyebab sejati (akar penyebab)',
+  realCauseBody: '<strong>Prosedur startup pagi tidak memadai</strong> (tidak ada proses koreksi suhu)<br>Uji: "Tambah prosedur ini tidak kambuh?" → <strong>Ya</strong>. <strong>Diterapkan sebagai hipotesis penyebab sejati, diverifikasi melalui pelaksanaan dan konfirmasi efek</strong>.',
   stepA5Name: 'Perencanaan dan pelaksanaan tindakan',
   stepA5p1: '<strong>Matriks evaluasi kandidat tindakan:</strong>',
   matrixHeadMeasure: 'Tindakan', matrixHeadEffect: 'Efek', matrixHeadFeasible: 'Kelayakan', matrixHeadLateral: 'Deploy lateral', matrixHeadTotal: 'Total',
@@ -957,10 +957,10 @@ Object.assign(window.kaizenI18n.id, {
   stepA5p2: '<strong>Dipakai:</strong> Tambah prosedur koreksi pagi (total 14 poin). Biaya hampir 0, segera bisa diterapkan ke line lain.',
   stepA5p3: '<strong>Pelaksanaan:</strong> Tambah warm-up 5 menit Mesin C saat startup, pasang prosedur berfoto di samping mesin, intensif inspeksi 10 produk pertama.',
   stepA6Name: 'Verifikasi efek',
-  outcomeATitle: 'Hasil 1 bulan setelah pelaksanaan',
+  outcomeATitle: 'Hasil 1 bulan setelah pelaksanaan (angka adalah perkiraan untuk ilustrasi)',
   metricDefectRate: 'Tingkat cacat', metricAnnualSave: 'Penghematan tahunan', metricGoalAchieved: 'Target tercapai', metricCost: 'Biaya tindakan', metricCostSub: 'Hanya pembuatan prosedur', metricSide: 'Efek samping', metricSideValue: 'Lebih singkat 8 menit', metricSideSub: 'Waktu startup pagi',
   stepA6p1: 'Capai 0.8%, melebihi target 1.0%. Selain cacat A, juga <strong>pendek waktu startup line pagi rata-rata 8 menit</strong> (prosedur jelas hilangkan keragu-raguan).',
-  stepA7Name: 'Standarisasi dan pencegahan kambuh',
+  stepA7Name: 'Standarisasi dan pencegahan kambuh (Hadome)',
   stepA7p1: '• <strong>Update dokumen standar kerja</strong>: Secara formal masukkan prosedur baru<br>• <strong>Pelatihan karyawan baru</strong>: Tambahkan ke checklist onboarding<br>• <strong>Review bulanan</strong>: Pantau tingkat cacat bulanan, peringatan saat ambang batas<br>• <strong>Deploy lateral</strong>: Periksa fenomena sama di mesin Proses C/D → Efek dikonfirmasi di D juga<br>• <strong>Laporan</strong>: Masukkan ke review kuartal di rapat direksi',
   scenarioBLabel: 'Skenario (Tipe B)',
   scenarioBBody: '<strong>Situasi:</strong> Leader lapangan mulai sering dengar dari operator: "pagi belakangan terasa berat", "cari alat makan waktu". Untuk objektif pahami <strong>apa masalah paling besar</strong>, lakukan wawancara seluruh anggota.',
@@ -968,7 +968,7 @@ Object.assign(window.kaizenI18n.id, {
   stepB1p1: '<strong>Step 1-1: Wawancara lapangan (kumpul 10 item)</strong>',
   stepB1p2: 'Dari operator, maintenance, kualitas — masing-masing maksimal 3 masalah, gabung duplikasi, konsolidasi 10:',
   stepB1p3: '① Banyak cacat pagi<br>② Alat berantakan, butuh waktu cari<br>③ Stop kerja menunggu kirim<br>④ Input laporan harian merepotkan<br>⑤ Timing supply suku cadang tidak seragam<br>⑥ Handover shift malam-siang tidak cukup<br>⑦ Standar inspeksi beda per orang<br>⑧ Tekanan udara kadang lemah<br>⑨ Ruang istirahat panas/dingin<br>⑩ Ruang ganti jauh',
-  stepB1p4: '<strong>Kualitas campuran juga OK.</strong> Termasuk yang sulit jadi QC — dulu list semua.',
+  stepB1p4: '<strong>Kualitas beragam juga OK.</strong> Termasuk yang sulit jadi QC — dulu list semua.',
   stepB1p5: '<strong>Step 1-2: Urutkan dengan matriks evaluasi (5 poin × 4 sumbu)</strong>',
   bMatrixProblem: 'Masalah', bMatrixImpact: 'Dampak', bMatrixFeasible: 'Kelayakan', bMatrixQuant: 'Dapat diukur', bMatrixAuto: 'Otonomi', bMatrixTotal: 'Total',
   bItem1: 'Banyak cacat pagi', bItem2: 'Alat berantakan', bItem3: 'Standar inspeksi beda', bItem4: 'Tekanan udara tidak stabil', bItem5: 'Tunggu kirim', bItem6: 'Handover kurang', bItem7: 'Laporan harian merepotkan', bItem8: 'Supply suku cadang tidak seragam', bItem9: 'Suhu ruang istirahat', bItem10: 'Ruang ganti jauh',
@@ -977,9 +977,9 @@ Object.assign(window.kaizenI18n.id, {
   bCalloutTitle: 'Kenapa tema ini (dengan dasar)',
   bCalloutBody: 'Pilih "cacat pagi" <strong>bukan intuisi</strong>. <strong>Dievaluasi pada 4 sumbu — dampak, kelayakan, terukur, otonomi — dapat 18 poin, tertinggi</strong>. Kalau ditanya "kenapa ini?" di Q&A, jawab dengan <strong>tabel evaluasi 10 item</strong>.',
   stepB2Name: 'Memahami keadaan saat ini',
-  stepB2p1: 'Setelah tema ditetapkan, dari sini <strong>drill-down sama Tipe A</strong>.',
-  stepB2p2: 'Kumpul data dukung "cacat pagi" dari wawancara → stratifikasi → persempit ke <strong>pagi, Proses B, Mesin C, cacat dimensi NG</strong>.',
-  stepB2p3: '(Detail sama Lapisan 1-4 di tab Tipe A. Data mendukung wawancara.)',
+  stepB2p1: 'Setelah tema ditetapkan, dari sini kita memahami keadaan saat ini dengan <strong>prosedur yang sama seperti Tipe A</strong>.',
+  stepB2p2: 'Kumpulkan data yang mendukung "cacat pagi" dari wawancara. Lakukan stratifikasi drill-down. Hasilnya mempersempit ke <strong>pagi, Proses B, Mesin C, cacat dimensi NG</strong>.',
+  stepB2p3: '(Detail sama dengan diagram Pareto Lapisan 1-4 di tab Tipe A. Data mendukung wawancara.)',
   stepB3Name: 'Penetapan target',
   stepB3p1: '<strong>Target:</strong> Tingkat cacat 3.5% → <strong>di bawah 1.0%</strong>',
   stepB3p2: '<strong>Target penghematan:</strong> Tahunan ~4.3 juta yen',
@@ -988,15 +988,15 @@ Object.assign(window.kaizenI18n.id, {
   stepB4Name: 'Analisis penyebab',
   stepB4p1: 'Tipe B <strong>memberikan bobot lebih ke Man/Method</strong> dalam analisis 4M (mulai dari wawancara, sudut pandang berakar di lapangan berfungsi).',
   stepB4p2: 'Tapi kesimpulan sama: <strong>prosedur startup pagi tidak memadai</strong> adalah penyebab sejati.',
-  stepB4p3: 'Info tambahan: dari wawancara, <strong>"senior idle-kan mesin beberapa menit pagi dari pengalaman"</strong> — tacit knowledge ditemukan. Dikonfirmasi lewat analisis penyebab.',
+  stepB4p3: 'Info tambahan: dari wawancara, <strong>"senior menghangatkan (warm-up) mesin beberapa menit pagi dari pengalaman"</strong> — tacit knowledge ditemukan. Dikonfirmasi lewat analisis penyebab.',
   stepB5Name: 'Perencanaan dan pelaksanaan tindakan',
   stepB5p1: 'Tindakan <strong>hampir sama Tipe A</strong> (tambah 5 menit koreksi suhu), tapi Tipe B berjalan sebagai <strong>formalisasi tacit knowledge senior</strong>.',
   stepB5p2: 'Karena mulai dari wawancara, rasa <strong>"kami pilih, kami buat"</strong> kuat, tingkat kepatuhan prosedur tinggi.',
   stepB6Name: 'Verifikasi efek',
-  outcomeBTitle: 'Hasil 1 bulan setelah pelaksanaan',
+  outcomeBTitle: 'Hasil 1 bulan setelah pelaksanaan (angka adalah perkiraan untuk ilustrasi)',
   metricBacklog: 'Backlog', metricBacklogValue: '9 item', metricBacklogSub: 'Kandidat kuartal berikut', metricSatisfaction: 'Kepuasan lapangan', metricSatisfactionValue: 'Naik signifikan',
-  stepB6p1: 'Efek sedikit lebih tinggi dari Tipe A (0.7% vs 0.8%). Alasan: <strong>lapangan patuhi prosedur dengan keyakinan</strong>. Tidak ada rasa "dipaksa".',
-  stepB7Name: 'Standarisasi dan pencegahan kambuh',
+  stepB6p1: 'Mencapai efek hampir sama dengan Tipe A (0.7% vs 0.8%, perbedaan dalam margin error). <strong>Mana yang lebih baik tergantung budaya organisasi dan situasi lapangan</strong>. Secara umum, Tipe B dikatakan memiliki tingkat kepatuhan prosedur lebih tinggi karena mulai dari lapangan, tapi tidak bisa ditegaskan dengan angka.',
+  stepB7Name: 'Standarisasi dan pencegahan kambuh (Hadome)',
   stepB7p1: '• <strong>Update prosedur</strong>: Masukkan tacit knowledge senior<br>• <strong>Tema berikut</strong>: Pindah backlog #2 "alat berantakan" ke QC kuartal berikut<br>• <strong>Rutinisasi wawancara</strong>: 6 bulan/kali wawancara seluruh anggota, sistem tangkap masalah baru<br>• <strong>Proses Tipe B sendiri terstandarisasi</strong>: Loop berulang tahunan',
   bLoopTitle: 'Manfaat berkelanjutan Tipe B',
   bLoopBody: 'Wawancara → evaluasi → pilih → laksanakan → wawancara berikut — <strong>loop jadi budaya organisasi</strong>. QC tidak lagi "sekali lalu selesai", jadi <strong>aktivitas yang berputar alami tiap tahun</strong>.',
@@ -1017,16 +1017,16 @@ Object.assign(window.kaizenI18n.id, {
 Object.assign(window.kaizenI18n.my, {
   ch7Label: "အခန်း ၇",
   ch7Title: "လက်တွေ့နမူနာနှင့် လေ့လာခြင်း",
-  ch7Tldr: 'QC တွင် ဝင်ပေါက် ၂ ခု ရှိ။ <strong>အမျိုးအစား A: ညွှန်းကိန်းအပေါ်အခြေခံ</strong> (ကုမ္ပဏီ၏ ဂဏန်းမှ ဝင်) နှင့် <strong>အမျိုးအစား B: မေးမြန်းခြင်းအပေါ်အခြေခံ</strong> (လုပ်ငန်းခွင်၏ အသံမှ ဝင်)။ နှစ်ဦးလုံး <strong>ရောက်ရှိသော ပုံစံသည် အဆင့် ၇ ဆင့် အတူတူ</strong>။ စိတ်ကူး နမူနာဖြင့် အပြီးထိ ပြေး။',
+  ch7Tldr: 'QC တွင် ကျယ်ပြန့်စွာ <strong>ဝင်နည်း ၂ မျိုး</strong> ရှိ (စာရေးသူ၏ ကိုယ်ပိုင် စီစဉ်မှု)။ <strong>အမျိုးအစား A: ညွှန်းကိန်းအပေါ်အခြေခံ</strong> (ကုမ္ပဏီ၏ ဂဏန်းမှ ဝင်) နှင့် <strong>အမျိုးအစား B: မေးမြန်းခြင်းအပေါ်အခြေခံ</strong> (လုပ်ငန်းခွင်၏ အသံမှ ဝင်)။ နှစ်ဦးလုံး <strong>ရောက်ရှိသော ပုံစံသည် အဆင့် ၇ ဆင့် အတူတူ</strong>။ စိတ်ကူး နမူနာဖြင့် အပြီးထိ ပြေး။',
   ch7_h1: 'QC တွင် ဝင်ပေါက် ၂ မျိုး ရှိ',
-  ch7_p1: 'လက်တွေ့ လုပ်ငန်းခွင်တွင် QC စတင်သောအခါ <strong>ဝင်နည်း ၂ မျိုး</strong> ရှိ။ နှစ်ဦးလုံး မှန်။ ကုမ္ပဏီ ယဉ်ကျေးမှုနှင့် ရည်ရွယ်ချက်အလိုက် သုံးခြင်း။',
+  ch7_p1: 'လက်တွေ့ လုပ်ငန်းခွင်တွင် QC စတင်သောအခါ <strong>ဝင်နည်း ပုံစံ ၂ မျိုး</strong> ရှိ (စာရေးသူ၏ ကိုယ်ပိုင် စီစဉ်မှု)။ နှစ်ဦးလုံး မှန်။ ကုမ္ပဏီ ယဉ်ကျေးမှုနှင့် ရည်ရွယ်ချက်အလိုက် သုံးခြင်း။',
   typeALabel: 'အမျိုးအစား A', typeBLabel: 'အမျိုးအစား B',
   typeAName: 'ညွှန်းကိန်းအပေါ်အခြေခံ',
-  typeADesc: 'ကုမ္ပဏီ KPI သို့ စီမံခန့်ခွဲမှု ပြဿနာမှ ဝင်။ "အော်ဒါ တိုးနေလျက် စက်ပစ္စည်း စွမ်းရည် မလုံ"၊ "ထုတ်ကုန် ရှုံးခဲ့" အစရှိသည့် <strong>ဂဏန်း ပုံမှန်မဟုတ်မှု သို့ စီမံခန့်ခွဲမှု မူဝါဒ</strong> ဖြစ်။ Toyota/ကြီးကျယ်သော ကုမ္ပဏီတွင် အသုံးများ။',
+  typeADesc: 'ကုမ္ပဏီ KPI သို့ စီမံခန့်ခွဲမှု ပြဿနာမှ ဝင်။ "အော်ဒါ တိုးနေလျက် စက်ပစ္စည်း စွမ်းရည် မလုံ"၊ "ထုတ်ကုန် ရှုံးခဲ့" အစရှိသည့် <strong>ဂဏန်း ပုံမှန်မဟုတ်မှု သို့ စီမံခန့်ခွဲမှု မူဝါဒ</strong> ဖြစ်။ ဂဏန်း စီမံခန့်ခွဲမှု ခိုင်မာသော အဖွဲ့အစည်းများ၌ အသုံးများ။',
   typeBName: 'မေးမြန်းခြင်းအပေါ်အခြေခံ',
   typeBDesc: 'လုပ်ငန်းခွင် ပြဿနာမှ ဝင်။ လုပ်သား၊ ပြုပြင်ထိန်းသိမ်းရေး၊ အရည်အသွေး တို့၏ အသံ စု၍ <strong>အကဲဖြတ် မက်ထရစ်</strong>ဖြင့် ဘက်မလိုက်ဘဲ အကြောင်းအရာ ရွေး။ ပါဝင်မှု မြင့်၊ တိုးတက်စေရန် အတွက်လည်း သင့်တော်။',
   ch7_p2: 'အရေးကြီးသည်မှာ <strong>ဘယ်ဟာရွေးရွေး QC ဇာတ်လမ်း အဆင့် ၇ ဆင့်</strong> အတိုင်း လုပ်ခြင်း။ ဝင်ပေါက် ကွဲသော်လည်း <strong>တကယ့်အကြောင်းရင်းနှင့် တုံ့ပြန်မှု တူညီသော နေရာ</strong> သို့ ရောက်။',
-  ch7_p3: 'အောက်တွင် တူညီသော စိတ်ကူး စက်ရုံ (ထုတ်လုပ်မှု၊ ဝန်ထမ်း ၈၀ ယောက်၊ လုပ်ငန်းစဉ် A-D ၄ ခု) ဖြင့် A နှင့် B နှစ်ဦးလုံး လုပ်ငန်းစဉ် အပြီးထိ ပြေး။',
+  ch7_p3: 'အောက်တွင် တူညီသော စိတ်ကူး စက်ရုံ (ထုတ်လုပ်မှု၊ ဝန်ထမ်း ၈၀ ယောက်၊ လုပ်ငန်းစဉ် A-D ၄ ခု) ဖြင့် A နှင့် B နှစ်ဦးလုံး လုပ်ငန်းစဉ် အပြီးထိ ပြေး။<br><small style="color:var(--sub);">*QC Story သည် "ပြန်လည် သုံးသပ်မှုနှင့် အနာဂတ် စိန်ခေါ်မှု" ပါဝင်သော အဆင့် ၈ ဆင့် ပုံစံဖြင့်လည်း စီစဉ်သည်။ ဤလမ်းညွှန်တွင် အဆင့် ၇ ဆင့်သာ ရိုးရှင်းအောင် လုပ်ထားသည်။</small>',
   tabA: 'အမျိုးအစား A (ညွှန်းကိန်း)', tabB: 'အမျိုးအစား B (မေးမြန်းခြင်း)',
   scenarioALabel: 'ဇာတ်လမ်း (A)',
   scenarioABody: '<strong>အခြေအနေ:</strong> ယခင်နှစ်နှင့် နှိုင်း အော်ဒါ ၁၃၀% တိုး။ စက်ရုံ လည်ပတ်နှုန်း ထိန်းနိုင် သော်လည်း <strong>ချွတ်ယွင်းမှု နှုန်း ယခင်နှစ်၏ အလားတူ လ နှင့် နှိုင်း ၁.၈ ဆ</strong> ဆိုးလာ။ ဒါရိုက်တာများထံမှ "လာမည့် သုံးလပတ်မတိုင်မီ ချွတ်ယွင်းမှု နှုန်း ယခင် အဆင့် သို့ ပြန်ပို့" အမိန့်။ KPI အစီရင်ခံစာ မှ ဖော်ထုတ်။',
@@ -1049,16 +1049,16 @@ Object.assign(window.kaizenI18n.my, {
   narrowdownTitle: 'ကျဉ်းကျပ်မှု ရလဒ်',
   narrowdownBody: '<strong>မနက် (၈-၁၀)၊ လုပ်ငန်းစဉ် B၊ စက် C တွင် ဖြစ်ပေါ်သော အရွယ်အစား NG ချွတ်ယွင်းမှု</strong>။ စက် C သည် ၈၄% ယူ။ <strong>ဤနေရာ၌ တုံ့ပြန်လျှင် အားလုံး အကြီးအကျယ် လှုပ်</strong>။',
   stepA3Name: 'ရည်မှန်းချက် သတ်မှတ်',
-  stepA3p1: '<strong>ရည်မှန်းချက်:</strong> ချွတ်ယွင်းမှု နှုန်း ၃.၅% → <strong>၁.၀% အောက်</strong>',
-  stepA3p2: '<strong>လျှော့ချရေး ရည်မှန်းချက်:</strong> နှစ်စဉ် ၆ သန်း ယန်း → <strong>၁.၇ သန်း ယန်း အောက်</strong>',
+  stepA3p1: '<strong>ရည်မှန်းချက်:</strong> ချွတ်ယွင်းမှု နှုန်း ၃.၅% → <strong>၁.၀% အောက်</strong> (ယခင်နှစ် အဆင့် ၁.၉% ထက် ပိုမိုကောင်းမွန်)',
+  stepA3p2: '<strong>လျှော့ချရေး ရည်မှန်းချက်:</strong> နှစ်စဉ် ၆ သန်း ယန်း → <strong>၁.၇ သန်း ယန်း အောက်</strong> (၄.၃ သန်း ယန်း လျှော့ချ)<br><small style="color:var(--sub);">*လျှော့ချငွေတွင် ချွတ်ယွင်း ပစ္စည်း ကုန်ကျစရိတ်၊ ခွဲခြား လုပ်အား ကုန်ကျစရိတ်၊ ပြန်လည် ပြုပြင် ကုန်ကျစရိတ် ပါဝင်။</small>',
   stepA3p3: '<strong>အချိန်ကာလ:</strong> ၃ လ',
   stepA4Name: 'အကြောင်းရင်း ခွဲခြမ်းစိတ်ဖြာ',
   stepA4p1: 'ကျဉ်းကျပ်သော အခြေအနေ "မနက်၊ စက် C အရွယ်အစား NG" အတွက် <strong>ငါးရိုးပုံ (4M)</strong>ဖြင့် အကြောင်းရင်း ကိုယ်စားလှယ်များ ဖော်ထုတ်:',
-  stepA4p2: '• <strong>Machine (စက်):</strong> ည ရပ်နား အပူချိန် ကျ၍ အစိတ်အပိုင်း ကျုံ့<br>• <strong>Method (နည်းလမ်း):</strong> မနက် စတင်မှု၌ အပူချိန် ပြင်ဆင်ခြင်း မရှိ<br>• <strong>Man (လူ):</strong> (မဆိုင်၊ လုပ်သား အများ တွင်လည်း တူညီ)<br>• <strong>Material (ပစ္စည်း):</strong> (မဆိုင်၊ တွဲလိုက် ခြားနားခြင်းနှင့် ဆက်စပ် မရှိ)',
+  stepA4p2: '• <strong>Machine (စက်):</strong> ည ရပ်နား အပူချိန် ကျ၍ အစိတ်အပိုင်း ကျုံ့<br>• <strong>Method (နည်းလမ်း):</strong> မနက် စတင်မှု၌ အပူချိန် ပြင်ဆင်ခြင်း မရှိ<br>• <strong>Man (လူ):</strong> လုပ်သား အများ တွင်လည်း တူညီ၊ <strong>အဓိက အကြောင်းရင်း မဟုတ်ဟု ဆုံးဖြတ်</strong><br>• <strong>Material (ပစ္စည်း):</strong> တွဲလိုက် ခြားနားခြင်းနှင့် ဆက်စပ်မှု အားနည်း၊ <strong>အဓိက အကြောင်းရင်း မဟုတ်ဟု ဆုံးဖြတ်</strong>',
   stepA4p3: '<strong>၅-Whys ခွဲခြမ်းစိတ်ဖြာ:</strong>',
-  stepA4p4: 'Why 1: မနက် အရွယ်အစား NG များ → စက် C ချိန်ညှိ လွဲ<br>Why 2: ချိန်ညှိ လွဲ → မနေ့က အပြီးခါ အခြေအနေနှင့် ကွဲ<br>Why 3: အခြေအနေ ကွဲ → ည အပူချိန် ပြောင်းလဲ၍ အစိတ်အပိုင်း ကျုံ့<br>Why 4: ကျုံ့မှု အကျိုး ကျန် → မနက် အပူချိန် ပြင်ဆင်ခြင်း လုပ်ငန်းစဉ် မရှိ<br>Why 5: ပြင်ဆင်မှု လုပ်ငန်းစဉ် မရှိ → မနက် စတင်မှု စံချိန် မသတ်မှတ်ထား',
-  realCauseTitle: 'တကယ့်အကြောင်းရင်း',
-  realCauseBody: '<strong>မနက် စတင်မှု လုပ်ငန်းစဉ် မပြည့်စုံ</strong> (အပူချိန် ပြင်ဆင် လုပ်ငန်းစဉ် မရှိ)<br>စစ်ဆေးမှု: "ဤလုပ်ငန်းစဉ် ထပ်ထည့်လျှင် ပြန်မဖြစ်?" → <strong>Yes</strong>။ တကယ့်အကြောင်းရင်း အတည်ပြု။',
+  stepA4p4: 'Why 1: မနက် အရွယ်အစား NG များ → စက် C ချိန်ညှိ လွဲ<br>Why 2: ချိန်ညှိ လွဲ → မနေ့က အပြီးခါ အခြေအနေနှင့် ကွဲ<br>Why 3: အခြေအနေ ကွဲ → ည အပူချိန် ပြောင်းလဲ၍ အစိတ်အပိုင်း ကျုံ့<br>Why 4: ကျုံ့မှု အကျိုး ကျန် → မနက် အပူချိန် ပြင်ဆင်ခြင်း လုပ်ငန်းစဉ် မရှိ<br>Why 5: စတင်မှု ထိန်းချုပ်ရမည့် အချက်များတွင် "အပူချိန်" မပါဝင် → <strong>မနက် အခြေအနေ ပြောင်းလဲမှုကို ထည့်သွင်း စဉ်းစားခြင်း မပြုသော အလုပ် ဒီဇိုင်း</strong>',
+  realCauseTitle: 'တကယ့်အကြောင်းရင်း (အရင်းခံ အကြောင်းရင်း)',
+  realCauseBody: '<strong>မနက် စတင်မှု လုပ်ငန်းစဉ် မပြည့်စုံ</strong> (အပူချိန် ပြင်ဆင် လုပ်ငန်းစဉ် မရှိ)<br>စစ်ဆေးမှု: "ဤလုပ်ငန်းစဉ် ထပ်ထည့်လျှင် ပြန်မဖြစ်?" → <strong>Yes</strong>။ <strong>တကယ့်အကြောင်းရင်း ယူဆချက် အဖြစ် လက်ခံ၍၊ တုံ့ပြန်မှု လုပ်ဆောင်ပြီးနောက် အကျိုးသက်ရောက်မှု အတည်ပြုမှုဖြင့် စစ်ဆေး</strong>။',
   stepA5Name: 'တုံ့ပြန်မှု စီစဉ် နှင့် လုပ်ဆောင်ခြင်း',
   stepA5p1: '<strong>တုံ့ပြန်မှု ကိုယ်စားလှယ်များ၏ အကဲဖြတ် မက်ထရစ်:</strong>',
   matrixHeadMeasure: 'တုံ့ပြန်မှု', matrixHeadEffect: 'အကျိုးသက်ရောက်မှု', matrixHeadFeasible: 'အကောင်အထည်', matrixHeadLateral: 'ဖြန့်ကျက်', matrixHeadTotal: 'စုစုပေါင်း',
@@ -1069,10 +1069,10 @@ Object.assign(window.kaizenI18n.my, {
   stepA5p2: '<strong>ရွေးချယ်:</strong> မနက် ပြင်ဆင်ခြင်း လုပ်ငန်းစဉ် ထပ်ခြင်း (စုစုပေါင်း ၁၄ မှတ်)။ ကုန်ကျ နီးနီးသုည၊ အခြား လိုင်းများ သို့ ချက်ချင်း သုံးနိုင်။',
   stepA5p3: '<strong>လုပ်ဆောင်မှု:</strong> စတင်ချိန်၌ စက် C ၏ ၅ မိနစ် နွေးထားခြင်း ထပ်ထည့်၊ ဓာတ်ပုံပါ လုပ်ငန်းစဉ် ကို စက်ဘေး၌ ကပ်၊ ပထမ ၁၀ ခုကို စစ်ဆေးမှု မြှင့်။',
   stepA6Name: 'အကျိုးသက်ရောက်မှု အတည်ပြု',
-  outcomeATitle: 'လုပ်ဆောင်ပြီး ၁ လ အကြာ ရလဒ်',
+  outcomeATitle: 'လုပ်ဆောင်ပြီး ၁ လ အကြာ ရလဒ် (ဂဏန်းများသည် ပုံဥပမာအတွက် ခန့်မှန်း)',
   metricDefectRate: 'ချွတ်ယွင်းမှု နှုန်း', metricAnnualSave: 'နှစ်စဉ် လျှော့ချငွေ', metricGoalAchieved: 'ရည်မှန်းချက် ပြည့်', metricCost: 'တုံ့ပြန်မှု ကုန်ကျ', metricCostSub: 'လုပ်ငန်းစဉ် ထုတ်လုပ်မှုသာ', metricSide: 'ဘေးထွက် အကျိုး', metricSideValue: '၈ မိနစ် တို', metricSideSub: 'မနက် စတင်မှု အချိန်',
   stepA6p1: 'ရည်မှန်း ၁.၀% ထက် ၀.၈% ဖြင့် ပြည့်။ ချွတ်ယွင်းမှု A သာမက <strong>မနက် လိုင်း စတင်သော အချိန်လည်း ပျမ်းမျှ ၈ မိနစ် တို</strong> (လုပ်ငန်းစဉ် ရှင်းလင်း၍ ဝေခွဲခြင်း ပျောက်)။',
-  stepA7Name: 'စံချိန်ထား နှင့် ပြန်မဖြစ်စေ',
+  stepA7Name: 'စံချိန်ထား နှင့် ပြန်မဖြစ်စေ (Hadome)',
   stepA7p1: '• <strong>အလုပ် စံ စာရွက် မွမ်းမံ</strong>: အပူချိန် ပြင်ဆင်ခြင်း လုပ်ငန်းစဉ်သစ်ကို တရားဝင် ထည့်<br>• <strong>ဝန်ထမ်းသစ် သင်ကြား</strong>: ဝင်ရောက်ချိန် သင်ကြား စစ်ဆေးစာရင်း သို့ ထပ်<br>• <strong>လစဉ် ပြန်စစ်</strong>: ချွတ်ယွင်းမှု နှုန်း လစဉ် စောင့်ကြည့်၊ ကန့်သတ်ကျော်လျှင် သတိပေး<br>• <strong>ဖြန့်ကျက်</strong>: လုပ်ငန်းစဉ် C/D ၏ စက်များတွင်လည်း ဖြစ်ရပ် ရှိမရှိ စုံစမ်း → လုပ်ငန်းစဉ် D တွင်လည်း အကျိုး အတည်ပြု<br>• <strong>အစီရင်ခံ</strong>: ဒါရိုက်တာ အစည်းအဝေး၏ သုံးလပတ် ပြန်စစ်မှုတွင် ထည့်',
   scenarioBLabel: 'ဇာတ်လမ်း (B)',
   scenarioBBody: '<strong>အခြေအနေ:</strong> လုပ်ငန်းခွင် ခေါင်းဆောင်သည် လုပ်သားများထံမှ "ခုတလော မနက် ပင်ပန်း"၊ "ကိရိယာ ရှာရ အချိန်ကြာ" တို့ ကို မကြာခဏ ကြားလာ။ <strong>ပြဿနာ အကြီးဆုံး က ဘာလဲ</strong> ဘက်မလိုက်ဘဲ နားလည်ရန် အားလုံးကို မေးမြန်း။',
@@ -1080,7 +1080,7 @@ Object.assign(window.kaizenI18n.my, {
   stepB1p1: '<strong>အဆင့် ၁-၁: လုပ်ငန်းခွင် မေးမြန်းခြင်း (၁၀ ခု စု)</strong>',
   stepB1p2: 'လုပ်သား၊ ပြုပြင်ထိန်းသိမ်းရေး၊ အရည်အသွေး တာဝန်ရှိသူ အားလုံးထံမှ ပြဿနာကို တစ်ဦးလျှင် ၃ ခုထိ ထုတ်ပေး၊ ထပ်တူ သိမ်းပြီး ၁၀ ခု အဖြစ် ခြုံ:',
   stepB1p3: '① မနက် ချွတ်ယွင်းမှု များ<br>② ကိရိယာ ပြန့်၍ ရှာရ အချိန်ကြာ<br>③ ထုတ်ပေးမှု စောင့်၍ အလုပ် ရပ်သော အချိန် ရှိ<br>④ နေ့စဉ် အစီရင်ခံ ရိုက်ထည့် ခက်<br>⑤ အစိတ်အပိုင်း ပေးပို့သော အချိန် မညီ<br>⑥ ည-နေ့ အလုပ်ဆိုင်း လွှဲပြောင်း မပြည့်စုံ<br>⑦ စစ်ဆေးရေး စံ လူအလိုက် ကွဲပြား<br>⑧ လေ ဖိအား တစ်ခါတစ်ရံ အားနည်း<br>⑨ အနားယူ နေရာ ပူ/အေး<br>⑩ အ၀တ်လဲခန်း ဝေးလွန်း',
-  stepB1p4: '<strong>အရည်အသွေး ရောထွေးနေသော်လည်း အဆင်ပြေ။</strong> QC အတွက် မသင့်တော်သော အရာများ ပါဝင်ပြီး ဦးစွာ အားလုံး စာရင်းပြု။',
+  stepB1p4: '<strong>အရည်အသွေး ကွဲပြားနေသော်လည်း အဆင်ပြေ။</strong> QC အတွက် မသင့်တော်သော အရာများ ပါဝင်ပြီး ဦးစွာ အားလုံး စာရင်းပြု။',
   stepB1p5: '<strong>အဆင့် ၁-၂: အကဲဖြတ် မက်ထရစ်ဖြင့် စီ (၅ မှတ် × ၄ ဝင်ရိုး)</strong>',
   bMatrixProblem: 'ပြဿနာ', bMatrixImpact: 'သက်ရောက်မှု', bMatrixFeasible: 'အကောင်အထည်', bMatrixQuant: 'ဂဏန်း ဖော်', bMatrixAuto: 'ဆုံးဖြတ်ခွင့်', bMatrixTotal: 'စုစုပေါင်း',
   bItem1: 'မနက် ချွတ်ယွင်းမှု များ', bItem2: 'ကိရိယာ ပြန့်', bItem3: 'စစ်ဆေး စံ ကွဲပြား', bItem4: 'လေဖိအား မတည်ငြိမ်', bItem5: 'ထုတ်ပေးမှု စောင့်', bItem6: 'လွှဲပြောင်း မပြည့်', bItem7: 'နေ့စဉ် အစီရင်ခံ ခက်', bItem8: 'အစိတ်အပိုင်း ပေးပို့ မညီ', bItem9: 'အနားယူ နေရာ အပူချိန်', bItem10: 'အ၀တ်လဲခန်း ဝေး',
@@ -1089,9 +1089,9 @@ Object.assign(window.kaizenI18n.my, {
   bCalloutTitle: 'ဘာကြောင့် ဤအကြောင်းအရာ (အခြေခံပါ)',
   bCalloutBody: '"မနက် ချွတ်ယွင်းမှု" ရွေးသည် <strong>ထင်ရာ မဟုတ်</strong>။ <strong>သက်ရောက်မှု၊ အကောင်အထည်၊ ဂဏန်းဖော်၊ ဆုံးဖြတ်ခွင့် ၄ ဝင်ရိုးဖြင့် အကဲဖြတ်ရ ၁၈ မှတ် ထိပ်ဆုံး</strong> ဖြစ်၍။ "ဘာကြောင့် ဤအရာ?" Q&A တွင် မေးခံရလျှင် <strong>၁၀ ခု အကဲဖြတ်ဇယား</strong>ဖြင့် ဖြေနိုင်။',
   stepB2Name: 'လက်ရှိအခြေအနေ နားလည်',
-  stepB2p1: 'အကြောင်းအရာ ဆုံးဖြတ်ပြီးနောက်၊ ဤမှစ၍ A နှင့် <strong>တူညီသော drill-down</strong>။',
-  stepB2p2: 'မေးမြန်းမှုမှ ထွက်သော "မနက် ချွတ်ယွင်းမှု" ကို ထောက်သော အချက်အလက် ရ → အလွှာခွဲ drill-down → <strong>မနက်၊ လုပ်ငန်းစဉ် B၊ စက် C၊ အရွယ်အစား NG ချွတ်ယွင်းမှု</strong> သို့ ကျဉ်းကျပ်။',
-  stepB2p3: '(အသေးစိတ်မှာ A တက်ဘ်၏ အလွှာ ၁-၄ နှင့် တူညီသော Pareto။ အချက်အလက်က မေးမြန်းမှုကို ထောက်။)',
+  stepB2p1: 'အကြောင်းအရာ ဆုံးဖြတ်ပြီးနောက်၊ ဤမှစ၍ A နှင့် <strong>တူညီသော လုပ်ငန်းစဉ်</strong>ဖြင့် လက်ရှိအခြေအနေ နားလည်။',
+  stepB2p2: 'မေးမြန်းမှုမှ ထွက်သော "မနက် ချွတ်ယွင်းမှု" ကို ထောက်သော အချက်အလက် စုဆောင်း။ အလွှာခွဲ drill-down လုပ်ဆောင်။ ရလဒ်အနေဖြင့် <strong>မနက်၊ လုပ်ငန်းစဉ် B၊ စက် C၊ အရွယ်အစား NG ချွတ်ယွင်းမှု</strong> သို့ ကျဉ်းကျပ်။',
+  stepB2p3: '(အသေးစိတ်မှာ A တက်ဘ်၏ အလွှာ ၁-၄ Pareto ဇယား နှင့် တူညီ။ အချက်အလက်က မေးမြန်းမှုကို ထောက်။)',
   stepB3Name: 'ရည်မှန်းချက် သတ်မှတ်',
   stepB3p1: '<strong>ရည်မှန်းချက်:</strong> ချွတ်ယွင်းမှု နှုန်း ၃.၅% → <strong>၁.၀% အောက်</strong>',
   stepB3p2: '<strong>လျှော့ချရေး ရည်မှန်းချက်:</strong> နှစ်စဉ် ၄.၃ သန်း ယန်း ခန့်',
@@ -1100,15 +1100,15 @@ Object.assign(window.kaizenI18n.my, {
   stepB4Name: 'အကြောင်းရင်း ခွဲခြမ်းစိတ်ဖြာ',
   stepB4p1: 'B တွင် 4M ခွဲခြမ်းတွင် <strong>လူ/နည်းလမ်း မြင်ကွင်းကို အလေးသာ ပေး</strong> (လုပ်ငန်းခွင် မေးမြန်း စတင်၊ လုပ်ငန်းခွင်၌ အမြစ်တွယ်သော မြင်ကွင်း ထိရောက်)။',
   stepB4p2: 'သို့သော် နိဂုံး တူညီ: <strong>မနက် စတင်မှု လုပ်ငန်းစဉ် မပြည့်စုံ</strong> က တကယ့်အကြောင်းရင်း။',
-  stepB4p3: 'နောက်ထပ် တွေ့ရှိသော အသိ: လုပ်ငန်းခွင် မေးမြန်းမှုမှ <strong>"အတွေ့အကြုံ ရှိသူသည် အတွေ့အကြုံဖြင့် မနက် စက်ကို မိနစ် အနည်းငယ် ပြေးထား"</strong> သော ကိုယ်ပိုင်ဗဟုသုတ တွေ့။ အကြောင်းရင်း ခွဲခြမ်းဖြင့် ထောက်။',
+  stepB4p3: 'နောက်ထပ် တွေ့ရှိသော အသိ: လုပ်ငန်းခွင် မေးမြန်းမှုမှ <strong>"အတွေ့အကြုံ ရှိသူသည် အတွေ့အကြုံဖြင့် မနက် စက်ကို မိနစ် အနည်းငယ် warm-up (နွေးထားခြင်း) ပြုလုပ်ထား"</strong> သော ကိုယ်ပိုင်ဗဟုသုတ တွေ့။ အကြောင်းရင်း ခွဲခြမ်းဖြင့် ထောက်။',
   stepB5Name: 'တုံ့ပြန်မှု စီစဉ် နှင့် လုပ်ဆောင်ခြင်း',
   stepB5p1: 'တုံ့ပြန်မှုသည် A နှင့် <strong>နီးပါး တူညီ</strong> (၅ မိနစ် အပူချိန် ပြင်ဆင်ခြင်း ထပ်) သော်လည်း B တွင် <strong>အတွေ့အကြုံ ရှိသူ၏ ကိုယ်ပိုင်ဗဟုသုတကို ပုံစံ ပြု</strong> သော ပုံစံဖြင့် သွား။',
   stepB5p2: 'လုပ်ငန်းခွင် မေးမြန်းမှုမှ စတင်၍ <strong>"ကျွန်တော်တို့ ရွေးခဲ့၊ ကျွန်တော်တို့ လုပ်"</strong> သော ခံစားမှု အားကောင်း၊ လုပ်ငန်းစဉ် လိုက်နာသော နှုန်း မြင့်။',
   stepB6Name: 'အကျိုးသက်ရောက်မှု အတည်ပြု',
-  outcomeBTitle: 'လုပ်ဆောင်ပြီး ၁ လ အကြာ ရလဒ်',
+  outcomeBTitle: 'လုပ်ဆောင်ပြီး ၁ လ အကြာ ရလဒ် (ဂဏန်းများသည် ပုံဥပမာအတွက် ခန့်မှန်း)',
   metricBacklog: 'Backlog', metricBacklogValue: '၉ ခု', metricBacklogSub: 'နောက် ကာလအတွက် ကိုယ်စားလှယ်', metricSatisfaction: 'လုပ်ငန်းခွင် ကျေနပ်မှု', metricSatisfactionValue: 'အလွန်တက်',
-  stepB6p1: 'A ထက် အနည်းငယ် ပိုမိုထိရောက် (၀.၇% vs ၀.၈%)။ အကြောင်း: <strong>လုပ်ငန်းခွင် လက်ခံ၍ လုပ်ငန်းစဉ် လိုက်နာ</strong> ခြင်း။ "အတင်း ခိုင်းခံ" ခံစားမှု မရှိ။',
-  stepB7Name: 'စံချိန်ထား နှင့် ပြန်မဖြစ်စေ',
+  stepB6p1: 'A နှင့် နီးပါး တူညီသော အကျိုးသက်ရောက်မှု ရရှိ (၀.၇% vs ၀.၈%၊ ခြားနားချက်မှာ အမှားနယ်ပယ်အတွင်း)။ <strong>မည်သည်က ပိုကောင်းသည်မှာ အဖွဲ့အစည်း ယဉ်ကျေးမှုနှင့် လုပ်ငန်းခွင် အခြေအနေအပေါ် မူတည်</strong>။ အထွေထွေအားဖြင့် B သည် လုပ်ငန်းခွင်မှ စတင်သောကြောင့် လုပ်ငန်းစဉ် လိုက်နာနှုန်း မြင့်သည်ဟု ဆိုကြသော်လည်း၊ ဂဏန်းဖြင့် အတိအလင်း မပြောနိုင်။',
+  stepB7Name: 'စံချိန်ထား နှင့် ပြန်မဖြစ်စေ (Hadome)',
   stepB7p1: '• <strong>လုပ်ငန်းစဉ် စာရွက် မွမ်းမံ</strong>: အတွေ့အကြုံ ရှိသူ၏ ကိုယ်ပိုင်ဗဟုသုတ ထည့်<br>• <strong>နောက်အကြောင်းအရာ</strong>: Backlog ၂ နေရာ "ကိရိယာ ပြန့်" ကို နောက်ကာလ QC သို့ ပြောင်း<br>• <strong>မေးမြန်း ပုံမှန်ပြု</strong>: ၆ လ တစ်ကြိမ် အားလုံး မေးမြန်း၊ ပြဿနာသစ် ဖမ်းသော စနစ်<br>• <strong>B ၏ စနစ်ကိုယ်တိုင် စံချိန်ပြု</strong>: ဤစီးကြောင်းကို နှစ်စဉ် ထပ်ခါထပ်ခါ လုပ်နိုင်',
   bLoopTitle: 'B ၏ ဆက်လက်တည်ရှိ အကျိုးခံစားခွင့်',
   bLoopBody: 'မေးမြန်း → အကဲဖြတ် → ရွေး → လုပ်ဆောင် → နောက် မေးမြန်း၊ <strong>ဤသံသရာ အဖွဲ့အစည်း ယဉ်ကျေးမှု</strong> ဖြစ်။ QC သည် "တစ်ကြိမ် လုပ်၍ ပြီး" မဟုတ်ဘဲ <strong>နှစ်စဉ် သဘာဝအားဖြင့် လည်ပတ်သော လှုပ်ရှားမှု</strong>။',
