@@ -15,15 +15,12 @@
       <div class="brand-sub" data-i18n="brandSub">現場改善の入り口</div>
     </div>
   </a>
-  <div class="lang-switch">
-    <button class="lang-btn active" data-lang="ja" onclick="kaizenApplyLang('ja')">日本語</button>
-    <button class="lang-btn" data-lang="en" onclick="kaizenApplyLang('en')">English</button>
-  </div>
+  <div class="lang-switch"></div>
 </header>
 
 <article class="chapter-content">
   <div class="chapter-header">
-    <div class="chapter-number-large">CHAPTER 3</div>
+    <div class="chapter-number-large" data-i18n="ch3Label">CHAPTER 3</div>
     <h2 data-i18n="ch3Title">QC7つ道具ってなに?</h2>
   </div>
 
@@ -92,7 +89,7 @@
 <script src="_common.js"></script>
 <script>
 Object.assign(window.kaizenI18n.ja, {
-  tldrLabel: "ひとこと要約",
+  ch3Label: "CHAPTER 3",
   ch3Title: "QC7つ道具ってなに?",
   ch3Tldr: '7つ道具は<strong>工具箱の中身</strong>。用途別に7本ある。全部を最初に覚える必要はなくて、<strong>パレート図</strong>と<strong>特性要因図</strong>の2つを押さえれば、現場の8割は戦える。',
   ch3_h1: '名前はいかつい、でも中身は地味',
@@ -137,12 +134,195 @@ Object.assign(window.kaizenI18n.ja, {
   ch3_p16: '道具を使って絞り込んだ後、「で、なぜそれが起きるの?」を掘り下げる時の考え方。<strong>なぜなぜ分析</strong>とか、<strong>4M(人・機械・材料・方法)</strong>とか。',
   ch3_p17: 'ここを雑にやると、対策も雑になる。次章で、丁寧にやる型を渡します。'
 });
+
 Object.assign(window.kaizenI18n.en, {
-  tldrLabel: "TL;DR",
+  ch3Label: "CHAPTER 3",
   ch3Title: "What are the 7 QC tools?",
-  ch3Tldr: 'The 7 QC tools are the <strong>contents of a toolbox</strong>. Seven tools, each with a purpose. Master the <strong>Pareto chart</strong> and the <strong>fishbone diagram</strong>, and you can handle 80% of real shop floor situations.',
-  toolKing: 'Most used', toolOften: 'Often used', toolSometimes: 'Sometimes'
+  ch3Tldr: 'The 7 QC tools are the <strong>contents of a toolbox</strong>. Seven tools, each with a purpose. You don\'t need to learn all at once. Master the <strong>Pareto chart</strong> and <strong>fishbone diagram</strong>, and you can handle 80% of real shop floor situations.',
+  ch3_h1: 'Scary names, mundane contents',
+  ch3_p1: '<strong>The 7 QC Tools</strong>. Listed out in kanji and katakana, they sound intimidating. But <strong>each one is plain</strong>. Bar charts, line charts, scatter plots... stuff you learned in middle school math.',
+  ch3_p2: 'Don\'t be afraid. What matters is <strong>"which one to use when"</strong>. That\'s all.',
+  ch3_h2: 'The full map of the 7 tools',
+  ch3_p3: 'Here\'s the overview. Each shows <strong>where to use it</strong> in a short line.',
+  toolKing: 'Most used', toolOften: 'Often used', toolSometimes: 'Sometimes',
+  tool1Name: '① Pareto chart',
+  tool1Use: '<strong>When:</strong> Grasp the current state. List things in descending order. <strong>Use it at every layer of drill-down</strong>.',
+  tool2Name: '② Fishbone diagram (cause-and-effect)',
+  tool2Use: '<strong>When:</strong> Cause analysis, after narrowing down. Organize "why does this happen" by branch. <strong>Drawing it before narrowing down is mostly wasted</strong>.',
+  tool3Name: '③ Stratification',
+  tool3Use: '<strong>When:</strong> Changing the "cut" of the data. By time, machine, process, operator. <strong>Always used together with Pareto</strong>.',
+  tool4Name: '④ Check sheet',
+  tool4Use: '<strong>When:</strong> Collecting data. Count "what, when, how many." Excel tallies count too.',
+  tool5Name: '⑤ Histogram',
+  tool5Use: '<strong>When:</strong> Looking at "variability." The distribution of continuous values like size, weight, time.',
+  tool6Name: '⑥ Scatter plot',
+  tool6Use: '<strong>When:</strong> Checking the relation between two things. "Do defects rise with temperature?"',
+  tool7Name: '⑦ Control chart / graph',
+  tool7Use: '<strong>When:</strong> Seeing changes over time. Before/after comparison, daily monitoring.',
+  ch3_h3: 'Why the Pareto chart is "the king"',
+  ch3_p4: 'There are 7 tools, but <strong>the one you use most is the Pareto chart</strong>. By far. Here\'s why.',
+  ch3_p5: 'Remember the previous chapter: "<strong>Go from the big to the small</strong>." Every time you do this, you draw a Pareto.',
+  ch3_p6: '<strong>Layer 1 Pareto</strong>: by process. Process B is the biggest.<br><strong>Layer 2 Pareto</strong>: inside Process B. Step ②Machining is biggest.<br><strong>Layer 3 Pareto</strong>: by time. Morning is biggest.<br><strong>Layer 4 Pareto</strong>: by machine. Machine C is biggest.',
+  ch3_p7: 'That is, <strong>one Pareto per layer</strong>. Four layers = four Paretos. This is real QC.',
+  ch3CalloutTitle: 'The point most people get wrong',
+  ch3CalloutBody: 'Don\'t stop at <strong>one Pareto chart</strong>. "Find the biggest item → stratify it further → new Pareto" — this loop is the correct usage.',
+  ch3_h4: 'Draw the fishbone LAST',
+  ch3_p8: 'The second most used is the <strong>fishbone diagram</strong>. A fish-skeleton shape for organizing causes.',
+  ch3_p9: 'But <strong>timing is critical, or half its value disappears</strong>.',
+  ch3_p10: '• <strong>× Bad usage</strong>: Draw it first. "Let\'s list all causes" with nothing narrowed down yet.<br>• <strong>○ Good usage</strong>: Draw it after Pareto narrows things down. "Morning + Process B ②Machining + Machine C defects" — then: "What\'s the cause <strong>under these conditions?</strong>"',
+  ch3_p11: 'Just by following this order, the fishbone transforms <strong>from an alibi diagram into a real analysis diagram</strong>.',
+  ch3_h5: 'Start with these 3',
+  ch3_p12: 'You don\'t need to learn all 7 at once. Start with just these 3.',
+  ch3_p13: '<strong>1. Pareto chart</strong> (order by size)<br><strong>2. Stratification</strong> (change the cut)<br><strong>3. Fishbone diagram</strong> (draw it after narrowing down)',
+  ch3_p14: 'With just these 3, <strong>you can handle 80% of the shop floor</strong>. Learn the other 4 when you actually need them.',
+  ch3_quote: '"When you try to use every tool, the tools drag you around. The tool you need is chosen by the phenomenon."',
+  ch3_h6: 'Bridge to the next chapter',
+  ch3_p15: 'Now that you know the tools, the next step is <strong>how to find the real cause</strong>.',
+  ch3_p16: 'After narrowing down with tools, "So why does this happen?" — the thinking that goes deeper. <strong>Why-why analysis</strong>, <strong>4M (Man/Machine/Material/Method)</strong>.',
+  ch3_p17: 'If sloppy here, the countermeasure will be sloppy too. Next chapter, a clean way to do this.'
 });
+
+Object.assign(window.kaizenI18n.vi, {
+  ch3Label: "CHƯƠNG 3",
+  ch3Title: "7 công cụ QC là gì?",
+  ch3Tldr: '7 công cụ QC là <strong>nội dung của hộp dụng cụ</strong>. 7 công cụ với 7 mục đích. Không cần học hết ngay. Nắm vững <strong>biểu đồ Pareto</strong> và <strong>sơ đồ xương cá</strong>, bạn có thể xử lý 80% tình huống ở hiện trường.',
+  ch3_h1: 'Tên đáng sợ, nội dung đơn giản',
+  ch3_p1: '<strong>7 công cụ QC</strong>. Khi liệt kê bằng chữ Hán và katakana, nghe rất đáng sợ. Nhưng <strong>từng cái đều đơn giản</strong>. Biểu đồ cột, đường, phân bố... Đều là thứ học ở cấp 2.',
+  ch3_p2: 'Đừng sợ. Quan trọng là <strong>"dùng công cụ nào khi nào"</strong>. Chỉ thế thôi.',
+  ch3_h2: 'Bản đồ tổng quan 7 công cụ',
+  ch3_p3: 'Bảng tổng quan. Mỗi công cụ kèm <strong>nơi dùng</strong> ngắn gọn.',
+  toolKing: 'Dùng nhiều nhất', toolOften: 'Dùng thường xuyên', toolSometimes: 'Thỉnh thoảng',
+  tool1Name: '① Biểu đồ Pareto',
+  tool1Use: '<strong>Khi nào:</strong> Nắm hiện trạng. Sắp xếp theo thứ tự giảm dần. <strong>Dùng ở mọi lớp phân tích</strong>.',
+  tool2Name: '② Sơ đồ xương cá (nhân quả)',
+  tool2Use: '<strong>Khi nào:</strong> Phân tích nguyên nhân sau khi thu hẹp. Sắp xếp "tại sao xảy ra" theo nhánh. <strong>Vẽ trước khi thu hẹp thì vô nghĩa</strong>.',
+  tool3Name: '③ Phân tầng',
+  tool3Use: '<strong>Khi nào:</strong> Đổi "góc nhìn" dữ liệu. Theo thời gian, máy, quy trình, người làm. <strong>Luôn dùng cùng Pareto</strong>.',
+  tool4Name: '④ Bảng kiểm tra',
+  tool4Use: '<strong>Khi nào:</strong> Thu thập dữ liệu. Đếm "cái gì, khi nào, bao nhiêu". Bảng Excel cũng là một dạng.',
+  tool5Name: '⑤ Biểu đồ Histogram',
+  tool5Use: '<strong>Khi nào:</strong> Xem "độ biến thiên". Phân bố giá trị liên tục như kích thước, trọng lượng, thời gian.',
+  tool6Name: '⑥ Biểu đồ phân tán',
+  tool6Use: '<strong>Khi nào:</strong> Xem mối quan hệ hai thứ. "Nhiệt độ cao thì lỗi tăng?"',
+  tool7Name: '⑦ Biểu đồ kiểm soát / đồ thị',
+  tool7Use: '<strong>Khi nào:</strong> Xem biến động theo thời gian. So sánh trước/sau, giám sát hàng ngày.',
+  ch3_h3: 'Tại sao biểu đồ Pareto là "vua"',
+  ch3_p4: 'Có 7 công cụ, nhưng <strong>dùng nhiều nhất là Pareto</strong>. Áp đảo. Tại sao.',
+  ch3_p5: 'Nhớ chương trước: "<strong>Từ lớn đến nhỏ</strong>". Mỗi lần làm vậy, ta vẽ Pareto.',
+  ch3_p6: '<strong>Pareto lớp 1</strong>: theo quy trình. Quy trình B lớn nhất.<br><strong>Pareto lớp 2</strong>: trong quy trình B. Bước ②Gia công lớn nhất.<br><strong>Pareto lớp 3</strong>: theo thời gian. Buổi sáng lớn nhất.<br><strong>Pareto lớp 4</strong>: theo máy. Máy C lớn nhất.',
+  ch3_p7: 'Tức là <strong>mỗi lớp một Pareto</strong>. 4 lớp = 4 Pareto. Đây là QC thật sự.',
+  ch3CalloutTitle: 'Điểm nhiều người sai',
+  ch3CalloutBody: 'Đừng dừng ở <strong>1 biểu đồ Pareto</strong>. "Tìm mục lớn nhất → phân tầng thêm → Pareto mới" — vòng lặp này mới đúng.',
+  ch3_h4: 'Xương cá vẽ CUỐI CÙNG',
+  ch3_p8: 'Thứ hai dùng nhiều là <strong>sơ đồ xương cá</strong>. Hình dạng xương cá để sắp xếp nguyên nhân.',
+  ch3_p9: 'Nhưng <strong>thời điểm quan trọng, sai thì mất nửa giá trị</strong>.',
+  ch3_p10: '• <strong>× Sai cách</strong>: Vẽ đầu tiên. "Liệt kê mọi nguyên nhân" khi chưa thu hẹp.<br>• <strong>○ Đúng cách</strong>: Vẽ sau khi Pareto thu hẹp. "Lỗi sáng + quy trình B ②Gia công + máy C" — rồi: "Dưới điều kiện này, nguyên nhân là gì?"',
+  ch3_p11: 'Chỉ tuân thủ thứ tự này, xương cá biến từ <strong>sơ đồ tạo cớ thành sơ đồ phân tích thật sự</strong>.',
+  ch3_h5: 'Bắt đầu với 3 cái này',
+  ch3_p12: 'Không cần học hết 7 cái. Bắt đầu với 3 cái này.',
+  ch3_p13: '<strong>1. Biểu đồ Pareto</strong> (sắp xếp theo kích thước)<br><strong>2. Phân tầng</strong> (đổi góc nhìn)<br><strong>3. Sơ đồ xương cá</strong> (vẽ sau khi thu hẹp)',
+  ch3_p14: 'Chỉ với 3 cái này, <strong>xử lý được 80% hiện trường</strong>. 4 cái còn lại học khi cần.',
+  ch3_quote: '"Khi cố dùng hết công cụ, công cụ kéo bạn đi. Công cụ cần dùng do hiện tượng quyết định."',
+  ch3_h6: 'Cầu nối sang chương tiếp theo',
+  ch3_p15: 'Đã biết công cụ, giờ là <strong>cách tìm nguyên nhân thật</strong>.',
+  ch3_p16: 'Sau khi thu hẹp bằng công cụ, "Vậy tại sao xảy ra?" — cách suy nghĩ đào sâu. <strong>Phân tích 5-Whys</strong>, <strong>4M (Người/Máy/Vật liệu/Phương pháp)</strong>.',
+  ch3_p17: 'Cẩu thả ở đây thì đối sách cũng cẩu thả. Chương sau, cách làm chỉn chu.'
+});
+
+Object.assign(window.kaizenI18n.id, {
+  ch3Label: "BAB 3",
+  ch3Title: "Apa itu 7 alat QC?",
+  ch3Tldr: '7 alat QC adalah <strong>isi kotak perkakas</strong>. 7 alat dengan 7 fungsi. Tidak perlu hapalkan semua sekaligus. Kuasai <strong>diagram Pareto</strong> dan <strong>diagram tulang ikan</strong>, Anda bisa atasi 80% situasi lapangan.',
+  ch3_h1: 'Nama menakutkan, isi sederhana',
+  ch3_p1: '<strong>7 alat QC</strong>. Ketika dicatat dengan kanji dan katakana, kedengaran menakutkan. Tapi <strong>satu-satu sederhana</strong>. Grafik batang, garis, sebaran... Yang sudah dipelajari di SMP.',
+  ch3_p2: 'Tidak perlu takut. Yang penting adalah <strong>"pakai yang mana kapan"</strong>. Itu saja.',
+  ch3_h2: 'Peta lengkap 7 alat',
+  ch3_p3: 'Daftar dulu. Setiap alat disertai <strong>tempat pakainya</strong> singkat.',
+  toolKing: 'Paling sering', toolOften: 'Sering', toolSometimes: 'Kadang-kadang',
+  tool1Name: '① Diagram Pareto',
+  tool1Use: '<strong>Kapan:</strong> Pahami keadaan saat ini. Susun dari besar ke kecil. <strong>Pakai di setiap lapisan drill-down</strong>.',
+  tool2Name: '② Diagram tulang ikan (sebab-akibat)',
+  tool2Use: '<strong>Kapan:</strong> Analisis penyebab setelah dipersempit. Susun "kenapa terjadi" per cabang. <strong>Gambar sebelum dipersempit tidak berarti</strong>.',
+  tool3Name: '③ Stratifikasi',
+  tool3Use: '<strong>Kapan:</strong> Ubah "sudut pandang" data. Per waktu, mesin, proses, operator. <strong>Selalu pakai bersama Pareto</strong>.',
+  tool4Name: '④ Lembar periksa',
+  tool4Use: '<strong>Kapan:</strong> Kumpulkan data. Hitung "apa, kapan, berapa". Tabel Excel juga salah satunya.',
+  tool5Name: '⑤ Histogram',
+  tool5Use: '<strong>Kapan:</strong> Lihat "variasi". Distribusi nilai kontinu seperti ukuran, berat, waktu.',
+  tool6Name: '⑥ Diagram pencar',
+  tool6Use: '<strong>Kapan:</strong> Lihat hubungan dua hal. "Kalau suhu naik, cacat naik?"',
+  tool7Name: '⑦ Peta kendali / grafik',
+  tool7Use: '<strong>Kapan:</strong> Lihat perubahan seiring waktu. Bandingkan sebelum/sesudah, pantau harian.',
+  ch3_h3: 'Kenapa diagram Pareto adalah "raja"',
+  ch3_p4: 'Ada 7 alat, tapi <strong>yang paling dipakai adalah Pareto</strong>. Jauh di atas. Kenapa.',
+  ch3_p5: 'Ingat bab lalu: "<strong>Dari besar ke kecil</strong>". Setiap kali begitu, gambar Pareto.',
+  ch3_p6: '<strong>Pareto lapisan 1</strong>: per proses. Proses B paling besar.<br><strong>Pareto lapisan 2</strong>: dalam Proses B. Langkah ②Pemrosesan paling besar.<br><strong>Pareto lapisan 3</strong>: per waktu. Pagi paling besar.<br><strong>Pareto lapisan 4</strong>: per mesin. Mesin C paling besar.',
+  ch3_p7: 'Artinya <strong>satu Pareto per lapisan</strong>. 4 lapisan = 4 Pareto. Ini QC sejati.',
+  ch3CalloutTitle: 'Poin yang banyak orang salah',
+  ch3CalloutBody: 'Jangan berhenti di <strong>1 diagram Pareto</strong>. "Temukan item terbesar → stratifikasi lagi → Pareto baru" — loop ini yang benar.',
+  ch3_h4: 'Tulang ikan digambar TERAKHIR',
+  ch3_p8: 'Kedua paling dipakai adalah <strong>diagram tulang ikan</strong>. Bentuk kerangka ikan untuk sortir penyebab.',
+  ch3_p9: 'Tapi <strong>waktu penting, salah waktu hilang setengah nilai</strong>.',
+  ch3_p10: '• <strong>× Cara salah</strong>: Gambar duluan. "Cantumkan semua penyebab" tanpa dipersempit.<br>• <strong>○ Cara benar</strong>: Gambar setelah Pareto persempit. "Cacat pagi + Proses B ②Pemrosesan + Mesin C" — lalu: "Di kondisi ini, apa penyebabnya?"',
+  ch3_p11: 'Hanya dengan tuhan urutan ini, tulang ikan berubah <strong>dari diagram pembuat alibi jadi diagram analisis sejati</strong>.',
+  ch3_h5: 'Mulai dengan 3 ini',
+  ch3_p12: 'Tidak perlu hapal semua 7. Mulai dengan 3 ini.',
+  ch3_p13: '<strong>1. Diagram Pareto</strong> (susun per ukuran)<br><strong>2. Stratifikasi</strong> (ubah sudut pandang)<br><strong>3. Diagram tulang ikan</strong> (gambar setelah persempit)',
+  ch3_p14: 'Dengan 3 ini, <strong>bisa tangani 80% lapangan</strong>. 4 sisanya, pelajari saat butuh.',
+  ch3_quote: '"Kalau coba pakai semua alat, alat yang menyeret Anda. Alat yang dipakai ditentukan oleh fenomena."',
+  ch3_h6: 'Jembatan ke bab berikutnya',
+  ch3_p15: 'Sudah tahu alat, berikutnya <strong>cara cari penyebab sejati</strong>.',
+  ch3_p16: 'Setelah persempit pakai alat, "Jadi kenapa terjadi?" — cara berpikir mendalam. <strong>Analisis 5-Why</strong>, <strong>4M (Manusia/Mesin/Material/Metode)</strong>.',
+  ch3_p17: 'Kalau ceroboh di sini, tindakan juga ceroboh. Bab berikutnya, cara rapi.'
+});
+
+Object.assign(window.kaizenI18n.my, {
+  ch3Label: "အခန်း ၃",
+  ch3Title: "QC ကိရိယာ ၇ မျိုး ဆိုတာဘာလဲ?",
+  ch3Tldr: 'ကိရိယာ ၇ မျိုးသည် <strong>ပစ္စည်းသေတ္တာ၏ အတွင်းပစ္စည်း</strong>။ ရည်ရွယ်ချက်အလိုက် ၇ ခု ရှိ။ အစ၌ အားလုံး မှတ်ရန် မလို။ <strong>Pareto ဇယား</strong> နှင့် <strong>ငါးရိုးပုံ</strong> ၂ ခုကို ကျွမ်းကျင်လျှင် လုပ်ငန်းခွင်၏ ၈၀% ကို ကိုင်တွယ်နိုင်။',
+  ch3_h1: 'အမည်ကြောက်စရာ၊ အတွင်းသားရိုးရှင်း',
+  ch3_p1: '<strong>QC ကိရိယာ ၇ မျိုး</strong>။ ကန်းဂျိ နှင့် ကတကနဖြင့် စာရင်းပြုလုပ်လျှင် ကြောက်စရာ ကောင်း။ သို့သော် <strong>တစ်ခုချင်းစီ ရိုးရှင်း</strong>။ တိုင်ဇယား၊ မျဉ်းကြောင်းဇယား၊ ကွဲပြားဇယား... အလယ်တန်း သင်္ချာ အဆင့်။',
+  ch3_p2: 'မကြောက်ပါနဲ့။ အရေးကြီးသည်မှာ <strong>"ဘယ်အခြေအနေတွင် ဘယ်အရာ သုံးမည်"</strong> သာ။',
+  ch3_h2: 'ကိရိယာ ၇ မျိုး၏ စုစုပေါင်း မြေပုံ',
+  ch3_p3: 'ဦးစွာ စာရင်းအဖြစ် ပြသည်။ တစ်ခုချင်းစီ၏ <strong>သုံးရမည့် နေရာ</strong> အတိုချုပ် ရေးထားသည်။',
+  toolKing: 'အများဆုံး သုံး', toolOften: 'မကြာခဏ သုံး', toolSometimes: 'တစ်ခါတစ်ရံ',
+  tool1Name: '① Pareto ဇယား',
+  tool1Use: '<strong>ဘယ်အခါသုံး:</strong> လက်ရှိအခြေအနေ နားလည်ရန်။ ကြီးသည်မှ စီစဉ်။ <strong>အလွှာတိုင်း အခါတိုင်း သုံး</strong>။',
+  tool2Name: '② ငါးရိုးပုံ (အကြောင်းရင်း-အကျိုးဆက်)',
+  tool2Use: '<strong>ဘယ်အခါသုံး:</strong> ကျဉ်းကျပ်ပြီးနောက် အကြောင်းရင်း ခွဲခြမ်း။ "ဘာကြောင့် ဖြစ်" ကို အကိုင်းခွဲ၍ စီစဉ်။ <strong>ကျဉ်းကျပ်မသုံးမီ ဆွဲလျှင် အဓိပ္ပာယ်နည်း</strong>။',
+  tool3Name: '③ အလွှာခွဲခြင်း',
+  tool3Use: '<strong>ဘယ်အခါသုံး:</strong> အချက်အလက်၏ "ရှုထောင့်" ပြောင်းသောအခါ။ အချိန်၊ စက်၊ လုပ်ငန်းစဉ်၊ လုပ်သားအလိုက်။ <strong>Pareto နှင့် တွဲ၍ သုံး</strong>။',
+  tool4Name: '④ စစ်ဆေးစာရွက်',
+  tool4Use: '<strong>ဘယ်အခါသုံး:</strong> အချက်အလက် စုဆောင်းချိန်။ "ဘာ၊ ဘယ်အခါ၊ ဘယ်လောက်" ရေတွက်။ Excel ဇယားလည်း တစ်မျိုး။',
+  tool5Name: '⑤ Histogram',
+  tool5Use: '<strong>ဘယ်အခါသုံး:</strong> "ကွဲပြားခြင်း" ကြည့်လိုသောအခါ။ အရွယ်အစား၊ အလေးချိန်၊ အချိန် စသည်။',
+  tool6Name: '⑥ ကွဲလွင့်ဇယား',
+  tool6Use: '<strong>ဘယ်အခါသုံး:</strong> နှစ်ခု၏ ဆက်စပ်မှု ကြည့်သောအခါ။ "အပူချိန်တက်လျှင် ချွတ်ယွင်းမှု တက်လား?"',
+  tool7Name: '⑦ ထိန်းချုပ်ဇယား / ဂရပ်',
+  tool7Use: '<strong>ဘယ်အခါသုံး:</strong> အချိန်အလိုက် ပြောင်းလဲမှု ကြည့်သောအခါ။ ရှေ့/နောက် နှိုင်းယှဉ်၊ နေ့စဉ် စောင့်ကြည့်။',
+  ch3_h3: 'Pareto ဇယားသည် "ဘုရင်" ဖြစ်ရခြင်းအကြောင်း',
+  ch3_p4: '၇ ခုရှိ၊ <strong>အများဆုံး သုံးသည်က Pareto</strong>။ တစ်ဆေးအား။ အဘယ်ကြောင့်။',
+  ch3_p5: 'အရင်အခန်း: "<strong>ကြီးမှ သေးသို့</strong>"။ အခါတိုင်း လုပ်သည့်အခါ Pareto ဆွဲ။',
+  ch3_p6: '<strong>အလွှာ ၁ Pareto</strong>: လုပ်ငန်းစဉ်အလိုက်။ B အကြီးဆုံး။<br><strong>အလွှာ ၂ Pareto</strong>: B အတွင်း။ ②ပြုပြင်မှု အကြီးဆုံး။<br><strong>အလွှာ ၃ Pareto</strong>: အချိန်အလိုက်။ မနက် အကြီးဆုံး။<br><strong>အလွှာ ၄ Pareto</strong>: စက်အလိုက်။ C အကြီးဆုံး။',
+  ch3_p7: 'ဆိုလိုသည်မှာ <strong>အလွှာတစ်ခုလျှင် Pareto တစ်ခု</strong>။ ၄ အလွှာ = ၄ Pareto။ ၎င်းသည် စစ်မှန်သော QC။',
+  ch3CalloutTitle: 'လူအများ မှားသော အချက်',
+  ch3CalloutBody: '<strong>Pareto တစ်ခုတည်း</strong>တွင် မရပ်ပါ။ "ကြီးသော အရာ တွေ့ → ထပ်မံ အလွှာခွဲ → Pareto အသစ်" ဤသံသရာသည် မှန်သော သုံးစွဲမှု။',
+  ch3_h4: 'ငါးရိုးပုံကို "နောက်ဆုံး" ဆွဲ',
+  ch3_p8: 'ဒုတိယ အများဆုံး သုံးသည်မှာ <strong>ငါးရိုးပုံ</strong>။ ငါးရိုးအသွင်အပြင်ဖြင့် အကြောင်းရင်း စီစဉ်သော ပုံ။',
+  ch3_p9: 'သို့သော် <strong>အချိန်ကို မှားလျှင် တန်ဖိုး တစ်ဝက် ပျောက်သွား</strong>။',
+  ch3_p10: '• <strong>× မှားသော သုံးပုံ</strong>: ဦးဆုံး ဆွဲ။ "အကြောင်းရင်း အားလုံး ဖော်ထုတ်ကြပါစို့" မကျဉ်းကျပ်ရသေးခင်။<br>• <strong>○ မှန်သော သုံးပုံ</strong>: Pareto ဖြင့် ကျဉ်းကျပ်ပြီးမှ ဆွဲ။ "မနက် + လုပ်ငန်းစဉ် B-②ပြုပြင်မှု + စက် C ချွတ်ယွင်းမှု" ပြီးမှ "ဤအခြေအနေအောက်တွင် အကြောင်းရင်းကား"။',
+  ch3_p11: 'ဤအစီအစဉ်ကို လိုက်နာရုံဖြင့်၊ ငါးရိုးပုံသည် <strong>အကြောင်းပြချက် ပုံမှ စစ်မှန်သော ခွဲခြမ်းစိတ်ဖြာမှု ပုံ</strong>သို့ ပြောင်းလဲ။',
+  ch3_h5: 'ဦးစွာ ၃ ခု စ',
+  ch3_p12: 'အားလုံး ၇ ခု အစ၌ မှတ်ရန် မလို။ ဦးစွာ ဤ ၃ ခု။',
+  ch3_p13: '<strong>၁. Pareto ဇယား</strong> (ကြီးသည်မှ စီ)<br><strong>၂. အလွှာခွဲခြင်း</strong> (ရှုထောင့် ပြောင်း)<br><strong>၃. ငါးရိုးပုံ</strong> (ကျဉ်းကျပ်ပြီး ဆွဲ)',
+  ch3_p14: 'ဤ ၃ ခုသာဖြင့် <strong>လုပ်ငန်းခွင် ၈၀% ကို ကိုင်တွယ်နိုင်</strong>။ ကျန် ၄ ခု လိုအပ်သည့်အခါ မှတ်။',
+  ch3_quote: '"ကိရိယာ အားလုံး သုံးရန် ကြိုးစားလျှင် ကိရိယာ သင့်ကို ကျော်လွန်လိမ့်။ သုံးသင့်သော ကိရိယာကို ဖြစ်ရပ်က ဆုံးဖြတ်။"',
+  ch3_h6: 'နောက်အခန်းသို့ တံတား',
+  ch3_p15: 'ကိရိယာ သိပြီး၊ နောက်တစ်ခုသည် <strong>စစ်မှန်သော အကြောင်းရင်း ရှာနည်း</strong>။',
+  ch3_p16: 'ကိရိယာသုံး၍ ကျဉ်းကျပ်ပြီးနောက် "ဘာကြောင့် ဖြစ်သလဲ" ကို နက်ရှိုင်းစွာ တွေးသောအခါ။ <strong>၅-Whys ခွဲခြမ်းစိတ်ဖြာမှု</strong>၊ <strong>4M (လူ/စက်/ပစ္စည်း/နည်းလမ်း)</strong>။',
+  ch3_p17: 'ဤနေရာ ပေါ့ဆလျှင် တုံ့ပြန်မှုလည်း ပေါ့ဆ။ နောက်အခန်းတွင် သေချာလုပ်သော ပုံစံ။'
+});
+
 kaizenInitLang();
 </script>
 </body>

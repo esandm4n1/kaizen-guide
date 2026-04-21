@@ -15,15 +15,12 @@
       <div class="brand-sub" data-i18n="brandSub">現場改善の入り口</div>
     </div>
   </a>
-  <div class="lang-switch">
-    <button class="lang-btn active" data-lang="ja" onclick="kaizenApplyLang('ja')">日本語</button>
-    <button class="lang-btn" data-lang="en" onclick="kaizenApplyLang('en')">English</button>
-  </div>
+  <div class="lang-switch"></div>
 </header>
 
 <article class="chapter-content">
   <div class="chapter-header">
-    <div class="chapter-number-large">CHAPTER 1</div>
+    <div class="chapter-number-large" data-i18n="ch1Label">CHAPTER 1</div>
     <h2 data-i18n="ch1Title">QCってなぜやるの?</h2>
   </div>
 
@@ -79,8 +76,9 @@
 
 <script src="_common.js"></script>
 <script>
+// 日本語
 Object.assign(window.kaizenI18n.ja, {
-  tldrLabel: "ひとこと要約",
+  ch1Label: "CHAPTER 1",
   ch1Title: "QCってなぜやるの?",
   ch1Tldr: 'QCは「賞を取るため」の活動じゃない。現場の困りごとを数字で解いて、会社とお客さんを助けて、最終的に<strong>働く人の給料を上げるため</strong>にやるもの。順番を思い出すと、だいぶ楽になる。',
   ch1_h1: "「QCめんどくさい」は、だいたい正しい",
@@ -108,11 +106,13 @@ Object.assign(window.kaizenI18n.ja, {
   ch1_p15: '• <strong>難しい言葉は後回し</strong>。まずイメージを掴む。<br>• <strong>実例ベース</strong>。現場で本当にあった話から学ぶ。<br>• <strong>「答えを教える」よりも「考える型」を渡す</strong>。自動化ツールは作らない。<br>• <strong>金をかけない改善</strong>を中心に。現場で明日から使える話。',
   ch1_p16: '一緒に、ゆっくり進めましょう。'
 });
+
+// 英語
 Object.assign(window.kaizenI18n.en, {
-  tldrLabel: "TL;DR",
+  ch1Label: "CHAPTER 1",
   ch1Title: "Why do we even do QC?",
   ch1Tldr: 'QC is not an activity "to win awards." It\'s for solving shop floor problems with numbers, helping the company and the customer, and ultimately <strong>raising the wages of the people who work there</strong>. Remember the order, and things get a lot easier.',
-  ch1_h1: '"QC is a pain" - you\'re basically right',
+  ch1_h1: '"QC is a pain" — you\'re basically right',
   ch1_p1: 'Right off the bat: if you feel QC activities are <strong>a pain</strong>, it\'s not because your senses are dull. You\'re actually right.',
   ch1_p2: 'At many shop floors, QC has become <strong>"something we do reluctantly for the annual presentation."</strong> Pick a theme, make the slides, rehearse, present, done. Same thing next year. No way this is fun.',
   ch1_p3: 'But QC was never supposed to be that. The presentation is a <strong>place to share results</strong>, not the purpose.',
@@ -129,7 +129,7 @@ Object.assign(window.kaizenI18n.en, {
   ch1_p10: 'The real power of QC is to <strong>convert "I feel like" into "dollars (or yen)"</strong>. Defects down → how many → loss per unit → annual total. Once you get here, it becomes a <strong>negotiation card</strong>.',
   ch1_h4: "QC methods are just tools",
   ch1_p11: 'Pareto charts, fishbone diagrams, 4M, PDCA...<br>These are the words most people get scared of from day one. Hard to remember, hard to use, easy to hate.',
-  ch1_p12: 'But don\'t worry. These are all just <strong>tools</strong>. The purpose is "raising wages" above - not mastering the tools.',
+  ch1_p12: 'But don\'t worry. These are all just <strong>tools</strong>. The purpose is "raising wages" above — not mastering the tools.',
   ch1_p13: 'A carpenter practices using a saw <strong>to build a house</strong>, not to become a saw master. Same thing here.',
   ch1_quote: '"QC is not the goal. QC exists for the people who work."',
   ch1_h5: "What this book cares about",
@@ -137,6 +137,100 @@ Object.assign(window.kaizenI18n.en, {
   ch1_p15: '• <strong>Hard words come later</strong>. Grasp the image first.<br>• <strong>Example-based</strong>. Learn from real shop floor stories.<br>• <strong>"Hand over thinking patterns" rather than "give answers"</strong>. We don\'t build automation.<br>• <strong>Improvements without spending money</strong>. Things you can use tomorrow.',
   ch1_p16: 'Let\'s go slowly, together.'
 });
+
+// ベトナム語
+Object.assign(window.kaizenI18n.vi, {
+  ch1Label: "CHƯƠNG 1",
+  ch1Title: "Tại sao phải làm QC?",
+  ch1Tldr: 'QC không phải là hoạt động "để lấy giải thưởng". Đó là việc giải quyết vấn đề hiện trường bằng con số, giúp đỡ công ty và khách hàng, và cuối cùng là <strong>để tăng lương cho người lao động</strong>. Nhớ thứ tự này, mọi thứ sẽ dễ dàng hơn nhiều.',
+  ch1_h1: '"QC phiền phức" — Bạn đúng đấy',
+  ch1_p1: 'Nói thẳng ra: nếu bạn thấy hoạt động QC <strong>phiền phức</strong>, không phải vì cảm giác của bạn sai. Bạn đúng rồi.',
+  ch1_p2: 'Ở nhiều hiện trường, QC đã trở thành <strong>"việc miễn cưỡng làm cho buổi thuyết trình hàng năm"</strong>. Chọn chủ đề, làm tài liệu, tập luyện, thuyết trình, xong. Năm sau lại lặp lại. Điều này không thể nào thú vị được.',
+  ch1_p3: 'Nhưng QC vốn không phải như vậy. Buổi thuyết trình là <strong>nơi chia sẻ kết quả</strong>, không phải là mục đích.',
+  ch1_h2: 'Mục đích thực sự là "tăng lương cho người lao động"',
+  ch1_p4: 'Nói thẳng thắn, mục đích của QC là thế này: <strong>tăng lương cho những người làm việc tại hiện trường</strong>.',
+  ch1_p5: 'Quá trình diễn ra như sau:',
+  cycleTitle: "Chu trình từ QC đến tăng lương",
+  cycleStep: '① Cải tiến hiện trường → ② Giảm lỗi và lãng phí → ③ Thể hiện hiệu quả <strong>bằng tiền</strong> → ④ Đàm phán với khách hàng (hoặc công ty) → ⑤ Chia sẻ phần dư cho người lao động',
+  ch1_p6: 'Nếu một mắt xích nào đó bị đứt, QC chỉ còn là <strong>cuộc thi viết văn</strong>. Thực tế ở nhiều công ty đều như vậy.',
+  ch1_h3: 'Từ "đã cải thiện" đến "thể hiện bằng con số" là một bộ',
+  ch1_p7: 'Mẫu thường gặp tại hiện trường:',
+  ch1_p8: '"Cảm thấy lỗi đã giảm."<br>"Cảm thấy công việc dễ hơn trước."<br>"Cảm thấy lãng phí ít đi."',
+  ch1_p9: 'Tất cả đều dừng ở <strong>"cảm thấy"</strong>. Như vậy không thể dùng làm tài liệu đàm phán.',
+  ch1_p10: 'Sức mạnh thực sự của QC là <strong>biến "cảm thấy" thành "yên (¥)"</strong>. Lỗi giảm → giảm bao nhiêu → thiệt hại mỗi đơn vị → tổng một năm. Nếu làm được đến đây, nó sẽ trở thành <strong>lá bài đàm phán</strong>.',
+  ch1_h4: "Phương pháp QC chỉ là công cụ",
+  ch1_p11: 'Biểu đồ Pareto, sơ đồ xương cá, 4M, PDCA...<br>Đây là những từ mà 9/10 người sợ ngay từ đầu. Khó nhớ, khó dùng, dễ ghét.',
+  ch1_p12: 'Nhưng yên tâm. Tất cả đều chỉ là <strong>công cụ</strong>. Mục đích là "tăng lương" ở trên, không phải là thành thạo công cụ.',
+  ch1_p13: 'Thợ mộc luyện dùng cưa là <strong>để xây nhà</strong>, không phải để trở thành bậc thầy về cưa. Điều này giống vậy.',
+  ch1_quote: '"QC không phải mục đích. QC tồn tại vì người lao động."',
+  ch1_h5: "Những điều cuốn sách này coi trọng",
+  ch1_p14: 'Trong hướng dẫn này, chúng tôi giữ những nguyên tắc sau:',
+  ch1_p15: '• <strong>Từ khó để sau</strong>. Nắm hình ảnh trước.<br>• <strong>Dựa trên ví dụ thực tế</strong>. Học từ câu chuyện thật ở hiện trường.<br>• <strong>Trao "khuôn mẫu suy nghĩ" thay vì "câu trả lời"</strong>. Không tạo công cụ tự động.<br>• <strong>Cải tiến không tốn tiền</strong> là trọng tâm. Những điều có thể áp dụng ngay từ ngày mai.',
+  ch1_p16: 'Chúng ta hãy đi từ từ, cùng nhau.'
+});
+
+// インドネシア語
+Object.assign(window.kaizenI18n.id, {
+  ch1Label: "BAB 1",
+  ch1Title: "Kenapa melakukan QC?",
+  ch1Tldr: 'QC bukan kegiatan "untuk memenangkan penghargaan". Ini untuk menyelesaikan masalah lapangan dengan angka, membantu perusahaan dan pelanggan, dan akhirnya <strong>menaikkan gaji pekerja</strong>. Ingat urutannya, semua jadi lebih mudah.',
+  ch1_h1: '"QC ribet" — Anda benar',
+  ch1_p1: 'Kesimpulan langsung: kalau Anda merasa kegiatan QC <strong>ribet</strong>, bukan karena perasaan Anda salah. Anda benar.',
+  ch1_p2: 'Di banyak lapangan, QC sudah menjadi <strong>"sesuatu yang dilakukan dengan terpaksa untuk presentasi tahunan"</strong>. Pilih tema, buat materi, latihan, presentasi, selesai. Tahun depan mengulang lagi. Tidak mungkin menarik.',
+  ch1_p3: 'Tapi QC asalnya bukan seperti itu. Presentasi adalah <strong>tempat berbagi hasil</strong>, bukan tujuan.',
+  ch1_h2: 'Tujuan sejati adalah "menaikkan gaji pekerja"',
+  ch1_p4: 'Berbicara terus terang, tujuan QC adalah ini: <strong>menaikkan gaji orang-orang yang bekerja di lapangan</strong>.',
+  ch1_p5: 'Alurnya seperti ini:',
+  cycleTitle: "Siklus dari QC ke kenaikan gaji",
+  cycleStep: '① Perbaiki lapangan → ② Cacat dan kerugian berkurang → ③ Tampilkan efeknya <strong>dalam uang</strong> → ④ Negosiasi dengan pelanggan (atau perusahaan) → ⑤ Kembalikan penghematan kepada pekerja',
+  ch1_p6: 'Kalau salah satu mata rantai putus, QC hanya menjadi <strong>kontes menulis</strong>. Kenyataan di banyak perusahaan seperti itu.',
+  ch1_h3: 'Dari "sudah diperbaiki" ke "ditunjukkan dengan angka" itu satu paket',
+  ch1_p7: 'Pola yang sering ditemui di lapangan:',
+  ch1_p8: '"Rasanya cacat berkurang."<br>"Rasanya jadi lebih mudah."<br>"Rasanya pemborosan berkurang."',
+  ch1_p9: 'Semua berhenti di <strong>"rasanya"</strong>. Ini tidak bisa dipakai sebagai bahan negosiasi.',
+  ch1_p10: 'Kekuatan sejati QC adalah <strong>mengubah "rasanya" menjadi "yen (¥)"</strong>. Cacat turun → berapa banyak → kerugian per unit → total setahun. Kalau sampai sini, menjadi <strong>kartu negosiasi</strong>.',
+  ch1_h4: "Metode QC hanyalah alat",
+  ch1_p11: 'Diagram Pareto, diagram tulang ikan, 4M, PDCA...<br>Kata-kata ini, 9 dari 10 orang langsung takut di awal. Sulit diingat, sulit dipakai, mudah dibenci.',
+  ch1_p12: 'Tapi tenang saja. Semua ini hanyalah <strong>alat</strong>. Tujuannya "menaikkan gaji" di atas, bukan menguasai alat.',
+  ch1_p13: 'Tukang kayu berlatih pakai gergaji itu <strong>untuk membangun rumah</strong>, bukan untuk jadi ahli gergaji. Sama saja.',
+  ch1_quote: '"QC bukan tujuan. QC ada untuk para pekerja."',
+  ch1_h5: "Hal yang dipegang buku ini",
+  ch1_p14: 'Dalam panduan ini, kami memegang prinsip berikut:',
+  ch1_p15: '• <strong>Kata sulit belakangan</strong>. Pahami gambaran dulu.<br>• <strong>Berbasis contoh nyata</strong>. Belajar dari cerita lapangan yang sungguhan.<br>• <strong>Memberikan "pola berpikir" daripada "jawaban"</strong>. Tidak membuat alat otomatis.<br>• <strong>Perbaikan tanpa mengeluarkan uang</strong> menjadi fokus. Hal yang bisa dipakai besok.',
+  ch1_p16: 'Mari jalan pelan-pelan, bersama-sama.'
+});
+
+// ミャンマー語
+Object.assign(window.kaizenI18n.my, {
+  ch1Label: "အခန်း ၁",
+  ch1Title: "QC ကို ဘာလို့ လုပ်ရတာလဲ?",
+  ch1Tldr: 'QC သည် "ဆု ရဖို့ အတွက်" လုပ်ငန်းမဟုတ်ပါ။ လုပ်ငန်းခွင် ပြဿနာများကို ဂဏန်းများဖြင့် ဖြေရှင်းပြီး ကုမ္ပဏီနှင့် သုံးစွဲသူအား ကူညီကာ နောက်ဆုံးတွင် <strong>လုပ်သားများ၏ လခကို တိုးမြှင့်ရန်</strong> လုပ်သည်။ အစီအစဉ်ကို မှတ်မိလျှင် အများကြီး လွယ်ကူသွားမည်။',
+  ch1_h1: '"QC က ပင်ပန်းတယ်" — သင့်ခံစားချက် မှန်ပါတယ်',
+  ch1_p1: 'တိုက်ရိုက်ပြောရရင်: QC လုပ်ငန်းသည် <strong>ပင်ပန်းသည်ဟု ခံစားရ</strong>လျှင် သင့်ခံစားချက် မမှန်၍ မဟုတ်ပါ။ အမှန်ဖြစ်ပါသည်။',
+  ch1_p2: 'လုပ်ငန်းခွင် အများတွင် QC သည် <strong>"နှစ်စဉ် တင်ပြပွဲ အတွက် မရလို့ လုပ်ရတဲ့ အရာ"</strong> ဖြစ်လာခဲ့သည်။ အကြောင်းရင်းရွေး၊ စာရွက်စာတမ်းလုပ်၊ ကြိုတင်ပြင်ဆင်၊ တင်ပြ၊ ပြီး။ နောက်နှစ် ထပ်လုပ်။ ဤသည် ပျော်စရာမဖြစ်နိုင်ပါ။',
+  ch1_p3: 'သို့သော် QC သည် မူရင်း ထိုသို့ မဟုတ်ပါ။ တင်ပြပွဲသည် <strong>ရလဒ်ကို မျှဝေရန် နေရာ</strong>ဖြစ်ပြီး ရည်ရွယ်ချက် မဟုတ်ပါ။',
+  ch1_h2: 'တကယ့်ရည်ရွယ်ချက်သည် "လုပ်သားများ၏ လခ တိုးမြှင့်ရန်"',
+  ch1_p4: 'အကောင်းဆုံးပြောရရင် QC ၏ ရည်ရွယ်ချက်သည် ဤ- <strong>လုပ်ငန်းခွင်တွင် အလုပ်လုပ်သော သူများ၏ လခကို တိုးမြှင့်ရန်</strong>။',
+  ch1_p5: 'ဖြစ်စဉ်က ဤသို့ ဖြစ်သည်:',
+  cycleTitle: "QC မှ လခတိုးရန် လည်ပတ်မှု",
+  cycleStep: '① လုပ်ငန်းခွင် တိုးတက်အောင် လုပ်သည် → ② ချွတ်ယွင်းမှုနှင့် ဆုံးရှုံးမှု လျော့သည် → ③ အကျိုးသက်ရောက်မှုကို <strong>ငွေဖြင့်</strong> ပြသည် → ④ သုံးစွဲသူ (သို့) ကုမ္ပဏီနှင့် ညှိနှိုင်းသည် → ⑤ သက်သာသော ငွေကို လုပ်သားများအား ပြန်ပေးသည်',
+  ch1_p6: 'ဤဖြစ်စဉ်၏ တစ်ဆင့်ပင် ပြတ်သွားလျှင် QC သည် <strong>စာစီစာကုံး ယှဉ်ပြိုင်ပွဲ</strong> သာ ဖြစ်သွားမည်။ ကုမ္ပဏီ အများတွင် ထိုသို့ ဖြစ်နေသည်။',
+  ch1_h3: '"တိုးတက်သည်" မှ "ဂဏန်းဖြင့် ပြသည်" အထိ တစ်ခုတည်း',
+  ch1_p7: 'လုပ်ငန်းခွင်တွင် မကြာခဏတွေ့ရသော ပုံစံ:',
+  ch1_p8: '"ချွတ်ယွင်းမှု လျော့သလို ခံစားရသည်။"<br>"ယခင်ထက် လွယ်ကူလာသလို ခံစားရသည်။"<br>"အလဟာဿ နည်းလာသလို ခံစားရသည်။"',
+  ch1_p9: 'အားလုံး <strong>"ခံစားရသည်"</strong> တွင် ရပ်တန့်သည်။ ဤသို့ဆိုလျှင် ညှိနှိုင်းရန် အထောက်အထား မဖြစ်။',
+  ch1_p10: 'QC ၏ စစ်မှန်သော အင်အားသည် <strong>"ခံစားရသည်" ကို "ယန်း (¥)" အဖြစ် ပြောင်းခြင်း</strong> တွင် ရှိသည်။ ချွတ်ယွင်းမှု လျော့ → ဘယ်လောက် လျော့ → တစ်ခုလျှင် ဆုံးရှုံးမှု → တစ်နှစ် စုစုပေါင်း။ ဤအထိ ထွက်လာလျှင် <strong>ညှိနှိုင်းရန် ကတ်</strong> ဖြစ်လာမည်။',
+  ch1_h4: "QC နည်းလမ်းများသည် ကိရိယာများသာ",
+  ch1_p11: 'Pareto ဇယား၊ ငါးရိုးပုံ၊ 4M၊ PDCA...<br>အစတွင် သင်ယူရသော ဤစကားများ၊ ၉၀% လူသည် ကြောက်ကြသည်။ မှတ်ရခက်၊ သုံးရခက်၊ မုန်းရလွယ်။',
+  ch1_p12: 'သို့သော် စိတ်ချပါ။ ဤအားလုံးသည် <strong>ကိရိယာများ</strong> သာ။ ရည်ရွယ်ချက်သည် "လခတိုးမြှင့်ရန်" ဖြစ်ပြီး ကိရိယာကို ကျွမ်းကျင်ရန် မဟုတ်။',
+  ch1_p13: 'လက်သမားက လွှာ ပြင်ရေးနည်းကို အလေးအနက် လေ့ကျင့်ရခြင်းသည် <strong>အိမ်ဆောက်ရန်</strong> ဖြစ်ပြီး လွှာ ကျွမ်းကျင်သူ ဖြစ်ရန် မဟုတ်။ အတူတူပင်။',
+  ch1_quote: '"QC သည် ရည်ရွယ်ချက် မဟုတ်။ QC သည် လုပ်သားများအတွက် ရှိသည်။"',
+  ch1_h5: "ဤစာအုပ်တွင် အရေးထားသော အရာ",
+  ch1_p14: 'ဤလမ်းညွှန်တွင် အောက်ပါတို့ကို လိုက်နာ၍ ဆက်သွားမည်:',
+  ch1_p15: '• <strong>ခက်ခဲသော စကား နောက်မှ</strong>။ ပုံရိပ်ကို အရင် ဖမ်းဆုပ်ပါ။<br>• <strong>အမှန်တကယ်သော နမူနာများ အခြေခံ</strong>။ လုပ်ငန်းခွင်တွင် ဖြစ်ခဲ့သော ပြဿနာမှ သင်ယူပါ။<br>• <strong>"အဖြေပြောပြ" ထက် "တွေးခေါ်ပုံစံ ပေးအပ်"</strong>။ အလိုအလျောက် ကိရိယာ မလုပ်။<br>• <strong>ငွေမကုန်သော တိုးတက်မှု</strong> အခြေခံ။ မနက်ဖြန်မှ သုံးနိုင်သော အကြောင်း။',
+  ch1_p16: 'အတူတူ ဖြည်းဖြည်းချင်း သွားကြပါစို့။'
+});
+
 kaizenInitLang();
 </script>
 </body>

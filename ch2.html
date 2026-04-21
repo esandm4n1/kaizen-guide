@@ -15,15 +15,12 @@
       <div class="brand-sub" data-i18n="brandSub">現場改善の入り口</div>
     </div>
   </a>
-  <div class="lang-switch">
-    <button class="lang-btn active" data-lang="ja" onclick="kaizenApplyLang('ja')">日本語</button>
-    <button class="lang-btn" data-lang="en" onclick="kaizenApplyLang('en')">English</button>
-  </div>
+  <div class="lang-switch"></div>
 </header>
 
 <article class="chapter-content">
   <div class="chapter-header">
-    <div class="chapter-number-large">CHAPTER 2</div>
+    <div class="chapter-number-large" data-i18n="ch2Label">CHAPTER 2</div>
     <h2 data-i18n="ch2Title">答えから作るな、探れ</h2>
   </div>
 
@@ -93,7 +90,7 @@
 <script src="_common.js"></script>
 <script>
 Object.assign(window.kaizenI18n.ja, {
-  tldrLabel: "ひとこと要約",
+  ch2Label: "CHAPTER 2",
   ch2Title: "答えから作るな、探れ",
   ch2Tldr: '多くのQCは、<strong>先に対策を決めてから、それに合うデータを揃えている</strong>。これを「逆再生QC」と呼ぼう。本物のQCは逆で、データから探っていって、<strong>最後に対策が決まる</strong>。順序を守るだけで、発表の質は段違いになる。',
   ch2_h1: "QCあるある:みんな答えから作ってる",
@@ -132,11 +129,12 @@ Object.assign(window.kaizenI18n.ja, {
   ch2_p21: 'でも、道具の前に、この<strong>姿勢</strong>がすべてなんだ。',
   ch2_p22: '<strong>答えから作るな、探れ</strong>。<br>次の章からは、探るための道具を1つずつ見ていきます。'
 });
+
 Object.assign(window.kaizenI18n.en, {
-  tldrLabel: "TL;DR",
+  ch2Label: "CHAPTER 2",
   ch2Title: "Don't build from the answer. Investigate.",
   ch2Tldr: 'Most QC activities <strong>decide the countermeasure first, then gather data to fit it</strong>. Let\'s call this "reverse-play QC." Real QC is the opposite: you investigate from the data, and <strong>the countermeasure is decided last</strong>. Just following this order changes the quality of a presentation dramatically.',
-  ch2_h1: "The common pattern: everyone builds from the answer",
+  ch2_h1: "Common pattern: everyone builds from the answer",
   ch2_p1: 'Honest confession: <strong>most QC on the shop floor is built from the answer</strong>.',
   ch2_p2: 'You probably recognize this flow:',
   ch2_p3: '• The leader decides "I want to change this equipment" first<br>• A Pareto chart is built later to match<br>• A fishbone diagram is drawn later to match<br>• The intended countermeasure is implemented<br>• Naturally, results come out<br>• The presentation looks clean',
@@ -172,6 +170,130 @@ Object.assign(window.kaizenI18n.en, {
   ch2_p21: 'But before the tools, <strong>this mindset is everything</strong>.',
   ch2_p22: '<strong>Don\'t build from the answer. Investigate.</strong><br>From the next chapter, we\'ll look at the tools for investigating.'
 });
+
+Object.assign(window.kaizenI18n.vi, {
+  ch2Label: "CHƯƠNG 2",
+  ch2Title: "Đừng bắt đầu từ câu trả lời. Hãy điều tra.",
+  ch2Tldr: 'Phần lớn QC <strong>quyết định đối sách trước, rồi thu thập dữ liệu cho phù hợp</strong>. Ta gọi đây là "QC ngược". QC thật sự thì ngược lại: điều tra từ dữ liệu, và <strong>đối sách được quyết định sau cùng</strong>. Chỉ cần tuân thủ thứ tự này, chất lượng thuyết trình thay đổi hoàn toàn.',
+  ch2_h1: "Thường gặp: Mọi người đều bắt đầu từ câu trả lời",
+  ch2_p1: 'Thú nhận thẳng thắn: <strong>phần lớn QC ở hiện trường đều bắt đầu từ câu trả lời</strong>.',
+  ch2_p2: 'Có lẽ bạn nhận ra luồng này:',
+  ch2_p3: '• Trưởng nhóm nghĩ trước: "Muốn thay thiết bị này"<br>• Sau đó làm biểu đồ Pareto cho phù hợp<br>• Sau đó vẽ sơ đồ xương cá cho phù hợp<br>• Thực hiện đối sách đã định trước<br>• Hiển nhiên, có kết quả<br>• Bản thuyết trình gọn gàng',
+  ch2_p4: 'Điều này thấy ở mọi buổi thuyết trình hàng năm. Slide gọn, số liệu khớp. Nhưng <strong>nội dung trống rỗng</strong>.',
+  reverseQcTitle: 'Gọi đây là "QC ngược"',
+  reverseQcDesc: 'QC được lắp ghép ngược từ kết luận. Cả Pareto và xương cá đều trở thành "tạo chứng cứ giả" không có dấu vết suy nghĩ thực. <strong>Giám khảo tinh mắt nhận ra ngay</strong>.',
+  ch2_h2: 'Tại sao ta hay "bắt đầu từ câu trả lời"',
+  ch2_p5: 'Phần lớn người làm đều biết điều này sai. Nhưng vẫn làm. Lý do thường là:',
+  ch2_p6: '• <strong>Không có thời gian</strong>. Ngày thuyết trình sắp tới.<br>• <strong>Không có dữ liệu</strong>. Chưa thu thập chi tiết.<br>• <strong>Sếp muốn có kết luận sớm</strong>. "Nguyên nhân là gì?"<br>• <strong>Không chịu được "chưa biết"</strong>. Cảm thấy bất an.<br>• <strong>Nghĩ không đẹp mắt</strong>. Hiểu nhầm rằng đối sách táo bạo gây ấn tượng hơn.',
+  ch2_p7: 'Tất cả đều hiểu được. Nhưng việc bạn chịu được áp lực này hay không quyết định độ sâu của QC.',
+  ch2_h3: 'Thứ tự thật: Hãy coi là trò chơi thám tử',
+  ch2_p8: 'Vậy QC thật sự tiến hành ra sao? Hãy coi là <strong>trò chơi thám tử</strong>.',
+  ch2_p9: 'Thủ phạm (nguyên nhân thật) chưa biết là ai. Nhìn vào chứng cứ (dữ liệu) để thu hẹp nghi phạm. Cuối cùng thủ phạm hiện ra. <strong>Đối sách chỉ được quyết định lúc đó</strong>.',
+  badOrderLabel: "✗ QC ngược",
+  badOrderSteps: "① Quyết định đối sách<br>② Thu thập dữ liệu<br>③ Vẽ sơ đồ xương cá<br>④ Thuyết trình",
+  goodOrderLabel: "○ QC thật",
+  goodOrderSteps: "① Xem dữ liệu<br>② Thu hẹp từ lớn nhất<br>③ Đạt đến nguyên nhân thật<br>④ Quyết định đối sách<br>⑤ Thuyết trình",
+  ch2_p10: 'Các bước trông giống nhau. Nhưng <strong>thứ tự ngược</strong>. Đó là tất cả.',
+  ch2_h4: '"Từ lớn đến nhỏ" là quy tắc duy nhất',
+  ch2_p11: 'Trò chơi thám tử không khó. Thực ra chỉ có <strong>một việc</strong>.',
+  ch2_p12: '<strong>Đi từ lớn xuống nhỏ.</strong>',
+  ch2_p13: 'Ví dụ hiện trường có 4 công đoạn:',
+  ch2_p14: '<strong>Lớp 1</strong>: Lỗi xảy ra ở đâu? → Công đoạn B nhiều nhất<br><strong>Lớp 2</strong>: Ở đâu trong công đoạn B? → Tập trung ở ②Gia công<br><strong>Lớp 3</strong>: Khi nào? → Buổi sáng nhiều nhất<br><strong>Lớp 4</strong>: Cụ thể gì? → Một máy cụ thể',
+  ch2_p15: 'Khi đã thu hẹp thành "sáng + công đoạn B + máy cụ thể", <strong>nguyên nhân bắt đầu hiện ra</strong>. Chỉ xảy ra khi cả ba yếu tố trùng. <strong>Lúc này vẽ xương cá mới có ý nghĩa</strong>.',
+  ch2_h5: '"Điều tra" có vui hay khổ?',
+  ch2_p16: 'Đây là ngã rẽ quan trọng.',
+  ch2_p17: 'Khi viết ra <strong>phân tầng điều tra sâu</strong> như vậy, nhiều người thấy phiền. Thật ra là phiền.',
+  ch2_p18: 'Nhưng <strong>nếu bạn thấy vui, bạn đã thắng rồi</strong>.',
+  ch2_p19: 'Cảm giác thủ phạm dần hiện ra. "Chỉ công đoạn B thôi sao?" "Chỉ buổi sáng?" "Chỉ máy đó?" Khoảnh khắc ngạc nhiên. <strong>Đây là khoái cảm giải đố</strong>.',
+  ch2_quote: '"Điều tra là vui. Một khi nhận ra điều này, bạn không còn ghét QC nữa."',
+  ch2_h6: "Cầu nối sang chương tiếp theo",
+  ch2_p20: 'Công cụ để "điều tra" chính là những thứ gọi là <strong>7 công cụ QC</strong>.',
+  ch2_p21: 'Nhưng trước công cụ, <strong>thái độ này là tất cả</strong>.',
+  ch2_p22: '<strong>Đừng bắt đầu từ câu trả lời. Hãy điều tra.</strong><br>Từ chương sau, ta sẽ xem từng công cụ.'
+});
+
+Object.assign(window.kaizenI18n.id, {
+  ch2Label: "BAB 2",
+  ch2Title: "Jangan mulai dari jawaban. Selidiki.",
+  ch2Tldr: 'Banyak QC <strong>menentukan tindakan lebih dulu, lalu mengumpulkan data agar cocok</strong>. Kita sebut ini "QC terbalik". QC sejati kebalikannya: menyelidiki dari data, dan <strong>tindakan ditentukan terakhir</strong>. Hanya mengikuti urutan ini, kualitas presentasi berubah drastis.',
+  ch2_h1: "Hal biasa: Semua orang mulai dari jawaban",
+  ch2_p1: 'Pengakuan jujur: <strong>sebagian besar QC di lapangan dimulai dari jawaban</strong>.',
+  ch2_p2: 'Mungkin Anda kenal alur ini:',
+  ch2_p3: '• Ketua duluan berpikir "Ingin ganti peralatan ini"<br>• Kemudian bikin diagram Pareto yang cocok<br>• Kemudian gambar tulang ikan yang cocok<br>• Melaksanakan tindakan yang sudah direncanakan<br>• Tentu saja, ada hasil<br>• Presentasi rapi',
+  ch2_p4: 'Ini terlihat di setiap presentasi tahunan. Slide rapi, angka cocok. Tapi <strong>isinya kosong</strong>.',
+  reverseQcTitle: 'Sebut ini "QC terbalik"',
+  reverseQcDesc: 'QC yang disusun terbalik dari kesimpulan. Pareto dan tulang ikan jadi "pembuat alibi" tanpa jejak pemikiran sungguhan. <strong>Juri yang tajam langsung tahu</strong>.',
+  ch2_h2: 'Kenapa kita akhirnya "mulai dari jawaban"',
+  ch2_p5: 'Banyak yang tahu ini salah tapi tetap melakukannya. Alasan biasa:',
+  ch2_p6: '• <strong>Tidak ada waktu</strong>. Tanggal presentasi dekat.<br>• <strong>Tidak ada data</strong>. Belum dikumpulkan detail.<br>• <strong>Atasan ingin kesimpulan cepat</strong>. "Penyebabnya apa?"<br>• <strong>Tidak tahan "belum tahu"</strong>. Merasa cemas.<br>• <strong>Pikir tidak mencolok</strong>. Salah kira tindakan heboh lebih berkesan.',
+  ch2_p7: 'Semua bisa dimengerti. Tapi apakah Anda tahan tekanan ini menentukan kedalaman QC.',
+  ch2_h3: 'Urutan sejati: Anggap permainan detektif',
+  ch2_p8: 'Jadi QC sejati bagaimana? Anggap sebagai <strong>permainan detektif</strong>.',
+  ch2_p9: 'Pelaku (penyebab sejati) belum diketahui. Lihat bukti (data) untuk mempersempit tersangka. Akhirnya pelaku muncul. <strong>Tindakan baru ditentukan saat itu</strong>.',
+  badOrderLabel: "✗ QC terbalik",
+  badOrderSteps: "① Tentukan tindakan<br>② Kumpulkan data<br>③ Gambar tulang ikan<br>④ Presentasi",
+  goodOrderLabel: "○ QC sejati",
+  goodOrderSteps: "① Lihat data<br>② Persempit dari terbesar<br>③ Sampai ke penyebab sejati<br>④ Tindakan ditentukan<br>⑤ Presentasi",
+  ch2_p10: 'Langkah terlihat mirip. Tapi <strong>urutan terbalik</strong>. Itu semuanya.',
+  ch2_h4: '"Dari besar ke kecil" adalah satu-satunya aturan',
+  ch2_p11: 'Permainan detektif tidak sulit. Sebenarnya hanya ada <strong>satu hal</strong>.',
+  ch2_p12: '<strong>Dari yang besar ke yang kecil.</strong>',
+  ch2_p13: 'Contoh lapangan dengan 4 proses:',
+  ch2_p14: '<strong>Lapisan 1</strong>: Cacat terjadi di mana? → Proses B paling banyak<br><strong>Lapisan 2</strong>: Di mana dalam Proses B? → Terfokus di ②Pemrosesan<br><strong>Lapisan 3</strong>: Kapan? → Pagi paling banyak<br><strong>Lapisan 4</strong>: Spesifik apa? → Mesin tertentu',
+  ch2_p15: 'Setelah dipersempit jadi "pagi + Proses B + mesin tertentu", <strong>penyebab muncul</strong>. Hanya terjadi ketika ketiganya bertepatan. <strong>Baru sekarang menggambar tulang ikan jadi bermakna</strong>.',
+  ch2_h5: '"Menyelidiki" menyenangkan atau menyakitkan?',
+  ch2_p16: 'Ini titik kritis.',
+  ch2_p17: 'Saat menulis <strong>drill-down berlapis</strong> begini, banyak yang merasa ribet. Sebenarnya memang ribet.',
+  ch2_p18: 'Tapi <strong>kalau Anda merasa menyenangkan, Anda sudah menang</strong>.',
+  ch2_p19: 'Rasa pelaku perlahan muncul. "Hanya Proses B?" "Hanya pagi?" "Hanya mesin itu?" Momen kejutan. <strong>Ini kenikmatan memecahkan teka-teki</strong>.',
+  ch2_quote: '"Menyelidiki itu menyenangkan. Setelah orang menyadari ini, mereka tidak lagi membenci QC."',
+  ch2_h6: "Jembatan ke bab berikutnya",
+  ch2_p20: 'Alat untuk "menyelidiki" adalah yang disebut <strong>7 Alat QC</strong>.',
+  ch2_p21: 'Tapi sebelum alat, <strong>sikap ini adalah segalanya</strong>.',
+  ch2_p22: '<strong>Jangan mulai dari jawaban. Selidiki.</strong><br>Dari bab berikutnya, kita lihat alat satu per satu.'
+});
+
+Object.assign(window.kaizenI18n.my, {
+  ch2Label: "အခန်း ၂",
+  ch2Title: "အဖြေကနေ မစတင်ပါနဲ့။ စုံစမ်းပါ။",
+  ch2Tldr: 'QC အများစုသည် <strong>တုံ့ပြန်မှုကို ရှေးဦးစွာ သတ်မှတ်ပြီး၊ ထို့နောက် ကိုက်ညီသော အချက်အလက်များ စုဆောင်းကြသည်</strong>။ ၎င်းကို "ပြောင်းပြန် QC" ဟု ခေါ်ကြပါစို့။ စစ်မှန်သော QC သည် ပြောင်းပြန်- အချက်အလက်မှ စုံစမ်း၍ <strong>နောက်ဆုံး၌ တုံ့ပြန်မှု ဆုံးဖြတ်ခြင်း</strong>။ အစီအစဉ်ကို လိုက်နာရုံဖြင့် တင်ပြမှု၏ အရည်အသွေးသည် လုံးဝ ပြောင်းလဲသွားမည်။',
+  ch2_h1: "မကြာခဏတွေ့: အားလုံး အဖြေမှ စတင်",
+  ch2_p1: 'ရိုးသားစွာ ဝန်ခံရင်: <strong>လုပ်ငန်းခွင် QC အများစုသည် အဖြေမှ စတင်ခြင်း</strong> ဖြစ်သည်။',
+  ch2_p2: 'ဤလုပ်ငန်းစဉ်ကို မှတ်မိလိမ့်မည်:',
+  ch2_p3: '• ခေါင်းဆောင်က အစပိုင်း "ဤစက်ပစ္စည်း ပြောင်းချင်တယ်" ဟု တွေး<br>• ထို့နောက် ကိုက်ညီသော Pareto ဇယား လုပ်<br>• ထို့နောက် ကိုက်ညီသော ငါးရိုးပုံ ဆွဲ<br>• စီစဉ်ထားသော တုံ့ပြန်မှု လုပ်ဆောင်<br>• သဘာဝအားဖြင့် ရလဒ် ရ<br>• တင်ပြမှု သန့်ရှင်း',
+  ch2_p4: 'ဤအရာကို နှစ်စဉ် တင်ပြပွဲတိုင်းတွင် တွေ့သည်။ Slide သပ်ရပ်၊ ဂဏန်း ကိုက်ညီ။ သို့သော် <strong>အတွင်းသား ဗလာ</strong>။',
+  reverseQcTitle: 'ဤအရာကို "ပြောင်းပြန် QC" ဟု ခေါ်ပါ',
+  reverseQcDesc: 'နိဂုံးမှ ပြောင်းပြန် ပေါင်းစပ်ထားသော QC။ Pareto နှင့် ငါးရိုးပုံ နှစ်ခုလုံး "အကြောင်းပြချက်" သာဖြစ်ပြီး စစ်မှန်သော တွေးခေါ်မှု၏ ခြေရာ မရှိ။ <strong>ထက်မြက်သော တရားသူကြီးသည် ချက်ချင်း မြင်</strong>။',
+  ch2_h2: 'ဘာကြောင့် "အဖြေမှ စတင်" ဖြစ်လာလဲ',
+  ch2_p5: 'ဤသို့ လုပ်သူ အများစုသည် မှားသည်ကို သိကြသည်။ သို့သော် လုပ်ကြသေး။ အကြောင်းများ:',
+  ch2_p6: '• <strong>အချိန် မရှိ</strong>။ တင်ပြပွဲ နီးနေ။<br>• <strong>အချက်အလက် မရှိ</strong>။ အသေးစိတ် မစုဆောင်းထား။<br>• <strong>အထက်လူကြီးက အမြန်နိဂုံး လိုချင်</strong>။ "အကြောင်းရင်း ဘာလဲ?"<br>• <strong>"မသိသေး" ကို မခံနိုင်</strong>။ စိတ်မချခြင်း။<br>• <strong>လှပ မဟုတ်ဘူးဟု ထင်</strong>။ လှုပ်ရှားသော တုံ့ပြန်မှုက ပိုထင်ရှားဟု အထင်မှား။',
+  ch2_p7: 'အားလုံး နားလည်နိုင်။ သို့သော် ဤဖိအားကို ခံနိုင်/မခံနိုင်က QC ၏ အနက်ကို ဆုံးဖြတ်။',
+  ch2_h3: 'စစ်မှန်သော အစီအစဉ်: စုံထောက်ဂိမ်းဟု တွေး',
+  ch2_p8: 'စစ်မှန်သော QC သည် မည်သို့ တိုးတက်သလဲ။ <strong>စုံထောက်ဂိမ်း</strong> ဟု တွေးပါ။',
+  ch2_p9: 'တရားခံ (စစ်မှန်သော အကြောင်းရင်း) မည်သူမည်ဝါ မသိသေး။ သက်သေ (အချက်အလက်) ကိုကြည့်၍ သံသယရှိသူများ ကို ကျဉ်းကျပ်ကြ။ နောက်ဆုံး တရားခံ ပေါ်ထွက်။ <strong>တုံ့ပြန်မှုသည် ထိုအခါမှ ဆုံးဖြတ်</strong>။',
+  badOrderLabel: "✗ ပြောင်းပြန် QC",
+  badOrderSteps: "① တုံ့ပြန်မှု ဆုံးဖြတ်<br>② အချက်အလက် စုဆောင်း<br>③ ငါးရိုးပုံ ဆွဲ<br>④ တင်ပြ",
+  goodOrderLabel: "○ စစ်မှန်သော QC",
+  goodOrderSteps: "① အချက်အလက် ကြည့်<br>② ကြီးသည်မှ ကျဉ်းကျပ်<br>③ စစ်မှန်သော အကြောင်းရင်း ရောက်<br>④ တုံ့ပြန်မှု ဆုံးဖြတ်<br>⑤ တင်ပြ",
+  ch2_p10: 'အဆင့်များ ဆင်တူ။ သို့သော် <strong>အစီအစဉ် ပြောင်းပြန်</strong>။ ၎င်းသာ အရေးပါ။',
+  ch2_h4: '"ကြီးမှ သေးသို့" သာ တစ်ခုတည်းသော စည်းကမ်း',
+  ch2_p11: 'စုံထောက်ဂိမ်း မခက်။ တကယ့်မှာ <strong>တစ်ခုသာ</strong> ရှိ။',
+  ch2_p12: '<strong>ကြီးသည်မှ သေးသည်သို့ ကြည့်။</strong>',
+  ch2_p13: 'ဥပမာ လုပ်ငန်းစဉ် ၄ ခုပါသော လုပ်ငန်းခွင်:',
+  ch2_p14: '<strong>အလွှာ ၁</strong>: ချွတ်ယွင်းချက် ဘယ်မှာ ဖြစ်? → လုပ်ငန်းစဉ် B အများဆုံး<br><strong>အလွှာ ၂</strong>: လုပ်ငန်းစဉ် B တွင် ဘယ်မှာ? → ②ပြုပြင်မှု တွင် စုစည်း<br><strong>အလွှာ ၃</strong>: ဘယ်အချိန်? → မနက်ပိုင်း အများဆုံး<br><strong>အလွှာ ၄</strong>: အတိအကျ ဘာ? → သီးခြား စက်တစ်ခု',
+  ch2_p15: '"မနက် + လုပ်ငန်းစဉ် B + သီးခြား စက်" အထိ ကျဉ်းကျပ်လိုက်လျှင် <strong>အကြောင်းရင်း ပေါ်လာ</strong>။ ဤသုံးမျိုး တိုက်ဆိုင်သည့်အခါတွင်သာ ဖြစ်ပေါ်။ <strong>ထိုအခါမှ ငါးရိုးပုံ ဆွဲခြင်း အဓိပ္ပာယ် ရှိ</strong>။',
+  ch2_h5: '"စုံစမ်းခြင်း" ပျော်ရွှင်လား နာကျင်လား',
+  ch2_p16: 'ဤနေရာ အရေးပါသော ခွဲခြားစရာ။',
+  ch2_p17: '<strong>အလွှာလိုက် နက်နက်ရှိုင်းရှိုင်း စုံစမ်းခြင်း</strong> ကို ဤသို့ ရေးဖွဲ့သောအခါ၊ "ပင်ပန်းပုံပေါ်" ဟု လူအများ ခံစားရ။',
+  ch2_p18: 'သို့သော် <strong>ဤနေရာ၌ "ပျော်ရွှင်" ဟု ခံစားနိုင်လျှင် သင် အနိုင်ရပြီ</strong>။',
+  ch2_p19: 'တရားခံ တဖြည်းဖြည်း ပေါ်ထွက်လာသော ခံစားမှု။ "လုပ်ငန်းစဉ် B သာလား?" "မနက်သာလား?" "ထိုစက်သာလား?" တုန်လှုပ်သော ခဏ။ <strong>ဤသည် ပဟေဠိ ဖြေရှင်းခြင်း၏ ပျော်ရွှင်မှု</strong>။',
+  ch2_quote: '"စုံစမ်းခြင်း ပျော်စရာ။ ၎င်းကို သိသောသူများသည် QC ကို မမုန်းတော့။"',
+  ch2_h6: "နောက်အခန်းသို့ တံတား",
+  ch2_p20: '"စုံစမ်း" ရန် ကိရိယာများသည် <strong>QC ကိရိယာ ၇ မျိုး</strong> ဟု ခေါ်သည်။',
+  ch2_p21: 'သို့သော် ကိရိယာမတိုင်မီ <strong>ဤသဘောထားသာ အားလုံး</strong>။',
+  ch2_p22: '<strong>အဖြေကနေ မစတင်ပါနဲ့။ စုံစမ်းပါ။</strong><br>နောက်အခန်းမှစ၍ ကိရိယာတစ်ခုချင်းစီ ကြည့်ကြမည်။'
+});
+
 kaizenInitLang();
 </script>
 </body>
