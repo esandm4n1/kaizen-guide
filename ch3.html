@@ -57,11 +57,17 @@
     <p data-i18n="ch3CalloutBody">パレート図を<strong>最初の1枚だけで終わらせない</strong>。「大きい項目を発見した → そこをさらに層別 → またパレート」の繰り返しが正しい使い方。</p>
   </div>
 
-  <h3 data-i18n="ch3_h4">特性要因図は「最後」に書く</h3>
+  <h3 data-i18n="ch3_h4">特性要因図は「絞り込んだ後」に、4Mで要因を書き出すために使う</h3>
   <p data-i18n="ch3_p8">2番目によく使うのが<strong>特性要因図(フィッシュボーン)</strong>。魚の骨みたいな形で、原因を整理する図。</p>
-  <p data-i18n="ch3_p9">ただし、<strong>書くタイミングを間違えると価値が半減する</strong>。</p>
-  <p data-i18n="ch3_p10">• <strong>×ダメな使い方</strong>:最初に書く。「原因を全部洗い出しましょう」と、まだ絞り込んでいない状態で書く。<br>• <strong>○正しい使い方</strong>:パレート図で絞り込んだ後に書く。「朝一の工程B-②加工・機械Cの不良」に絞ってから、「<strong>この条件下での</strong>原因を考えましょう」と書く。</p>
-  <p data-i18n="ch3_p11">この順番を守るだけで、特性要因図は<strong>アリバイ作りの図から、本物の分析の図</strong>に変わる。</p>
+  <p data-i18n="ch3_p9">大事なのは、<strong>「何のために書くか」</strong>。「原因を全部洗い出すアリバイ作り」のために書くのはもったいない。実践的な使い方はこう:</p>
+
+  <div class="callout">
+    <div class="callout-title"><span class="callout-icon">🎯</span><span data-i18n="ch3_fishTitle">特性要因図の実践的な使い方</span></div>
+    <p data-i18n="ch3_fishBody">① パレート図で <strong>絞り込んだ問題</strong> を魚の頭に書く(例:「朝一・機械Cの擦り傷不良」)<br>② <strong>4M(人・機械・材料・方法)</strong> の4本の大骨を引く<br>③ 各大骨に対して、<strong>考えられる要因を全部書き出す</strong> (例:「機械」なら 刃が摩耗 / 温度が上がっていない / 潤滑油が少ない…)<br>④ 書き出した要因を、<strong>1つずつ現場で調査する</strong> (刃を見る、温度計で測る、油量を確認…)<br>⑤ 調査結果と事実が一致した要因が <strong>真因(の候補)</strong></p>
+  </div>
+
+  <p data-i18n="ch3_p10">つまり特性要因図は、<strong>「考え得る要因を網羅的に書き出して、現場で1つずつ潰していく」作業リスト</strong>。これが実践的な使い方。</p>
+  <p data-i18n="ch3_p11">「絞り込みの前に書く」のも「対策の後で形式的に添付する」のも、どちらも本来の使い方からズレてしまう。<strong>絞り込みの後・真因調査の前</strong>に書くのが、タイミングとして一番効く。</p>
 
   <h3 data-i18n="ch3_h5">まずは3つから</h3>
   <p data-i18n="ch3_p12">全部を最初に覚える必要はない。まずはこの3つ。</p>
@@ -119,11 +125,13 @@ Object.assign(window.kaizenI18n.ja, {
   ch3_p7: 'つまり、<strong>層別ごとに1枚のパレート図</strong>。4層掘れば4枚書くことになる。これが本物のQC。',
   ch3CalloutTitle: '多くの人が間違えるポイント',
   ch3CalloutBody: 'パレート図を<strong>最初の1枚だけで終わらせない</strong>。「大きい項目を発見した → そこをさらに層別 → またパレート」の繰り返しが正しい使い方。',
-  ch3_h4: '特性要因図は「最後」に書く',
+  ch3_h4: '特性要因図は「絞り込んだ後」に、4Mで要因を書き出すために使う',
   ch3_p8: '2番目によく使うのが<strong>特性要因図(フィッシュボーン)</strong>。魚の骨みたいな形で、原因を整理する図。',
-  ch3_p9: 'ただし、<strong>書くタイミングを間違えると価値が半減する</strong>。',
-  ch3_p10: '• <strong>×ダメな使い方</strong>:最初に書く。「原因を全部洗い出しましょう」と、まだ絞り込んでいない状態で書く。<br>• <strong>○正しい使い方</strong>:パレート図で絞り込んだ後に書く。「朝一の工程B-②加工・機械Cの不良」に絞ってから、「<strong>この条件下での</strong>原因を考えましょう」と書く。',
-  ch3_p11: 'この順番を守るだけで、特性要因図は<strong>アリバイ作りの図から、本物の分析の図</strong>に変わる。',
+  ch3_p9: '大事なのは、<strong>「何のために書くか」</strong>。「原因を全部洗い出すアリバイ作り」のために書くのはもったいない。実践的な使い方はこう:',
+  ch3_fishTitle: '特性要因図の実践的な使い方',
+  ch3_fishBody: '① パレート図で <strong>絞り込んだ問題</strong> を魚の頭に書く(例:「朝一・機械Cの擦り傷不良」)<br>② <strong>4M(人・機械・材料・方法)</strong> の4本の大骨を引く<br>③ 各大骨に対して、<strong>考えられる要因を全部書き出す</strong> (例:「機械」なら 刃が摩耗 / 温度が上がっていない / 潤滑油が少ない…)<br>④ 書き出した要因を、<strong>1つずつ現場で調査する</strong> (刃を見る、温度計で測る、油量を確認…)<br>⑤ 調査結果と事実が一致した要因が <strong>真因(の候補)</strong>',
+  ch3_p10: 'つまり特性要因図は、<strong>「考え得る要因を網羅的に書き出して、現場で1つずつ潰していく」作業リスト</strong>。これが実践的な使い方。',
+  ch3_p11: '「絞り込みの前に書く」のも「対策の後で形式的に添付する」のも、どちらも本来の使い方からズレてしまう。<strong>絞り込みの後・真因調査の前</strong>に書くのが、タイミングとして一番効く。',
   ch3_h5: 'まずは3つから',
   ch3_p12: '全部を最初に覚える必要はない。まずはこの3つ。',
   ch3_p13: '<strong>1. パレート図</strong>(大きい順に並べる)<br><strong>2. 層別</strong>(切り口を変える)<br><strong>3. 特性要因図</strong>(絞り込んだ後で書く)',
@@ -166,11 +174,13 @@ Object.assign(window.kaizenI18n.en, {
   ch3_p7: 'That is, <strong>one Pareto per layer</strong>. Four layers = four Paretos. This is real QC.',
   ch3CalloutTitle: 'The point most people get wrong',
   ch3CalloutBody: 'Don\'t stop at <strong>one Pareto chart</strong>. "Find the biggest item → stratify it further → new Pareto" — this loop is the correct usage.',
-  ch3_h4: 'Draw the fishbone LAST',
+  ch3_h4: 'Use the fishbone AFTER narrowing down — to enumerate causes by 4M',
   ch3_p8: 'The second most used is the <strong>fishbone diagram</strong>. A fish-skeleton shape for organizing causes.',
-  ch3_p9: 'But <strong>timing is critical, or half its value disappears</strong>.',
-  ch3_p10: '• <strong>× Bad usage</strong>: Draw it first. "Let\'s list all causes" with nothing narrowed down yet.<br>• <strong>○ Good usage</strong>: Draw it after Pareto narrows things down. "Morning + Process B ②Machining + Machine C defects" — then: "What\'s the cause <strong>under these conditions?</strong>"',
-  ch3_p11: 'Just by following this order, the fishbone transforms <strong>from an alibi diagram into a real analysis diagram</strong>.',
+  ch3_p9: 'What matters is <strong>"what you draw it for."</strong> Drawing it just as an "alibi of listing all possible causes" is a waste. The practical way is this:',
+  ch3_fishTitle: 'Practical use of the fishbone diagram',
+  ch3_fishBody: '① Write the <strong>narrowed-down problem</strong> from your Pareto at the fish\'s head (e.g. "Morning + Machine C scratch defects")<br>② Draw the four main bones: <strong>4M (Man / Machine / Material / Method)</strong><br>③ For each bone, <strong>list out every plausible factor</strong> (e.g. for Machine: "blade worn / temperature not reaching spec / low lubricant...")<br>④ Take each listed factor and <strong>investigate it on the shop floor, one by one</strong> (inspect the blade, measure the temperature, check the oil level...)<br>⑤ The factors whose investigation matches reality are <strong>root cause candidates</strong>',
+  ch3_p10: 'In other words, the fishbone is a <strong>work list: enumerate every plausible factor, then knock them out on the floor one at a time</strong>. That is the practical use.',
+  ch3_p11: 'Drawing it "before narrowing down" or "formally attaching it after the countermeasure" both miss the point. <strong>After narrowing down, before investigating the root cause</strong> — that\'s the timing where it pays off.',
   ch3_h5: 'Start with these 3',
   ch3_p12: 'You don\'t need to learn all 7 at once. Start with just these 3.',
   ch3_p13: '<strong>1. Pareto chart</strong> (order by size)<br><strong>2. Stratification</strong> (change the cut)<br><strong>3. Fishbone diagram</strong> (draw it after narrowing down)',
@@ -213,11 +223,13 @@ Object.assign(window.kaizenI18n.vi, {
   ch3_p7: 'Tức là <strong>mỗi lớp một Pareto</strong>. 4 lớp = 4 Pareto. Đây là QC thật sự.',
   ch3CalloutTitle: 'Điểm nhiều người sai',
   ch3CalloutBody: 'Đừng dừng ở <strong>1 biểu đồ Pareto</strong>. "Tìm mục lớn nhất → phân tầng thêm → Pareto mới" — vòng lặp này mới đúng.',
-  ch3_h4: 'Xương cá vẽ CUỐI CÙNG',
+  ch3_h4: 'Xương cá dùng SAU khi thu hẹp — để liệt kê nguyên nhân theo 4M',
   ch3_p8: 'Thứ hai dùng nhiều là <strong>sơ đồ xương cá</strong>. Hình dạng xương cá để sắp xếp nguyên nhân.',
-  ch3_p9: 'Nhưng <strong>thời điểm quan trọng, sai thì mất nửa giá trị</strong>.',
-  ch3_p10: '• <strong>× Sai cách</strong>: Vẽ đầu tiên. "Liệt kê mọi nguyên nhân" khi chưa thu hẹp.<br>• <strong>○ Đúng cách</strong>: Vẽ sau khi Pareto thu hẹp. "Lỗi sáng + quy trình B ②Gia công + máy C" — rồi: "Dưới điều kiện này, nguyên nhân là gì?"',
-  ch3_p11: 'Chỉ tuân thủ thứ tự này, xương cá biến từ <strong>sơ đồ tạo cớ thành sơ đồ phân tích thật sự</strong>.',
+  ch3_p9: 'Quan trọng là <strong>"vẽ để làm gì"</strong>. Vẽ như một "bằng chứng liệt kê hết mọi nguyên nhân" thì lãng phí. Cách dùng thực tế là thế này:',
+  ch3_fishTitle: 'Cách dùng thực tế của sơ đồ xương cá',
+  ch3_fishBody: '① Viết <strong>vấn đề đã thu hẹp</strong> từ Pareto vào đầu con cá (ví dụ: "Lỗi trầy xước của máy C buổi sáng")<br>② Vẽ 4 xương lớn: <strong>4M (Người / Máy / Vật liệu / Phương pháp)</strong><br>③ Với mỗi xương, <strong>liệt kê mọi yếu tố có thể</strong> (ví dụ Máy: "lưỡi mòn / nhiệt độ không đủ / dầu bôi trơn ít...")<br>④ Lấy từng yếu tố và <strong>điều tra tại hiện trường, từng cái một</strong> (kiểm tra lưỡi, đo nhiệt độ, kiểm dầu...)<br>⑤ Yếu tố nào thực tế trùng với kết quả điều tra là <strong>ứng viên nguyên nhân thực</strong>',
+  ch3_p10: 'Nói cách khác, xương cá là <strong>danh sách công việc: liệt kê tất cả yếu tố khả thi, rồi xử lý từng cái một ở hiện trường</strong>. Đây là cách dùng thực tế.',
+  ch3_p11: 'Vẽ "trước khi thu hẹp" hay "đính kèm hình thức sau đối sách" đều lệch khỏi mục đích ban đầu. <strong>Sau khi thu hẹp, trước khi điều tra nguyên nhân thực</strong> — đó là thời điểm hiệu quả nhất.',
   ch3_h5: 'Bắt đầu với 3 cái này',
   ch3_p12: 'Không cần học hết 7 cái. Bắt đầu với 3 cái này.',
   ch3_p13: '<strong>1. Biểu đồ Pareto</strong> (sắp xếp theo kích thước)<br><strong>2. Phân tầng</strong> (đổi góc nhìn)<br><strong>3. Sơ đồ xương cá</strong> (vẽ sau khi thu hẹp)',
@@ -260,11 +272,13 @@ Object.assign(window.kaizenI18n.id, {
   ch3_p7: 'Artinya <strong>satu Pareto per lapisan</strong>. 4 lapisan = 4 Pareto. Ini QC sejati.',
   ch3CalloutTitle: 'Poin yang banyak orang salah',
   ch3CalloutBody: 'Jangan berhenti di <strong>1 diagram Pareto</strong>. "Temukan item terbesar → stratifikasi lagi → Pareto baru" — loop ini yang benar.',
-  ch3_h4: 'Tulang ikan digambar TERAKHIR',
+  ch3_h4: 'Tulang ikan dipakai SETELAH dipersempit — untuk mendaftar penyebab dengan 4M',
   ch3_p8: 'Kedua paling dipakai adalah <strong>diagram tulang ikan</strong>. Bentuk kerangka ikan untuk sortir penyebab.',
-  ch3_p9: 'Tapi <strong>waktu penting, salah waktu hilang setengah nilai</strong>.',
-  ch3_p10: '• <strong>× Cara salah</strong>: Gambar duluan. "Cantumkan semua penyebab" tanpa dipersempit.<br>• <strong>○ Cara benar</strong>: Gambar setelah Pareto persempit. "Cacat pagi + Proses B ②Pemrosesan + Mesin C" — lalu: "Di kondisi ini, apa penyebabnya?"',
-  ch3_p11: 'Hanya dengan tuhan urutan ini, tulang ikan berubah <strong>dari diagram pembuat alibi jadi diagram analisis sejati</strong>.',
+  ch3_p9: 'Yang penting adalah <strong>"digambar untuk apa"</strong>. Menggambar sekadar sebagai "alibi mencantumkan semua penyebab" itu mubazir. Cara pakai praktisnya begini:',
+  ch3_fishTitle: 'Cara praktis memakai diagram tulang ikan',
+  ch3_fishBody: '① Tulis <strong>masalah yang sudah dipersempit</strong> dari Pareto di kepala ikan (contoh: "Cacat goresan Mesin C pagi hari")<br>② Gambar 4 tulang besar: <strong>4M (Orang / Mesin / Material / Metode)</strong><br>③ Untuk tiap tulang, <strong>daftarkan semua faktor yang mungkin</strong> (contoh Mesin: "mata aus / suhu tak naik / minyak pelumas sedikit...")<br>④ Ambil tiap faktor, <strong>selidiki di lapangan satu per satu</strong> (periksa mata, ukur suhu, cek oli...)<br>⑤ Faktor yang cocok dengan kenyataan adalah <strong>kandidat penyebab sejati</strong>',
+  ch3_p10: 'Dengan kata lain, tulang ikan adalah <strong>daftar kerja: catat semua faktor yang mungkin, lalu habisi satu per satu di lapangan</strong>. Inilah pemakaian praktis.',
+  ch3_p11: 'Menggambar "sebelum dipersempit" atau "menempel formalitas setelah tindakan" keduanya keluar dari maksud semula. <strong>Setelah dipersempit, sebelum menyelidiki penyebab sejati</strong> — itulah timing yang paling efektif.',
   ch3_h5: 'Mulai dengan 3 ini',
   ch3_p12: 'Tidak perlu hapal semua 7. Mulai dengan 3 ini.',
   ch3_p13: '<strong>1. Diagram Pareto</strong> (susun per ukuran)<br><strong>2. Stratifikasi</strong> (ubah sudut pandang)<br><strong>3. Diagram tulang ikan</strong> (gambar setelah persempit)',
@@ -307,11 +321,13 @@ Object.assign(window.kaizenI18n.my, {
   ch3_p7: 'ဆိုလိုသည်မှာ <strong>အလွှာတစ်ခုလျှင် Pareto တစ်ခု</strong>။ ၄ အလွှာ = ၄ Pareto။ ၎င်းသည် စစ်မှန်သော QC။',
   ch3CalloutTitle: 'လူအများ မှားသော အချက်',
   ch3CalloutBody: '<strong>Pareto တစ်ခုတည်း</strong>တွင် မရပ်ပါ။ "ကြီးသော အရာ တွေ့ → ထပ်မံ အလွှာခွဲ → Pareto အသစ်" ဤသံသရာသည် မှန်သော သုံးစွဲမှု။',
-  ch3_h4: 'ငါးရိုးပုံကို "နောက်ဆုံး" ဆွဲ',
+  ch3_h4: 'ငါးရိုးပုံကို "ကျဉ်းကျပ်ပြီးမှ" 4M ဖြင့် အကြောင်းရင်းများ စာရင်းပြုရန် သုံး',
   ch3_p8: 'ဒုတိယ အများဆုံး သုံးသည်မှာ <strong>ငါးရိုးပုံ</strong>။ ငါးရိုးအသွင်အပြင်ဖြင့် အကြောင်းရင်း စီစဉ်သော ပုံ။',
-  ch3_p9: 'သို့သော် <strong>အချိန်ကို မှားလျှင် တန်ဖိုး တစ်ဝက် ပျောက်သွား</strong>။',
-  ch3_p10: '• <strong>× မှားသော သုံးပုံ</strong>: ဦးဆုံး ဆွဲ။ "အကြောင်းရင်း အားလုံး ဖော်ထုတ်ကြပါစို့" မကျဉ်းကျပ်ရသေးခင်။<br>• <strong>○ မှန်သော သုံးပုံ</strong>: Pareto ဖြင့် ကျဉ်းကျပ်ပြီးမှ ဆွဲ။ "မနက် + လုပ်ငန်းစဉ် B-②ပြုပြင်မှု + စက် C ချွတ်ယွင်းမှု" ပြီးမှ "ဤအခြေအနေအောက်တွင် အကြောင်းရင်းကား"။',
-  ch3_p11: 'ဤအစီအစဉ်ကို လိုက်နာရုံဖြင့်၊ ငါးရိုးပုံသည် <strong>အကြောင်းပြချက် ပုံမှ စစ်မှန်သော ခွဲခြမ်းစိတ်ဖြာမှု ပုံ</strong>သို့ ပြောင်းလဲ။',
+  ch3_p9: 'အရေးကြီးသည်မှာ <strong>"ဘာအတွက် ဆွဲသနည်း"</strong>။ "အကြောင်းရင်း အားလုံး ဖော်ထုတ်ရုံ အကြောင်းပြချက် ပုံ" အဖြစ်သာ ဆွဲခြင်းသည် အလဟာဿ။ လက်တွေ့ သုံးပုံက ဤသို့:',
+  ch3_fishTitle: 'ငါးရိုးပုံ၏ လက်တွေ့သုံးပုံ',
+  ch3_fishBody: '① Pareto ဖြင့် <strong>ကျဉ်းကျပ်ထားသော ပြဿနာ</strong> ကို ငါး၏ ခေါင်းတွင် ရေး (ဥပမာ "မနက်ပိုင်း + စက် C ၏ ခြစ်ရာ ချွတ်ယွင်းမှု")<br>② အရိုးကြီး ၄ ခု ဆွဲ: <strong>4M (လူ / စက် / ပစ္စည်း / နည်းလမ်း)</strong><br>③ အရိုးကြီး တစ်ခုချင်းစီအတွက် <strong>ဖြစ်နိုင်သော အကြောင်းရင်း အားလုံး စာရင်းပြု</strong> (ဥပမာ "စက်" ဆိုလျှင် - ဓား ပွန်း / အပူချိန် မရောက် / ချောဆီ နည်း...)<br>④ စာရင်းပြုထားသော အကြောင်းရင်းများကို <strong>လုပ်ငန်းခွင်တွင် တစ်ခုချင်း စုံစမ်း</strong> (ဓား ကြည့်၊ အပူချိန်တိုင်း၊ ဆီ စစ်ဆေး...)<br>⑤ စုံစမ်း ရလဒ်နှင့် အမှန်တရား ကိုက်ညီသော အကြောင်းရင်းသည် <strong>စစ်မှန်သော အကြောင်းရင်း (ကိုယ်စားလှယ်)</strong>',
+  ch3_p10: 'အဓိပ္ပာယ်မှာ၊ ငါးရိုးပုံသည် <strong>"ဖြစ်နိုင်သော အကြောင်းရင်းများကို လုံးဝ စာရင်းပြု၍ လုပ်ငန်းခွင်တွင် တစ်ခုချင်း ဖျက်သွား" သော အလုပ်စာရင်း</strong>။ ၎င်းသည် လက်တွေ့ သုံးပုံ။',
+  ch3_p11: '"ကျဉ်းကျပ်မတိုင်မီ ဆွဲခြင်း" သည်လည်းကောင်း၊ "တုံ့ပြန်မှု ပြီးနောက် ပုံသေနည်းဖြင့် တွဲလျက် တင်ခြင်း" သည်လည်းကောင်း၊ နှစ်ခုစလုံး မူရင်း သုံးပုံမှ သွေဖည်သည်။ <strong>ကျဉ်းကျပ်ပြီးနောက်၊ စစ်မှန်သော အကြောင်းရင်း စုံစမ်းမှု မတိုင်မီ</strong> ဆွဲသည်က အချိန်ကိုက်ဆုံး။',
   ch3_h5: 'ဦးစွာ ၃ ခု စ',
   ch3_p12: 'အားလုံး ၇ ခု အစ၌ မှတ်ရန် မလို။ ဦးစွာ ဤ ၃ ခု။',
   ch3_p13: '<strong>၁. Pareto ဇယား</strong> (ကြီးသည်မှ စီ)<br><strong>၂. အလွှာခွဲခြင်း</strong> (ရှုထောင့် ပြောင်း)<br><strong>၃. ငါးရိုးပုံ</strong> (ကျဉ်းကျပ်ပြီး ဆွဲ)',
